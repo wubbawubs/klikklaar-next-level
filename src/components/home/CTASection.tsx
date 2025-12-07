@@ -1,48 +1,58 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 
-const benefits = [
-  "Gratis analyse",
-  "Binnen 2 minuten resultaat",
-  "Geen verplichtingen",
-];
+const benefits = ["Gratis analyse", "Binnen 2 minuten", "Geen verplichtingen"];
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-section-lg">
       <div className="container">
         <div className="relative rounded-3xl overflow-hidden">
-          {/* Background */}
+          {/* Background - solid gradient */}
           <div className="absolute inset-0 gradient-cta" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-30" />
+          
+          {/* Subtle pattern overlay */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
 
           {/* Content */}
-          <div className="relative px-6 py-16 lg:px-16 lg:py-24 text-center">
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
-              Klaar om te groeien?
+          <div className="relative px-8 py-20 lg:px-16 lg:py-28 text-center">
+            <h2 className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-3xl mx-auto">
+              Klaar om automatisch meer klanten te krijgen?
             </h2>
-            <p className="text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            
+            <p className="text-xl text-white/90 max-w-xl mx-auto mb-10">
               Ontdek binnen 2 minuten wat KlikKlaar voor jouw website kan betekenen.
             </p>
 
             {/* Benefits */}
-            <div className="flex flex-wrap justify-center gap-6 mb-10">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12">
               {benefits.map((benefit) => (
                 <div key={benefit} className="flex items-center gap-2 text-white/90">
-                  <CheckCircle2 className="w-5 h-5" />
-                  <span>{benefit}</span>
+                  <Check className="w-5 h-5" />
+                  <span className="font-medium">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            {/* CTA Button */}
-            <GradientButton 
-              size="lg" 
-              className="bg-white text-kk-orange hover:bg-white/90 hover:shadow-2xl"
-            >
-              Start je gratis website-check
-              <ArrowRight className="w-5 h-5" />
-            </GradientButton>
+            {/* CTA Buttons - dual buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <GradientButton 
+                size="xl" 
+                className="bg-white text-kk-orange hover:bg-white/95 shadow-premium-lg"
+              >
+                Start je gratis website-check
+                <ArrowRight className="w-5 h-5" />
+              </GradientButton>
+              <GradientButton 
+                variant="outline" 
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              >
+                Neem contact op
+              </GradientButton>
+            </div>
           </div>
         </div>
       </div>

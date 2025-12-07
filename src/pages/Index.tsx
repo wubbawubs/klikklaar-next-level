@@ -2,7 +2,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TrustBar } from "@/components/home/TrustBar";
-import { ValuePropsSection } from "@/components/home/ValuePropsSection";
+import { PainSection } from "@/components/home/PainSection";
+import { USPSection } from "@/components/home/USPSection";
 import { HowItWorksSection } from "@/components/home/HowItWorksSection";
 import { DeliverablesSection } from "@/components/home/DeliverablesSection";
 import { BeforeAfterSection } from "@/components/home/BeforeAfterSection";
@@ -15,14 +16,34 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
+        {/* 1. Hero - nieuwe wereld beloven */}
         <HeroSection />
+        
+        {/* Trust strip - social proof direct */}
         <TrustBar />
-        <ValuePropsSection />
+        
+        {/* 2. Pijn - herkenning creëren */}
+        <PainSection />
+        
+        {/* 3. USP - waarom KlikKlaar uniek is */}
+        <USPSection />
+        
+        {/* 4. Flow - hoe het werkt */}
         <HowItWorksSection />
+        
+        {/* 5. Deliverables - wat ze krijgen */}
         <DeliverablesSection />
+        
+        {/* 6. Before/After - bewijs */}
         <BeforeAfterSection />
+        
+        {/* 7. Use cases - branches */}
         <UseCasesSection />
+        
+        {/* 8. Testimonials - vertrouwen */}
         <TestimonialsSection />
+        
+        {/* 9. Massive CTA */}
         <CTASection />
       </main>
       <Footer />
