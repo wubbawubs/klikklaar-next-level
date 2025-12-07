@@ -28,9 +28,9 @@ export function HowItWorksSection() {
   return (
     <section className="py-section">
       <div className="container">
-        {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <span className="inline-block text-sm font-semibold text-kk-orange uppercase tracking-wider mb-4 opacity-0 animate-fade-in">
+        {/* Left-aligned header */}
+        <div className="max-w-2xl mb-20">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-6 opacity-0 animate-fade-in">
             Hoe we samenwerken
           </span>
           <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
@@ -42,44 +42,63 @@ export function HowItWorksSection() {
           </p>
         </div>
 
-        {/* Steps - Personal contact flow */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Connector line - desktop only */}
-          <div className="hidden lg:block absolute top-[80px] left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-kk-orange via-kk-violet to-kk-orange opacity-20" />
+        {/* Steps - Asymmetric layout with focal point on step 2 */}
+        <div className="relative max-w-6xl">
+          {/* Connector line - animated gradient */}
+          <div className="hidden lg:block absolute top-[100px] left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-kk-orange/20 via-kk-violet/40 to-kk-orange/20" />
+          <div className="hidden lg:block absolute top-[100px] left-[15%] h-0.5 w-24 bg-gradient-to-r from-kk-orange to-kk-violet animate-pulse-subtle" />
           
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className="relative opacity-0 animate-fade-in text-center group"
-                style={{ animationDelay: `${150 + index * 100}ms`, animationFillMode: 'forwards' }}
-              >
-                {/* Step indicator */}
-                <div className="relative mx-auto mb-6">
-                  <div className="w-[140px] h-[140px] mx-auto rounded-2xl gradient-subtle border border-border flex items-center justify-center relative shadow-premium group-hover:shadow-premium-lg transition-shadow duration-300">
-                    <step.icon className="w-12 h-12 text-kk-orange" />
-                    
-                    {/* Step number badge */}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full gradient-cta flex items-center justify-center text-white text-sm font-bold shadow-glow-orange">
-                      {step.number}
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-start">
+            {steps.map((step, index) => {
+              const isFocal = index === 1;
+              return (
+                <div
+                  key={step.number}
+                  className={`relative opacity-0 animate-fade-in group ${
+                    index === 0 ? 'lg:mt-8' : ''
+                  } ${index === 2 ? 'lg:mt-8' : ''}`}
+                  style={{ animationDelay: `${150 + index * 100}ms`, animationFillMode: 'forwards' }}
+                >
+                  {/* Step indicator */}
+                  <div className="relative mb-6">
+                    <div className={`mx-auto rounded-2xl gradient-subtle border border-border flex items-center justify-center relative shadow-premium group-hover:shadow-premium-lg transition-shadow duration-300 ${
+                      isFocal ? 'w-[160px] h-[160px]' : 'w-[140px] h-[140px]'
+                    }`}>
+                      <step.icon className={`text-kk-orange ${isFocal ? 'w-14 h-14' : 'w-12 h-12'}`} />
+                      
+                      {/* Step number badge */}
+                      <div className={`absolute -top-3 -right-3 rounded-full gradient-cta flex items-center justify-center text-white font-bold shadow-glow-orange ${
+                        isFocal ? 'w-10 h-10 text-base' : 'w-8 h-8 text-sm'
+                      }`}>
+                        {step.number}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Highlight tag */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-kk-orange/10 text-kk-orange text-xs font-semibold mb-3">
-                  {step.highlight}
-                </div>
+                  {/* Text content - centered */}
+                  <div className="text-center">
+                    {/* Highlight tag */}
+                    <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-kk-orange/10 text-kk-orange font-semibold mb-3 ${
+                      isFocal ? 'text-sm' : 'text-xs'
+                    }`}>
+                      {step.highlight}
+                    </div>
 
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+                    {/* Content */}
+                    <h3 className={`font-semibold text-foreground mb-3 ${
+                      isFocal ? 'text-2xl' : 'text-xl'
+                    }`}>
+                      {step.title}
+                    </h3>
+                    <p className={`text-muted-foreground leading-relaxed ${
+                      isFocal ? 'text-base' : ''
+                    }`}>
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
