@@ -140,7 +140,7 @@ function HeroSection() {
           </span>
           
           <h1 
-            className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6"
+            className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -203,7 +203,7 @@ function DeliverablesGrid() {
             Alles wat je krijgt
           </span>
           <h2 
-            className="text-display-sm lg:text-display text-foreground"
+            className="text-display-sm lg:text-display font-bold text-foreground"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -293,7 +293,7 @@ function WeeklyProcess() {
               Wekelijkse cyclus
             </span>
             <h2 
-              className="text-display-sm lg:text-display text-foreground mb-6"
+              className="text-display-sm lg:text-display font-bold text-foreground mb-6"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -369,7 +369,7 @@ function CTASection() {
 
           <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
             <h2 
-              className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
+              className="text-display-sm sm:text-display lg:text-display-lg font-bold text-white mb-6 max-w-2xl mx-auto"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',

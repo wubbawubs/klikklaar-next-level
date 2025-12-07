@@ -127,7 +127,7 @@ function HeroSection() {
         </span>
         
         <h1 
-          className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
+          className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -179,15 +179,13 @@ function PricingCards() {
                 key={tier.id}
                 className={`relative rounded-2xl border p-6 lg:p-8 transition-all duration-500
                   ${tier.featured 
-                    ? 'bg-card border-kk-orange/30 shadow-premium-lg md:col-span-2 lg:col-span-1 lg:-translate-y-4 lg:scale-105' 
+                    ? 'bg-card border-kk-orange/30 shadow-premium-lg ring-2 ring-kk-orange/20' 
                     : 'bg-card border-border shadow-premium-sm hover:shadow-premium'
                   }
                   ${tier.comingSoon ? 'opacity-90' : ''}`}
                 style={{ 
                   opacity: isVisible ? 1 : 0,
-                  transform: isVisible 
-                    ? tier.featured ? 'translateY(-16px) scale(1.05)' : 'translateY(0)' 
-                    : 'translateY(24px)',
+                  transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
                   transitionDelay: `${index * 100}ms`
                 }}
               >
@@ -276,7 +274,7 @@ function Guarantee() {
             <Check className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
           </div>
           
-          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground mb-3 lg:mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-display font-bold text-foreground mb-3 lg:mb-4">
             Geen gedoe.{" "}
             <span className="gradient-text">Altijd opzegbaar.</span>
           </h2>
@@ -313,7 +311,7 @@ function FAQSection() {
           <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-3">
             Veelgestelde vragen
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground">
+          <h2 className="text-xl sm:text-2xl lg:text-display font-bold text-foreground">
             Vragen over{" "}
             <span className="gradient-text">prijzen en contracten?</span>
           </h2>
@@ -366,7 +364,7 @@ function CTASection() {
 
           <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
             <h2 
-              className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
+              className="text-display-sm sm:text-display lg:text-display-lg font-bold text-white mb-6 max-w-2xl mx-auto"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',

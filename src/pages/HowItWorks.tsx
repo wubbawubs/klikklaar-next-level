@@ -124,7 +124,7 @@ function HeroSection() {
           </span>
           
           <h1 
-            className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6"
+            className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -188,7 +188,7 @@ function StepsSection() {
             3 simpele stappen
           </span>
           <h2 
-            className="text-xl sm:text-2xl lg:text-display text-foreground"
+            className="text-xl sm:text-2xl lg:text-display font-bold text-foreground"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -296,7 +296,7 @@ function BenefitsSection() {
             Waarom dit werkt
           </span>
           <h2 
-            className="text-xl sm:text-2xl lg:text-display text-foreground"
+            className="text-xl sm:text-2xl lg:text-display font-bold text-foreground"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -351,7 +351,7 @@ function CTASection() {
 
           <div className="relative px-6 py-10 sm:px-8 sm:py-12 lg:px-16 lg:py-24 text-center">
             <h2 
-              className="text-xl sm:text-2xl lg:text-display-lg text-white mb-4 lg:mb-6 max-w-2xl mx-auto"
+              className="text-xl sm:text-2xl lg:text-display-lg font-bold text-white mb-4 lg:mb-6 max-w-2xl mx-auto"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
