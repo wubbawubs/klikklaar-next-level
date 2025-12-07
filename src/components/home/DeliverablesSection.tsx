@@ -32,7 +32,7 @@ export function DeliverablesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-section-haze-warm section-shadow-top relative overflow-hidden">
+    <section ref={ref} className="py-12 lg:py-16 haze-gradient-warm relative overflow-hidden">
       <div className="max-w-container-wide mx-auto px-6 lg:px-10">
         {/* Header - Left aligned for asymmetry */}
         <div className="max-w-2xl mb-16">

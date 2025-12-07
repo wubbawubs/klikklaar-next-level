@@ -21,7 +21,7 @@ export function UseCasesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-section-haze-cool relative overflow-hidden">
+    <section ref={ref} className="py-12 lg:py-16 haze-gradient-cool relative overflow-hidden">
       <div className="container relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
