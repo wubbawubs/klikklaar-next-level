@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { Check, Phone, Clock, Users, Star, ArrowRight, Zap, Target, BarChart3, Shield, TrendingUp, Sparkles, Calendar, MessageCircle } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const AdLandingA = () => {
@@ -116,10 +116,13 @@ const AdLandingA = () => {
       <header className="py-4 border-b border-border/30">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <img src={klikklaarLogo} alt="KlikKlaar" className="h-10 lg:h-12 w-auto" />
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">
+          <div className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">
             <span>Vanaf €99/maand</span>
             <span className="text-white/60">•</span>
             <span className="text-white/90 font-normal">Altijd opzegbaar</span>
+          </div>
+          <div className="sm:hidden inline-flex items-center bg-gradient-to-r from-kk-orange to-kk-violet text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">
+            €99/mnd
           </div>
         </div>
       </header>
@@ -167,22 +170,16 @@ const AdLandingA = () => {
               transitionDelay: '150ms'
             }}
           >
-            <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-premium-xl border border-border/30">
+            <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-premium-xl border border-border/30 group cursor-pointer">
               {/* Video placeholder - replace with actual video embed */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-kk-orange to-kk-violet flex items-center justify-center mb-6 mx-auto cursor-pointer hover:scale-110 transition-all duration-300 shadow-glow-orange">
-                    <div className="w-0 h-0 border-t-[16px] border-t-transparent border-l-[28px] border-l-white border-b-[16px] border-b-transparent ml-2" />
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-r from-kk-orange to-kk-violet flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-all duration-300 shadow-glow-orange">
+                    <div className="w-0 h-0 border-t-[14px] border-t-transparent border-l-[24px] border-l-white border-b-[14px] border-b-transparent ml-1.5" />
                   </div>
-                  <p className="text-white/80 text-lg font-medium mb-2">Bekijk de video</p>
+                  <p className="text-white/80 text-base lg:text-lg font-medium mb-1">Bekijk de video</p>
                   <p className="text-white/50 text-sm">2 minuten • Ontdek hoe het werkt</p>
                 </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute top-4 left-4 flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
               {/* Replace this div with actual video iframe when ready */}
               {/* <iframe src="YOUR_VSL_URL" className="w-full h-full" allowFullScreen /> */}
