@@ -1,58 +1,19 @@
 import { TrendingUp, ArrowRight, Quote } from "lucide-react";
-import { useState, useEffect } from "react";
 
 const metrics = [
-  {
-    label: "Google positie",
-    before: "#12",
-    after: "#3",
-    improvement: "+9 posities",
-  },
-  {
-    label: "Laadtijd",
-    before: "4.2s",
-    after: "1.8s",
-    improvement: "-57%",
-  },
-  {
-    label: "Maandelijkse bezoekers",
-    before: "234",
-    after: "892",
-    improvement: "+281%",
-  },
-  {
-    label: "SEO score",
-    before: "47",
-    after: "94",
-    improvement: "+47 punten",
-  },
+  { label: "Google positie", before: "#12", after: "#3", improvement: "+9 posities" },
+  { label: "Laadtijd", before: "4.2s", after: "1.8s", improvement: "-57%" },
+  { label: "Maandelijkse bezoekers", before: "234", after: "892", improvement: "+281%" },
+  { label: "SEO score", before: "47", after: "94", improvement: "+47 punten" },
 ];
 
 export function BeforeAfterSection() {
-  const [animatedMetrics, setAnimatedMetrics] = useState<boolean[]>([false, false, false, false]);
-
-  // Staggered animation on mount
-  useEffect(() => {
-    const timers: NodeJS.Timeout[] = [];
-    metrics.forEach((_, index) => {
-      const timer = setTimeout(() => {
-        setAnimatedMetrics(prev => {
-          const newState = [...prev];
-          newState[index] = true;
-          return newState;
-        });
-      }, 300 + index * 150);
-      timers.push(timer);
-    });
-    return () => timers.forEach(t => clearTimeout(t));
-  }, []);
-
   return (
-    <section className="py-section">
+    <section className="py-20 lg:py-28">
       <div className="container">
-        {/* Left-aligned header */}
+        {/* Header */}
         <div className="max-w-2xl mb-16">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-6 opacity-0 animate-fade-in">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
             Bewezen resultaten
           </span>
           <h2 className="text-display-sm lg:text-display text-foreground mb-4 opacity-0 animate-fade-in animation-delay-100">
@@ -64,34 +25,23 @@ export function BeforeAfterSection() {
           </p>
         </div>
 
-        {/* Asymmetric layout: comparison + metrics + testimonial positioned right */}
-        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-start max-w-6xl">
-          {/* Left - Metrics grid */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left - Metrics */}
           <div className="grid grid-cols-2 gap-4 opacity-0 animate-fade-in animation-delay-200" style={{ animationFillMode: 'forwards' }}>
             {metrics.map((metric, index) => (
               <div
                 key={metric.label}
-                className={`bg-card rounded-2xl border border-border p-5 shadow-sm hover:shadow-premium transition-all duration-500 ${
-                  animatedMetrics[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
+                className="bg-card rounded-xl border border-border p-5 hover:shadow-sm transition-shadow"
               >
-                <p className="text-xs font-medium text-muted-foreground mb-4 uppercase tracking-wider">{metric.label}</p>
+                <p className="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wider">{metric.label}</p>
                 
-                {/* Before/After comparison */}
-                <div className="flex items-center justify-start gap-3 mb-4">
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Voor</p>
-                    <p className="text-lg font-medium text-muted-foreground/60">{metric.before}</p>
-                  </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-muted-foreground/60">{metric.before}</span>
                   <ArrowRight className="w-4 h-4 text-kk-orange" />
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Na</p>
-                    <p className="text-lg font-bold text-foreground">{metric.after}</p>
-                  </div>
+                  <span className="text-lg font-bold text-foreground">{metric.after}</span>
                 </div>
 
-                {/* Improvement badge */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-sm font-semibold">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-green-50 text-green-700 text-sm font-medium">
                   <TrendingUp className="w-3.5 h-3.5" />
                   {metric.improvement}
                 </div>
@@ -99,58 +49,20 @@ export function BeforeAfterSection() {
             ))}
           </div>
 
-          {/* Right - Visual comparison + Testimonial below (slightly right-aligned) */}
+          {/* Right - Testimonial */}
           <div className="opacity-0 animate-fade-in animation-delay-300" style={{ animationFillMode: 'forwards' }}>
-            {/* Visual comparison mockup */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {/* Before mockup */}
-              <div className="relative">
-                <div className="absolute -top-3 left-4 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-semibold">
-                  Voor
-                </div>
-                <div className="bg-card rounded-xl border border-border p-4 shadow-sm">
-                  <div className="w-full h-4 bg-muted rounded mb-3" />
-                  <div className="w-3/4 h-3 bg-muted rounded mb-2" />
-                  <div className="w-full h-3 bg-muted rounded mb-2" />
-                  <div className="w-2/3 h-3 bg-muted rounded mb-4" />
-                  <div className="flex items-center gap-2 text-red-500 text-sm">
-                    <span className="w-2 h-2 rounded-full bg-red-500" />
-                    Score: 47
-                  </div>
-                </div>
-              </div>
-
-              {/* After mockup */}
-              <div className="relative">
-                <div className="absolute -top-3 left-4 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold">
-                  Na
-                </div>
-                <div className="bg-card rounded-xl border-2 border-green-200 p-4 shadow-premium">
-                  <div className="w-full h-4 bg-gradient-to-r from-kk-orange/20 to-kk-violet/20 rounded mb-3" />
-                  <div className="w-3/4 h-3 bg-muted rounded mb-2" />
-                  <div className="w-full h-3 bg-muted rounded mb-2" />
-                  <div className="w-2/3 h-3 bg-muted rounded mb-4" />
-                  <div className="flex items-center gap-2 text-green-600 text-sm font-medium">
-                    <span className="w-2 h-2 rounded-full bg-green-500" />
-                    Score: 94
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial quote - positioned slightly right */}
-            <div className="ml-auto max-w-sm p-5 bg-muted/50 rounded-xl border border-border">
-              <Quote className="w-6 h-6 text-kk-orange/40 mb-2" />
-              <p className="text-foreground italic mb-3">
-                "Binnen 2 maanden stond ik op plek 3 in Google. Ik krijg nu elke week nieuwe aanvragen."
+            <div className="p-8 bg-muted/50 rounded-2xl border border-border">
+              <Quote className="w-8 h-8 text-kk-orange/30 mb-4" />
+              <p className="text-xl text-foreground mb-6 leading-relaxed italic">
+                "Binnen 2 maanden stond ik op plek 3 in Google. Ik krijg nu elke week nieuwe aanvragen via mijn website."
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full gradient-subtle flex items-center justify-center text-kk-orange font-semibold">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-kk-orange/10 flex items-center justify-center text-kk-orange font-bold text-lg">
                   M
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-foreground">Marco de Vries</p>
-                  <p className="text-xs text-muted-foreground">Loodgieter, Amsterdam</p>
+                  <p className="font-semibold text-foreground">Marco de Vries</p>
+                  <p className="text-sm text-muted-foreground">Loodgieter, Amsterdam</p>
                 </div>
               </div>
             </div>
