@@ -234,7 +234,7 @@
     background-color: hsl(var(--section-haze-cool));
   }
 
-  /* Gradient haze effects - Softer fades, more visible */
+  /* Gradient haze effects - Soft vertical fades in/out */
   .haze-gradient-top-right {
     position: relative;
   }
@@ -242,7 +242,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 100% 80% at 100% 0%, hsl(var(--kk-orange) / 0.12), hsl(var(--kk-orange) / 0.04) 40%, transparent 70%);
+    background: radial-gradient(ellipse 100% 80% at 100% 0%, hsl(var(--kk-orange) / 0.15), hsl(var(--kk-orange) / 0.05) 40%, transparent 70%);
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
     pointer-events: none;
   }
 
@@ -253,7 +255,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 90% 70% at 0% 100%, hsl(var(--kk-violet) / 0.1), hsl(var(--kk-violet) / 0.03) 40%, transparent 65%);
+    background: radial-gradient(ellipse 90% 70% at 0% 100%, hsl(var(--kk-violet) / 0.12), hsl(var(--kk-violet) / 0.04) 40%, transparent 65%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
     pointer-events: none;
   }
 
@@ -264,7 +268,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 50% at 50% 40%, hsl(var(--kk-orange) / 0.08), hsl(var(--kk-violet) / 0.04) 50%, transparent 80%);
+    background: radial-gradient(ellipse 80% 50% at 50% 40%, hsl(var(--kk-orange) / 0.12), hsl(var(--kk-violet) / 0.06) 50%, transparent 80%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     pointer-events: none;
   }
 
@@ -277,8 +283,10 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 120% 60% at 80% -20%, hsl(var(--kk-orange) / 0.1), transparent 60%),
-      radial-gradient(ellipse 100% 50% at 20% 100%, hsl(var(--kk-violet) / 0.06), transparent 50%);
+      radial-gradient(ellipse 120% 60% at 80% -20%, hsl(var(--kk-orange) / 0.12), transparent 60%),
+      radial-gradient(ellipse 100% 50% at 20% 100%, hsl(var(--kk-violet) / 0.08), transparent 50%);
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
     pointer-events: none;
   }
 
@@ -291,8 +299,10 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 90% 60% at 90% 20%, hsl(var(--kk-orange) / 0.1), transparent 50%),
-      radial-gradient(ellipse 70% 40% at 10% 80%, hsl(var(--kk-orange) / 0.06), transparent 40%);
+      radial-gradient(ellipse 90% 60% at 90% 20%, hsl(var(--kk-orange) / 0.14), transparent 50%),
+      radial-gradient(ellipse 70% 40% at 10% 80%, hsl(var(--kk-orange) / 0.08), transparent 40%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     pointer-events: none;
   }
 
@@ -305,8 +315,10 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 50% at 10% 30%, hsl(var(--kk-violet) / 0.08), transparent 50%),
-      radial-gradient(ellipse 60% 40% at 90% 70%, hsl(var(--kk-violet) / 0.05), transparent 40%);
+      radial-gradient(ellipse 80% 50% at 10% 30%, hsl(var(--kk-violet) / 0.12), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 90% 70%, hsl(var(--kk-violet) / 0.07), transparent 40%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     pointer-events: none;
   }
 
