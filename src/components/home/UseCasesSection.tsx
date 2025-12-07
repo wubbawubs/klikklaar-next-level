@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Scissors, Stethoscope, Building2, ShoppingBag, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface UseCase {
   icon: LucideIcon;
@@ -17,15 +18,26 @@ const useCases: UseCase[] = [
 ];
 
 export function UseCasesSection() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-20 lg:py-28 bg-muted/30">
+    <section ref={ref} className="py-24 lg:py-32 bg-muted/40">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
+          <span 
+            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+          >
             Branches
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
+          <h2 
+            className={`text-display-sm lg:text-display text-foreground ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "100ms" }}
+          >
             Voor elke{" "}
             <span className="gradient-text">ondernemer</span>
           </h2>
@@ -39,10 +51,12 @@ export function UseCasesSection() {
               <Link
                 key={useCase.title}
                 to={useCase.href}
-                className="group p-6 rounded-xl bg-card border border-border hover:shadow-premium hover:border-kk-orange/20 transition-all opacity-0 animate-fade-in"
-                style={{ animationDelay: `${250 + index * 80}ms`, animationFillMode: 'forwards' }}
+                className={`group p-6 rounded-xl bg-card border border-border 
+                  hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1
+                  transition-all duration-300 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+                style={{ animationDelay: `${250 + index * 80}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4 group-hover:bg-kk-orange/10 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4 group-hover:bg-kk-orange/10 group-hover:scale-110 transition-all duration-300">
                   <Icon className="w-6 h-6 text-kk-orange" />
                 </div>
 

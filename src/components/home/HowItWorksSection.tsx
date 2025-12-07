@@ -1,4 +1,5 @@
 import { MessageCircle, Search, Rocket } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const steps = [
   {
@@ -25,19 +26,35 @@ const steps = [
 ];
 
 export function HowItWorksSection() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-20 lg:py-28">
+    <section ref={ref} className="py-24 lg:py-32">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
+          <span 
+            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+          >
             Hoe we samenwerken
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
+          <h2 
+            className={`text-display-sm lg:text-display text-foreground ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "100ms" }}
+          >
             Persoonlijk contact,{" "}
             <span className="gradient-text">automatische resultaten</span>
           </h2>
-          <p className="text-lg text-muted-foreground mt-4 opacity-0 animate-fade-in animation-delay-200">
+          <p 
+            className={`text-lg text-muted-foreground mt-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "200ms" }}
+          >
             We kijken altijd even mee. Geen anonieme software — écht contact.
           </p>
         </div>
@@ -49,18 +66,18 @@ export function HowItWorksSection() {
             return (
               <div
                 key={step.number}
-                className="relative opacity-0 animate-fade-in"
-                style={{ animationDelay: `${250 + index * 100}ms`, animationFillMode: 'forwards' }}
+                className={`relative group ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+                style={{ animationDelay: `${250 + index * 100}ms` }}
               >
                 {/* Connector line */}
                 {index < 2 && (
-                  <div className="hidden md:block absolute top-16 left-[calc(50%+60px)] w-[calc(100%-60px)] h-px bg-border" />
+                  <div className="hidden md:block absolute top-16 left-[calc(50%+60px)] w-[calc(100%-60px)] h-px bg-gradient-to-r from-border to-transparent" />
                 )}
 
                 {/* Icon box */}
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                  <Icon className="w-10 h-10 text-kk-orange" />
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full gradient-cta flex items-center justify-center text-white text-sm font-bold">
+                <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-muted/50 border border-border flex items-center justify-center group-hover:border-kk-orange/30 group-hover:shadow-premium transition-all duration-300">
+                  <Icon className="w-10 h-10 text-kk-orange group-hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full gradient-cta flex items-center justify-center text-white text-sm font-bold shadow-glow-orange">
                     {step.number}
                   </div>
                 </div>

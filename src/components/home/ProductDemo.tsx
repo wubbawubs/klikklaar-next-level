@@ -10,9 +10,14 @@ const improvements = [
 
 export function ProductDemo() {
   const [animatedItems, setAnimatedItems] = useState<boolean[]>([false, false, false, false]);
+  const [scoreAnimated, setScoreAnimated] = useState(false);
 
   useEffect(() => {
-    const timers: NodeJS.Timeout[] = [];
+    // Animate score first
+    const scoreTimer = setTimeout(() => setScoreAnimated(true), 400);
+    
+    // Then animate items
+    const timers: NodeJS.Timeout[] = [scoreTimer];
     improvements.forEach((_, index) => {
       const timer = setTimeout(() => {
         setAnimatedItems(prev => {
@@ -20,7 +25,7 @@ export function ProductDemo() {
           newState[index] = true;
           return newState;
         });
-      }, 800 + index * 300);
+      }, 800 + index * 200);
       timers.push(timer);
     });
     return () => timers.forEach(t => clearTimeout(t));
@@ -33,7 +38,7 @@ export function ProductDemo() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-muted/30">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg gradient-cta flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg gradient-cta flex items-center justify-center shadow-glow-orange">
               <Zap className="w-4 h-4 text-white" />
             </div>
             <div>
@@ -58,7 +63,9 @@ export function ProductDemo() {
                   cx="50" cy="50" r="42" fill="none" 
                   stroke="url(#scoreGradient)" strokeWidth="8" 
                   strokeLinecap="round"
-                  strokeDasharray="264" strokeDashoffset="26"
+                  strokeDasharray="264" 
+                  strokeDashoffset={scoreAnimated ? 26 : 264}
+                  style={{ transition: "stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1)" }}
                 />
                 <defs>
                   <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -68,7 +75,12 @@ export function ProductDemo() {
                 </defs>
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-xl font-bold text-foreground">92</span>
+                <span 
+                  className="text-xl font-bold text-foreground transition-opacity duration-500"
+                  style={{ opacity: scoreAnimated ? 1 : 0 }}
+                >
+                  92
+                </span>
               </div>
             </div>
             
@@ -96,13 +108,12 @@ export function ProductDemo() {
                 style={{ 
                   opacity: animatedItems[i] ? 1 : 0,
                   transform: animatedItems[i] ? 'translateX(0)' : 'translateX(-10px)',
-                  transition: 'opacity 0.5s ease, transform 0.5s ease'
                 }}
               >
                 {item.done ? (
-                  <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                    item.highlight ? 'bg-kk-orange' : 'bg-green-500'
-                  }`}>
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center transition-transform duration-300 ${
+                    item.highlight ? 'bg-kk-orange shadow-glow-orange' : 'bg-green-500'
+                  } ${animatedItems[i] ? 'scale-100' : 'scale-0'}`}>
                     <Check className="w-3 h-3 text-white" />
                   </div>
                 ) : (
@@ -131,8 +142,12 @@ export function ProductDemo() {
               {[35, 42, 38, 55, 48, 62, 58, 72, 68, 85, 78, 92].map((height, i) => (
                 <div 
                   key={i} 
-                  className="flex-1 rounded-sm gradient-cta"
-                  style={{ height: `${height}%`, opacity: 0.4 + (i / 12) * 0.6 }}
+                  className="flex-1 rounded-sm gradient-cta transition-all duration-500"
+                  style={{ 
+                    height: scoreAnimated ? `${height}%` : '0%',
+                    opacity: 0.4 + (i / 12) * 0.6,
+                    transitionDelay: `${i * 50}ms`
+                  }}
                 />
               ))}
             </div>

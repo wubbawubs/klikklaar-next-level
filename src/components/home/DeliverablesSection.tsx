@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const deliverables = [
   {
@@ -28,19 +29,35 @@ const deliverables = [
 ];
 
 export function DeliverablesSection() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-20 lg:py-28 bg-muted/30">
+    <section ref={ref} className="py-24 lg:py-32 bg-muted/40">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
+          <span 
+            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+          >
             Dit krijg je concreet
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground mb-4 opacity-0 animate-fade-in animation-delay-100">
+          <h2 
+            className={`text-display-sm lg:text-display text-foreground mb-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "100ms" }}
+          >
             Geen vage beloftes,{" "}
             <span className="gradient-text">concrete resultaten</span>
           </h2>
-          <p className="text-lg text-muted-foreground opacity-0 animate-fade-in animation-delay-200">
+          <p 
+            className={`text-lg text-muted-foreground ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "200ms" }}
+          >
             Elke week leveren we meetbare verbeteringen aan je website.
           </p>
         </div>
@@ -50,10 +67,12 @@ export function DeliverablesSection() {
           {deliverables.map((item, index) => (
             <div
               key={item.title}
-              className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:shadow-sm transition-shadow opacity-0 animate-fade-in"
-              style={{ animationDelay: `${250 + index * 60}ms`, animationFillMode: 'forwards' }}
+              className={`flex items-start gap-4 p-5 rounded-xl bg-card border border-border group
+                hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-0.5
+                transition-all duration-300 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+              style={{ animationDelay: `${250 + index * 60}ms` }}
             >
-              <div className="w-6 h-6 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-6 h-6 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:shadow-glow-orange transition-shadow">
                 <Check className="w-3.5 h-3.5 text-white" />
               </div>
               <div>

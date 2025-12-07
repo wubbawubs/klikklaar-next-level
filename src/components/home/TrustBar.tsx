@@ -9,16 +9,16 @@ const stats = [
 
 export function TrustBar() {
   return (
-    <section className="py-10 border-y border-border bg-muted/30">
+    <section className="py-12 border-y border-border bg-muted/40">
       <div className="container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, index) => (
             <div 
               key={stat.label} 
-              className="flex items-center gap-4 opacity-0 animate-fade-in"
+              className="flex items-center gap-4 opacity-0 animate-fade-in group"
               style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'forwards' }}
             >
-              <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center shadow-sm group-hover:shadow-premium group-hover:border-kk-orange/20 transition-all duration-300">
                 <stat.icon className="w-5 h-5 text-kk-orange" />
               </div>
               <div>
