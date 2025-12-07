@@ -55,9 +55,7 @@ export function ProductDemo() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-muted/30">
           <div className="flex items-center gap-3">
-            <div className="h-10 rounded-lg overflow-hidden shadow-glow-orange bg-white flex items-center px-2">
-              <img src={klikklaarLogo} alt="KlikKlaar" className="h-6 w-auto object-contain" />
-            </div>
+            <img src={klikklaarLogo} alt="KlikKlaar" className="h-8 w-auto object-contain" />
             <div>
               <p className="text-sm font-semibold text-foreground">KlikKlaar Analyse</p>
               <p className="text-xs text-muted-foreground">jouwwebsite.nl</p>
