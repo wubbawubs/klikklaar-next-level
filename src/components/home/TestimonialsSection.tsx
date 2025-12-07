@@ -1,4 +1,4 @@
-import { Star, Quote, Award } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -6,31 +6,28 @@ const testimonials = [
     author: "Marco de Vries",
     role: "Loodgieter, Amsterdam",
     avatar: "M",
-    featured: true,
   },
   {
     quote: "Eindelijk iemand die het begrijpt. Geen technische praatjes, gewoon resultaat. Mijn agenda zit vol.",
     author: "Sandra Bakker",
     role: "Fysiotherapeut, Rotterdam",
     avatar: "S",
-    featured: false,
   },
   {
     quote: "Ik had geen idee waar ik moest beginnen met SEO. Nu hoef ik er niet meer over na te denken.",
     author: "Pieter Janssen",
     role: "Aannemer, Eindhoven",
     avatar: "P",
-    featured: false,
   },
 ];
 
 export function TestimonialsSection() {
   return (
-    <section className="py-section section-alt overflow-hidden">
+    <section className="py-20 lg:py-28">
       <div className="container">
-        {/* Left-aligned header */}
+        {/* Header */}
         <div className="max-w-2xl mb-16">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-6 opacity-0 animate-fade-in">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
             Wat klanten zeggen
           </span>
           <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
@@ -39,61 +36,33 @@ export function TestimonialsSection() {
           </h2>
         </div>
 
-        {/* Testimonials - Featured card larger + horizontal scroll on mobile */}
-        <div className="flex gap-6 lg:gap-8 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible scrollbar-hide">
+        {/* Testimonials */}
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className={`group relative bg-card rounded-2xl border border-border shadow-sm hover:shadow-premium transition-all duration-300 opacity-0 animate-fade-in flex-shrink-0 ${
-                testimonial.featured 
-                  ? 'p-8 lg:p-10 w-[320px] lg:w-[400px]' 
-                  : 'p-6 lg:p-8 w-[280px] lg:w-[320px]'
-              }`}
-              style={{ animationDelay: `${200 + index * 100}ms`, animationFillMode: 'forwards' }}
+              className="bg-card rounded-2xl border border-border p-8 hover:shadow-sm transition-shadow opacity-0 animate-fade-in"
+              style={{ animationDelay: `${250 + index * 100}ms`, animationFillMode: 'forwards' }}
             >
-              {/* Featured badge */}
-              {testimonial.featured && (
-                <div className="absolute -top-3 left-6 flex items-center gap-1.5 px-3 py-1 rounded-full bg-kk-orange text-white text-xs font-semibold">
-                  <Award className="w-3 h-3" />
-                  Uitgelicht
-                </div>
-              )}
+              <Quote className="w-8 h-8 text-kk-orange/20 mb-4" />
 
-              {/* Quote icon */}
-              <Quote className={`text-kk-orange/20 mb-4 ${
-                testimonial.featured ? 'w-10 h-10' : 'w-8 h-8'
-              }`} />
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
+              <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`fill-kk-orange text-kk-orange ${
-                    testimonial.featured ? 'w-5 h-5' : 'w-4 h-4'
-                  }`} />
+                  <Star key={i} className="w-4 h-4 fill-kk-orange text-kk-orange" />
                 ))}
               </div>
 
-              {/* Quote */}
-              <p className={`text-foreground mb-6 leading-relaxed italic ${
-                testimonial.featured ? 'text-lg' : ''
-              }`}>
+              <p className="text-foreground mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-3 mt-auto">
-                <div className={`rounded-full gradient-subtle flex items-center justify-center text-kk-orange font-bold ${
-                  testimonial.featured ? 'w-14 h-14 text-xl' : 'w-12 h-12 text-lg'
-                }`}>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-kk-orange/10 flex items-center justify-center text-kk-orange font-bold">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <p className={`font-semibold text-foreground ${
-                    testimonial.featured ? 'text-lg' : ''
-                  }`}>{testimonial.author}</p>
-                  <p className={`text-muted-foreground ${
-                    testimonial.featured ? 'text-sm' : 'text-sm'
-                  }`}>{testimonial.role}</p>
+                  <p className="font-semibold text-foreground text-sm">{testimonial.author}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
             </div>
