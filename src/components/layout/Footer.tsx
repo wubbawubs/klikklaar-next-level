@@ -25,7 +25,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-slate-900 text-white">
       <div className="container px-4 sm:px-6 py-10 lg:py-16">
         {/* Top section */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-10">
@@ -34,20 +34,20 @@ export function Footer() {
             <Link to="/" className="flex items-center mb-4">
               <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 w-auto brightness-0 invert" />
             </Link>
-            <p className="text-background/60 text-sm max-w-xs leading-relaxed">
+            <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
               Automatische website-verbeteringen voor lokale ondernemers. Meer klanten, zonder gedoe.
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold text-background mb-3 lg:mb-4 text-sm">Product</h4>
+            <h4 className="font-semibold text-white mb-3 lg:mb-4 text-sm">Product</h4>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-background/60 hover:text-background transition-colors"
+                    className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -58,13 +58,13 @@ export function Footer() {
 
           {/* Industries */}
           <div>
-            <h4 className="font-semibold text-background mb-3 lg:mb-4 text-sm">Branches</h4>
+            <h4 className="font-semibold text-white mb-3 lg:mb-4 text-sm">Branches</h4>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.industries.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-background/60 hover:text-background transition-colors"
+                    className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -75,13 +75,13 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-background mb-3 lg:mb-4 text-sm">Bedrijf</h4>
+            <h4 className="font-semibold text-white mb-3 lg:mb-4 text-sm">Bedrijf</h4>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-background/60 hover:text-background transition-colors"
+                    className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -92,13 +92,13 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold text-background mb-3 lg:mb-4 text-sm">Juridisch</h4>
+            <h4 className="font-semibold text-white mb-3 lg:mb-4 text-sm">Juridisch</h4>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-background/60 hover:text-background transition-colors"
+                    className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -109,11 +109,11 @@ export function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="mt-10 lg:mt-14 pt-6 lg:pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
-          <p className="text-xs text-background/50">
+        <div className="mt-10 lg:mt-14 pt-6 lg:pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
+          <p className="text-xs text-slate-500">
             © {new Date().getFullYear()} KlikKlaar. Alle rechten voorbehouden.
           </p>
-          <p className="text-xs text-background/50">
+          <p className="text-xs text-slate-500">
             Gemaakt met ❤️ voor lokale ondernemers in Nederland
           </p>
         </div>
