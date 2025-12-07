@@ -74,11 +74,6 @@ export function USPSection() {
                   transitionDelay: `${index * 100}ms`
                 }}
               >
-                {usp.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full gradient-cta text-white text-xs font-semibold">
-                    Populair
-                  </div>
-                )}
 
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors
                   ${usp.featured ? 'gradient-cta' : 'bg-kk-orange/10 group-hover:bg-kk-orange/20'}`}>
