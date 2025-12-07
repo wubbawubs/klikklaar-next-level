@@ -9,6 +9,7 @@ import { DeliverablesSection } from "@/components/home/DeliverablesSection";
 import { BeforeAfterSection } from "@/components/home/BeforeAfterSection";
 import { UseCasesSection } from "@/components/home/UseCasesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { FAQSection } from "@/components/home/FAQSection";
 import { CTASection } from "@/components/home/CTASection";
 
 const Index = () => {
@@ -43,7 +44,10 @@ const Index = () => {
         {/* 8. Testimonials - vertrouwen */}
         <TestimonialsSection />
         
-        {/* 9. Massive CTA */}
+        {/* 9. FAQ - veelgestelde vragen */}
+        <FAQSection />
+        
+        {/* 10. Massive CTA */}
         <CTASection />
       </main>
       <Footer />
