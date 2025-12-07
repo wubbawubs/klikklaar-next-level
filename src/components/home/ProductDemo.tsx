@@ -1,6 +1,48 @@
-import { TrendingUp, Zap, Check, ArrowRight } from "lucide-react";
+import { TrendingUp, Zap, Check } from "lucide-react";
+import { useState, useEffect } from "react";
+
+// Rotating stats for the floating cards
+const floatingStats = [
+  [
+    { label: "Bezoekers", value: "+281%", icon: TrendingUp },
+    { label: "Conversie", value: "+34%", icon: TrendingUp },
+    { label: "Leads", value: "+156%", icon: TrendingUp },
+  ],
+  [
+    { label: "Google positie", value: "#12 → #3", icon: TrendingUp },
+    { label: "Laadtijd", value: "4.2s → 1.8s", icon: TrendingUp },
+    { label: "SEO Score", value: "47 → 94", icon: TrendingUp },
+  ],
+];
 
 export function ProductDemo() {
+  const [visibleCard, setVisibleCard] = useState<'left' | 'right' | null>('right');
+  const [statIndex, setStatIndex] = useState([0, 0]); // Index for each card's current stat
+
+  // Rotate cards visibility and stats
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleCard(prev => {
+        if (prev === 'right') {
+          // When hiding right, update its stat for next time
+          setStatIndex(curr => [curr[0], (curr[1] + 1) % floatingStats[1].length]);
+          return 'left';
+        } else if (prev === 'left') {
+          // When hiding left, update its stat for next time
+          setStatIndex(curr => [(curr[0] + 1) % floatingStats[0].length, curr[1]]);
+          return null;
+        } else {
+          return 'right';
+        }
+      });
+    }, 3000); // Every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const rightStat = floatingStats[0][statIndex[0]];
+  const leftStat = floatingStats[1][statIndex[1]];
+
   return (
     <div className="relative">
       {/* Main audit card */}
@@ -87,27 +129,40 @@ export function ProductDemo() {
         </div>
       </div>
 
-      {/* Floating result cards */}
-      <div className="absolute -right-4 lg:-right-8 top-8 bg-card rounded-xl shadow-premium border border-border p-4 animate-float">
+      {/* Floating result card - RIGHT */}
+      <div 
+        className={`absolute -right-4 lg:-right-8 top-8 bg-card rounded-xl shadow-premium border border-border p-4 transition-all duration-700 ease-in-out ${
+          visibleCard === 'right' 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+      >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-            <TrendingUp className="w-5 h-5 text-green-600" />
+            <rightStat.icon className="w-5 h-5 text-green-600" />
           </div>
           <div>
-            <p className="text-xs text-muted-foreground">Bezoekers</p>
-            <p className="text-lg font-bold text-foreground">+281%</p>
+            <p className="text-xs text-muted-foreground">{rightStat.label}</p>
+            <p className="text-lg font-bold text-foreground">{rightStat.value}</p>
           </div>
         </div>
       </div>
 
-      <div className="absolute -left-4 lg:-left-8 bottom-24 bg-card rounded-xl shadow-premium border border-border p-4 animate-float animation-delay-300">
+      {/* Floating result card - LEFT */}
+      <div 
+        className={`absolute -left-4 lg:-left-8 bottom-24 bg-card rounded-xl shadow-premium border border-border p-4 transition-all duration-700 ease-in-out ${
+          visibleCard === 'left' 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-kk-orange/10 flex items-center justify-center">
-            <ArrowRight className="w-5 h-5 text-kk-orange" />
+            <leftStat.icon className="w-5 h-5 text-kk-orange" />
           </div>
           <div>
-            <p className="text-xs text-muted-foreground">Google positie</p>
-            <p className="text-lg font-bold text-foreground">#12 → #3</p>
+            <p className="text-xs text-muted-foreground">{leftStat.label}</p>
+            <p className="text-lg font-bold text-foreground">{leftStat.value}</p>
           </div>
         </div>
       </div>

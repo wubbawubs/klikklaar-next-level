@@ -1,8 +1,20 @@
 import { ArrowRight } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { ProductDemo } from "./ProductDemo";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
+  const [optimizationCount, setOptimizationCount] = useState(9678);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Random increment between 1-3 for realism
+      setOptimizationCount(prev => prev + Math.floor(Math.random() * 3) + 1);
+    }, 15000); // Every 15 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-28 lg:pt-36 pb-20 lg:pb-28 overflow-hidden">
       {/* Subtle background gradient */}
@@ -14,11 +26,11 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left content */}
           <div className="max-w-xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-kk-orange/10 border border-kk-orange/20 mb-8 opacity-0 animate-fade-in">
-              <span className="w-1.5 h-1.5 rounded-full bg-kk-orange animate-pulse-subtle" />
-              <span className="text-sm font-medium text-kk-orange">
-                Al 100+ ondernemers geholpen
+            {/* Badge - now GREEN */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
+              <span className="text-sm font-medium text-green-700">
+                <span className="font-bold">{optimizationCount.toLocaleString()}</span> optimalisaties actief
               </span>
             </div>
 
