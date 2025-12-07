@@ -1,6 +1,27 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { ProductDemo } from "./ProductDemo";
+import { useState, useEffect } from "react";
+
+function LiveCounter() {
+  const [count, setCount] = useState(9678);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount(prev => prev + 1);
+    }, 15000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
+      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
+      <span className="text-sm font-medium text-green-700">
+        <span className="font-bold">{count.toLocaleString('nl-NL')}</span> websites in optimalisatie
+      </span>
+    </div>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -15,12 +36,7 @@ export function HeroSection() {
           {/* Left content */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
-              <span className="text-sm font-medium text-green-700">
-                <span className="font-bold">157</span> websites in optimalisatie
-              </span>
-            </div>
+            <LiveCounter />
 
             {/* Headline */}
             <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
@@ -34,7 +50,7 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-fade-in animation-delay-300">
-              <GradientButton size="xl">
+              <GradientButton size="lg">
                 <Phone className="w-5 h-5" />
                 Plan een vrijblijvend gesprek
               </GradientButton>

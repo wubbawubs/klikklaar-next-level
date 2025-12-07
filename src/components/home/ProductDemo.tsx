@@ -9,18 +9,18 @@ const improvements = [
 ];
 
 export function ProductDemo() {
-  const [checkedItems, setCheckedItems] = useState<boolean[]>([false, false, false, false]);
+  const [animatedItems, setAnimatedItems] = useState<boolean[]>([false, false, false, false]);
 
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
     improvements.forEach((_, index) => {
       const timer = setTimeout(() => {
-        setCheckedItems(prev => {
+        setAnimatedItems(prev => {
           const newState = [...prev];
           newState[index] = true;
           return newState;
         });
-      }, 500 + index * 250);
+      }, 800 + index * 300);
       timers.push(timer);
     });
     return () => timers.forEach(t => clearTimeout(t));
@@ -90,9 +90,14 @@ export function ProductDemo() {
             {improvements.map((item, i) => (
               <div 
                 key={i} 
-                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 ${
-                  checkedItems[i] ? 'opacity-100' : 'opacity-0'
-                } ${item.highlight ? 'bg-kk-orange/10' : 'bg-muted/50'}`}
+                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-500 ${
+                  item.highlight ? 'bg-kk-orange/10' : 'bg-muted/50'
+                }`}
+                style={{ 
+                  opacity: animatedItems[i] ? 1 : 0,
+                  transform: animatedItems[i] ? 'translateX(0)' : 'translateX(-10px)',
+                  transition: 'opacity 0.5s ease, transform 0.5s ease'
+                }}
               >
                 {item.done ? (
                   <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
