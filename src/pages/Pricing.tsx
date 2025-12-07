@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useState, useEffect } from "react";
 import { 
   Check, 
   Phone, 
@@ -100,6 +101,13 @@ const faqs = [
 ];
 
 function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -107,20 +115,48 @@ function HeroSection() {
       </div>
 
       <div className="container text-center">
-        <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 animate-fade-in">
+        <span 
+          className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+          }}
+        >
           Prijzen
         </span>
         
-        <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 max-w-3xl mx-auto animate-fade-in animation-delay-100">
+        <h1 
+          className="text-display-lg lg:text-display-xl text-foreground mb-6 max-w-3xl mx-auto"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+          }}
+        >
           Investeer in groei,{" "}
           <span className="gradient-text">niet in gedoe</span>
         </h1>
         
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6 animate-fade-in animation-delay-200">
+        <p 
+          className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+          }}
+        >
           Transparante prijzen, geen verborgen kosten. Altijd maandelijks opzegbaar.
         </p>
 
-        <p className="text-sm text-muted-foreground animate-fade-in animation-delay-300">
+        <p 
+          className="text-sm text-muted-foreground"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+            transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+          }}
+        >
           ✓ Geen langlopende contracten · ✓ Geen setup-kosten · ✓ Altijd opzegbaar
         </p>
       </div>

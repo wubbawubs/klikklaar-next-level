@@ -11,7 +11,7 @@ import {
   Send,
   CheckCircle
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactMethods = [
@@ -54,6 +54,13 @@ const faqs = [
 ];
 
 function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -61,16 +68,37 @@ function HeroSection() {
       </div>
 
       <div className="container text-center">
-        <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 animate-fade-in">
+        <span 
+          className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+          }}
+        >
           Contact
         </span>
         
-        <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 max-w-3xl mx-auto animate-fade-in animation-delay-100">
+        <h1 
+          className="text-display-lg lg:text-display-xl text-foreground mb-6 max-w-3xl mx-auto"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+          }}
+        >
           Laten we{" "}
           <span className="gradient-text">kennismaken</span>
         </h1>
         
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in animation-delay-200">
+        <p 
+          className="text-xl text-muted-foreground max-w-2xl mx-auto"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+          }}
+        >
           Heb je een vraag, wil je samenwerken of gewoon even sparren? 
           We horen graag van je.
         </p>
