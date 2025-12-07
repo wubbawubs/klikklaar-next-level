@@ -12,8 +12,20 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   const { threshold = 0.1, rootMargin = "0px 0px -50px 0px", triggerOnce = true } = options;
   const ref = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   useEffect(() => {
+    // Small delay to ensure CSS has applied opacity: 0 before we start observing
+    const initTimer = setTimeout(() => {
+      setHasInitialized(true);
+    }, 50);
+
+    return () => clearTimeout(initTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!hasInitialized) return;
+    
     const element = ref.current;
     if (!element) return;
 
@@ -34,9 +46,10 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [threshold, rootMargin, triggerOnce]);
+  }, [threshold, rootMargin, triggerOnce, hasInitialized]);
 
-  return { ref, isVisible };
+  // Only animate after initialization - prevents flash of visible content
+  return { ref, isVisible: hasInitialized && isVisible };
 }
 
 // Utility component for scroll reveal
