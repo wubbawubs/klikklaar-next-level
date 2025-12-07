@@ -23,7 +23,7 @@ export function USPSection() {
     <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
             Waarom KlikKlaar
           </span>
