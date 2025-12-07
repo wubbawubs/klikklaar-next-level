@@ -1,5 +1,5 @@
 import { TrendingUp, Zap, Check, ArrowUpRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const improvements = [
   { label: "Meta-tags geoptimaliseerd", done: true },
@@ -9,17 +9,29 @@ const improvements = [
 ];
 
 export function ProductDemo() {
-  const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Trigger animations immediately on mount
-    requestAnimationFrame(() => {
-      setMounted(true);
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), 100);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative" ref={containerRef}>
       {/* Main card */}
       <div className="bg-card rounded-2xl shadow-premium-lg border border-border overflow-hidden">
         {/* Header */}
@@ -51,7 +63,7 @@ export function ProductDemo() {
                   stroke="url(#scoreGradient)" strokeWidth="8" 
                   strokeLinecap="round"
                   strokeDasharray="264" 
-                  strokeDashoffset={mounted ? 26 : 264}
+                  strokeDashoffset={isVisible ? 26 : 264}
                   style={{ transition: "stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s" }}
                 />
                 <defs>
@@ -65,7 +77,7 @@ export function ProductDemo() {
                 <span 
                   className="text-xl font-bold text-foreground"
                   style={{ 
-                    opacity: mounted ? 1 : 0,
+                    opacity: isVisible ? 1 : 0,
                     transition: 'opacity 0.4s ease-out 0.5s'
                   }}
                 >
@@ -90,7 +102,7 @@ export function ProductDemo() {
               Verbeteringen toegepast
             </p>
             {improvements.map((item, i) => {
-              const delay = 0.3 + i * 0.1;
+              const delay = 0.3 + i * 0.15;
               return (
                 <div 
                   key={i} 
@@ -98,9 +110,9 @@ export function ProductDemo() {
                     item.highlight ? 'bg-kk-orange/10' : 'bg-muted/50'
                   }`}
                   style={{ 
-                    opacity: mounted ? 1 : 0,
-                    transform: mounted ? 'translateX(0)' : 'translateX(-8px)',
-                    transition: `opacity 0.4s ease-out ${delay}s, transform 0.4s ease-out ${delay}s`,
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateX(0)' : 'translateX(-12px)',
+                    transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
                   }}
                 >
                   {item.done ? (
@@ -109,8 +121,8 @@ export function ProductDemo() {
                         item.highlight ? 'bg-kk-orange' : 'bg-green-500'
                       }`}
                       style={{
-                        transform: mounted ? 'scale(1)' : 'scale(0)',
-                        transition: `transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay + 0.1}s`,
+                        transform: isVisible ? 'scale(1)' : 'scale(0)',
+                        transition: `transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay + 0.15}s`,
                       }}
                     >
                       <Check className="w-3 h-3 text-white" />
@@ -119,8 +131,8 @@ export function ProductDemo() {
                     <div 
                       className="w-5 h-5 rounded-full border-2 border-kk-orange border-dashed animate-pulse-subtle"
                       style={{
-                        opacity: mounted ? 1 : 0,
-                        transition: `opacity 0.3s ease-out ${delay}s`,
+                        opacity: isVisible ? 1 : 0,
+                        transition: `opacity 0.4s ease-out ${delay}s`,
                       }}
                     />
                   )}
@@ -150,9 +162,9 @@ export function ProductDemo() {
                   key={i} 
                   className="flex-1 rounded-sm gradient-cta"
                   style={{ 
-                    height: mounted ? `${height}%` : '0%',
+                    height: isVisible ? `${height}%` : '0%',
                     opacity: 0.4 + (i / 12) * 0.6,
-                    transition: `height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${0.8 + i * 0.04}s`
+                    transition: `height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${1.0 + i * 0.05}s`
                   }}
                 />
               ))}
@@ -165,9 +177,9 @@ export function ProductDemo() {
       <div 
         className="absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4"
         style={{
-          opacity: mounted ? 1 : 0,
-          transform: mounted ? 'translateY(0)' : 'translateY(8px)',
-          transition: 'opacity 0.4s ease-out 0.5s, transform 0.4s ease-out 0.5s'
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+          transition: 'opacity 0.5s ease-out 0.6s, transform 0.5s ease-out 0.6s'
         }}
       >
         <div className="flex items-center gap-3">
