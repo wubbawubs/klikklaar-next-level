@@ -11,14 +11,14 @@ export function CTASection() {
     <section ref={ref} className="py-12 lg:py-24">
       <div className="container px-4 sm:px-6">
         <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden">
-          {/* Premium dark gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+          {/* Premium lighter gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-600 to-slate-700" />
           
-          {/* Subtle color accents */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-kk-violet/20 via-transparent to-kk-orange/10" />
+          {/* Subtle color accents - more visible */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-kk-violet/30 via-kk-fuchsia/15 to-kk-orange/20" />
           
           {/* Glass overlay for premium feel */}
-          <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-white/[0.03]" />
 
           {/* Decorative soft blur elements */}
           <div className="absolute top-0 right-0 w-64 lg:w-96 h-64 lg:h-96 bg-kk-violet/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
