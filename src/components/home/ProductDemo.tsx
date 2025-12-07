@@ -1,4 +1,4 @@
-import { TrendingUp, Zap, Check, ArrowUpRight } from "lucide-react";
+import { TrendingUp, Zap, Check, ArrowUpRight, Users, MousePointerClick, Eye } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const improvements = [
@@ -8,8 +8,16 @@ const improvements = [
   { label: "Schema markup toevoegen", done: false, inProgress: true },
 ];
 
+const kpiStats = [
+  { icon: TrendingUp, label: "Bezoekers", value: "+281%", color: "bg-green-100", iconColor: "text-green-600" },
+  { icon: Users, label: "Leads", value: "+156%", color: "bg-blue-100", iconColor: "text-blue-600" },
+  { icon: MousePointerClick, label: "Klikken", value: "+312%", color: "bg-purple-100", iconColor: "text-purple-600" },
+  { icon: Eye, label: "Impressies", value: "+89%", color: "bg-kk-orange/10", iconColor: "text-kk-orange" },
+];
+
 export function ProductDemo() {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentKpi, setCurrentKpi] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,6 +37,15 @@ export function ProductDemo() {
 
     return () => observer.disconnect();
   }, []);
+
+  // KPI rotation
+  useEffect(() => {
+    if (!isVisible) return;
+    const interval = setInterval(() => {
+      setCurrentKpi((prev) => (prev + 1) % kpiStats.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isVisible]);
 
   return (
     <div className="relative" ref={containerRef}>
@@ -173,24 +190,39 @@ export function ProductDemo() {
         </div>
       </div>
 
-      {/* Floating card */}
+      {/* Floating KPI cards */}
       <div 
-        className="absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4"
+        className="absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4 overflow-hidden"
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
           transition: 'opacity 0.5s ease-out 0.6s, transform 0.5s ease-out 0.6s'
         }}
       >
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-            <TrendingUp className="w-5 h-5 text-green-600" />
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground">Bezoekers</p>
-            <p className="text-lg font-bold text-foreground">+281%</p>
-          </div>
-        </div>
+        {kpiStats.map((kpi, index) => {
+          const Icon = kpi.icon;
+          return (
+            <div 
+              key={kpi.label}
+              className="flex items-center gap-3"
+              style={{
+                position: index === currentKpi ? 'relative' : 'absolute',
+                opacity: index === currentKpi ? 1 : 0,
+                transform: index === currentKpi ? 'translateY(0)' : 'translateY(8px)',
+                transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
+                pointerEvents: index === currentKpi ? 'auto' : 'none',
+              }}
+            >
+              <div className={`w-10 h-10 rounded-lg ${kpi.color} flex items-center justify-center`}>
+                <Icon className={`w-5 h-5 ${kpi.iconColor}`} />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">{kpi.label}</p>
+                <p className="text-lg font-bold text-foreground">{kpi.value}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Background glow */}
