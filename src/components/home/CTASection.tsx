@@ -11,24 +11,21 @@ export function CTASection() {
     <section ref={ref} className="py-12 lg:py-24">
       <div className="container px-4 sm:px-6">
         <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden">
-          {/* Premium lighter gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-600 to-slate-700" />
+          {/* Light premium gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-white" />
           
-          {/* Subtle color accents - more visible */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-kk-violet/30 via-kk-fuchsia/15 to-kk-orange/20" />
-          
-          {/* Glass overlay for premium feel */}
-          <div className="absolute inset-0 bg-white/[0.03]" />
+          {/* Subtle color accents */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-kk-violet/10 via-kk-fuchsia/5 to-kk-orange/10" />
 
           {/* Decorative soft blur elements */}
-          <div className="absolute top-0 right-0 w-64 lg:w-96 h-64 lg:h-96 bg-kk-violet/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-48 lg:w-64 h-48 lg:h-64 bg-kk-orange/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-kk-fuchsia/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-64 lg:w-96 h-64 lg:h-96 bg-kk-violet/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-48 lg:w-64 h-48 lg:h-64 bg-kk-orange/15 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-kk-fuchsia/10 rounded-full blur-3xl" />
 
           {/* Content */}
           <div className="relative px-6 py-10 sm:px-8 sm:py-14 lg:px-16 lg:py-20 text-center">
             <h2 
-              className="text-xl sm:text-2xl lg:text-display-lg text-white font-bold mb-4 lg:mb-6 max-w-2xl mx-auto"
+              className="text-xl sm:text-2xl lg:text-display-lg text-slate-800 font-bold mb-4 lg:mb-6 max-w-2xl mx-auto"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -39,7 +36,7 @@ export function CTASection() {
             </h2>
             
             <p 
-              className="text-sm sm:text-base lg:text-lg text-white/70 max-w-xl mx-auto mb-6 lg:mb-8"
+              className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl mx-auto mb-6 lg:mb-8"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -59,7 +56,7 @@ export function CTASection() {
               }}
             >
               {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center justify-center gap-2 text-white/80">
+                <div key={benefit} className="flex items-center justify-center gap-2 text-slate-700">
                   <div className="w-5 h-5 rounded-full bg-kk-orange/20 border border-kk-orange/30 flex items-center justify-center">
                     <Check className="w-3 h-3 text-kk-orange" />
                   </div>
