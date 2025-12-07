@@ -62,12 +62,12 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
+    <section className="relative pt-24 lg:pt-40 pb-12 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-kk-orange/[0.03] via-transparent to-transparent" />
       </div>
 
-      <div className="container text-center">
+      <div className="container px-4 sm:px-6 text-center">
         <span 
           className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
           style={{
@@ -80,7 +80,7 @@ function HeroSection() {
         </span>
         
         <h1 
-          className="text-display-lg lg:text-display-xl text-foreground mb-6 max-w-3xl mx-auto"
+          className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -92,7 +92,7 @@ function HeroSection() {
         </h1>
         
         <p 
-          className="text-xl text-muted-foreground max-w-2xl mx-auto"
+          className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -140,9 +140,9 @@ function ContactForm() {
   };
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
-      <div className="container">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20">
+    <section ref={ref} className="py-12 lg:py-32 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-20">
           {/* Contact methods */}
           <div className="lg:col-span-2">
             <div 

@@ -109,12 +109,12 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
+    <section className="relative pt-24 lg:pt-40 pb-12 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-kk-violet/[0.03] via-transparent to-transparent" />
       </div>
 
-      <div className="container text-center">
+      <div className="container px-4 sm:px-6 text-center">
         <span 
           className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
           style={{
@@ -127,7 +127,7 @@ function HeroSection() {
         </span>
         
         <h1 
-          className="text-display-lg lg:text-display-xl text-foreground mb-6 max-w-3xl mx-auto"
+          className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -139,7 +139,7 @@ function HeroSection() {
         </h1>
         
         <p 
-          className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6"
+          className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 lg:mb-6"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -150,14 +150,15 @@ function HeroSection() {
         </p>
 
         <p 
-          className="text-sm text-muted-foreground"
+          className="text-xs sm:text-sm text-muted-foreground"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
             transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
           }}
         >
-          ✓ Geen langlopende contracten · ✓ Geen setup-kosten · ✓ Altijd opzegbaar
+          <span className="hidden sm:inline">✓ Geen langlopende contracten · ✓ Geen setup-kosten · ✓ Altijd opzegbaar</span>
+          <span className="sm:hidden">✓ Geen contracten · ✓ Geen kosten · ✓ Opzegbaar</span>
         </p>
       </div>
     </section>
@@ -168,17 +169,17 @@ function PricingCards() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
+    <section ref={ref} className="py-12 lg:py-32 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
           {pricingTiers.map((tier, index) => {
             const Icon = tier.icon;
             return (
               <div
                 key={tier.id}
-                className={`relative rounded-2xl border p-8 transition-all duration-500
+                className={`relative rounded-2xl border p-6 lg:p-8 transition-all duration-500
                   ${tier.featured 
-                    ? 'bg-card border-kk-orange/30 shadow-premium-lg lg:-translate-y-4 lg:scale-105' 
+                    ? 'bg-card border-kk-orange/30 shadow-premium-lg md:col-span-2 lg:col-span-1 lg:-translate-y-4 lg:scale-105' 
                     : 'bg-card border-border shadow-premium-sm hover:shadow-premium'
                   }
                   ${tier.comingSoon ? 'opacity-90' : ''}`}
