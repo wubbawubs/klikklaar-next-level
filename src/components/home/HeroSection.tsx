@@ -1,59 +1,41 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
-import { HeroIllustration } from "./HeroIllustration";
-
-const benefits = [
-  "Automatische verbeteringen",
-  "Meer lokale klanten",
-  "Geen technische kennis nodig",
-];
+import { ProductDemo } from "./ProductDemo";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
-      {/* Background decoration */}
+    <section className="relative pt-28 lg:pt-36 pb-20 lg:pb-28 overflow-hidden">
+      {/* Subtle background gradient */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-kk-orange/5 via-kk-violet/5 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-kk-violet/5 via-kk-orange/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[60%] h-[80%] bg-gradient-to-bl from-kk-orange/[0.04] via-kk-violet/[0.03] to-transparent" />
       </div>
 
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left content */}
-          <div className="space-y-8">
+          <div className="max-w-xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border">
-              <span className="w-2 h-2 rounded-full bg-kk-orange animate-pulse" />
-              <span className="text-sm font-medium text-muted-foreground">
-                100+ lokale ondernemers geholpen
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-kk-orange/10 border border-kk-orange/20 mb-8 opacity-0 animate-fade-in">
+              <span className="w-1.5 h-1.5 rounded-full bg-kk-orange animate-pulse-subtle" />
+              <span className="text-sm font-medium text-kk-orange">
+                Al 100+ ondernemers geholpen
               </span>
             </div>
 
-            {/* Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Jouw website,{" "}
-                <span className="gradient-text">automatisch</span>{" "}
-                verbeterd
-              </h1>
-              <p className="text-lg lg:text-xl text-muted-foreground max-w-lg">
-                KlikKlaar analyseert en verbetert je website continu. Meer zichtbaarheid, meer klanten — zonder dat jij iets hoeft te doen.
-              </p>
-            </div>
+            {/* Headline - bigger, punchier */}
+            <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
+              Meer klanten.{" "}
+              <span className="gradient-text">Geen gedoe.</span>
+            </h1>
 
-            {/* Benefits */}
-            <ul className="space-y-3">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-kk-orange flex-shrink-0" />
-                  <span className="text-foreground">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Subheadline - shorter, one line */}
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 opacity-0 animate-fade-in animation-delay-200">
+              Automatische website-verbeteringen die je vindbaarheid boosten.
+            </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <GradientButton size="lg">
+            {/* CTAs - bigger, clearer hierarchy */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-fade-in animation-delay-300">
+              <GradientButton size="xl">
                 Gratis website-check
                 <ArrowRight className="w-5 h-5" />
               </GradientButton>
@@ -62,15 +44,15 @@ export function HeroSection() {
               </GradientButton>
             </div>
 
-            {/* Social proof mini */}
-            <p className="text-sm text-muted-foreground">
-              Binnen 2 minuten inzicht in jouw website-score
+            {/* Mini proof */}
+            <p className="text-sm text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
+              ✓ Binnen 2 minuten jouw score · ✓ Geen creditcard nodig
             </p>
           </div>
 
-          {/* Right illustration */}
-          <div className="relative lg:h-[500px]">
-            <HeroIllustration />
+          {/* Right - Product demo visualization */}
+          <div className="relative opacity-0 animate-fade-in animation-delay-200">
+            <ProductDemo />
           </div>
         </div>
       </div>

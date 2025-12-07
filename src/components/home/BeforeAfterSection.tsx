@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown, ArrowRight } from "lucide-react";
+import { TrendingUp, ArrowRight } from "lucide-react";
 
 const metrics = [
   {
@@ -6,83 +6,71 @@ const metrics = [
     before: "#12",
     after: "#3",
     improvement: "+9 posities",
-    positive: true,
   },
   {
     label: "Laadtijd",
     before: "4.2s",
     after: "1.8s",
     improvement: "-57%",
-    positive: true,
   },
   {
     label: "Maandelijkse bezoekers",
     before: "234",
     after: "892",
     improvement: "+281%",
-    positive: true,
   },
   {
     label: "SEO score",
-    before: "47/100",
-    after: "94/100",
+    before: "47",
+    after: "94",
     improvement: "+47 punten",
-    positive: true,
   },
 ];
 
 export function BeforeAfterSection() {
   return (
-    <section className="py-20 lg:py-28 section-alt">
+    <section className="py-section">
       <div className="container">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-kk-orange font-semibold text-sm uppercase tracking-wider">
+          <span className="inline-block text-sm font-semibold text-kk-orange uppercase tracking-wider mb-4 opacity-0 animate-fade-in">
             Resultaten
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mt-3 mb-4">
-            Voor en na{" "}
-            <span className="gradient-text">KlikKlaar</span>
+          <h2 className="text-display-sm lg:text-display text-foreground mb-4 opacity-0 animate-fade-in animation-delay-100">
+            Echte cijfers van{" "}
+            <span className="gradient-text">echte klanten</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Echte resultaten van lokale ondernemers die hun website lieten verbeteren.
+          <p className="text-lg text-muted-foreground opacity-0 animate-fade-in animation-delay-200">
+            Gemiddelde resultaten binnen 3 maanden.
           </p>
         </div>
 
-        {/* Comparison cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Metrics grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {metrics.map((metric, index) => (
             <div
               key={metric.label}
-              className="bg-card rounded-2xl border border-border p-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+              className="bg-card rounded-2xl border border-border p-6 text-center shadow-premium opacity-0 animate-fade-in"
+              style={{ animationDelay: `${200 + index * 80}ms`, animationFillMode: 'forwards' }}
             >
-              <p className="text-sm text-muted-foreground mb-4">{metric.label}</p>
+              <p className="text-sm font-medium text-muted-foreground mb-5">{metric.label}</p>
               
-              {/* Before/After */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="text-center">
+              {/* Before/After comparison */}
+              <div className="flex items-center justify-center gap-4 mb-5">
+                <div>
                   <p className="text-xs text-muted-foreground mb-1">Voor</p>
-                  <p className="text-lg font-semibold text-foreground/60">{metric.before}</p>
+                  <p className="text-xl font-semibold text-muted-foreground/60">{metric.before}</p>
                 </div>
-                <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                <div className="text-center">
+                <ArrowRight className="w-5 h-5 text-kk-orange" />
+                <div>
                   <p className="text-xs text-muted-foreground mb-1">Na</p>
-                  <p className="text-lg font-semibold text-foreground">{metric.after}</p>
+                  <p className="text-xl font-bold text-foreground">{metric.after}</p>
                 </div>
               </div>
 
               {/* Improvement badge */}
-              <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${
-                metric.positive 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-red-100 text-red-700'
-              }`}>
-                {metric.positive ? (
-                  <TrendingUp className="w-4 h-4" />
-                ) : (
-                  <TrendingDown className="w-4 h-4" />
-                )}
+              <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-green-50 text-green-700 text-sm font-semibold">
+                <TrendingUp className="w-4 h-4" />
                 {metric.improvement}
               </div>
             </div>

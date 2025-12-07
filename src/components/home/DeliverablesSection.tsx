@@ -1,82 +1,78 @@
 import { FileText, Globe, Gauge, RefreshCw, Search, Shield } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const deliverables = [
+interface Deliverable {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const deliverables: Deliverable[] = [
   {
     icon: FileText,
     title: "Verbeterde teksten",
-    description: "Automatisch geoptimaliseerde titels en beschrijvingen die bezoekers overtuigen.",
+    description: "Titels en beschrijvingen die bezoekers overtuigen.",
   },
   {
     icon: Globe,
     title: "Lokale vindbaarheid",
-    description: "Beter gevonden worden door klanten in jouw regio.",
+    description: "Beter gevonden worden in jouw regio.",
   },
   {
     icon: Gauge,
     title: "Snelheidsboost",
-    description: "Snellere laadtijden voor een betere bezoekerservaring.",
+    description: "Snellere laadtijden voor meer conversie.",
   },
   {
     icon: RefreshCw,
     title: "Wekelijkse updates",
-    description: "Continue verbeteringen op basis van de laatste inzichten.",
+    description: "Continue verbeteringen automatisch toegepast.",
   },
   {
     icon: Search,
     title: "Technische fixes",
-    description: "Automatische oplossing van technische problemen die je vindbaarheid beïnvloeden.",
+    description: "Alle technische SEO-problemen opgelost.",
   },
   {
     icon: Shield,
     title: "24/7 monitoring",
-    description: "Je website wordt continu in de gaten gehouden voor optimale prestaties.",
+    description: "Je website altijd in topconditie.",
   },
 ];
 
 export function DeliverablesSection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-section section-alt">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left content */}
-          <div>
-            <span className="text-kk-orange font-semibold text-sm uppercase tracking-wider">
-              Wat je krijgt
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mt-3 mb-4">
-              Dit verbetert KlikKlaar{" "}
-              <span className="gradient-text">voor jou</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Alles wat je nodig hebt om online te groeien, automatisch geregeld. Geen technische kennis vereist.
-            </p>
+        {/* Section header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-block text-sm font-semibold text-kk-orange uppercase tracking-wider mb-4 opacity-0 animate-fade-in">
+            Wat je krijgt
+          </span>
+          <h2 className="text-display-sm lg:text-display text-foreground mb-4 opacity-0 animate-fade-in animation-delay-100">
+            Dit verbetert KlikKlaar{" "}
+            <span className="gradient-text">voor jou</span>
+          </h2>
+          <p className="text-lg text-muted-foreground opacity-0 animate-fade-in animation-delay-200">
+            Concrete verbeteringen, geen loze beloftes.
+          </p>
+        </div>
 
-            {/* CTA */}
-            <a 
-              href="/deliverables" 
-              className="inline-flex items-center gap-2 text-kk-orange font-semibold hover:gap-3 transition-all"
+        {/* 6-card grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {deliverables.map((item, index) => (
+            <div
+              key={item.title}
+              className="group p-6 rounded-xl bg-card border border-border shadow-sm hover:shadow-premium transition-all duration-300 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${200 + index * 60}ms`, animationFillMode: 'forwards' }}
             >
-              Bekijk alle verbeteringen
-              <span>→</span>
-            </a>
-          </div>
-
-          {/* Right grid */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {deliverables.map((item, index) => (
-              <div
-                key={item.title}
-                className="group p-5 rounded-xl bg-card border border-border hover:border-kk-orange/30 transition-all duration-300 opacity-0 animate-fade-in"
-                style={{ animationDelay: `${index * 75}ms`, animationFillMode: 'forwards' }}
-              >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-kk-orange/10 to-kk-violet/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-5 h-5 text-kk-orange" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+              <div className="w-12 h-12 rounded-xl gradient-subtle flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <item.icon className="w-6 h-6 text-kk-orange" />
               </div>
-            ))}
-          </div>
+              <h3 className="font-semibold text-foreground mb-1.5">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

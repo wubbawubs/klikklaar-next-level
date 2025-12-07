@@ -2,59 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KlikKlaar Design System - Friendly, Premium, Outcome-focused */
+/* KlikKlaar Design System - Premium, Outcome-focused, Stripe/Motion vibes */
 
 @layer base {
   :root {
-    /* Core palette - warm, friendly, premium */
+    /* Core palette */
     --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 220 30% 12%;
 
-    /* Primary - Deep navy for trust */
-    --primary: 220 60% 15%;
+    /* Primary - Deep navy #1D3B71 */
+    --primary: 218 58% 28%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft lavender */
-    --secondary: 250 30% 96%;
-    --secondary-foreground: 220 20% 10%;
+    /* Secondary - Soft cool gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 30% 12%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted-foreground: 220 10% 46%;
 
     /* Accent - Orange (warm, action-oriented) */
-    --accent: 25 95% 55%;
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 25 95% 55%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 25 95% 53%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* KlikKlaar brand colors */
-    --kk-orange: 25 95% 55%;
-    --kk-orange-light: 30 100% 65%;
-    --kk-violet: 270 70% 55%;
-    --kk-violet-light: 275 80% 70%;
-    --kk-navy: 220 60% 15%;
-    --kk-navy-light: 220 40% 25%;
+    --kk-orange: 25 95% 53%;
+    --kk-orange-light: 28 100% 62%;
+    --kk-violet: 265 70% 55%;
+    --kk-violet-light: 270 75% 65%;
+    --kk-navy: 218 58% 28%;
+    --kk-navy-dark: 218 60% 20%;
+    --kk-navy-light: 218 45% 38%;
     
     /* Gradient stops */
-    --gradient-start: 25 95% 55%;
-    --gradient-end: 270 70% 55%;
+    --gradient-start: 25 95% 53%;
+    --gradient-end: 265 70% 55%;
 
     /* Section backgrounds */
-    --section-alt: 250 30% 98%;
-    --section-dark: 220 60% 8%;
+    --section-alt: 220 20% 97%;
+    --section-dark: 218 58% 12%;
+
+    /* Spacing system */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 5rem;
+    --space-3xl: 7.5rem;
+    --space-section: 7.5rem;
+    --space-section-lg: 10rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -63,11 +75,11 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 25 95% 55%;
+    --sidebar-ring: 25 95% 53%;
   }
 
   .dark {
-    --background: 220 25% 6%;
+    --background: 220 30% 6%;
     --foreground: 210 40% 98%;
 
     --card: 220 25% 10%;
@@ -77,7 +89,7 @@
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
-    --primary-foreground: 220 60% 15%;
+    --primary-foreground: 218 58% 28%;
 
     --secondary: 220 25% 15%;
     --secondary-foreground: 210 40% 98%;
@@ -85,7 +97,7 @@
     --muted: 220 25% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 25 95% 55%;
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
@@ -93,19 +105,19 @@
 
     --border: 220 25% 18%;
     --input: 220 25% 18%;
-    --ring: 25 95% 55%;
+    --ring: 25 95% 53%;
 
     --section-alt: 220 25% 8%;
     --section-dark: 220 30% 4%;
 
     --sidebar-background: 220 25% 8%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 25 95% 55%;
+    --sidebar-primary: 25 95% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 25% 15%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 220 25% 18%;
-    --sidebar-ring: 25 95% 55%;
+    --sidebar-ring: 25 95% 53%;
   }
 }
 
@@ -121,7 +133,7 @@
 }
 
 @layer utilities {
-  /* Gradient utilities */
+  /* Premium gradient utilities */
   .gradient-cta {
     background: linear-gradient(135deg, hsl(var(--kk-orange)) 0%, hsl(var(--kk-violet)) 100%);
   }
@@ -135,6 +147,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .gradient-subtle {
+    background: linear-gradient(135deg, hsl(var(--kk-orange) / 0.08) 0%, hsl(var(--kk-violet) / 0.08) 100%);
   }
 
   .gradient-border {
@@ -164,13 +180,27 @@
     color: hsl(0 0% 100%);
   }
 
-  /* Glow effects */
-  .glow-orange {
-    box-shadow: 0 0 40px -10px hsl(var(--kk-orange) / 0.4);
+  /* Premium shadows */
+  .shadow-premium {
+    box-shadow: 
+      0 1px 2px hsl(var(--foreground) / 0.04),
+      0 4px 8px hsl(var(--foreground) / 0.04),
+      0 12px 24px hsl(var(--foreground) / 0.06);
   }
 
-  .glow-violet {
-    box-shadow: 0 0 40px -10px hsl(var(--kk-violet) / 0.4);
+  .shadow-premium-lg {
+    box-shadow: 
+      0 2px 4px hsl(var(--foreground) / 0.04),
+      0 8px 16px hsl(var(--foreground) / 0.06),
+      0 24px 48px hsl(var(--foreground) / 0.08);
+  }
+
+  .shadow-glow-orange {
+    box-shadow: 0 8px 40px -8px hsl(var(--kk-orange) / 0.35);
+  }
+
+  .shadow-glow-violet {
+    box-shadow: 0 8px 40px -8px hsl(var(--kk-violet) / 0.35);
   }
 
   /* Animation delays */
@@ -180,4 +210,15 @@
   .animation-delay-400 { animation-delay: 400ms; }
   .animation-delay-500 { animation-delay: 500ms; }
   .animation-delay-600 { animation-delay: 600ms; }
+
+  /* Spacing utilities */
+  .section-spacing {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
+
+  .section-spacing-lg {
+    padding-top: var(--space-section-lg);
+    padding-bottom: var(--space-section-lg);
+  }
 }
