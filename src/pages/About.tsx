@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useState, useEffect } from "react";
 import { 
   Phone,
   Heart,
@@ -43,6 +44,13 @@ const stats = [
 ];
 
 function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -52,21 +60,49 @@ function HeroSection() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 animate-fade-in">
+            <span 
+              className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
+            >
               Over ons
             </span>
             
-            <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 animate-fade-in animation-delay-100">
+            <h1 
+              className="text-display-lg lg:text-display-xl text-foreground mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
+            >
               Gemaakt voor ondernemers,{" "}
               <span className="gradient-text">door ondernemers</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 animate-fade-in animation-delay-200">
+            <p 
+              className="text-xl text-muted-foreground mb-8"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
               We weten hoe het is om een bedrijf te runnen. Daarom bouwen we een dienst 
               die wél werkt voor drukke ondernemers — zonder gedoe.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animation-delay-300">
+            <div 
+              className="flex flex-col sm:flex-row gap-4"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
+            >
               <GradientButton size="lg">
                 <Phone className="w-5 h-5" />
                 Laten we kennismaken
@@ -75,12 +111,18 @@ function HeroSection() {
           </div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-4 animate-fade-in animation-delay-200">
+          <div 
+            className="grid grid-cols-2 gap-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
+            }}
+          >
             {stats.map((stat, index) => (
               <div 
                 key={stat.label}
                 className="p-6 bg-card rounded-xl border border-border shadow-premium-sm hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300 text-center"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <p className="text-3xl font-bold text-foreground mb-1">{stat.value}</p>
                 <p className="text-sm text-muted-foreground">{stat.label}</p>

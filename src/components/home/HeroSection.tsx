@@ -5,6 +5,13 @@ import { useState, useEffect } from "react";
 
 function LiveCounter() {
   const [count, setCount] = useState(146);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation after mount
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,7 +21,14 @@ function LiveCounter() {
   }, []);
 
   return (
-    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
+    <div 
+      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+      }}
+    >
       <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
       <span className="text-sm font-medium text-green-700">
         <span className="font-bold">{count.toLocaleString('nl-NL')}</span> websites in optimalisatie
@@ -24,6 +38,14 @@ function LiveCounter() {
 }
 
 export function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation after mount
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
       {/* Subtle background gradient */}
@@ -39,17 +61,38 @@ export function HeroSection() {
             <LiveCounter />
 
             {/* Headline */}
-            <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
+            <h1 
+              className="text-display-lg lg:text-display-xl text-foreground mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
+            >
               Je website verbetert zichzelf, <span className="gradient-text">jij houdt tijd over.</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl text-muted-foreground mb-10 max-w-lg opacity-0 animate-fade-in animation-delay-200">
+            <p 
+              className="text-xl text-muted-foreground mb-10 max-w-lg"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
               Wij zorgen dat je online groeit. Jij focust op je klanten.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-fade-in animation-delay-300">
+            <div 
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
+            >
               <GradientButton size="lg">
                 <Phone className="w-5 h-5" />
                 Plan een vrijblijvend gesprek
@@ -61,13 +104,27 @@ export function HeroSection() {
             </div>
 
             {/* Mini proof */}
-            <p className="text-sm text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
+            <p 
+              className="text-sm text-muted-foreground"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
+              }}
+            >
               ✓ Gratis adviesgesprek · ✓ Persoonlijk contact · ✓ Geen verplichtingen
             </p>
           </div>
 
           {/* Right - Product demo */}
-          <div className="relative opacity-0 animate-fade-in animation-delay-200">
+          <div 
+            className="relative"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
+            }}
+          >
             <ProductDemo />
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useState, useEffect } from "react";
 import { 
   MessageCircle, 
   Search, 
@@ -96,6 +97,13 @@ const benefits = [
 ];
 
 function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -104,21 +112,49 @@ function HeroSection() {
 
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 animate-fade-in">
+          <span 
+            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+            }}
+          >
             Hoe het werkt
           </span>
           
-          <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 animate-fade-in animation-delay-100">
+          <h1 
+            className="text-display-lg lg:text-display-xl text-foreground mb-6"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+            }}
+          >
             Persoonlijk contact,{" "}
             <span className="gradient-text">automatische resultaten</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground mb-10 animate-fade-in animation-delay-200">
+          <p 
+            className="text-xl text-muted-foreground mb-10"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+            }}
+          >
             Geen ingewikkelde dashboards of technische praatjes. Wij nemen alles uit handen — 
             jij focust op je klanten.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-300">
+          <div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+            }}
+          >
             <GradientButton size="lg">
               <Phone className="w-5 h-5" />
               Plan een vrijblijvend gesprek
