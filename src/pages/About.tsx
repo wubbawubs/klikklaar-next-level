@@ -139,9 +139,9 @@ function StorySection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image placeholder */}
           <div 
             className="order-2 lg:order-1"
@@ -205,9 +205,9 @@ function ValuesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-16">
           <span 
             className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
             style={{
@@ -219,7 +219,7 @@ function ValuesSection() {
             Onze waarden
           </span>
           <h2 
-            className="text-display-sm lg:text-display text-foreground"
+            className="text-xl sm:text-2xl lg:text-display text-foreground"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -231,13 +231,13 @@ function ValuesSection() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
               <div
                 key={value.title}
-                className="p-6 bg-card rounded-xl border border-border shadow-premium-sm hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300 text-center"
+                className="p-4 sm:p-5 lg:p-6 bg-card rounded-xl border border-border shadow-premium-sm hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300 text-center"
                 style={{ 
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -245,11 +245,11 @@ function ValuesSection() {
                   transitionDelay: `${index * 75}ms`
                 }}
               >
-                <div className="w-14 h-14 rounded-xl bg-kk-orange/10 flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-7 h-7 text-kk-orange" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-kk-orange/10 flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-kk-orange" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className="font-semibold text-foreground mb-1 lg:mb-2 text-sm sm:text-base">{value.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground">{value.description}</p>
               </div>
             );
           })}
@@ -263,25 +263,25 @@ function MissionSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-background">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-24 bg-background">
+      <div className="container px-4 sm:px-6">
         <div 
-          className="max-w-3xl mx-auto text-center p-12 bg-card rounded-2xl border border-border shadow-premium-lg"
+          className="max-w-3xl mx-auto text-center p-6 sm:p-8 lg:p-12 bg-card rounded-xl lg:rounded-2xl border border-border shadow-premium-lg"
           style={{ 
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <div className="w-16 h-16 rounded-2xl gradient-cta flex items-center justify-center mx-auto mb-6">
-            <Shield className="w-8 h-8 text-white" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl gradient-cta flex items-center justify-center mx-auto mb-4 lg:mb-6">
+            <Shield className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
           </div>
           
-          <h2 className="text-display-sm lg:text-display text-foreground mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground mb-3 lg:mb-4">
             Onze missie
           </h2>
           
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-xl text-muted-foreground leading-relaxed">
             Elke lokale ondernemer verdient een website die werkt. Wij maken SEO toegankelijk, 
             begrijpelijk en betaalbaar — zodat jij kunt focussen op waar je goed in bent.
           </p>
@@ -295,8 +295,8 @@ function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-24">
+      <div className="container px-4 sm:px-6">
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute inset-0 gradient-cta" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />

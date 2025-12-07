@@ -150,15 +150,15 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
+    <section className="relative pt-24 lg:pt-40 pb-12 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-kk-orange/[0.03] via-transparent to-transparent" />
       </div>
 
-      <div className="container">
+      <div className="container px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <span 
-            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-3"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -169,7 +169,7 @@ function HeroSection() {
           </span>
           
           <h1 
-            className="text-display-lg lg:text-display-xl text-foreground mb-6"
+            className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -181,7 +181,7 @@ function HeroSection() {
           </h1>
           
           <p 
-            className="text-xl text-muted-foreground mb-10"
+            className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-10"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -193,7 +193,7 @@ function HeroSection() {
           </p>
 
           <div 
-            className="flex flex-wrap justify-center gap-3"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -206,9 +206,9 @@ function HeroSection() {
                 <a 
                   key={useCase.id}
                   href={`#${useCase.id}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-card border border-border rounded-full text-xs sm:text-sm font-medium text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
                 >
-                  <Icon className="w-4 h-4 text-kk-orange" />
+                  <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-kk-orange" />
                   {useCase.title.split(' ')[0]}
                 </a>
               );
@@ -224,9 +224,9 @@ function UseCasesGrid() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="space-y-24">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="space-y-12 lg:space-y-24">
           {useCases.map((useCase, index) => {
             const Icon = useCase.icon;
             const isEven = index % 2 === 1;
@@ -243,28 +243,28 @@ function UseCasesGrid() {
                   transitionDelay: `${Math.min(index * 100, 300)}ms`
                 }}
               >
-                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center`}>
+              <div className={`grid lg:grid-cols-2 gap-6 lg:gap-20 items-center`}>
                   {/* Content */}
                   <div className={isEven ? 'lg:order-2' : ''}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-kk-orange/10 flex items-center justify-center">
-                        <Icon className="w-7 h-7 text-kk-orange" />
+                    <div className="flex items-center gap-3 mb-4 lg:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-kk-orange/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-kk-orange" />
                       </div>
                     </div>
 
-                    <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-2 lg:mb-4">
                       {useCase.title}
                     </h2>
-                    <p className="text-lg text-muted-foreground mb-6">
+                    <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
                       {useCase.description}
                     </p>
 
                     {/* Pain points */}
-                    <div className="mb-8">
-                      <p className="text-sm font-semibold text-foreground mb-3">Herkenbaar?</p>
-                      <ul className="space-y-2">
+                    <div className="mb-6 lg:mb-8">
+                      <p className="text-xs sm:text-sm font-semibold text-foreground mb-2 lg:mb-3">Herkenbaar?</p>
+                      <ul className="space-y-1.5 lg:space-y-2">
                         {useCase.painPoints.map((pain) => (
-                          <li key={pain} className="flex items-start gap-3 text-muted-foreground">
+                          <li key={pain} className="flex items-start gap-2 lg:gap-3 text-sm text-muted-foreground">
                             <span className="text-red-400">•</span>
                             {pain}
                           </li>
@@ -273,16 +273,16 @@ function UseCasesGrid() {
                     </div>
 
                     {/* Results */}
-                    <div className="flex gap-6 mb-8">
+                    <div className="flex gap-4 lg:gap-6 mb-6 lg:mb-8">
                       {useCase.results.map((result) => (
                         <div key={result.label}>
-                          <p className="text-2xl font-bold text-kk-orange">{result.value}</p>
-                          <p className="text-sm text-muted-foreground">{result.label}</p>
+                          <p className="text-xl sm:text-2xl font-bold text-kk-orange">{result.value}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{result.label}</p>
                         </div>
                       ))}
                     </div>
 
-                    <GradientButton size="lg">
+                    <GradientButton size="lg" className="text-sm sm:text-base">
                       <Phone className="w-4 h-4" />
                       Start met {useCase.title.split(' ')[0]}
                     </GradientButton>
@@ -290,24 +290,24 @@ function UseCasesGrid() {
 
                   {/* Testimonial card */}
                   <div className={isEven ? 'lg:order-1' : ''}>
-                    <div className="p-8 bg-card rounded-2xl border border-border shadow-premium-lg">
-                      <div className="flex gap-1 mb-4">
+                    <div className="p-5 sm:p-6 lg:p-8 bg-card rounded-xl lg:rounded-2xl border border-border shadow-premium-lg">
+                      <div className="flex gap-1 mb-3 lg:mb-4">
                         {[...Array(5)].map((_, i) => (
-                          <TrendingUp key={i} className="w-4 h-4 text-kk-orange" />
+                          <TrendingUp key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-kk-orange" />
                         ))}
                       </div>
                       
-                      <p className="text-lg text-foreground mb-6 leading-relaxed italic">
+                      <p className="text-sm sm:text-base lg:text-lg text-foreground mb-4 lg:mb-6 leading-relaxed italic">
                         "{useCase.testimonial.quote}"
                       </p>
                       
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full gradient-cta flex items-center justify-center text-white font-bold">
+                      <div className="flex items-center gap-2 lg:gap-3">
+                        <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full gradient-cta flex items-center justify-center text-white font-bold text-xs lg:text-base">
                           {useCase.testimonial.author.charAt(0)}
                         </div>
                         <div>
-                          <p className="font-semibold text-foreground text-sm">{useCase.testimonial.author}</p>
-                          <p className="text-sm text-muted-foreground">{useCase.testimonial.role}</p>
+                          <p className="font-semibold text-foreground text-xs sm:text-sm">{useCase.testimonial.author}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{useCase.testimonial.role}</p>
                         </div>
                       </div>
                     </div>
@@ -332,8 +332,8 @@ function AllIndustriesSection() {
   ];
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         <div 
           className="max-w-3xl mx-auto text-center"
           style={{ 
@@ -342,31 +342,31 @@ function AllIndustriesSection() {
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-3">
             En nog veel meer
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground mb-6">
+          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground mb-4 lg:mb-6">
             Werkt voor{" "}
             <span className="gradient-text">alle lokale ondernemers</span>
           </h2>
-          <p className="text-lg text-muted-foreground mb-10">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 lg:mb-10">
             Als je klanten uit je regio wilt aantrekken, kunnen we je helpen. 
             Onze aanpak werkt voor elke branche.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 lg:mb-10">
             {moreIndustries.map((industry) => (
               <span 
                 key={industry}
-                className="px-4 py-2 bg-card border border-border rounded-full text-sm text-muted-foreground"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-card border border-border rounded-full text-xs sm:text-sm text-muted-foreground"
               >
                 {industry}
               </span>
             ))}
           </div>
 
-          <GradientButton size="lg">
-            <Phone className="w-5 h-5" />
+          <GradientButton size="lg" className="text-sm sm:text-base">
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
             Bekijk of het werkt voor jouw branche
           </GradientButton>
         </div>
@@ -379,8 +379,8 @@ function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-24">
+      <div className="container px-4 sm:px-6">
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute inset-0 gradient-cta" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
