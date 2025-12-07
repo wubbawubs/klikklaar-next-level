@@ -9,26 +9,13 @@ const improvements = [
 ];
 
 export function ProductDemo() {
-  const [animatedItems, setAnimatedItems] = useState<boolean[]>([false, false, false, false]);
-  const [scoreAnimated, setScoreAnimated] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Animate score first
-    const scoreTimer = setTimeout(() => setScoreAnimated(true), 400);
-    
-    // Then animate items
-    const timers: NodeJS.Timeout[] = [scoreTimer];
-    improvements.forEach((_, index) => {
-      const timer = setTimeout(() => {
-        setAnimatedItems(prev => {
-          const newState = [...prev];
-          newState[index] = true;
-          return newState;
-        });
-      }, 800 + index * 200);
-      timers.push(timer);
+    // Trigger animations immediately on mount
+    requestAnimationFrame(() => {
+      setMounted(true);
     });
-    return () => timers.forEach(t => clearTimeout(t));
   }, []);
 
   return (
@@ -64,8 +51,8 @@ export function ProductDemo() {
                   stroke="url(#scoreGradient)" strokeWidth="8" 
                   strokeLinecap="round"
                   strokeDasharray="264" 
-                  strokeDashoffset={scoreAnimated ? 26 : 264}
-                  style={{ transition: "stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1)" }}
+                  strokeDashoffset={mounted ? 26 : 264}
+                  style={{ transition: "stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s" }}
                 />
                 <defs>
                   <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -76,8 +63,11 @@ export function ProductDemo() {
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
                 <span 
-                  className="text-xl font-bold text-foreground transition-opacity duration-500"
-                  style={{ opacity: scoreAnimated ? 1 : 0 }}
+                  className="text-xl font-bold text-foreground"
+                  style={{ 
+                    opacity: mounted ? 1 : 0,
+                    transition: 'opacity 0.4s ease-out 0.5s'
+                  }}
                 >
                   92
                 </span>
@@ -99,34 +89,50 @@ export function ProductDemo() {
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
               Verbeteringen toegepast
             </p>
-            {improvements.map((item, i) => (
-              <div 
-                key={i} 
-                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-500 ${
-                  item.highlight ? 'bg-kk-orange/10' : 'bg-muted/50'
-                }`}
-                style={{ 
-                  opacity: animatedItems[i] ? 1 : 0,
-                  transform: animatedItems[i] ? 'translateX(0)' : 'translateX(-10px)',
-                }}
-              >
-                {item.done ? (
-                  <div className={`w-5 h-5 rounded-full flex items-center justify-center transition-transform duration-300 ${
-                    item.highlight ? 'bg-kk-orange shadow-glow-orange' : 'bg-green-500'
-                  } ${animatedItems[i] ? 'scale-100' : 'scale-0'}`}>
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
-                ) : (
-                  <div className="w-5 h-5 rounded-full border-2 border-kk-orange border-dashed animate-pulse-subtle" />
-                )}
-                <span className={`text-sm ${item.done ? 'text-foreground' : 'text-muted-foreground'}`}>
-                  {item.label}
-                </span>
-                {item.inProgress && (
-                  <span className="ml-auto text-xs text-kk-orange font-medium">Bezig...</span>
-                )}
-              </div>
-            ))}
+            {improvements.map((item, i) => {
+              const delay = 0.3 + i * 0.1;
+              return (
+                <div 
+                  key={i} 
+                  className={`flex items-center gap-3 p-3 rounded-lg ${
+                    item.highlight ? 'bg-kk-orange/10' : 'bg-muted/50'
+                  }`}
+                  style={{ 
+                    opacity: mounted ? 1 : 0,
+                    transform: mounted ? 'translateX(0)' : 'translateX(-8px)',
+                    transition: `opacity 0.4s ease-out ${delay}s, transform 0.4s ease-out ${delay}s`,
+                  }}
+                >
+                  {item.done ? (
+                    <div 
+                      className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                        item.highlight ? 'bg-kk-orange' : 'bg-green-500'
+                      }`}
+                      style={{
+                        transform: mounted ? 'scale(1)' : 'scale(0)',
+                        transition: `transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay + 0.1}s`,
+                      }}
+                    >
+                      <Check className="w-3 h-3 text-white" />
+                    </div>
+                  ) : (
+                    <div 
+                      className="w-5 h-5 rounded-full border-2 border-kk-orange border-dashed animate-pulse-subtle"
+                      style={{
+                        opacity: mounted ? 1 : 0,
+                        transition: `opacity 0.3s ease-out ${delay}s`,
+                      }}
+                    />
+                  )}
+                  <span className={`text-sm ${item.done ? 'text-foreground' : 'text-muted-foreground'}`}>
+                    {item.label}
+                  </span>
+                  {item.inProgress && (
+                    <span className="ml-auto text-xs text-kk-orange font-medium">Bezig...</span>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Growth chart */}
@@ -142,11 +148,11 @@ export function ProductDemo() {
               {[35, 42, 38, 55, 48, 62, 58, 72, 68, 85, 78, 92].map((height, i) => (
                 <div 
                   key={i} 
-                  className="flex-1 rounded-sm gradient-cta transition-all duration-500"
+                  className="flex-1 rounded-sm gradient-cta"
                   style={{ 
-                    height: scoreAnimated ? `${height}%` : '0%',
+                    height: mounted ? `${height}%` : '0%',
                     opacity: 0.4 + (i / 12) * 0.6,
-                    transitionDelay: `${i * 50}ms`
+                    transition: `height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${0.8 + i * 0.04}s`
                   }}
                 />
               ))}
@@ -156,7 +162,14 @@ export function ProductDemo() {
       </div>
 
       {/* Floating card */}
-      <div className="absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4 opacity-0 animate-fade-in animation-delay-500" style={{ animationFillMode: 'forwards' }}>
+      <div 
+        className="absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4"
+        style={{
+          opacity: mounted ? 1 : 0,
+          transform: mounted ? 'translateY(0)' : 'translateY(8px)',
+          transition: 'opacity 0.4s ease-out 0.5s, transform 0.4s ease-out 0.5s'
+        }}
+      >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
             <TrendingUp className="w-5 h-5 text-green-600" />
