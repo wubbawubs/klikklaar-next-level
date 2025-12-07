@@ -80,7 +80,7 @@ function HeroSection() {
         </span>
         
         <h1 
-          className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
+          className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -343,7 +343,7 @@ function CallToAction() {
             <Phone className="w-8 h-8 text-white" />
           </div>
           
-          <h2 className="text-display-sm lg:text-display text-foreground mb-4">
+          <h2 className="text-display-sm lg:text-display font-bold text-foreground mb-4">
             Liever direct bellen?
           </h2>
           

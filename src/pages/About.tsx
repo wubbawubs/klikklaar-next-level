@@ -72,7 +72,7 @@ function HeroSection() {
             </span>
             
             <h1 
-              className="text-2xl sm:text-3xl lg:text-display-xl text-foreground mb-4 lg:mb-6"
+              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -174,7 +174,7 @@ function StorySection() {
             <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4">
               Ons verhaal
             </span>
-            <h2 className="text-display-sm lg:text-display text-foreground mb-6">
+            <h2 className="text-display-sm lg:text-display font-bold text-foreground mb-6">
               Waarom we{" "}
               <span className="gradient-text">KlikKlaar</span> begonnen
             </h2>
@@ -219,7 +219,7 @@ function ValuesSection() {
             Onze waarden
           </span>
           <h2 
-            className="text-xl sm:text-2xl lg:text-display text-foreground"
+            className="text-xl sm:text-2xl lg:text-display font-bold text-foreground"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -277,7 +277,7 @@ function MissionSection() {
             <Shield className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
           </div>
           
-          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground mb-3 lg:mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-display font-bold text-foreground mb-3 lg:mb-4">
             Onze missie
           </h2>
           
@@ -306,7 +306,7 @@ function CTASection() {
 
           <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
             <h2 
-              className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
+              className="text-display-sm sm:text-display lg:text-display-lg font-bold text-white mb-6 max-w-2xl mx-auto"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
