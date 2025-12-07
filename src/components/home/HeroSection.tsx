@@ -11,9 +11,9 @@ export function HeroSection() {
       </div>
 
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left content */}
-          <div className="max-w-xl">
+          <div className="max-w-xl lg:pt-8">
             {/* Badge - GREEN with website count */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
@@ -24,7 +24,7 @@ export function HeroSection() {
 
             {/* Headline - Emotional punch */}
             <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
-              <span className="block">Je website verbetert zichzelf</span>
+              <span className="whitespace-nowrap">Je website verbetert zichzelf |</span>{" "}
               <span className="gradient-text">jij houdt tijd over.</span>
             </h1>
 
@@ -52,7 +52,7 @@ export function HeroSection() {
           </div>
 
           {/* Right - Product demo */}
-          <div className="relative opacity-0 animate-fade-in animation-delay-200">
+          <div className="relative opacity-0 animate-fade-in animation-delay-200 lg:mt-12">
             <ProductDemo />
           </div>
         </div>
