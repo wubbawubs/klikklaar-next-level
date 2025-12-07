@@ -8,7 +8,7 @@ export function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16">
+    <section ref={ref} className="py-24 lg:py-32">
       <div className="container">
         <div className="relative rounded-3xl overflow-hidden">
           {/* Background with enhanced gradient */}

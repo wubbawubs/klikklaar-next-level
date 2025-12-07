@@ -37,7 +37,7 @@ export function FAQSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="py-12 lg:py-16 bg-background">
+    <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
         <div
           ref={ref}
@@ -48,11 +48,11 @@ export function FAQSection() {
             transition: 'opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           }}
         >
-          <span className="inline-block px-4 py-1.5 bg-kk-orange/10 text-kk-orange rounded-full text-sm font-medium mb-4">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4">
             Veelgestelde vragen
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Nog vragen?
+          <h2 className="text-display-sm lg:text-display text-foreground mb-4">
+            Nog vragen? <span className="gradient-text">Wij hebben antwoorden</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Hier vind je antwoorden op de meest gestelde vragen over KlikKlaar.
