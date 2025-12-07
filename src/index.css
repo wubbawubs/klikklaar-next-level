@@ -56,6 +56,11 @@
     /* Section backgrounds */
     --section-alt: 220 20% 97%;
     --section-dark: 218 58% 12%;
+    
+    /* Premium section haze tints */
+    --section-haze-purple: 250 30% 98%;
+    --section-haze-warm: 30 50% 98%;
+    --section-haze-cool: 220 25% 98%;
 
     /* Spacing system */
     --space-xs: 0.5rem;
@@ -180,7 +185,13 @@
     color: hsl(0 0% 100%);
   }
 
-  /* Premium shadows */
+  /* Premium shadows - 4 levels */
+  .shadow-premium-sm {
+    box-shadow: 
+      0 1px 2px hsl(var(--foreground) / 0.03),
+      0 2px 4px hsl(var(--foreground) / 0.03);
+  }
+
   .shadow-premium {
     box-shadow: 
       0 1px 2px hsl(var(--foreground) / 0.04),
@@ -195,12 +206,71 @@
       0 24px 48px hsl(var(--foreground) / 0.08);
   }
 
+  .shadow-premium-xl {
+    box-shadow: 
+      0 4px 8px hsl(var(--foreground) / 0.04),
+      0 16px 32px hsl(var(--foreground) / 0.08),
+      0 32px 64px hsl(var(--foreground) / 0.1);
+  }
+
   .shadow-glow-orange {
     box-shadow: 0 8px 40px -8px hsl(var(--kk-orange) / 0.35);
   }
 
   .shadow-glow-violet {
     box-shadow: 0 8px 40px -8px hsl(var(--kk-violet) / 0.35);
+  }
+
+  /* Section haze backgrounds */
+  .bg-section-haze-purple {
+    background-color: hsl(var(--section-haze-purple));
+  }
+
+  .bg-section-haze-warm {
+    background-color: hsl(var(--section-haze-warm));
+  }
+
+  .bg-section-haze-cool {
+    background-color: hsl(var(--section-haze-cool));
+  }
+
+  /* Gradient haze effects */
+  .haze-gradient-top-right {
+    position: relative;
+  }
+  .haze-gradient-top-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 90% 10%, hsl(var(--kk-orange) / 0.06), transparent 60%);
+    pointer-events: none;
+  }
+
+  .haze-gradient-bottom-left {
+    position: relative;
+  }
+  .haze-gradient-bottom-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 10% 90%, hsl(var(--kk-violet) / 0.05), transparent 50%);
+    pointer-events: none;
+  }
+
+  .haze-gradient-center {
+    position: relative;
+  }
+  .haze-gradient-center::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 50%, hsl(var(--kk-orange) / 0.04), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Section shadow dividers (no lines) */
+  .section-shadow-top {
+    box-shadow: inset 0 25px 50px -30px hsl(var(--foreground) / 0.04);
   }
 
   /* Animation delays */

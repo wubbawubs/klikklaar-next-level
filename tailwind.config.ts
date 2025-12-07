@@ -16,6 +16,12 @@ export default {
         "2xl": "1180px",
       },
     },
+    // Container width variations
+    maxWidth: {
+      'container-narrow': '768px',
+      'container': '1180px',
+      'container-wide': '1320px',
+    },
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -79,6 +85,11 @@ export default {
           navy: "hsl(var(--kk-navy))",
           "navy-dark": "hsl(var(--kk-navy-dark))",
           "navy-light": "hsl(var(--kk-navy-light))",
+        },
+        section: {
+          "haze-purple": "hsl(var(--section-haze-purple))",
+          "haze-warm": "hsl(var(--section-haze-warm))",
+          "haze-cool": "hsl(var(--section-haze-cool))",
         },
       },
       spacing: {

@@ -15,6 +15,7 @@ const steps = [
     title: "We analyseren samen",
     description: "Onze AI bekijkt je website en we bespreken de kansen. Je krijgt direct inzicht in wat er beter kan.",
     highlight: "Gratis inzicht",
+    focal: true,
   },
   {
     number: "3",
@@ -29,8 +30,8 @@ export function HowItWorksSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-16 haze-gradient-center relative overflow-hidden">
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span 
@@ -59,40 +60,58 @@ export function HowItWorksSection() {
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        {/* Steps - Asymmetric with focal point on step 2 */}
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-end">
           {steps.map((step, index) => {
             const Icon = step.icon;
+            const isFocal = step.focal;
+            
+            // Animation type based on position
+            const getAnimation = () => {
+              if (index === 0) return 'translateX(-20px)';
+              if (index === 2) return 'translateX(20px)';
+              return 'translateY(24px) scale(0.98)';
+            };
+
             return (
               <div
                 key={step.number}
-                className="relative group"
+                className={`relative group ${isFocal ? 'md:-mb-6' : ''}`}
                 style={{ 
                   opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                  transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                  transitionDelay: `${index * 100}ms`
+                  transform: isVisible 
+                    ? isFocal ? 'translateY(-24px)' : 'translateY(0)' 
+                    : getAnimation(),
+                  transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
+                  transitionDelay: `${index * 120}ms`
                 }}
               >
                 {/* Connector line */}
                 {index < 2 && (
-                  <div className="hidden md:block absolute top-16 left-[calc(50%+60px)] w-[calc(100%-60px)] h-px bg-gradient-to-r from-border to-transparent" />
+                  <div className="hidden md:block absolute top-20 left-[calc(50%+70px)] w-[calc(100%-70px)] h-px bg-gradient-to-r from-border to-transparent" />
                 )}
 
-                {/* Icon box */}
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl bg-muted/50 border border-border flex items-center justify-center group-hover:border-kk-orange/30 group-hover:shadow-premium transition-all duration-300">
-                  <Icon className="w-10 h-10 text-kk-orange group-hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full gradient-cta flex items-center justify-center text-white text-sm font-bold shadow-glow-orange">
+                {/* Icon box - larger for focal */}
+                <div className={`relative mx-auto mb-6 rounded-2xl bg-muted/50 border border-border flex items-center justify-center 
+                  group-hover:border-kk-orange/30 transition-all duration-300
+                  ${isFocal 
+                    ? 'w-40 h-40 shadow-premium-lg group-hover:shadow-glow-orange' 
+                    : 'w-32 h-32 shadow-premium-sm group-hover:shadow-premium'
+                  }`}>
+                  <Icon className={`text-kk-orange group-hover:scale-110 transition-transform duration-300 ${isFocal ? 'w-12 h-12' : 'w-10 h-10'}`} />
+                  <div className={`absolute -top-2 -right-2 rounded-full gradient-cta flex items-center justify-center text-white font-bold shadow-glow-orange
+                    ${isFocal ? 'w-10 h-10 text-base' : 'w-8 h-8 text-sm'}`}>
                     {step.number}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="text-center">
-                  <span className="inline-block px-3 py-1 rounded-full bg-kk-orange/10 text-kk-orange text-xs font-semibold mb-3">
+                  <span className={`inline-block px-3 py-1 rounded-full text-kk-orange text-xs font-semibold mb-3
+                    ${isFocal ? 'bg-kk-orange/15' : 'bg-kk-orange/10'}`}>
                     {step.highlight}
                   </span>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className={`font-semibold text-foreground mb-3 ${isFocal ? 'text-2xl' : 'text-xl'}`}>
                     {step.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
