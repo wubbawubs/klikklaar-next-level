@@ -12,6 +12,8 @@ import UseCases from "./pages/UseCases";
 import Contact from "./pages/Contact";
 import AdLandingA from "./pages/AdLandingA";
 import AdLandingB from "./pages/AdLandingB";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/ad" element={<AdLandingA />} />
           <Route path="/ad-b" element={<AdLandingB />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/voorwaarden" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
