@@ -117,10 +117,13 @@ const AdLandingB = () => {
       <header className="py-4 border-b border-border/30">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <img src={klikklaarLogo} alt="KlikKlaar" className="h-10 lg:h-12 w-auto" />
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">
+          <div className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">
             <span>Vanaf €99/maand</span>
             <span className="text-white/60">•</span>
             <span className="text-white/90 font-normal">Altijd opzegbaar</span>
+          </div>
+          <div className="sm:hidden inline-flex items-center bg-gradient-to-r from-kk-orange to-kk-violet text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">
+            €99/mnd
           </div>
         </div>
       </header>
