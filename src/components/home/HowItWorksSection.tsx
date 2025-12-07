@@ -66,8 +66,13 @@ export function HowItWorksSection() {
             return (
               <div
                 key={step.number}
-                className={`relative group ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-                style={{ animationDelay: `${250 + index * 100}ms` }}
+                className="relative group"
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                  transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+                  transitionDelay: `${index * 100}ms`
+                }}
               >
                 {/* Connector line */}
                 {index < 2 && (

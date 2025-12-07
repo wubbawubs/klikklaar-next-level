@@ -44,14 +44,17 @@ export function BeforeAfterSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left - Metrics */}
-          <div 
-            className={`grid grid-cols-2 gap-4 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-            style={{ animationDelay: "200ms" }}
-          >
+          <div className="grid grid-cols-2 gap-4">
             {metrics.map((metric, index) => (
               <div
                 key={metric.label}
                 className="bg-card rounded-xl border border-border p-5 group hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-0.5 transition-all duration-300"
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                  transition: 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s, border-color 0.3s',
+                  transitionDelay: `${index * 75}ms`
+                }}
               >
                 <p className="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wider">{metric.label}</p>
                 
@@ -71,8 +74,11 @@ export function BeforeAfterSection() {
 
           {/* Right - Testimonial */}
           <div 
-            className={`${isVisible ? "animate-fade-in" : "opacity-0"}`}
-            style={{ animationDelay: "300ms" }}
+            style={{ 
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 0.6s ease-out 0.15s, transform 0.6s ease-out 0.15s'
+            }}
           >
             <div className="p-8 bg-muted/50 rounded-2xl border border-border hover:shadow-premium transition-shadow duration-300">
               <Quote className="w-8 h-8 text-kk-orange/30 mb-4" />
