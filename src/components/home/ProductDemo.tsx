@@ -1,5 +1,6 @@
-import { TrendingUp, Zap, Check, ArrowUpRight, Users, MousePointerClick, Eye } from "lucide-react";
+import { TrendingUp, Check, ArrowUpRight, Users, MousePointerClick, Eye } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const improvements = [
   { label: "Meta-tags geoptimaliseerd", done: true },
@@ -54,8 +55,8 @@ export function ProductDemo() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-muted/30">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg gradient-cta flex items-center justify-center shadow-glow-orange">
-              <Zap className="w-4 h-4 text-white" />
+            <div className="w-10 h-10 rounded-lg overflow-hidden shadow-glow-orange">
+              <img src={klikklaarLogo} alt="KlikKlaar" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-sm font-semibold text-foreground">KlikKlaar Analyse</p>
