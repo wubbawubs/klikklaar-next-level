@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { cn } from "@/lib/utils";
+import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const navigation = [
   { name: "Wat je krijgt", href: "/deliverables" },
@@ -19,11 +20,8 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <nav className="container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg gradient-cta flex items-center justify-center">
-            <span className="text-white font-bold text-lg">K</span>
-          </div>
-          <span className="font-bold text-xl text-foreground">KlikKlaar</span>
+        <Link to="/" className="flex items-center">
+          <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 lg:h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

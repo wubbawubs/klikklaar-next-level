@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const footerLinks = {
   product: [
@@ -30,11 +31,8 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">K</span>
-              </div>
-              <span className="font-bold text-xl text-white">KlikKlaar</span>
+            <Link to="/" className="flex items-center mb-4">
+              <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 w-auto brightness-0 invert" />
             </Link>
             <p className="text-primary-foreground/70 text-sm max-w-xs">
               Automatische website-verbeteringen voor lokale ondernemers. Meer klanten, zonder gedoe.
