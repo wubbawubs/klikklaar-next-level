@@ -1,4 +1,4 @@
-import { TrendingUp, Zap, Check } from "lucide-react";
+import { TrendingUp, Zap, Check, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // Rotating stats for the floating cards
@@ -15,27 +15,50 @@ const floatingStats = [
   ],
 ];
 
+// Improvements list with staggered check-in
+const improvements = [
+  { label: "Meta-tags geoptimaliseerd", done: true, isOrange: false },
+  { label: "Nieuwe titels toegevoegd", done: true, isOrange: true }, // Orange highlight
+  { label: "Lokale zoekwoorden actief", done: true, isOrange: false },
+  { label: "Schema markup toevoegen", done: false, inProgress: true, isOrange: false },
+];
+
 export function ProductDemo() {
   const [visibleCard, setVisibleCard] = useState<'left' | 'right' | null>('right');
-  const [statIndex, setStatIndex] = useState([0, 0]); // Index for each card's current stat
+  const [statIndex, setStatIndex] = useState([0, 0]);
+  const [checkedItems, setCheckedItems] = useState<boolean[]>([false, false, false, false]);
+
+  // Staggered check-in animation on mount
+  useEffect(() => {
+    const timers: NodeJS.Timeout[] = [];
+    improvements.forEach((_, index) => {
+      const timer = setTimeout(() => {
+        setCheckedItems(prev => {
+          const newState = [...prev];
+          newState[index] = true;
+          return newState;
+        });
+      }, 400 + index * 300); // Staggered: 400ms, 700ms, 1000ms, 1300ms
+      timers.push(timer);
+    });
+    return () => timers.forEach(t => clearTimeout(t));
+  }, []);
 
   // Rotate cards visibility and stats
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleCard(prev => {
         if (prev === 'right') {
-          // When hiding right, update its stat for next time
           setStatIndex(curr => [curr[0], (curr[1] + 1) % floatingStats[1].length]);
           return 'left';
         } else if (prev === 'left') {
-          // When hiding left, update its stat for next time
           setStatIndex(curr => [(curr[0] + 1) % floatingStats[0].length, curr[1]]);
           return null;
         } else {
           return 'right';
         }
       });
-    }, 3000); // Every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -59,7 +82,7 @@ export function ProductDemo() {
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
             Live
           </div>
         </div>
@@ -100,24 +123,26 @@ export function ProductDemo() {
             </div>
           </div>
 
-          {/* Improvements list */}
+          {/* Improvements list with staggered animation */}
           <div className="space-y-3">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Verbeteringen toegepast</p>
-            {[
-              { label: "Meta-tags geoptimaliseerd", done: true },
-              { label: "Lokale zoekwoorden actief", done: true },
-              { label: "Laadsnelheid verbeterd", done: true },
-              { label: "Schema markup toegevoegd", done: false, inProgress: true },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+            {improvements.map((item, i) => (
+              <div 
+                key={i} 
+                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-500 ${
+                  checkedItems[i] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                } ${item.isOrange ? 'bg-kk-orange/10 border border-kk-orange/20' : 'bg-muted/50'}`}
+              >
                 {item.done ? (
-                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                    <Check className="w-3 h-3 text-green-600" />
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    item.isOrange ? 'bg-kk-orange' : 'bg-green-100'
+                  }`}>
+                    <Check className={`w-3 h-3 ${item.isOrange ? 'text-white' : 'text-green-600'}`} />
                   </div>
                 ) : (
                   <div className="w-5 h-5 rounded-full border-2 border-kk-orange border-dashed animate-pulse-subtle" />
                 )}
-                <span className={`text-sm ${item.done ? 'text-foreground' : 'text-muted-foreground'}`}>
+                <span className={`text-sm ${item.done ? 'text-foreground' : 'text-muted-foreground'} ${item.isOrange ? 'font-medium' : ''}`}>
                   {item.label}
                 </span>
                 {item.inProgress && (
@@ -125,6 +150,30 @@ export function ProductDemo() {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Mini growth chart */}
+          <div className="mt-6 pt-4 border-t border-border">
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Groei deze maand</p>
+              <div className="flex items-center gap-1 text-green-600 text-xs font-medium">
+                <ArrowUpRight className="w-3 h-3" />
+                +23%
+              </div>
+            </div>
+            <div className="flex items-end gap-1 h-12">
+              {[35, 42, 38, 55, 48, 62, 58, 72, 68, 85, 78, 92].map((height, i) => (
+                <div 
+                  key={i} 
+                  className="flex-1 rounded-sm transition-all duration-500 gradient-cta"
+                  style={{ 
+                    height: `${height}%`,
+                    opacity: 0.4 + (i / 12) * 0.6,
+                    transitionDelay: `${i * 50}ms`
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -150,7 +199,7 @@ export function ProductDemo() {
 
       {/* Floating result card - LEFT */}
       <div 
-        className={`absolute -left-4 lg:-left-8 bottom-24 bg-card rounded-xl shadow-premium border border-border p-4 transition-all duration-700 ease-in-out ${
+        className={`absolute -left-4 lg:-left-8 bottom-32 bg-card rounded-xl shadow-premium border border-border p-4 transition-all duration-700 ease-in-out ${
           visibleCard === 'left' 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 -translate-y-4 pointer-events-none'

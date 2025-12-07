@@ -1,10 +1,10 @@
-import { X, Clock, HelpCircle, TrendingDown } from "lucide-react";
+import { HelpCircle, TrendingDown, DollarSign, Clock } from "lucide-react";
 
 const painPoints = [
-  { icon: Clock, text: "Geen tijd voor technische website-dingen" },
-  { icon: HelpCircle, text: "Geen idee waar te beginnen met SEO" },
-  { icon: TrendingDown, text: "Concurrent staat hoger in Google" },
-  { icon: X, text: "Dure bureaus met weinig resultaat" },
+  { icon: HelpCircle, text: "Je weet dat je website beter moet, maar waar begin je?" },
+  { icon: Clock, text: "SEO voelt als een raadsel waar je geen tijd voor hebt" },
+  { icon: TrendingDown, text: "Concurrenten staan hoger — en je weet niet waarom" },
+  { icon: DollarSign, text: "Dure bureaus beloven veel, maar leveren weinig" },
 ];
 
 export function PainSection() {
@@ -17,31 +17,31 @@ export function PainSection() {
             Herkenbaar?
           </span>
 
-          {/* Headline */}
+          {/* Headline - More emotional */}
           <h2 className="text-display-sm lg:text-display text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
-            Lokale ondernemers hebben geen tijd voor{" "}
-            <span className="gradient-text">online gedoe</span>
+            Je runt een bedrijf, niet een{" "}
+            <span className="gradient-text">marketingbureau</span>
           </h2>
 
-          {/* Pain points */}
+          {/* Pain points - Deeper emotions */}
           <div className="grid sm:grid-cols-2 gap-4 mt-12">
             {painPoints.map((pain, index) => (
               <div
                 key={pain.text}
-                className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border text-left opacity-0 animate-fade-in"
+                className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border text-left opacity-0 animate-fade-in group hover:shadow-premium transition-shadow duration-300"
                 style={{ animationDelay: `${150 + index * 75}ms`, animationFillMode: 'forwards' }}
               >
-                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 group-hover:bg-red-100 transition-colors">
                   <pain.icon className="w-5 h-5 text-red-500" />
                 </div>
-                <p className="text-foreground font-medium">{pain.text}</p>
+                <p className="text-foreground font-medium leading-relaxed">{pain.text}</p>
               </div>
             ))}
           </div>
 
-          {/* Transition text */}
+          {/* Transition text - More personal */}
           <p className="text-lg text-muted-foreground mt-12 opacity-0 animate-fade-in animation-delay-500">
-            Daarom hebben we KlikKlaar gebouwd — zodat jij je kunt focussen op je klanten.
+            Daarom nemen wij het over. Zodat jij kunt focussen op wat je écht goed kunt.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 
-const benefits = ["Gratis analyse", "Binnen 2 minuten", "Geen verplichtingen"];
+const benefits = ["Gratis adviesgesprek", "Persoonlijk contact", "Geen verplichtingen"];
 
 export function CTASection() {
   return (
@@ -19,11 +19,11 @@ export function CTASection() {
           {/* Content */}
           <div className="relative px-8 py-20 lg:px-16 lg:py-28 text-center">
             <h2 className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-3xl mx-auto">
-              Klaar om automatisch meer klanten te krijgen?
+              Laten we samen kijken wat er mogelijk is
             </h2>
             
             <p className="text-xl text-white/90 max-w-xl mx-auto mb-10">
-              Ontdek binnen 2 minuten wat KlikKlaar voor jouw website kan betekenen.
+              Plan een vrijblijvend gesprek. We bespreken je website en laten zien hoe we kunnen helpen.
             </p>
 
             {/* Benefits */}
@@ -36,21 +36,22 @@ export function CTASection() {
               ))}
             </div>
 
-            {/* CTA Buttons - dual buttons */}
+            {/* CTA Buttons - Contact-first */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <GradientButton 
                 size="xl" 
                 className="bg-white text-kk-orange hover:bg-white/95 shadow-premium-lg"
               >
-                Start je gratis website-check
-                <ArrowRight className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
+                Plan een vrijblijvend gesprek
               </GradientButton>
               <GradientButton 
                 variant="outline" 
                 size="lg"
                 className="border-white/30 text-white hover:bg-white/10 hover:border-white/50"
               >
-                Neem contact op
+                Of doe eerst de gratis check
+                <ArrowRight className="w-4 h-4" />
               </GradientButton>
             </div>
           </div>

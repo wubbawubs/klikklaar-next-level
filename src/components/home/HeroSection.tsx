@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { ProductDemo } from "./ProductDemo";
 
@@ -22,31 +22,32 @@ export function HeroSection() {
               </span>
             </div>
 
-            {/* Headline */}
+            {/* Headline - Emotional punch */}
             <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
-              Meer klanten.{" "}
-              <span className="gradient-text">Geen gedoe.</span>
+              Je website verbetert zichzelf —{" "}
+              <span className="gradient-text">jij houdt tijd over.</span>
             </h1>
 
-            {/* Subheadline - more human */}
+            {/* Subheadline - Outcome focused */}
             <p className="text-xl lg:text-2xl text-muted-foreground mb-10 opacity-0 animate-fade-in animation-delay-200">
-              Automatische website-verbeteringen die zorgen dat je beter gevonden wordt. Elke week.
+              Wij zorgen dat je online groeit. Jij focust op je klanten.
             </p>
 
-            {/* CTAs */}
+            {/* CTAs - Contact-first flow */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-fade-in animation-delay-300">
               <GradientButton size="xl">
-                Gratis website-check
-                <ArrowRight className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
+                Plan een vrijblijvend gesprek
               </GradientButton>
               <GradientButton variant="outline" size="lg">
                 Bekijk hoe het werkt
+                <ArrowRight className="w-4 h-4" />
               </GradientButton>
             </div>
 
-            {/* Mini proof */}
+            {/* Mini proof - Personal */}
             <p className="text-sm text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
-              ✓ Binnen 2 minuten jouw score · ✓ Geen creditcard nodig
+              ✓ Gratis adviesgesprek · ✓ Persoonlijk contact · ✓ Geen verplichtingen
             </p>
           </div>
 
