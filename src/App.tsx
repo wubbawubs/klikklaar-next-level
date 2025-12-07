@@ -10,6 +10,8 @@ import HowItWorks from "./pages/HowItWorks";
 import About from "./pages/About";
 import UseCases from "./pages/UseCases";
 import Contact from "./pages/Contact";
+import AdLandingA from "./pages/AdLandingA";
+import AdLandingB from "./pages/AdLandingB";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/over-ons" element={<About />} />
           <Route path="/voorbeelden" element={<UseCases />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ad" element={<AdLandingA />} />
+          <Route path="/ad-b" element={<AdLandingB />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
