@@ -244,7 +244,7 @@ const AdLandingB = () => {
       </section>
 
       {/* Pain Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -288,7 +288,7 @@ const AdLandingB = () => {
       </section>
 
       {/* USP Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -332,7 +332,7 @@ const AdLandingB = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -387,7 +387,7 @@ const AdLandingB = () => {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -471,7 +471,7 @@ const AdLandingB = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -522,7 +522,7 @@ const AdLandingB = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -556,7 +556,7 @@ const AdLandingB = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-12 lg:py-16 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
