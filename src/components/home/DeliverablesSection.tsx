@@ -67,10 +67,15 @@ export function DeliverablesSection() {
           {deliverables.map((item, index) => (
             <div
               key={item.title}
-              className={`flex items-start gap-4 p-5 rounded-xl bg-card border border-border group
+              className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border group
                 hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-0.5
-                transition-all duration-300 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-              style={{ animationDelay: `${250 + index * 60}ms` }}
+                transition-all duration-300"
+              style={{ 
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s, border-color 0.3s',
+                transitionDelay: `${index * 50}ms`
+              }}
             >
               <div className="w-6 h-6 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:shadow-glow-orange transition-shadow">
                 <Check className="w-3.5 h-3.5 text-white" />

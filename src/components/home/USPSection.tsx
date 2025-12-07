@@ -63,13 +63,16 @@ export function USPSection() {
             return (
               <div
                 key={usp.title}
-                className={`relative p-8 rounded-2xl border transition-all duration-300 group
+                className={`relative p-8 rounded-2xl border transition-all duration-500
                   ${usp.featured 
                     ? 'bg-card border-kk-orange/30 shadow-premium-lg hover:shadow-glow-orange' 
                     : 'bg-card border-border shadow-sm hover:shadow-premium hover:-translate-y-1'
-                  }
-                  ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-                style={{ animationDelay: `${250 + index * 100}ms` }}
+                  }`}
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                  transitionDelay: `${index * 100}ms`
+                }}
               >
                 {usp.featured && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full gradient-cta text-white text-xs font-semibold">
