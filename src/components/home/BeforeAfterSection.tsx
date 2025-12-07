@@ -50,9 +50,9 @@ export function BeforeAfterSection() {
   return (
     <section className="py-section">
       <div className="container">
-        {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-kk-orange uppercase tracking-wider mb-4 opacity-0 animate-fade-in">
+        {/* Left-aligned header */}
+        <div className="max-w-2xl mb-16">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-6 opacity-0 animate-fade-in">
             Bewezen resultaten
           </span>
           <h2 className="text-display-sm lg:text-display text-foreground mb-4 opacity-0 animate-fade-in animation-delay-100">
@@ -64,10 +64,45 @@ export function BeforeAfterSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-          {/* Left - Visual comparison mockup */}
-          <div className="relative opacity-0 animate-fade-in animation-delay-200">
-            <div className="grid grid-cols-2 gap-4">
+        {/* Asymmetric layout: comparison + metrics + testimonial positioned right */}
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-start max-w-6xl">
+          {/* Left - Metrics grid */}
+          <div className="grid grid-cols-2 gap-4 opacity-0 animate-fade-in animation-delay-200" style={{ animationFillMode: 'forwards' }}>
+            {metrics.map((metric, index) => (
+              <div
+                key={metric.label}
+                className={`bg-card rounded-2xl border border-border p-5 shadow-sm hover:shadow-premium transition-all duration-500 ${
+                  animatedMetrics[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                <p className="text-xs font-medium text-muted-foreground mb-4 uppercase tracking-wider">{metric.label}</p>
+                
+                {/* Before/After comparison */}
+                <div className="flex items-center justify-start gap-3 mb-4">
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Voor</p>
+                    <p className="text-lg font-medium text-muted-foreground/60">{metric.before}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-kk-orange" />
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Na</p>
+                    <p className="text-lg font-bold text-foreground">{metric.after}</p>
+                  </div>
+                </div>
+
+                {/* Improvement badge */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-sm font-semibold">
+                  <TrendingUp className="w-3.5 h-3.5" />
+                  {metric.improvement}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right - Visual comparison + Testimonial below (slightly right-aligned) */}
+          <div className="opacity-0 animate-fade-in animation-delay-300" style={{ animationFillMode: 'forwards' }}>
+            {/* Visual comparison mockup */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
               {/* Before mockup */}
               <div className="relative">
                 <div className="absolute -top-3 left-4 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-semibold">
@@ -103,8 +138,8 @@ export function BeforeAfterSection() {
               </div>
             </div>
 
-            {/* Testimonial quote */}
-            <div className="mt-6 p-5 bg-muted/50 rounded-xl border border-border">
+            {/* Testimonial quote - positioned slightly right */}
+            <div className="ml-auto max-w-sm p-5 bg-muted/50 rounded-xl border border-border">
               <Quote className="w-6 h-6 text-kk-orange/40 mb-2" />
               <p className="text-foreground italic mb-3">
                 "Binnen 2 maanden stond ik op plek 3 in Google. Ik krijg nu elke week nieuwe aanvragen."
@@ -119,39 +154,6 @@ export function BeforeAfterSection() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Right - Metrics grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {metrics.map((metric, index) => (
-              <div
-                key={metric.label}
-                className={`bg-card rounded-2xl border border-border p-5 text-center shadow-sm hover:shadow-premium transition-all duration-500 ${
-                  animatedMetrics[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <p className="text-xs font-medium text-muted-foreground mb-4 uppercase tracking-wider">{metric.label}</p>
-                
-                {/* Before/After comparison */}
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Voor</p>
-                    <p className="text-lg font-medium text-muted-foreground/60">{metric.before}</p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-kk-orange" />
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Na</p>
-                    <p className="text-lg font-bold text-foreground">{metric.after}</p>
-                  </div>
-                </div>
-
-                {/* Improvement badge */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-sm font-semibold">
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  {metric.improvement}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

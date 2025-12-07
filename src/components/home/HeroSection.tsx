@@ -14,7 +14,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-start">
           {/* Left content */}
           <div className="lg:pt-8">
-            {/* Badge - GREEN with website count */}
+            {/* Badge - GREEN with website count - animated bounce */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
               <span className="text-sm font-medium text-green-700">
@@ -50,8 +50,8 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Right - Product demo */}
-          <div className="relative opacity-0 animate-fade-in animation-delay-200 lg:mt-12">
+          {/* Right - Product demo - Extended beyond container */}
+          <div className="relative opacity-0 animate-fade-in animation-delay-200 lg:mt-12 lg:-mr-12 xl:-mr-20">
             <ProductDemo />
           </div>
         </div>

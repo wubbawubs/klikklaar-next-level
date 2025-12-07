@@ -68,8 +68,8 @@ export function ProductDemo() {
 
   return (
     <div className="relative">
-      {/* Main audit card */}
-      <div className="relative bg-card rounded-2xl shadow-premium-lg border border-border overflow-hidden">
+      {/* Main audit card - Larger */}
+      <div className="relative bg-card rounded-2xl shadow-premium-lg border border-border overflow-hidden lg:scale-105 lg:origin-left">
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-muted/30">
           <div className="flex items-center gap-3">
@@ -178,9 +178,9 @@ export function ProductDemo() {
         </div>
       </div>
 
-      {/* Floating result card - RIGHT */}
+      {/* Floating result card - RIGHT - Extended beyond container */}
       <div 
-        className={`absolute -right-4 lg:-right-8 top-8 bg-card rounded-xl shadow-premium border border-border p-4 transition-all duration-700 ease-in-out ${
+        className={`absolute -right-6 lg:-right-16 top-8 bg-card rounded-xl shadow-premium-lg border border-border p-4 transition-all duration-700 ease-in-out ${
           visibleCard === 'right' 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-4 pointer-events-none'
@@ -199,7 +199,7 @@ export function ProductDemo() {
 
       {/* Floating result card - LEFT */}
       <div 
-        className={`absolute -left-4 lg:-left-8 bottom-32 bg-card rounded-xl shadow-premium border border-border p-4 transition-all duration-700 ease-in-out ${
+        className={`absolute -left-4 lg:-left-12 bottom-32 bg-card rounded-xl shadow-premium-lg border border-border p-4 transition-all duration-700 ease-in-out ${
           visibleCard === 'left' 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 -translate-y-4 pointer-events-none'
@@ -216,8 +216,8 @@ export function ProductDemo() {
         </div>
       </div>
 
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-kk-orange/10 to-kk-violet/10 rounded-full blur-3xl -z-10" />
+      {/* Background glow - Enhanced */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-kk-orange/10 to-kk-violet/10 rounded-full blur-3xl -z-10" />
     </div>
   );
 }
