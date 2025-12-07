@@ -26,7 +26,7 @@ export function USPSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-muted/40">
+    <section ref={ref} className="py-12 lg:py-16 bg-background">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
