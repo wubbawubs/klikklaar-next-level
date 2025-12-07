@@ -55,7 +55,7 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative pt-32 lg:pt-40 pb-16 lg:pb-20 overflow-hidden">
+    <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-kk-orange/[0.03] via-transparent to-transparent" />
       </div>
@@ -112,7 +112,7 @@ function ContactForm() {
   };
 
   return (
-    <section ref={ref} className="py-16 lg:py-24">
+    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-20">
           {/* Contact methods */}

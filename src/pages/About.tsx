@@ -79,7 +79,7 @@ function HeroSection() {
             {stats.map((stat, index) => (
               <div 
                 key={stat.label}
-                className="p-6 bg-card rounded-xl border border-border shadow-premium-sm text-center"
+                className="p-6 bg-card rounded-xl border border-border shadow-premium-sm hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300 text-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <p className="text-3xl font-bold text-foreground mb-1">{stat.value}</p>
