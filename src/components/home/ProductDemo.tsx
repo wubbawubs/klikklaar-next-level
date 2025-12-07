@@ -57,7 +57,7 @@ export function ProductDemo() {
           <div className="flex items-center gap-3">
             <img src={klikklaarLogo} alt="KlikKlaar" className="h-8 w-auto object-contain" />
             <div>
-              <p className="text-sm font-semibold text-foreground">KlikKlaar Analyse</p>
+              <p className="text-sm font-semibold text-foreground">Zichtbaarheids Analyse</p>
               <p className="text-xs text-muted-foreground">jouwwebsite.nl</p>
             </div>
           </div>
