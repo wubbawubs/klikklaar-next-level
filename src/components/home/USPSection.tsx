@@ -26,7 +26,7 @@ export function USPSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 haze-gradient-top-right relative overflow-hidden">
+    <section ref={ref} className="py-24 lg:py-32 haze-gradient-top-right relative overflow-hidden">
       <div className="container relative z-10">
         {/* Header - Left aligned for asymmetry */}
         <div className="max-w-2xl mb-16">
