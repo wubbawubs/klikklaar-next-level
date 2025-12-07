@@ -37,26 +37,33 @@ export function DeliverablesSection() {
         {/* Header - Left aligned for asymmetry */}
         <div className="max-w-2xl mb-16">
           <span 
-            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
+            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+            }}
           >
             Dit krijg je concreet
           </span>
           <h2 
-            className={`text-display-sm lg:text-display text-foreground mb-4 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "100ms" }}
+            className="text-display-sm lg:text-display text-foreground mb-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+            }}
           >
             Geen vage beloftes,{" "}
             <span className="gradient-text">concrete resultaten</span>
           </h2>
           <p 
-            className={`text-lg text-muted-foreground ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "200ms" }}
+            className="text-lg text-muted-foreground"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+            }}
           >
             Elke week leveren we meetbare verbeteringen aan je website.
           </p>

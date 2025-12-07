@@ -142,17 +142,22 @@ function StepsSection() {
       <div className="container relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <span 
-            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
+            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+            }}
           >
             3 simpele stappen
           </span>
           <h2 
-            className={`text-display-sm lg:text-display text-foreground ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "100ms" }}
+            className="text-display-sm lg:text-display text-foreground"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+            }}
           >
             Van kennismaking tot{" "}
             <span className="gradient-text">automatische groei</span>
@@ -245,17 +250,22 @@ function BenefitsSection() {
       <div className="container relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span 
-            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
+            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+            }}
           >
             Waarom dit werkt
           </span>
           <h2 
-            className={`text-display-sm lg:text-display text-foreground ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "100ms" }}
+            className="text-display-sm lg:text-display text-foreground"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+            }}
           >
             Gebouwd voor{" "}
             <span className="gradient-text">drukke ondernemers</span>
@@ -305,27 +315,34 @@ function CTASection() {
 
           <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
             <h2 
-              className={`text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
+              className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
             >
               Klaar om de eerste stap te zetten?
             </h2>
             
             <p 
-              className={`text-lg text-white/90 max-w-xl mx-auto mb-10 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "100ms" }}
+              className="text-lg text-white/90 max-w-xl mx-auto mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
             >
               Plan een vrijblijvend kennismakingsgesprek. We kijken samen wat we voor jouw website kunnen betekenen.
             </p>
 
             <div 
-              className={`flex flex-col sm:flex-row gap-4 justify-center ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "200ms" }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
             >
               <GradientButton 
                 size="xl" 

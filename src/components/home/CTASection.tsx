@@ -22,28 +22,35 @@ export function CTASection() {
           {/* Content */}
           <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
             <h2 
-              className={`text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
+              className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
             >
               Laten we samen kijken wat er mogelijk is
             </h2>
             
             <p 
-              className={`text-lg text-white/90 max-w-xl mx-auto mb-10 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "100ms" }}
+              className="text-lg text-white/90 max-w-xl mx-auto mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
             >
               Plan een vrijblijvend gesprek. We bespreken je website en laten zien hoe we kunnen helpen.
             </p>
 
             {/* Benefits */}
             <div 
-              className={`flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "200ms" }}
+              className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
             >
               {benefits.map((benefit) => (
                 <div key={benefit} className="flex items-center gap-2 text-white/90">
@@ -57,10 +64,12 @@ export function CTASection() {
 
             {/* CTAs */}
             <div 
-              className={`flex flex-col sm:flex-row gap-4 justify-center ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "300ms" }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
             >
               <GradientButton 
                 size="xl" 

@@ -20,26 +20,33 @@ export function BeforeAfterSection() {
             {/* Header - Left aligned */}
             <div className="max-w-lg mb-10">
               <span 
-                className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
-                  isVisible ? "animate-fade-in" : "opacity-0"
-                }`}
+                className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                  transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+                }}
               >
                 Bewezen resultaten
               </span>
               <h2 
-                className={`text-display-sm lg:text-display text-foreground mb-4 ${
-                  isVisible ? "animate-fade-in" : "opacity-0"
-                }`}
-                style={{ animationDelay: "100ms" }}
+                className="text-display-sm lg:text-display text-foreground mb-4"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                  transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+                }}
               >
                 Van onzichtbaar naar{" "}
                 <span className="gradient-text">top 3 in Google</span>
               </h2>
               <p 
-                className={`text-lg text-muted-foreground ${
-                  isVisible ? "animate-fade-in" : "opacity-0"
-                }`}
-                style={{ animationDelay: "200ms" }}
+                className="text-lg text-muted-foreground"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                  transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+                }}
               >
                 Echte cijfers van een echte klant — binnen 3 maanden.
               </p>
