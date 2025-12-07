@@ -87,82 +87,65 @@ const AdLandingB = () => {
   const faqs = [
     {
       q: "Moet ik iets technisch kunnen?",
-      a: "Nee, helemaal niets. Wij doen alles voor je. Je hoeft alleen je website URL te delen en wij regelen de rest. Geen inloggen, geen handleidingen, geen gedoe."
+      a: "Nee, helemaal niets. Wij doen alles voor je. Je hoeft alleen je website URL te delen en wij regelen de rest."
     },
     {
       q: "Hoe snel zie ik resultaat?",
-      a: "De eerste verbeteringen zijn vaak binnen 48 uur zichtbaar. Echte groei - meer bezoekers, meer klanten - bouw je op over weken. We houden je elke week op de hoogte."
+      a: "De eerste verbeteringen zijn vaak binnen 48 uur zichtbaar. Echte groei bouw je op over weken."
     },
     {
       q: "Kan ik maandelijks opzeggen?",
-      a: "Ja, altijd. Geen lange contracten, geen opzegtermijn, geen gedoe. Als je wilt stoppen, stop je gewoon. Zo simpel is het."
+      a: "Ja, altijd. Geen lange contracten, geen opzegtermijn, geen gedoe."
     },
     {
       q: "Werkt dit voor mijn branche?",
-      a: "We werken met kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en nog veel meer. Als je lokale klanten wilt bereiken, kunnen we je helpen."
+      a: "We werken met kappers, tandartsen, coaches, aannemers, en nog veel meer lokale ondernemers."
     },
     {
       q: "Wat kost het precies?",
-      a: "Vanaf €99 per maand, zonder opstartkosten. Je weet precies waar je aan toe bent. Geen verborgen kosten, geen verrassingen."
+      a: "Vanaf €99 per maand, zonder opstartkosten. Geen verborgen kosten."
     },
     {
       q: "Hoe weet ik dat het werkt?",
-      a: "Je krijgt elke week een rapport in normaal Nederlands. Daarin zie je precies wat we gedaan hebben en wat de resultaten zijn. Geen technisch jargon, alleen concrete cijfers."
+      a: "Je krijgt elke week een rapport in normaal Nederlands met concrete resultaten."
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="py-4 border-b border-border/30">
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          <img src={klikklaarLogo} alt="KlikKlaar" className="h-10 lg:h-12 w-auto" />
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">
+            <span>Vanaf €99/maand</span>
+            <span className="text-white/60">•</span>
+            <span className="text-white/90 font-normal">Altijd opzegbaar</span>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section - Homepage style with ProductDemo */}
-      <section className="relative py-16 lg:py-24 overflow-hidden">
+      <section className="relative py-12 lg:py-16 overflow-hidden">
         {/* Gradient haze background */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at top right, hsl(var(--kk-orange) / 0.1), transparent 60%), radial-gradient(ellipse at bottom left, hsl(var(--kk-violet) / 0.08), transparent 60%)'
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--kk-orange) / 0.04) 20%, hsl(var(--kk-orange) / 0.06) 50%, hsl(var(--kk-orange) / 0.04) 80%, transparent 100%)'
           }}
         />
         
         <div className="container mx-auto px-4 relative z-10">
-          {/* Logo */}
-          <div 
-            className="flex justify-center mb-8"
-            style={{
-              opacity: isLoaded ? 1 : 0,
-              transform: isLoaded ? 'translateY(0)' : 'translateY(-10px)',
-              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-            }}
-          >
-            <img src={klikklaarLogo} alt="KlikKlaar" className="h-12 lg:h-16 w-auto" />
-          </div>
-
-          {/* Price badge - prominent */}
-          <div 
-            className="flex justify-center mb-8"
-            style={{
-              opacity: isLoaded ? 1 : 0,
-              transform: isLoaded ? 'translateY(0)' : 'translateY(-10px)',
-              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-              transitionDelay: '100ms'
-            }}
-          >
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg">
-              <span>Vanaf €99/maand</span>
-              <span className="text-white/60">•</span>
-              <span className="text-white/90 font-normal">Altijd opzegbaar</span>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Left: Content */}
             <div>
               <h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: '150ms'
+                  transitionDelay: '100ms'
                 }}
               >
                 Meer klanten.{" "}
@@ -172,12 +155,12 @@ const AdLandingB = () => {
               </h1>
               
               <p 
-                className="text-xl lg:text-2xl text-muted-foreground mb-8"
+                className="text-lg lg:text-xl text-muted-foreground mb-6"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: '250ms'
+                  transitionDelay: '150ms'
                 }}
               >
                 Wij zorgen dat jouw website beter gevonden wordt. Automatisch. 
@@ -185,15 +168,15 @@ const AdLandingB = () => {
               </p>
 
               <div 
-                className="flex flex-col sm:flex-row gap-4 mb-6"
+                className="flex flex-col sm:flex-row gap-3 mb-4"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: '350ms'
+                  transitionDelay: '200ms'
                 }}
               >
-                <GradientButton size="lg" className="text-lg px-8 py-7 shadow-glow-orange">
+                <GradientButton size="lg" className="text-base px-6 py-5 shadow-glow-orange">
                   <Phone className="w-5 h-5 mr-2" />
                   Plan een vrijblijvend gesprek
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -205,7 +188,7 @@ const AdLandingB = () => {
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transition: 'opacity 0.6s ease-out',
-                  transitionDelay: '450ms'
+                  transitionDelay: '250ms'
                 }}
               >
                 <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> Geen verplichtingen</span>
@@ -214,13 +197,13 @@ const AdLandingB = () => {
               </div>
             </div>
 
-            {/* Right: ProductDemo - exact same as homepage */}
+            {/* Right: ProductDemo */}
             <div 
               style={{
                 opacity: isLoaded ? 1 : 0,
-                transform: isLoaded ? 'translateY(0)' : 'translateY(30px)',
+                transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'opacity 1s ease-out, transform 1s ease-out',
-                transitionDelay: '300ms'
+                transitionDelay: '200ms'
               }}
             >
               <ProductDemo />
@@ -230,25 +213,25 @@ const AdLandingB = () => {
       </section>
 
       {/* Social Proof Strip */}
-      <section className="py-10 border-y border-border/50 bg-muted/30">
+      <section className="py-8 border-y border-border/30">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-10 lg:gap-20">
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
             {socialProof.map((item, index) => (
               <div 
                 key={index} 
-                className="flex items-center gap-4"
+                className="flex items-center gap-3"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',
                   transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                  transitionDelay: `${500 + index * 100}ms`
+                  transitionDelay: `${300 + index * 50}ms`
                 }}
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-kk-orange/20 to-kk-violet/20 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-kk-orange" />
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-kk-orange/15 to-kk-violet/15 flex items-center justify-center">
+                  <item.icon className="w-5 h-5 text-kk-orange" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground">{item.value}</div>
+                  <div className="text-xl font-bold text-foreground">{item.value}</div>
                   <div className="text-sm text-muted-foreground">{item.label}</div>
                 </div>
               </div>
@@ -258,20 +241,20 @@ const AdLandingB = () => {
       </section>
 
       {/* Pain Section */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, hsl(var(--kk-violet) / 0.05), transparent 70%)'
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--kk-violet) / 0.03) 20%, hsl(var(--kk-violet) / 0.05) 50%, hsl(var(--kk-violet) / 0.03) 80%, transparent 100%)'
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Je bent goed in wat je doet.{" "}
               <span className="text-muted-foreground">Maar je website werkt niet mee.</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
               Je hebt geen tijd om aan je website te sleutelen. Je wilt gewoon dat klanten je vinden. 
               Zonder dure bureaus, zonder ingewikkelde tools, zonder eindeloos gedoe.
             </p>
@@ -284,12 +267,12 @@ const AdLandingB = () => {
               ].map((pain, index) => (
                 <div 
                   key={index}
-                  className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/50"
+                  className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/30"
                   style={{
                     opacity: isLoaded ? 1 : 0,
                     transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                     transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                    transitionDelay: `${600 + index * 100}ms`
+                    transitionDelay: `${350 + index * 80}ms`
                   }}
                 >
                   <h3 className="text-lg font-bold text-foreground mb-2">{pain.title}</h3>
@@ -302,43 +285,43 @@ const AdLandingB = () => {
       </section>
 
       {/* USP Section */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at top left, hsl(var(--kk-orange) / 0.08), transparent 60%)'
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--kk-orange) / 0.03) 20%, hsl(var(--kk-orange) / 0.05) 50%, hsl(var(--kk-orange) / 0.03) 80%, transparent 100%)'
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl lg:text-4xl font-bold text-foreground mb-4">
               Daarom kiezen ondernemers voor{" "}
               <span className="bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet bg-clip-text text-transparent">
                 KlikKlaar
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Wij geloven dat online zichtbaarheid niet ingewikkeld hoeft te zijn
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {usps.map((usp, index) => (
               <div 
                 key={index}
-                className="bg-card rounded-2xl p-8 shadow-premium-sm border border-border/50 hover:shadow-premium-lg hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300"
+                className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/30 hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-0.5 transition-all duration-300"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: `${700 + index * 100}ms`
+                  transitionDelay: `${400 + index * 80}ms`
                 }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-kk-orange/20 to-kk-violet/20 flex items-center justify-center mb-6">
-                  <usp.icon className="w-8 h-8 text-kk-orange" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-kk-orange/15 to-kk-violet/15 flex items-center justify-center mb-4">
+                  <usp.icon className="w-6 h-6 text-kk-orange" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{usp.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{usp.description}</p>
+                <h3 className="text-lg font-bold text-foreground mb-2">{usp.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{usp.description}</p>
               </div>
             ))}
           </div>
@@ -346,18 +329,24 @@ const AdLandingB = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--muted) / 0.5) 20%, hsl(var(--muted) / 0.6) 50%, hsl(var(--muted) / 0.5) 80%, transparent 100%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl lg:text-4xl font-bold text-foreground mb-4">
               Hoe werkt het?
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               In drie simpele stappen naar meer klanten uit jouw regio
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <div 
                 key={index}
@@ -366,27 +355,27 @@ const AdLandingB = () => {
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: `${800 + index * 100}ms`
+                  transitionDelay: `${450 + index * 80}ms`
                 }}
               >
-                <div className="bg-card rounded-2xl p-8 shadow-premium-sm border border-border/50 h-full">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-kk-orange to-kk-violet bg-clip-text text-transparent mb-4">
+                <div className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/30 h-full">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-kk-orange to-kk-violet bg-clip-text text-transparent mb-3">
                     {step.number}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 text-muted-foreground/30">
-                    <ArrowRight className="w-8 h-8" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 text-muted-foreground/30">
+                    <ArrowRight className="w-6 h-6" />
                   </div>
                 )}
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <GradientButton size="lg" className="text-lg px-10 py-6 shadow-glow-orange">
+          <div className="text-center mt-10">
+            <GradientButton size="lg" className="text-base px-8 py-5 shadow-glow-orange">
               <Calendar className="w-5 h-5 mr-2" />
               Start met stap 1: Plan een gesprek
             </GradientButton>
@@ -395,38 +384,38 @@ const AdLandingB = () => {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at bottom right, hsl(var(--kk-violet) / 0.08), transparent 60%)'
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--kk-violet) / 0.03) 20%, hsl(var(--kk-violet) / 0.05) 50%, hsl(var(--kk-violet) / 0.03) 80%, transparent 100%)'
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 Wat krijg je concreet?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Elke week werken we aan je website. Dit zijn de concrete verbeteringen die je kunt verwachten:
+              <p className="text-lg text-muted-foreground mb-6">
+                Elke week werken we aan je website. Dit zijn de concrete verbeteringen:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {deliverables.map((item, index) => (
                   <li 
                     key={index} 
-                    className="flex items-start gap-4"
+                    className="flex items-start gap-3"
                     style={{
                       opacity: isLoaded ? 1 : 0,
                       transform: isLoaded ? 'translateX(0)' : 'translateX(-20px)',
                       transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                      transitionDelay: `${900 + index * 80}ms`
+                      transitionDelay: `${500 + index * 60}ms`
                     }}
                   >
-                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-4 h-4 text-green-500" />
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-green-500" />
                     </div>
-                    <span className="text-lg text-foreground">{item}</span>
+                    <span className="text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -434,43 +423,42 @@ const AdLandingB = () => {
 
             {/* Price card */}
             <div 
-              className="bg-card rounded-2xl p-10 shadow-premium-xl border border-border/50"
+              className="bg-card rounded-xl p-8 shadow-premium-lg border border-border/30"
               style={{
                 opacity: isLoaded ? 1 : 0,
                 transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                transitionDelay: '1000ms'
+                transitionDelay: '550ms'
               }}
             >
               <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-kk-orange/10 text-kk-orange px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+                <div className="inline-flex items-center gap-2 bg-kk-orange/10 text-kk-orange px-3 py-1 rounded-full text-sm font-medium mb-4">
                   <Sparkles className="w-4 h-4" />
                   Meest gekozen
                 </div>
-                <p className="text-muted-foreground mb-2">Al vanaf</p>
-                <div className="text-6xl font-bold text-foreground mb-1">€99</div>
-                <p className="text-muted-foreground mb-8">per maand</p>
+                <p className="text-muted-foreground text-sm mb-1">Al vanaf</p>
+                <div className="text-5xl font-bold text-foreground mb-1">€99</div>
+                <p className="text-muted-foreground text-sm mb-6">per maand</p>
                 
-                <ul className="text-left space-y-4 mb-8">
+                <ul className="text-left space-y-3 mb-6">
                   {[
                     "Geen opstartkosten",
                     "Altijd opzegbaar",
                     "Resultaat binnen 48 uur",
-                    "Wekelijks rapport",
-                    "Persoonlijke begeleiding"
+                    "Wekelijks rapport"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-green-500" />
-                      <span className="text-foreground">{item}</span>
+                    <li key={i} className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-500" />
+                      <span className="text-sm text-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p className="text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-3">
                   Benieuwd wat wij voor jou kunnen doen?
                 </p>
-                <GradientButton className="w-full" size="lg">
-                  <Phone className="w-5 h-5 mr-2" />
+                <GradientButton className="w-full" size="default">
+                  <Phone className="w-4 h-4 mr-2" />
                   Plan een gesprek
                 </GradientButton>
               </div>
@@ -480,41 +468,47 @@ const AdLandingB = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 lg:py-32 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--muted) / 0.5) 20%, hsl(var(--muted) / 0.6) 50%, hsl(var(--muted) / 0.5) 80%, transparent 100%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl lg:text-4xl font-bold text-foreground mb-4">
               Wat ondernemers zeggen
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Ontdek hoe andere lokale ondernemers groeien met KlikKlaar
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-card rounded-2xl p-8 shadow-premium-sm border border-border/50"
+                className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/30"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: `${1100 + index * 100}ms`
+                  transitionDelay: `${550 + index * 80}ms`
                 }}
               >
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-kk-orange text-kk-orange" />
+                    <Star key={i} className="w-4 h-4 fill-kk-orange text-kk-orange" />
                   ))}
                 </div>
-                <p className="text-foreground text-lg mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <p className="text-foreground text-sm mb-4 leading-relaxed">"{testimonial.quote}"</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="font-semibold text-foreground text-sm">{testimonial.name}</div>
+                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                   </div>
-                  <div className="bg-green-500/10 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="bg-green-500/10 text-green-600 px-2 py-0.5 rounded-full text-xs font-medium">
                     {testimonial.result}
                   </div>
                 </div>
@@ -525,32 +519,32 @@ const AdLandingB = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center top, hsl(var(--kk-orange) / 0.06), transparent 60%)'
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--kk-orange) / 0.03) 20%, hsl(var(--kk-orange) / 0.04) 50%, hsl(var(--kk-orange) / 0.03) 80%, transparent 100%)'
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-10">
               Veelgestelde vragen
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4">
               {faqs.map((faq, index) => (
                 <div 
                   key={index} 
-                  className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/50"
+                  className="bg-card rounded-lg p-5 shadow-premium-sm border border-border/30"
                   style={{
                     opacity: isLoaded ? 1 : 0,
                     transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',
                     transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                    transitionDelay: `${1200 + index * 80}ms`
+                    transitionDelay: `${600 + index * 60}ms`
                   }}
                 >
-                  <h3 className="font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+                  <h3 className="font-semibold text-foreground text-sm mb-2">{faq.q}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -559,16 +553,16 @@ const AdLandingB = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-20 lg:py-24 relative overflow-hidden">
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, hsl(var(--kk-orange) / 0.1), transparent 50%), radial-gradient(ellipse at bottom, hsl(var(--kk-violet) / 0.08), transparent 60%)'
+            background: 'linear-gradient(to bottom, transparent 0%, hsl(var(--kk-orange) / 0.06) 30%, hsl(var(--kk-violet) / 0.06) 70%, transparent 100%)'
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
           <div 
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center"
             style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
@@ -576,50 +570,48 @@ const AdLandingB = () => {
               transitionDelay: '200ms'
             }}
           >
-            <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-600 px-3 py-1.5 rounded-full text-sm font-medium mb-4">
               <Shield className="w-4 h-4" />
-              Geen verplichtingen, geen risico
+              Geen verplichtingen
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Klaar om te groeien?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Plan een vrijblijvend gesprek en ontdek wat wij voor jouw bedrijf kunnen betekenen. 
-              Geen verkooppraatjes, gewoon een eerlijk advies.
+            <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Plan een vrijblijvend gesprek en ontdek wat wij voor jouw bedrijf kunnen betekenen.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <GradientButton size="lg" className="text-lg px-12 py-7 shadow-glow-orange">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <GradientButton size="lg" className="text-base px-10 py-6 shadow-glow-orange">
                 <Phone className="w-5 h-5 mr-2" />
                 Plan je gratis gesprek
                 <ArrowRight className="w-5 h-5 ml-2" />
               </GradientButton>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2"><MessageCircle className="w-4 h-4 text-kk-orange" /> Binnen 24 uur reactie</span>
-              <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-kk-orange" /> 15 minuten gesprek</span>
-              <span className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-kk-orange" /> Direct inzicht in kansen</span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5"><MessageCircle className="w-4 h-4 text-kk-orange" /> Binnen 24 uur reactie</span>
+              <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-kk-orange" /> 15 minuten gesprek</span>
+              <span className="flex items-center gap-1.5"><TrendingUp className="w-4 h-4 text-kk-orange" /> Direct inzicht</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Minimal Footer */}
-      <footer className="py-10 border-t border-border/50 bg-muted/20">
+      <footer className="py-6 border-t border-border/30">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-4">
-              <img src={klikklaarLogo} alt="KlikKlaar" className="h-8 w-auto" />
-              <p className="text-sm text-muted-foreground">
-                © 2024 KlikKlaar. Alle rechten voorbehouden.
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-3">
+              <img src={klikklaarLogo} alt="KlikKlaar" className="h-6 w-auto" />
+              <p className="text-xs text-muted-foreground">
+                © 2024 KlikKlaar
               </p>
             </div>
-            <div className="flex gap-8 text-sm text-muted-foreground">
+            <div className="flex gap-6 text-xs text-muted-foreground">
               <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
               <Link to="/prijzen" className="hover:text-foreground transition-colors">Prijzen</Link>
-              <Link to="/hoe-het-werkt" className="hover:text-foreground transition-colors">Hoe het werkt</Link>
             </div>
           </div>
         </div>
