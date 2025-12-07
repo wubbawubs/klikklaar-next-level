@@ -9,7 +9,7 @@ const stats = [
 
 export function TrustBar() {
   return (
-    <section className="py-16 haze-gradient-hero-flow relative overflow-hidden">
+    <section className="py-8 lg:py-12 haze-gradient-hero-flow relative overflow-hidden">
       <div className="container relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, index) => (

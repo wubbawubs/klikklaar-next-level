@@ -47,22 +47,23 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-24 lg:pt-40 pb-12 lg:pb-24 overflow-hidden">
+    <section className="relative pt-24 lg:pt-32 pb-8 lg:pb-16 overflow-hidden">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-kk-orange/[0.03] via-transparent to-transparent" />
       </div>
 
       <div className="container px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-          {/* Left content */}
-          <div>
+        {/* Mobile: stacked layout, Desktop: side by side */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left content - Text */}
+          <div className="order-1 lg:order-1">
             {/* Badge */}
             <LiveCounter />
 
             {/* Headline */}
             <h1 
-              className="text-3xl sm:text-4xl lg:text-display-xl text-foreground mb-4 lg:mb-6 leading-tight"
+              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6 leading-tight"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -74,7 +75,7 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p 
-              className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-10 max-w-lg"
+              className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-4 lg:mb-6 max-w-lg"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -84,32 +85,13 @@ export function HeroSection() {
               Wij zorgen dat je online groeit. Jij focust op je klanten.
             </p>
 
-            {/* CTAs */}
-            <div 
-              className="flex flex-col sm:flex-row gap-3 mb-6 lg:mb-8"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
-              }}
-            >
-              <GradientButton size="lg" className="w-full sm:w-auto text-sm sm:text-base">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                Plan een vrijblijvend gesprek
-              </GradientButton>
-              <GradientButton variant="outline" size="lg" className="w-full sm:w-auto text-sm sm:text-base">
-                Bekijk hoe het werkt
-                <ArrowRight className="w-4 h-4" />
-              </GradientButton>
-            </div>
-
-            {/* Mini proof */}
+            {/* Mini proof - Desktop only */}
             <p 
-              className="text-sm text-muted-foreground"
+              className="hidden lg:block text-sm text-muted-foreground"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-                transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
               }}
             >
               ✓ Gratis adviesgesprek · ✓ Persoonlijk contact · ✓ Geen verplichtingen
@@ -118,7 +100,7 @@ export function HeroSection() {
 
           {/* Right - Product demo */}
           <div 
-            className="relative"
+            className="relative order-2 lg:order-2"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -127,6 +109,49 @@ export function HeroSection() {
           >
             <ProductDemo />
           </div>
+
+          {/* CTAs - Below illustration on mobile, in left column on desktop */}
+          <div 
+            className="order-3 lg:hidden"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
+            }}
+          >
+            <div className="flex flex-col gap-3 mb-4">
+              <GradientButton size="lg" className="w-full text-sm sm:text-base">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                Plan een vrijblijvend gesprek
+              </GradientButton>
+              <GradientButton variant="outline" size="lg" className="w-full text-sm sm:text-base">
+                Bekijk hoe het werkt
+                <ArrowRight className="w-4 h-4" />
+              </GradientButton>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground text-center">
+              ✓ Gratis adviesgesprek · ✓ Geen verplichtingen
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop CTAs - In the left column area */}
+        <div 
+          className="hidden lg:flex flex-row gap-4 mt-8"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
+          }}
+        >
+          <GradientButton size="lg">
+            <Phone className="w-5 h-5" />
+            Plan een vrijblijvend gesprek
+          </GradientButton>
+          <GradientButton variant="outline" size="lg">
+            Bekijk hoe het werkt
+            <ArrowRight className="w-4 h-4" />
+          </GradientButton>
         </div>
       </div>
     </section>

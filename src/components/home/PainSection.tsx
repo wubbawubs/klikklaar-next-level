@@ -12,9 +12,9 @@ export function PainSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left - Header */}
           <div>
             <span 

@@ -12,9 +12,9 @@ export function BeforeAfterSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 items-start">
           {/* Left - Header & Metrics (narrower container) */}
           <div className="lg:col-span-3">
             {/* Header - Left aligned */}

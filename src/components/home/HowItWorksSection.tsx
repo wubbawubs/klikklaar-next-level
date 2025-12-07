@@ -30,10 +30,10 @@ export function HowItWorksSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-16">
           <span 
             className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
             style={{
