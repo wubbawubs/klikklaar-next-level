@@ -32,7 +32,7 @@ export function TestimonialsSection() {
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-bottom-left relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
         {/* Header - Left aligned for asymmetry */}
-        <div className="max-w-2xl mb-10 lg:mb-16">
+        <div className="max-w-2xl mb-8 lg:mb-12">
           <span 
             className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
             style={{
@@ -57,12 +57,12 @@ export function TestimonialsSection() {
         </div>
 
         {/* Testimonials - Variable shadow weights */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4 lg:gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className={`bg-card rounded-2xl border p-8 group
-                hover:border-kk-orange/20 hover:-translate-y-1.5
+              className={`bg-card rounded-2xl border p-6 lg:p-8 group
+                hover:border-kk-orange/20 hover:-translate-y-1
                 transition-all duration-300
                 ${testimonial.featured 
                   ? 'border-kk-orange/20 shadow-premium-lg hover:shadow-glow-orange' 

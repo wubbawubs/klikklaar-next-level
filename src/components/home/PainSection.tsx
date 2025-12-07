@@ -14,7 +14,7 @@ export function PainSection() {
   return (
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           {/* Left - Header */}
           <div>
             <span 

@@ -35,7 +35,7 @@ export function DeliverablesSection() {
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
       <div className="max-w-container-wide mx-auto px-4 sm:px-6 lg:px-10">
         {/* Header - Left aligned for asymmetry */}
-        <div className="max-w-2xl mb-10 lg:mb-16">
+        <div className="max-w-2xl mb-8 lg:mb-12">
           <span 
             className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
             style={{
@@ -78,8 +78,8 @@ export function DeliverablesSection() {
             return (
               <div
                 key={item.title}
-                className={`flex items-start gap-4 p-5 rounded-xl bg-card border border-border group
-                  hover:border-kk-orange/20 hover:-translate-y-1.5
+                className={`flex items-start gap-3 lg:gap-4 p-4 lg:p-5 rounded-xl bg-card border border-border group
+                  hover:border-kk-orange/20 hover:-translate-y-1
                   transition-all duration-300
                   ${isFirstRow ? 'shadow-premium hover:shadow-premium-lg' : 'shadow-premium-sm hover:shadow-premium'}`}
                 style={{ 

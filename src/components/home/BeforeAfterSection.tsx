@@ -14,11 +14,11 @@ export function BeforeAfterSection() {
   return (
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-5 gap-6 lg:gap-16 items-start">
           {/* Left - Header & Metrics (narrower container) */}
           <div className="lg:col-span-3">
             {/* Header - Left aligned */}
-            <div className="max-w-lg mb-10">
+            <div className="max-w-lg mb-8">
               <span 
                 className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
                 style={{

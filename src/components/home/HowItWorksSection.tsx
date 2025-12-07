@@ -33,7 +33,7 @@ export function HowItWorksSection() {
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-12">
           <span 
             className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
             style={{
@@ -68,7 +68,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Steps - Asymmetric with focal point on step 2 */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-12 items-end">
+        <div className="grid md:grid-cols-3 gap-4 lg:gap-8 items-end">
           {steps.map((step, index) => {
             const Icon = step.icon;
             const isFocal = step.focal;
