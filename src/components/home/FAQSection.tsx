@@ -44,8 +44,8 @@ export function FAQSection() {
           className="text-center mb-16"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           }}
         >
           <span className="inline-block px-4 py-1.5 bg-kk-orange/10 text-kk-orange rounded-full text-sm font-medium mb-4">
@@ -62,8 +62,8 @@ export function FAQSection() {
         <div
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s',
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s',
           }}
         >
           <Accordion type="single" collapsible className="space-y-4">
@@ -88,8 +88,8 @@ export function FAQSection() {
           className="text-center mt-12"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s',
+            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s',
           }}
         >
           <p className="text-muted-foreground">
