@@ -24,8 +24,7 @@ export function HeroSection() {
 
             {/* Headline - Emotional punch */}
             <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
-              Je website verbetert zichzelf —{" "}
-              <span className="gradient-text">jij houdt tijd over.</span>
+              Je website verbetert zichzelf, <span className="gradient-text">jij houdt tijd over.</span>
             </h1>
 
             {/* Subheadline - Outcome focused */}
