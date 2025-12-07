@@ -1,37 +1,57 @@
 import { Zap, MapPin, BarChart3 } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const usps = [
   {
     icon: Zap,
     title: "Alles gebeurt automatisch",
     description: "Wij analyseren je website, passen verbeteringen toe en zorgen dat je elke week beter gevonden wordt. Geen taken, geen instellingen.",
+    featured: false,
   },
   {
     icon: MapPin,
     title: "Meer klanten uit je eigen regio",
     description: "We optimaliseren je website specifiek op jouw plaats, beroep en doelgroep. Zodat je wordt gevonden door mensen die écht in de buurt zoeken.",
+    featured: true,
   },
   {
     icon: BarChart3,
     title: "Duidelijke resultaten, elke week",
     description: "Je krijgt een helder rapport: wat we verbeterden, hoe je zichtbaarheid stijgt en welke kansen eraan komen. Simpel, in normaal Nederlands.",
+    featured: false,
   },
 ];
 
 export function USPSection() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-20 lg:py-28 bg-muted/30">
+    <section ref={ref} className="py-24 lg:py-32 bg-muted/40">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 opacity-0 animate-fade-in">
+          <span 
+            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+          >
             Waarom KlikKlaar
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
+          <h2 
+            className={`text-display-sm lg:text-display text-foreground ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "100ms" }}
+          >
             Gemaakt voor ondernemers,{" "}
             <span className="gradient-text">niet voor marketeers</span>
           </h2>
-          <p className="text-lg text-muted-foreground mt-4 opacity-0 animate-fade-in animation-delay-200">
+          <p 
+            className={`text-lg text-muted-foreground mt-4 ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "200ms" }}
+          >
             Geen lastige termen, geen dashboards met honderd grafieken. KlikKlaar doet alles voor je.
           </p>
         </div>
@@ -43,11 +63,23 @@ export function USPSection() {
             return (
               <div
                 key={usp.title}
-                className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-premium transition-shadow opacity-0 animate-fade-in"
-                style={{ animationDelay: `${250 + index * 100}ms`, animationFillMode: 'forwards' }}
+                className={`relative p-8 rounded-2xl border transition-all duration-300 group
+                  ${usp.featured 
+                    ? 'bg-card border-kk-orange/30 shadow-premium-lg hover:shadow-glow-orange' 
+                    : 'bg-card border-border shadow-sm hover:shadow-premium hover:-translate-y-1'
+                  }
+                  ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+                style={{ animationDelay: `${250 + index * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-kk-orange/10 flex items-center justify-center mb-6">
-                  <Icon className="w-6 h-6 text-kk-orange" />
+                {usp.featured && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full gradient-cta text-white text-xs font-semibold">
+                    Populair
+                  </div>
+                )}
+
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors
+                  ${usp.featured ? 'gradient-cta' : 'bg-kk-orange/10 group-hover:bg-kk-orange/20'}`}>
+                  <Icon className={`w-6 h-6 ${usp.featured ? 'text-white' : 'text-kk-orange'}`} />
                 </div>
 
                 <h3 className="text-xl font-semibold text-foreground mb-3">
