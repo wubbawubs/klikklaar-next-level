@@ -21,8 +21,8 @@ export function UseCasesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-background">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-16 bg-section-haze-cool relative overflow-hidden">
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span 
@@ -43,18 +43,27 @@ export function UseCasesSection() {
           </h2>
         </div>
 
-        {/* Cards */}
+        {/* Cards - Variable shadow weights */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {useCases.map((useCase, index) => {
             const Icon = useCase.icon;
+            // First card gets more visual weight
+            const isPriority = index === 0;
+            
             return (
               <Link
                 key={useCase.title}
                 to={useCase.href}
                 className={`group p-6 rounded-xl bg-card border border-border 
-                  hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1
-                  transition-all duration-300 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-                style={{ animationDelay: `${250 + index * 80}ms` }}
+                  hover:border-kk-orange/20 hover:-translate-y-1.5
+                  transition-all duration-300
+                  ${isPriority ? 'shadow-premium hover:shadow-premium-lg' : 'shadow-premium-sm hover:shadow-premium'}`}
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                  transition: 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s, border-color 0.3s',
+                  transitionDelay: `${index * 80}ms`
+                }}
               >
                 <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4 group-hover:bg-kk-orange/10 group-hover:scale-110 transition-all duration-300">
                   <Icon className="w-6 h-6 text-kk-orange" />

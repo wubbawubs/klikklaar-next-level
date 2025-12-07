@@ -26,10 +26,10 @@ export function USPSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-background">
-      <div className="container">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+    <section ref={ref} className="py-12 lg:py-16 bg-section-haze-purple haze-gradient-top-right relative overflow-hidden">
+      <div className="container relative z-10">
+        {/* Header - Left aligned for asymmetry */}
+        <div className="max-w-2xl mb-16">
           <span 
             className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
               isVisible ? "animate-fade-in" : "opacity-0"
@@ -56,8 +56,8 @@ export function USPSection() {
           </p>
         </div>
 
-        {/* USP cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* USP cards - Asymmetric grid with featured card elevated */}
+        <div className="grid md:grid-cols-3 gap-6 items-start">
           {usps.map((usp, index) => {
             const Icon = usp.icon;
             return (
@@ -65,12 +65,14 @@ export function USPSection() {
                 key={usp.title}
                 className={`relative p-8 rounded-2xl border transition-all duration-500
                   ${usp.featured 
-                    ? 'bg-card border-kk-orange/30 shadow-premium-lg hover:shadow-glow-orange' 
-                    : 'bg-card border-border shadow-sm hover:shadow-premium hover:-translate-y-1'
+                    ? 'bg-card border-kk-orange/30 shadow-premium-lg hover:shadow-glow-orange md:-translate-y-4' 
+                    : 'bg-card border-border shadow-premium-sm hover:shadow-premium hover:-translate-y-1.5'
                   }`}
                 style={{ 
                   opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                  transform: isVisible 
+                    ? usp.featured ? 'translateY(-16px)' : 'translateY(0)' 
+                    : 'translateY(24px)',
                   transitionDelay: `${index * 100}ms`
                 }}
               >

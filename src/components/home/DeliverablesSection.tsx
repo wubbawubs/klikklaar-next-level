@@ -32,10 +32,10 @@ export function DeliverablesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-background">
-      <div className="container">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+    <section ref={ref} className="py-12 lg:py-16 bg-section-haze-warm section-shadow-top relative overflow-hidden">
+      <div className="max-w-container-wide mx-auto px-6 lg:px-10">
+        {/* Header - Left aligned for asymmetry */}
+        <div className="max-w-2xl mb-16">
           <span 
             className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
               isVisible ? "animate-fade-in" : "opacity-0"
@@ -62,30 +62,36 @@ export function DeliverablesSection() {
           </p>
         </div>
 
-        {/* Deliverables grid */}
+        {/* Deliverables grid - Staggered 3-2-1 layout */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {deliverables.map((item, index) => (
-            <div
-              key={item.title}
-              className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border group
-                hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-0.5
-                transition-all duration-300"
-              style={{ 
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-                transition: 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s, border-color 0.3s',
-                transitionDelay: `${index * 50}ms`
-              }}
-            >
-              <div className="w-6 h-6 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:shadow-glow-orange transition-shadow">
-                <Check className="w-3.5 h-3.5 text-white" />
+          {deliverables.map((item, index) => {
+            // Create staggered visual weight
+            const isFirstRow = index < 3;
+            
+            return (
+              <div
+                key={item.title}
+                className={`flex items-start gap-4 p-5 rounded-xl bg-card border border-border group
+                  hover:border-kk-orange/20 hover:-translate-y-1.5
+                  transition-all duration-300
+                  ${isFirstRow ? 'shadow-premium hover:shadow-premium-lg' : 'shadow-premium-sm hover:shadow-premium'}`}
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                  transition: 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s, border-color 0.3s',
+                  transitionDelay: `${index * 60}ms`
+                }}
+              >
+                <div className="w-6 h-6 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:shadow-glow-orange transition-shadow">
+                  <Check className="w-3.5 h-3.5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

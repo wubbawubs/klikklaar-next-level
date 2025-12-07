@@ -7,18 +7,21 @@ const testimonials = [
     author: "Marco de Vries",
     role: "Loodgieter, Amsterdam",
     avatar: "M",
+    featured: true,
   },
   {
     quote: "Eindelijk iemand die het begrijpt. Geen technische praatjes, gewoon resultaat. Mijn agenda zit vol.",
     author: "Sandra Bakker",
     role: "Fysiotherapeut, Rotterdam",
     avatar: "S",
+    featured: false,
   },
   {
     quote: "Ik had geen idee waar ik moest beginnen met SEO. Nu hoef ik er niet meer over na te denken.",
     author: "Pieter Janssen",
     role: "Aannemer, Eindhoven",
     avatar: "P",
+    featured: false,
   },
 ];
 
@@ -26,10 +29,10 @@ export function TestimonialsSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 bg-background">
-      <div className="container">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+    <section ref={ref} className="py-12 lg:py-16 haze-gradient-bottom-left relative overflow-hidden">
+      <div className="container relative z-10">
+        {/* Header - Left aligned for asymmetry */}
+        <div className="max-w-2xl mb-16">
           <span 
             className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
               isVisible ? "animate-fade-in" : "opacity-0"
@@ -48,15 +51,24 @@ export function TestimonialsSection() {
           </h2>
         </div>
 
-        {/* Testimonials */}
+        {/* Testimonials - Variable shadow weights */}
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className={`bg-card rounded-2xl border border-border p-8 group
-                hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1
-                transition-all duration-300 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-              style={{ animationDelay: `${250 + index * 100}ms` }}
+              className={`bg-card rounded-2xl border p-8 group
+                hover:border-kk-orange/20 hover:-translate-y-1.5
+                transition-all duration-300
+                ${testimonial.featured 
+                  ? 'border-kk-orange/20 shadow-premium-lg hover:shadow-glow-orange' 
+                  : 'border-border shadow-premium-sm hover:shadow-premium'
+                }`}
+              style={{ 
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s, border-color 0.3s',
+                transitionDelay: `${index * 100}ms`
+              }}
             >
               <Quote className="w-8 h-8 text-kk-orange/20 mb-4 group-hover:text-kk-orange/40 transition-colors" />
 
@@ -71,7 +83,8 @@ export function TestimonialsSection() {
               </p>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full gradient-cta flex items-center justify-center text-white font-bold shadow-sm group-hover:shadow-glow-orange transition-shadow">
+                <div className={`w-10 h-10 rounded-full gradient-cta flex items-center justify-center text-white font-bold transition-shadow
+                  ${testimonial.featured ? 'shadow-glow-orange' : 'shadow-sm group-hover:shadow-glow-orange'}`}>
                   {testimonial.avatar}
                 </div>
                 <div>
