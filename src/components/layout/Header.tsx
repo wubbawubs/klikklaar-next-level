@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const navigation = [
-  { name: "Wat je krijgt", href: "/deliverables" },
-  { name: "Hoe het werkt", href: "/how-it-works" },
-  { name: "Prijzen", href: "/pricing" },
-  { name: "Voorbeelden", href: "/use-cases" },
-  { name: "Over ons", href: "/about" },
+  { name: "Wat je krijgt", href: "/wat-je-krijgt" },
+  { name: "Hoe het werkt", href: "/hoe-het-werkt" },
+  { name: "Prijzen", href: "/prijzen" },
+  { name: "Voorbeelden", href: "/voorbeelden" },
+  { name: "Over ons", href: "/over-ons" },
 ];
 
 export function Header() {
