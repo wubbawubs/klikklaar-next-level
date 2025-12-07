@@ -169,9 +169,9 @@ function PricingCards() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-32 haze-gradient-cool relative overflow-hidden">
+    <section ref={ref} className="py-8 lg:py-24 haze-gradient-cool relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-start">
           {pricingTiers.map((tier, index) => {
             const Icon = tier.icon;
             return (
@@ -262,32 +262,32 @@ function Guarantee() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         <div 
-          className="max-w-3xl mx-auto text-center p-12 bg-card rounded-2xl border border-border shadow-premium-lg"
+          className="max-w-3xl mx-auto text-center p-6 sm:p-8 lg:p-12 bg-card rounded-xl lg:rounded-2xl border border-border shadow-premium-lg"
           style={{ 
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <div className="w-16 h-16 rounded-2xl gradient-cta flex items-center justify-center mx-auto mb-6">
-            <Check className="w-8 h-8 text-white" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl gradient-cta flex items-center justify-center mx-auto mb-4 lg:mb-6">
+            <Check className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
           </div>
           
-          <h2 className="text-display-sm lg:text-display text-foreground mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground mb-3 lg:mb-4">
             Geen gedoe.{" "}
             <span className="gradient-text">Altijd opzegbaar.</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 lg:mb-8">
             Wij geloven in resultaat, niet in kleine lettertjes. Maandelijks opzegbaar, geen verborgen kosten, 
             en als je niet tevreden bent zoeken we samen naar een oplossing.
           </p>
 
-          <GradientButton size="lg">
-            <Phone className="w-5 h-5" />
+          <GradientButton size="lg" className="text-sm sm:text-base">
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
             Plan een vrijblijvend gesprek
           </GradientButton>
         </div>
@@ -300,20 +300,20 @@ function FAQSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-background">
-      <div className="container max-w-3xl">
+    <section ref={ref} className="py-12 lg:py-24 bg-background">
+      <div className="container px-4 sm:px-6 max-w-3xl">
         <div 
-          className="text-center mb-16"
+          className="text-center mb-8 lg:mb-16"
           style={{ 
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4">
+          <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-3">
             Veelgestelde vragen
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground">
+          <h2 className="text-xl sm:text-2xl lg:text-display text-foreground">
             Vragen over{" "}
             <span className="gradient-text">prijzen en contracten?</span>
           </h2>
@@ -355,8 +355,8 @@ function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-24">
+      <div className="container px-4 sm:px-6">
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute inset-0 gradient-cta" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />

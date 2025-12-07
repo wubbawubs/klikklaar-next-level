@@ -68,7 +68,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Steps - Asymmetric with focal point on step 2 */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-end">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-12 items-end">
           {steps.map((step, index) => {
             const Icon = step.icon;
             const isFocal = step.focal;
@@ -95,33 +95,33 @@ export function HowItWorksSection() {
               >
                 {/* Connector line */}
                 {index < 2 && (
-                  <div className="hidden md:block absolute top-20 left-[calc(50%+70px)] w-[calc(100%-70px)] h-px bg-gradient-to-r from-border to-transparent" />
+                  <div className="hidden md:block absolute top-16 lg:top-20 left-[calc(50%+50px)] lg:left-[calc(50%+70px)] w-[calc(100%-50px)] lg:w-[calc(100%-70px)] h-px bg-gradient-to-r from-border to-transparent" />
                 )}
 
-                {/* Icon box - larger for focal */}
-                <div className={`relative mx-auto mb-6 rounded-2xl bg-muted/50 border border-border flex items-center justify-center 
+                {/* Icon box - smaller on mobile */}
+                <div className={`relative mx-auto mb-4 lg:mb-6 rounded-2xl bg-muted/50 border border-border flex items-center justify-center 
                   group-hover:border-kk-orange/30 transition-all duration-300
                   ${isFocal 
-                    ? 'w-40 h-40 shadow-premium-lg group-hover:shadow-glow-orange' 
-                    : 'w-32 h-32 shadow-premium-sm group-hover:shadow-premium'
+                    ? 'w-20 h-20 sm:w-28 sm:h-28 lg:w-40 lg:h-40 shadow-premium-lg group-hover:shadow-glow-orange' 
+                    : 'w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 shadow-premium-sm group-hover:shadow-premium'
                   }`}>
-                  <Icon className={`text-kk-orange group-hover:scale-110 transition-transform duration-300 ${isFocal ? 'w-12 h-12' : 'w-10 h-10'}`} />
-                  <div className={`absolute -top-2 -right-2 rounded-full gradient-cta flex items-center justify-center text-white font-bold shadow-glow-orange
-                    ${isFocal ? 'w-10 h-10 text-base' : 'w-8 h-8 text-sm'}`}>
+                  <Icon className={`text-kk-orange group-hover:scale-110 transition-transform duration-300 ${isFocal ? 'w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12' : 'w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10'}`} />
+                  <div className={`absolute -top-1.5 -right-1.5 lg:-top-2 lg:-right-2 rounded-full gradient-cta flex items-center justify-center text-white font-bold shadow-glow-orange
+                    ${isFocal ? 'w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-xs sm:text-sm lg:text-base' : 'w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-xs sm:text-sm'}`}>
                     {step.number}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="text-center">
-                  <span className={`inline-block px-3 py-1 rounded-full text-kk-orange text-xs font-semibold mb-3
+                  <span className={`inline-block px-2 sm:px-3 py-1 rounded-full text-kk-orange text-[10px] sm:text-xs font-semibold mb-2 sm:mb-3
                     ${isFocal ? 'bg-kk-orange/15' : 'bg-kk-orange/10'}`}>
                     {step.highlight}
                   </span>
-                  <h3 className={`font-semibold text-foreground mb-3 ${isFocal ? 'text-2xl' : 'text-xl'}`}>
+                  <h3 className={`font-semibold text-foreground mb-2 sm:mb-3 ${isFocal ? 'text-lg sm:text-xl lg:text-2xl' : 'text-base sm:text-lg lg:text-xl'}`}>
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
