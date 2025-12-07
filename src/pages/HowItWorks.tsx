@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { 
   MessageCircle, 
   Search, 
@@ -17,6 +18,8 @@ import {
   Calendar,
   FileText
 } from "lucide-react";
+
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
 
 const mainSteps = [
   {
@@ -155,13 +158,17 @@ function HeroSection() {
               transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
             }}
           >
-            <GradientButton size="lg" className="w-full sm:w-auto">
-              <Phone className="w-5 h-5" />
-              Plan een vrijblijvend gesprek
+            <GradientButton size="lg" className="w-full sm:w-auto" asChild>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Phone className="w-5 h-5" />
+                Plan een vrijblijvend gesprek
+              </a>
             </GradientButton>
-            <GradientButton variant="outline" size="lg" className="w-full sm:w-auto">
-              Bekijk prijzen
-              <ArrowRight className="w-4 h-4" />
+            <GradientButton variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+              <Link to="/prijzen">
+                Bekijk prijzen
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </GradientButton>
           </div>
         </div>
@@ -383,9 +390,12 @@ function CTASection() {
               <GradientButton 
                 size="lg" 
                 className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
+                asChild
               >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                Plan een vrijblijvend gesprek
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Plan een vrijblijvend gesprek
+                </a>
               </GradientButton>
             </div>
           </div>

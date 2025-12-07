@@ -18,6 +18,8 @@ import {
   CheckCircle
 } from "lucide-react";
 
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+
 const useCases = [
   {
     id: "kappers",
@@ -282,9 +284,11 @@ function UseCasesGrid() {
                       ))}
                     </div>
 
-                    <GradientButton size="lg" className="text-sm sm:text-base">
-                      <Phone className="w-4 h-4" />
-                      Start met {useCase.title.split(' ')[0]}
+                    <GradientButton size="lg" className="text-sm sm:text-base" asChild>
+                      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                        <Phone className="w-4 h-4" />
+                        Start met {useCase.title.split(' ')[0]}
+                      </a>
                     </GradientButton>
                   </div>
 
@@ -365,9 +369,11 @@ function AllIndustriesSection() {
             ))}
           </div>
 
-          <GradientButton size="lg" className="text-sm sm:text-base">
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-            Bekijk of het werkt voor jouw branche
+          <GradientButton size="lg" className="text-sm sm:text-base" asChild>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+              Bekijk of het werkt voor jouw branche
+            </a>
           </GradientButton>
         </div>
       </div>
@@ -422,9 +428,12 @@ function CTASection() {
               <GradientButton 
                 size="xl" 
                 className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow"
+                asChild
               >
-                <Phone className="w-5 h-5" />
-                Plan een vrijblijvend gesprek
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5" />
+                  Plan een vrijblijvend gesprek
+                </a>
               </GradientButton>
             </div>
           </div>

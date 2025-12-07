@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { Check, Phone, Clock, Users, Star, ArrowRight, Zap, Target, BarChart3, Shield, TrendingUp, Sparkles, Calendar, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import { ProductDemo } from "@/components/home/ProductDemo";
+import { Link } from "react-router-dom";
+
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
 
 const AdLandingB = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -179,10 +181,12 @@ const AdLandingB = () => {
                   transitionDelay: '200ms'
                 }}
               >
-                <GradientButton size="lg" className="w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-4 sm:py-5 shadow-glow-orange">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Plan een vrijblijvend gesprek
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                <GradientButton size="lg" className="w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-4 sm:py-5 shadow-glow-orange" asChild>
+                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Plan een vrijblijvend gesprek
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
                 </GradientButton>
               </div>
 
@@ -378,9 +382,11 @@ const AdLandingB = () => {
           </div>
 
           <div className="text-center mt-10">
-            <GradientButton size="lg" className="text-base px-8 py-5 shadow-glow-orange">
-              <Calendar className="w-5 h-5 mr-2" />
-              Start met stap 1: Plan een gesprek
+            <GradientButton size="lg" className="text-base px-8 py-5 shadow-glow-orange" asChild>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Calendar className="w-5 h-5 mr-2" />
+                Start met stap 1: Plan een gesprek
+              </a>
             </GradientButton>
           </div>
         </div>
@@ -460,9 +466,11 @@ const AdLandingB = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   Benieuwd wat wij voor jou kunnen doen?
                 </p>
-                <GradientButton className="w-full" size="default">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Plan een gesprek
+                <GradientButton className="w-full" size="default" asChild>
+                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Plan een gesprek
+                  </a>
                 </GradientButton>
               </div>
             </div>
@@ -586,10 +594,12 @@ const AdLandingB = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <GradientButton size="lg" className="text-base px-10 py-6 shadow-glow-orange">
-                <Phone className="w-5 h-5 mr-2" />
-                Plan je gratis gesprek
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <GradientButton size="lg" className="text-base px-10 py-6 shadow-glow-orange" asChild>
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Plan je gratis gesprek
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
               </GradientButton>
             </div>
             

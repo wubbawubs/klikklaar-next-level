@@ -18,6 +18,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+
 const pricingTiers = [
   {
     id: "basis",
@@ -169,7 +171,7 @@ function PricingCards() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-8 lg:py-24 haze-gradient-cool relative overflow-hidden">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-start">
           {pricingTiers.map((tier, index) => {
@@ -238,13 +240,21 @@ function PricingCards() {
 
                 {/* CTA */}
                 {tier.featured ? (
-                  <GradientButton className="w-full" size="lg">
-                    <Phone className="w-4 h-4" />
-                    {tier.cta}
+                  <GradientButton className="w-full" size="lg" asChild>
+                    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                      <Phone className="w-4 h-4" />
+                      {tier.cta}
+                    </a>
                   </GradientButton>
                 ) : (
-                  <GradientButton variant="outline" className="w-full" size="lg" disabled={tier.comingSoon}>
-                    {tier.cta}
+                  <GradientButton variant="outline" className="w-full" size="lg" disabled={tier.comingSoon} asChild={!tier.comingSoon}>
+                    {tier.comingSoon ? (
+                      tier.cta
+                    ) : (
+                      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                        {tier.cta}
+                      </a>
+                    )}
                   </GradientButton>
                 )}
               </div>
@@ -284,9 +294,11 @@ function Guarantee() {
             en als je niet tevreden bent zoeken we samen naar een oplossing.
           </p>
 
-          <GradientButton size="lg" className="text-sm sm:text-base">
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-            Plan een vrijblijvend gesprek
+          <GradientButton size="lg" className="text-sm sm:text-base" asChild>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+              Plan een vrijblijvend gesprek
+            </a>
           </GradientButton>
         </div>
       </div>
@@ -396,9 +408,12 @@ function CTASection() {
               <GradientButton 
                 size="xl" 
                 className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow"
+                asChild
               >
-                <Phone className="w-5 h-5" />
-                Plan een gratis adviesgesprek
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5" />
+                  Plan een gratis adviesgesprek
+                </a>
               </GradientButton>
             </div>
           </div>

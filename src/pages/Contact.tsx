@@ -14,6 +14,8 @@ import {
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+
 const contactMethods = [
   {
     icon: Phone,
@@ -166,8 +168,8 @@ function ContactForm() {
                     className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border shadow-premium-sm hover:shadow-premium hover:border-kk-orange/20 transition-all duration-300"
                     style={{ transitionDelay: `${index * 75}ms` }}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-kk-orange/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-kk-orange" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-kk-orange/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-kk-orange" />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">{method.title}</p>
@@ -329,8 +331,8 @@ function CallToAction() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         <div 
           className="max-w-3xl mx-auto text-center p-12 bg-card rounded-2xl border border-border shadow-premium-lg"
           style={{ 
@@ -354,9 +356,9 @@ function CallToAction() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <GradientButton size="lg" asChild>
-              <a href="tel:+31201234567">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                 <Phone className="w-5 h-5" />
-                Bel direct: +31 (0)20 123 4567
+                Plan een vrijblijvend gesprek
               </a>
             </GradientButton>
           </div>

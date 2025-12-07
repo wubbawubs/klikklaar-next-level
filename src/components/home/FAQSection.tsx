@@ -51,7 +51,7 @@ export function FAQSection() {
           <span className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4">
             Veelgestelde vragen
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground mb-4">
+          <h2 className="text-display-sm lg:text-display font-bold text-foreground mb-4">
             Nog vragen? <span className="gradient-text">Wij hebben antwoorden</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ export function FAQSection() {
         >
           <p className="text-muted-foreground">
             Staat je vraag er niet tussen?{" "}
-            <a href="#contact" className="text-kk-orange hover:underline font-medium">
+            <a href="/contact" className="text-kk-orange hover:underline font-medium">
               Neem contact op
             </a>
           </p>

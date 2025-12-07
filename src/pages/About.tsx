@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { 
   Phone,
   Heart,
@@ -12,6 +13,8 @@ import {
   Shield,
   ArrowRight
 } from "lucide-react";
+
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
 
 const values = [
   {
@@ -103,9 +106,11 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
               }}
             >
-              <GradientButton size="lg" className="w-full sm:w-auto">
-                <Phone className="w-5 h-5" />
-                Laten we kennismaken
+              <GradientButton size="lg" className="w-full sm:w-auto" asChild>
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5" />
+                  Laten we kennismaken
+                </a>
               </GradientButton>
             </div>
           </div>
@@ -339,17 +344,23 @@ function CTASection() {
               <GradientButton 
                 size="xl" 
                 className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow"
+                asChild
               >
-                <Phone className="w-5 h-5" />
-                Neem contact op
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5" />
+                  Neem contact op
+                </a>
               </GradientButton>
               <GradientButton 
                 variant="outline" 
                 size="lg"
                 className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                asChild
               >
-                Bekijk onze aanpak
-                <ArrowRight className="w-4 h-4" />
+                <Link to="/hoe-het-werkt">
+                  Bekijk onze aanpak
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </GradientButton>
             </div>
           </div>

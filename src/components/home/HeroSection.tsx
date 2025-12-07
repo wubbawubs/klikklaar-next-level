@@ -2,6 +2,9 @@ import { ArrowRight, Phone } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { ProductDemo } from "./ProductDemo";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
 
 function LiveCounter() {
   const [count, setCount] = useState(146);
@@ -120,13 +123,17 @@ export function HeroSection() {
             }}
           >
             <div className="flex flex-col gap-3 mb-4">
-              <GradientButton size="lg" className="w-full text-sm sm:text-base">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                Plan een vrijblijvend gesprek
+              <GradientButton size="lg" className="w-full text-sm sm:text-base" asChild>
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Plan een vrijblijvend gesprek
+                </a>
               </GradientButton>
-              <GradientButton variant="outline" size="lg" className="w-full text-sm sm:text-base">
-                Bekijk hoe het werkt
-                <ArrowRight className="w-4 h-4" />
+              <GradientButton variant="outline" size="lg" className="w-full text-sm sm:text-base" asChild>
+                <Link to="/hoe-het-werkt">
+                  Bekijk hoe het werkt
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </GradientButton>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground text-center">
@@ -144,13 +151,17 @@ export function HeroSection() {
             transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
           }}
         >
-          <GradientButton size="lg">
-            <Phone className="w-5 h-5" />
-            Plan een vrijblijvend gesprek
+          <GradientButton size="lg" asChild>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <Phone className="w-5 h-5" />
+              Plan een vrijblijvend gesprek
+            </a>
           </GradientButton>
-          <GradientButton variant="outline" size="lg">
-            Bekijk hoe het werkt
-            <ArrowRight className="w-4 h-4" />
+          <GradientButton variant="outline" size="lg" asChild>
+            <Link to="/hoe-het-werkt">
+              Bekijk hoe het werkt
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </GradientButton>
         </div>
       </div>

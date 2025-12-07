@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { 
   Check, 
   FileText, 
@@ -17,6 +18,8 @@ import {
   TrendingUp,
   Eye
 } from "lucide-react";
+
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
 
 const deliverableCategories = [
   {
@@ -170,13 +173,17 @@ function HeroSection() {
               transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
             }}
           >
-            <GradientButton size="lg" className="w-full sm:w-auto">
-              <Phone className="w-5 h-5" />
-              Plan een vrijblijvend gesprek
+            <GradientButton size="lg" className="w-full sm:w-auto" asChild>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Phone className="w-5 h-5" />
+                Plan een vrijblijvend gesprek
+              </a>
             </GradientButton>
-            <GradientButton variant="outline" size="lg" className="w-full sm:w-auto">
-              Bekijk prijzen
-              <ArrowRight className="w-4 h-4" />
+            <GradientButton variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+              <Link to="/prijzen">
+                Bekijk prijzen
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </GradientButton>
           </div>
         </div>
@@ -189,8 +196,8 @@ function DeliverablesGrid() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-warm relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-warm relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span 
             className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
@@ -277,8 +284,8 @@ function WeeklyProcess() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 haze-gradient-cool relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Content */}
           <div>
@@ -358,8 +365,8 @@ function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
-      <div className="container">
+    <section ref={ref} className="py-12 lg:py-24">
+      <div className="container px-4 sm:px-6">
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute inset-0 gradient-cta" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
@@ -401,9 +408,12 @@ function CTASection() {
               <GradientButton 
                 size="xl" 
                 className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow"
+                asChild
               >
-                <Phone className="w-5 h-5" />
-                Plan een vrijblijvend gesprek
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5" />
+                  Plan een vrijblijvend gesprek
+                </a>
               </GradientButton>
             </div>
           </div>
