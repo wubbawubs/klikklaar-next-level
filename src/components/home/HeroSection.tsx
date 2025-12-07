@@ -4,7 +4,7 @@ import { ProductDemo } from "./ProductDemo";
 import { useState, useEffect } from "react";
 
 function LiveCounter() {
-  const [count, setCount] = useState(9678);
+  const [count, setCount] = useState(146);
 
   useEffect(() => {
     const interval = setInterval(() => {
