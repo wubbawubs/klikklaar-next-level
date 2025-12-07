@@ -2,21 +2,21 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Ik snap niet hoe het werkt, maar ik zie wél dat het werkt. Mijn website staat nu op plek 1!",
+    quote: "Ik snap niet hoe het werkt, maar ik zie wél dat het werkt. Mijn website staat nu op plek 1 in Google!",
     author: "Lisa de Vries",
-    role: "Kapsalon Stijl",
+    role: "Kapsalon Stijl, Amsterdam",
     avatar: "L",
   },
   {
-    quote: "In 3 maanden tijd 40% meer patiënten via onze website. Precies wat ze beloven.",
+    quote: "In 3 maanden tijd 40% meer patiënten via onze website. Precies wat ze beloven, zonder dat ik iets hoef te doen.",
     author: "Dr. Mark Jansen",
-    role: "Tandartspraktijk Centrum",
+    role: "Tandartspraktijk, Utrecht",
     avatar: "M",
   },
   {
-    quote: "Als IT-bedrijf weten we hoe complex SEO kan zijn. KlikKlaar maakt het simpel én effectief.",
+    quote: "Eindelijk een dienst die gewoon doet wat ze zeggen. Simpel, effectief, en ik hoef nergens over na te denken.",
     author: "Sophie van den Berg",
-    role: "TechStart BV",
+    role: "Coach, Den Haag",
     avatar: "S",
   },
 ];
@@ -30,10 +30,13 @@ export function TestimonialsSection() {
           <span className="inline-block text-sm font-semibold text-kk-orange uppercase tracking-wider mb-4 opacity-0 animate-fade-in">
             Reviews
           </span>
-          <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
-            Wat klanten{" "}
-            <span className="gradient-text">zeggen</span>
+          <h2 className="text-display-sm lg:text-display text-foreground mb-4 opacity-0 animate-fade-in animation-delay-100">
+            Werkt voor{" "}
+            <span className="gradient-text">álle lokale bedrijven</span>
           </h2>
+          <p className="text-lg text-muted-foreground opacity-0 animate-fade-in animation-delay-200">
+            Kappers, coaches, tandartsen, aannemers... Als mensen lokaal zoeken, werkt KlikKlaar.
+          </p>
         </div>
 
         {/* Testimonials */}

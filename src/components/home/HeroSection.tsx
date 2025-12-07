@@ -1,20 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { ProductDemo } from "./ProductDemo";
-import { useEffect, useState } from "react";
 
 export function HeroSection() {
-  const [optimizationCount, setOptimizationCount] = useState(9678);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Random increment between 1-3 for realism
-      setOptimizationCount(prev => prev + Math.floor(Math.random() * 3) + 1);
-    }, 15000); // Every 15 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative pt-28 lg:pt-36 pb-20 lg:pb-28 overflow-hidden">
       {/* Subtle background gradient */}
@@ -26,26 +14,26 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left content */}
           <div className="max-w-xl">
-            {/* Badge - now GREEN */}
+            {/* Badge - GREEN with website count */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8 opacity-0 animate-fade-in">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
               <span className="text-sm font-medium text-green-700">
-                <span className="font-bold">{optimizationCount.toLocaleString()}</span> optimalisaties actief
+                <span className="font-bold">157</span> websites in optimalisatie
               </span>
             </div>
 
-            {/* Headline - bigger, punchier */}
+            {/* Headline */}
             <h1 className="text-display-lg lg:text-display-xl text-foreground mb-6 opacity-0 animate-fade-in animation-delay-100">
               Meer klanten.{" "}
               <span className="gradient-text">Geen gedoe.</span>
             </h1>
 
-            {/* Subheadline - shorter, one line */}
+            {/* Subheadline - more human */}
             <p className="text-xl lg:text-2xl text-muted-foreground mb-10 opacity-0 animate-fade-in animation-delay-200">
-              Automatische website-verbeteringen die je vindbaarheid boosten.
+              Automatische website-verbeteringen die zorgen dat je beter gevonden wordt. Elke week.
             </p>
 
-            {/* CTAs - bigger, clearer hierarchy */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-fade-in animation-delay-300">
               <GradientButton size="xl">
                 Gratis website-check
@@ -62,7 +50,7 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Right - Product demo visualization */}
+          {/* Right - Product demo */}
           <div className="relative opacity-0 animate-fade-in animation-delay-200">
             <ProductDemo />
           </div>

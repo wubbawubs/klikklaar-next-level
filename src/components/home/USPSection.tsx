@@ -1,20 +1,20 @@
-import { Zap, Target, Shield } from "lucide-react";
+import { Zap, MapPin, BarChart3 } from "lucide-react";
 
 const usps = [
   {
     icon: Zap,
-    title: "100% automatisch",
-    description: "Geen handleiding. Geen technische kennis. Je website wordt continu verbeterd terwijl jij ondernemer bent.",
+    title: "Alles gebeurt automatisch",
+    description: "Wij analyseren je website, passen verbeteringen toe en zorgen dat je elke week beter gevonden wordt. Geen taken, geen instellingen, geen technische rommel.",
   },
   {
-    icon: Target,
-    title: "Resultaat-gedreven",
-    description: "Geen loze beloftes. Je ziet precies welke verbeteringen worden toegepast en wat het oplevert.",
+    icon: MapPin,
+    title: "Meer klanten uit je eigen regio",
+    description: "We optimaliseren je website specifiek op jouw plaats, beroep en doelgroep. Zodat je wordt gevonden door mensen die écht in de buurt zoeken.",
   },
   {
-    icon: Shield,
-    title: "Altijd in controle",
-    description: "Transparante rapportages, maandelijks opzegbaar. Je website blijft van jou.",
+    icon: BarChart3,
+    title: "Duidelijke resultaten, elke week",
+    description: "Je krijgt een helder rapport: wat we verbeterden, hoe je zichtbaarheid stijgt en welke kansen eraan komen. Simpel, in normaal Nederlands.",
   },
 ];
 
@@ -28,9 +28,12 @@ export function USPSection() {
             Waarom KlikKlaar
           </span>
           <h2 className="text-display-sm lg:text-display text-foreground opacity-0 animate-fade-in animation-delay-100">
-            Dit maakt ons{" "}
-            <span className="gradient-text">anders</span>
+            Gemaakt voor ondernemers,{" "}
+            <span className="gradient-text">niet voor marketeers</span>
           </h2>
+          <p className="text-lg text-muted-foreground mt-4 opacity-0 animate-fade-in animation-delay-200">
+            Geen lastige termen, geen dashboards met honderd grafieken. KlikKlaar doet alles voor je en laat alleen zien wat écht telt.
+          </p>
         </div>
 
         {/* USP cards - 3 cards */}
