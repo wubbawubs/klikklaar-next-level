@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { GradientButton } from "@/components/ui/GradientButton";
-import { Check, Phone, Clock, Users, Star, ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Check, Phone, Clock, Users, Star, ArrowRight, Zap, Target, BarChart3, Shield, TrendingUp, Sparkles, Calendar, MessageCircle } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const AdLandingA = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -10,11 +11,22 @@ const AdLandingA = () => {
     setIsLoaded(true);
   }, []);
 
-  const benefits = [
-    "Automatische website optimalisatie",
-    "Meer klanten uit jouw regio",
-    "Wekelijks rapport in normaal Nederlands",
-    "Geen technische kennis nodig"
+  const usps = [
+    {
+      icon: Zap,
+      title: "Alles automatisch",
+      description: "Geen taken, geen instellingen, geen technische complexiteit. Wij doen alles - jij focust op je klanten."
+    },
+    {
+      icon: Target,
+      title: "Meer klanten uit je regio",
+      description: "Word beter gevonden door mensen die actief zoeken naar wat jij aanbiedt, precies in jouw buurt."
+    },
+    {
+      icon: BarChart3,
+      title: "Duidelijke resultaten",
+      description: "Wekelijks een helder rapport in normaal Nederlands. Geen jargon, alleen wat er verbeterd is."
+    }
   ];
 
   const socialProof = [
@@ -23,75 +35,170 @@ const AdLandingA = () => {
     { icon: Clock, value: "< 48u", label: "Eerste resultaten" }
   ];
 
+  const steps = [
+    {
+      number: "01",
+      title: "Laten we kennismaken",
+      description: "Plan een kort gesprek. We bespreken je bedrijf, je doelen en bekijken samen je huidige website."
+    },
+    {
+      number: "02", 
+      title: "We analyseren samen",
+      description: "We laten je zien waar de kansen liggen. Geen technisch gepraat, gewoon helder uitgelegd."
+    },
+    {
+      number: "03",
+      title: "Jij focust, wij optimaliseren",
+      description: "Vanaf dat moment nemen wij het over. Elke week verbeteringen, elke week een rapport."
+    }
+  ];
+
+  const deliverables = [
+    "Nieuwe H1 & H2 koppen die converteren",
+    "Geoptimaliseerde meta-descriptions",
+    "Lokale zoekwoorden strategisch ingebouwd",
+    "Snelheidsverbeteringen doorgevoerd",
+    "Technische fixes (schema, structuur)",
+    "Wekelijks helder rapport"
+  ];
+
+  const testimonials = [
+    {
+      quote: "Eindelijk iemand die het gewoon voor me regelt. Ik snap niks van websites, maar mijn telefoon gaat veel vaker over sinds ik met KlikKlaar werk.",
+      name: "Sandra van Dam",
+      role: "Kapsalon De Knip, Amsterdam",
+      result: "+47% meer afspraken"
+    },
+    {
+      quote: "Binnen een maand meer aanvragen dan het hele jaar daarvoor. En ik hoef er letterlijk niks voor te doen. Ze sturen me elke week een update.",
+      name: "Peter Janssen",
+      role: "Loodgietersbedrijf Janssen, Utrecht",
+      result: "+156% meer leads"
+    },
+    {
+      quote: "Ik was sceptisch over online marketing, maar dit werkt gewoon. Simpel, eerlijk, en ik zie direct resultaat in mijn agenda.",
+      name: "Maria Bakker",
+      role: "Fysiotherapie Centrum, Den Haag",
+      result: "+89% meer bezoekers"
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "Moet ik iets technisch kunnen?",
+      a: "Nee, helemaal niets. Wij doen alles voor je. Je hoeft alleen je website URL te delen en wij regelen de rest. Geen inloggen, geen handleidingen, geen gedoe."
+    },
+    {
+      q: "Hoe snel zie ik resultaat?",
+      a: "De eerste verbeteringen zijn vaak binnen 48 uur zichtbaar. Echte groei - meer bezoekers, meer klanten - bouw je op over weken. We houden je elke week op de hoogte."
+    },
+    {
+      q: "Kan ik maandelijks opzeggen?",
+      a: "Ja, altijd. Geen lange contracten, geen opzegtermijn, geen gedoe. Als je wilt stoppen, stop je gewoon. Zo simpel is het."
+    },
+    {
+      q: "Werkt dit voor mijn branche?",
+      a: "We werken met kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en nog veel meer. Als je lokale klanten wilt bereiken, kunnen we je helpen."
+    },
+    {
+      q: "Wat kost het precies?",
+      a: "Vanaf €99 per maand, zonder opstartkosten. Je weet precies waar je aan toe bent. Geen verborgen kosten, geen verrassingen."
+    },
+    {
+      q: "Hoe weet ik dat het werkt?",
+      a: "Je krijgt elke week een rapport in normaal Nederlands. Daarin zie je precies wat we gedaan hebben en wat de resultaten zijn. Geen technisch jargon, alleen concrete cijfers."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero with VSL */}
-      <section className="relative py-12 lg:py-16 overflow-hidden">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
         {/* Gradient haze background */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at top right, hsl(var(--kk-orange) / 0.08), transparent 60%)'
+            background: 'radial-gradient(ellipse at top right, hsl(var(--kk-orange) / 0.1), transparent 60%), radial-gradient(ellipse at bottom left, hsl(var(--kk-violet) / 0.08), transparent 60%)'
           }}
         />
         
         <div className="container mx-auto px-4 relative z-10">
-          {/* Price badge - prominent */}
+          {/* Logo */}
           <div 
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-8"
             style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded ? 'translateY(0)' : 'translateY(-10px)',
               transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
             }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-6 py-2 rounded-full text-lg font-bold shadow-lg">
+            <img src={klikklaarLogo} alt="KlikKlaar" className="h-12 lg:h-16 w-auto" />
+          </div>
+
+          {/* Price badge - prominent */}
+          <div 
+            className="flex justify-center mb-8"
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              transform: isLoaded ? 'translateY(0)' : 'translateY(-10px)',
+              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+              transitionDelay: '100ms'
+            }}
+          >
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg">
               <span>Vanaf €99/maand</span>
-              <span className="text-white/80">•</span>
+              <span className="text-white/60">•</span>
               <span className="text-white/90 font-normal">Altijd opzegbaar</span>
             </div>
           </div>
 
           {/* Headline */}
           <div 
-            className="text-center max-w-3xl mx-auto mb-8"
+            className="text-center max-w-4xl mx-auto mb-10"
             style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
               transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-              transitionDelay: '100ms'
+              transitionDelay: '150ms'
             }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Meer klanten uit jouw regio.{" "}
               <span className="bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet bg-clip-text text-transparent">
                 Zonder gedoe.
               </span>
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Ontdek in 2 minuten hoe wij lokale ondernemers helpen groeien
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              Bekijk in 2 minuten hoe wij lokale ondernemers helpen groeien met automatische website optimalisatie
             </p>
           </div>
 
           {/* VSL Video Placeholder */}
           <div 
-            className="max-w-4xl mx-auto mb-8"
+            className="max-w-5xl mx-auto mb-10"
             style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
               transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-              transitionDelay: '200ms'
+              transitionDelay: '250ms'
             }}
           >
-            <div className="relative aspect-video bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden shadow-premium-xl border border-border/50">
+            <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-premium-xl border border-border/30">
               {/* Video placeholder - replace with actual video embed */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-kk-orange to-kk-violet flex items-center justify-center mb-4 mx-auto cursor-pointer hover:scale-105 transition-transform shadow-glow-orange">
-                    <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-1" />
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-kk-orange to-kk-violet flex items-center justify-center mb-6 mx-auto cursor-pointer hover:scale-110 transition-all duration-300 shadow-glow-orange">
+                    <div className="w-0 h-0 border-t-[16px] border-t-transparent border-l-[28px] border-l-white border-b-[16px] border-b-transparent ml-2" />
                   </div>
-                  <p className="text-white/60 text-sm">Klik om video te bekijken</p>
+                  <p className="text-white/80 text-lg font-medium mb-2">Bekijk de video</p>
+                  <p className="text-white/50 text-sm">2 minuten • Ontdek hoe het werkt</p>
                 </div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute top-4 left-4 flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
               {/* Replace this div with actual video iframe when ready */}
               {/* <iframe src="YOUR_VSL_URL" className="w-full h-full" allowFullScreen /> */}
@@ -105,31 +212,34 @@ const AdLandingA = () => {
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
               transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-              transitionDelay: '300ms'
+              transitionDelay: '350ms'
             }}
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-xl text-muted-foreground mb-6">
               Benieuwd wat wij voor jouw bedrijf kunnen betekenen?
             </p>
-            <GradientButton size="lg" className="text-lg px-8 py-6 shadow-glow-orange">
+            <GradientButton size="lg" className="text-lg px-10 py-7 shadow-glow-orange">
               <Phone className="w-5 h-5 mr-2" />
               Plan een vrijblijvend gesprek
+              <ArrowRight className="w-5 h-5 ml-2" />
             </GradientButton>
-            <p className="text-sm text-muted-foreground mt-3">
-              Geen verplichtingen • 15 minuten • Gratis advies
-            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mt-4">
+              <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> Geen verplichtingen</span>
+              <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> 15 minuten</span>
+              <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> Gratis advies</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Social Proof Strip */}
-      <section className="py-8 border-y border-border/50 bg-muted/30">
+      <section className="py-10 border-y border-border/50 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
+          <div className="flex flex-wrap justify-center gap-10 lg:gap-20">
             {socialProof.map((item, index) => (
               <div 
                 key={index} 
-                className="flex items-center gap-3"
+                className="flex items-center gap-4"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',
@@ -137,11 +247,11 @@ const AdLandingA = () => {
                   transitionDelay: `${400 + index * 100}ms`
                 }}
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-kk-orange/20 to-kk-violet/20 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-kk-orange" />
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-kk-orange/20 to-kk-violet/20 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-kk-orange" />
                 </div>
                 <div>
-                  <div className="font-bold text-foreground">{item.value}</div>
+                  <div className="text-2xl font-bold text-foreground">{item.value}</div>
                   <div className="text-sm text-muted-foreground">{item.label}</div>
                 </div>
               </div>
@@ -150,93 +260,288 @@ const AdLandingA = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Benefits list */}
-              <div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
-                  Wat krijg je bij KlikKlaar?
-                </h2>
-                <ul className="space-y-4">
-                  {benefits.map((benefit, index) => (
-                    <li 
-                      key={index} 
-                      className="flex items-start gap-3"
-                      style={{
-                        opacity: isLoaded ? 1 : 0,
-                        transform: isLoaded ? 'translateX(0)' : 'translateX(-20px)',
-                        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                        transitionDelay: `${600 + index * 100}ms`
-                      }}
-                    >
-                      <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-4 h-4 text-green-500" />
-                      </div>
-                      <span className="text-foreground">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      {/* Pain Section */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, hsl(var(--kk-violet) / 0.05), transparent 70%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+              Je bent goed in wat je doet.{" "}
+              <span className="text-muted-foreground">Maar je website werkt niet mee.</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+              Je hebt geen tijd om aan je website te sleutelen. Je wilt gewoon dat klanten je vinden. 
+              Zonder dure bureaus, zonder ingewikkelde tools, zonder eindeloos gedoe.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { title: "Geen tijd", description: "Je runt een bedrijf. Je hebt geen uren om aan je website te besteden." },
+                { title: "Geen kennis", description: "SEO, meta-tags, keywords... Het zegt je niets en dat hoeft ook niet." },
+                { title: "Geen zin", description: "Je wilt ondernemen, niet achter een computer zitten prutsen." }
+              ].map((pain, index) => (
+                <div 
+                  key={index}
+                  className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/50"
+                  style={{
+                    opacity: isLoaded ? 1 : 0,
+                    transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+                    transitionDelay: `${500 + index * 100}ms`
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-foreground mb-2">{pain.title}</h3>
+                  <p className="text-muted-foreground">{pain.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Price card */}
+      {/* USP Section */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at top left, hsl(var(--kk-orange) / 0.08), transparent 60%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+              Daarom kiezen ondernemers voor{" "}
+              <span className="bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet bg-clip-text text-transparent">
+                KlikKlaar
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Wij geloven dat online zichtbaarheid niet ingewikkeld hoeft te zijn
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {usps.map((usp, index) => (
               <div 
-                className="bg-card rounded-2xl p-8 shadow-premium-lg border border-border/50"
+                key={index}
+                className="bg-card rounded-2xl p-8 shadow-premium-sm border border-border/50 hover:shadow-premium-lg hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
-                  transitionDelay: '700ms'
+                  transitionDelay: `${600 + index * 100}ms`
                 }}
               >
-                <div className="text-center">
-                  <p className="text-muted-foreground mb-2">Al vanaf</p>
-                  <div className="text-5xl font-bold text-foreground mb-1">€99</div>
-                  <p className="text-muted-foreground mb-6">per maand</p>
-                  <ul className="text-sm text-muted-foreground space-y-2 mb-6">
-                    <li>✓ Geen opstartkosten</li>
-                    <li>✓ Altijd opzegbaar</li>
-                    <li>✓ Resultaat binnen 48 uur</li>
-                  </ul>
-                  <GradientButton className="w-full" size="lg">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Bel ons voor advies
-                  </GradientButton>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-kk-orange/20 to-kk-violet/20 flex items-center justify-center mb-6">
+                  <usp.icon className="w-8 h-8 text-kk-orange" />
                 </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{usp.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{usp.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+              Hoe werkt het?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              In drie simpele stappen naar meer klanten uit jouw regio
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {steps.map((step, index) => (
+              <div 
+                key={index}
+                className="relative"
+                style={{
+                  opacity: isLoaded ? 1 : 0,
+                  transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+                  transitionDelay: `${700 + index * 100}ms`
+                }}
+              >
+                <div className="bg-card rounded-2xl p-8 shadow-premium-sm border border-border/50 h-full">
+                  <div className="text-5xl font-bold bg-gradient-to-r from-kk-orange to-kk-violet bg-clip-text text-transparent mb-4">
+                    {step.number}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 text-muted-foreground/30">
+                    <ArrowRight className="w-8 h-8" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <GradientButton size="lg" className="text-lg px-10 py-6 shadow-glow-orange">
+              <Calendar className="w-5 h-5 mr-2" />
+              Start met stap 1: Plan een gesprek
+            </GradientButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Deliverables Section */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at bottom right, hsl(var(--kk-violet) / 0.08), transparent 60%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                Wat krijg je concreet?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Elke week werken we aan je website. Dit zijn de concrete verbeteringen die je kunt verwachten:
+              </p>
+              <ul className="space-y-4">
+                {deliverables.map((item, index) => (
+                  <li 
+                    key={index} 
+                    className="flex items-start gap-4"
+                    style={{
+                      opacity: isLoaded ? 1 : 0,
+                      transform: isLoaded ? 'translateX(0)' : 'translateX(-20px)',
+                      transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+                      transitionDelay: `${800 + index * 80}ms`
+                    }}
+                  >
+                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 text-green-500" />
+                    </div>
+                    <span className="text-lg text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Price card */}
+            <div 
+              className="bg-card rounded-2xl p-10 shadow-premium-xl border border-border/50"
+              style={{
+                opacity: isLoaded ? 1 : 0,
+                transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+                transitionDelay: '900ms'
+              }}
+            >
+              <div className="text-center">
+                <div className="inline-flex items-center gap-2 bg-kk-orange/10 text-kk-orange px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+                  <Sparkles className="w-4 h-4" />
+                  Meest gekozen
+                </div>
+                <p className="text-muted-foreground mb-2">Al vanaf</p>
+                <div className="text-6xl font-bold text-foreground mb-1">€99</div>
+                <p className="text-muted-foreground mb-8">per maand</p>
+                
+                <ul className="text-left space-y-4 mb-8">
+                  {[
+                    "Geen opstartkosten",
+                    "Altijd opzegbaar",
+                    "Resultaat binnen 48 uur",
+                    "Wekelijks rapport",
+                    "Persoonlijke begeleiding"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-green-500" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-muted-foreground mb-4">
+                  Benieuwd wat wij voor jou kunnen doen?
+                </p>
+                <GradientButton className="w-full" size="lg">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Plan een gesprek
+                </GradientButton>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section - Quick objection handling */}
-      <section className="py-16 lg:py-20 bg-muted/30">
+      {/* Testimonials Section */}
+      <section className="py-24 lg:py-32 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+              Wat ondernemers zeggen
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Ontdek hoe andere lokale ondernemers groeien met KlikKlaar
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <div 
+                key={index}
+                className="bg-card rounded-2xl p-8 shadow-premium-sm border border-border/50"
+                style={{
+                  opacity: isLoaded ? 1 : 0,
+                  transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+                  transitionDelay: `${1000 + index * 100}ms`
+                }}
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-kk-orange text-kk-orange" />
+                  ))}
+                </div>
+                <p className="text-foreground text-lg mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
+                  <div className="bg-green-500/10 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+                    {testimonial.result}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center top, hsl(var(--kk-orange) / 0.06), transparent 60%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">
               Veelgestelde vragen
             </h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Moet ik iets technisch kunnen?",
-                  a: "Nee, wij doen alles. Je hoeft letterlijk niets te doen behalve je website URL met ons delen."
-                },
-                {
-                  q: "Hoe snel zie ik resultaat?",
-                  a: "De meeste ondernemers zien binnen 48 uur de eerste verbeteringen. Structurele groei bouw je op over weken."
-                },
-                {
-                  q: "Kan ik maandelijks opzeggen?",
-                  a: "Ja, altijd. Geen lange contracten, geen gedoe. Opzeggen kan per direct."
-                },
-                {
-                  q: "Werkt dit voor mijn branche?",
-                  a: "We werken met kappers, tandartsen, coaches, aannemers, en veel meer. Als je lokale klanten wilt, kunnen we helpen."
-                }
-              ].map((faq, index) => (
+            <div className="grid md:grid-cols-2 gap-6">
+              {faqs.map((faq, index) => (
                 <div 
                   key={index} 
                   className="bg-card rounded-xl p-6 shadow-premium-sm border border-border/50"
@@ -244,11 +549,11 @@ const AdLandingA = () => {
                     opacity: isLoaded ? 1 : 0,
                     transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',
                     transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                    transitionDelay: `${800 + index * 100}ms`
+                    transitionDelay: `${1100 + index * 80}ms`
                   }}
                 >
-                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground">{faq.a}</p>
+                  <h3 className="font-semibold text-foreground mb-3">{faq.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -257,10 +562,16 @@ const AdLandingA = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, hsl(var(--kk-orange) / 0.1), transparent 50%), radial-gradient(ellipse at bottom, hsl(var(--kk-violet) / 0.08), transparent 60%)'
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
           <div 
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center"
             style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
@@ -268,34 +579,50 @@ const AdLandingA = () => {
               transitionDelay: '200ms'
             }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Shield className="w-4 h-4" />
+              Geen verplichtingen, geen risico
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Klaar om te groeien?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Plan een vrijblijvend gesprek en ontdek wat wij voor jouw bedrijf kunnen betekenen.
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Plan een vrijblijvend gesprek en ontdek wat wij voor jouw bedrijf kunnen betekenen. 
+              Geen verkooppraatjes, gewoon een eerlijk advies.
             </p>
-            <GradientButton size="lg" className="text-lg px-10 py-6 shadow-glow-orange">
-              <Phone className="w-5 h-5 mr-2" />
-              Plan je gratis gesprek
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </GradientButton>
-            <p className="text-sm text-muted-foreground mt-4">
-              Binnen 24 uur reactie • Geen verplichtingen
-            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <GradientButton size="lg" className="text-lg px-12 py-7 shadow-glow-orange">
+                <Phone className="w-5 h-5 mr-2" />
+                Plan je gratis gesprek
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </GradientButton>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+              <span className="flex items-center gap-2"><MessageCircle className="w-4 h-4 text-kk-orange" /> Binnen 24 uur reactie</span>
+              <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-kk-orange" /> 15 minuten gesprek</span>
+              <span className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-kk-orange" /> Direct inzicht in kansen</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Minimal Footer */}
-      <footer className="py-8 border-t border-border/50">
+      <footer className="py-10 border-t border-border/50 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2024 KlikKlaar. Alle rechten voorbehouden.
-            </p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-4">
+              <img src={klikklaarLogo} alt="KlikKlaar" className="h-8 w-auto" />
+              <p className="text-sm text-muted-foreground">
+                © 2024 KlikKlaar. Alle rechten voorbehouden.
+              </p>
+            </div>
+            <div className="flex gap-8 text-sm text-muted-foreground">
               <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
               <Link to="/prijzen" className="hover:text-foreground transition-colors">Prijzen</Link>
+              <Link to="/hoe-het-werkt" className="hover:text-foreground transition-colors">Hoe het werkt</Link>
             </div>
           </div>
         </div>
