@@ -8,9 +8,9 @@ export function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
-      <div className="container">
-        <div className="relative rounded-3xl overflow-hidden">
+    <section ref={ref} className="py-12 lg:py-24">
+      <div className="container px-4 sm:px-6">
+        <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden">
           {/* Background with enhanced gradient */}
           <div className="absolute inset-0 gradient-cta" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
@@ -20,7 +20,7 @@ export function CTASection() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
           {/* Content */}
-          <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
+          <div className="relative px-6 py-12 sm:px-8 sm:py-16 lg:px-16 lg:py-24 text-center">
             <h2 
               className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
               style={{

@@ -21,10 +21,10 @@ export function UseCasesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-12 lg:py-16 haze-gradient-cool relative overflow-hidden">
-      <div className="container relative z-10">
+    <section ref={ref} className="py-12 lg:py-20 haze-gradient-cool relative overflow-hidden">
+      <div className="container px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-16">
           <span 
             className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
               isVisible ? "animate-fade-in" : "opacity-0"

@@ -17,11 +17,11 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/50">
       <nav className="container px-4 sm:px-6 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-10 sm:h-12 lg:h-[74px] w-auto" />
+          <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-12 sm:h-14 lg:h-[80px] w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -60,7 +60,7 @@ export function Header() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "lg:hidden fixed inset-x-0 top-16 bg-background/98 backdrop-blur-lg border-b border-border transition-all duration-300 max-h-[calc(100vh-4rem)] overflow-y-auto",
+          "lg:hidden fixed inset-x-0 top-16 bg-background border-b border-border transition-all duration-300 max-h-[calc(100vh-4rem)] overflow-y-auto shadow-lg",
           mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         )}
       >

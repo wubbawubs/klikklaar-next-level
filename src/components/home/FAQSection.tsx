@@ -37,11 +37,11 @@ export function FAQSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section className="py-12 lg:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
         <div
           ref={ref}
-          className="text-center mb-16"
+          className="text-center mb-10 lg:mb-16"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
