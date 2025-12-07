@@ -234,7 +234,7 @@
     background-color: hsl(var(--section-haze-cool));
   }
 
-  /* Gradient haze effects - Soft vertical fades in/out */
+  /* Gradient haze effects - All fade in/out vertically at both edges */
   .haze-gradient-top-right {
     position: relative;
   }
@@ -243,8 +243,8 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse 100% 80% at 100% 0%, hsl(var(--kk-orange) / 0.15), hsl(var(--kk-orange) / 0.05) 40%, transparent 70%);
-    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     pointer-events: none;
   }
 
@@ -256,8 +256,8 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse 90% 70% at 0% 100%, hsl(var(--kk-violet) / 0.12), hsl(var(--kk-violet) / 0.04) 40%, transparent 65%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     pointer-events: none;
   }
 
@@ -285,8 +285,8 @@
     background: 
       radial-gradient(ellipse 120% 60% at 80% -20%, hsl(var(--kk-orange) / 0.12), transparent 60%),
       radial-gradient(ellipse 100% 50% at 20% 100%, hsl(var(--kk-violet) / 0.08), transparent 50%);
-    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     pointer-events: none;
   }
 
