@@ -157,17 +157,22 @@ function DeliverablesGrid() {
       <div className="container relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span 
-            className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
+            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+            }}
           >
             Alles wat je krijgt
           </span>
           <h2 
-            className={`text-display-sm lg:text-display text-foreground ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "100ms" }}
+            className="text-display-sm lg:text-display text-foreground"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+            }}
           >
             Van analyse tot{" "}
             <span className="gradient-text">automatische resultaten</span>
@@ -242,26 +247,33 @@ function WeeklyProcess() {
           {/* Left - Content */}
           <div>
             <span 
-              className={`inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
+              className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
             >
               Wekelijkse cyclus
             </span>
             <h2 
-              className={`text-display-sm lg:text-display text-foreground mb-6 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "100ms" }}
+              className="text-display-sm lg:text-display text-foreground mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
             >
               Elke week dezelfde{" "}
               <span className="gradient-text">betrouwbare aanpak</span>
             </h2>
             <p 
-              className={`text-lg text-muted-foreground mb-8 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "200ms" }}
+              className="text-lg text-muted-foreground mb-8"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
             >
               Geen eenmalige actie, maar een doorlopend proces. Elke week analyseren, verbeteren en rapporteren we — zodat je website continu beter wordt.
             </p>
@@ -321,27 +333,34 @@ function CTASection() {
 
           <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
             <h2 
-              className={`text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
+              className="text-display-sm sm:text-display lg:text-display-lg text-white mb-6 max-w-2xl mx-auto"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
             >
               Klaar om te zien wat we voor jou kunnen betekenen?
             </h2>
             
             <p 
-              className={`text-lg text-white/90 max-w-xl mx-auto mb-10 ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "100ms" }}
+              className="text-lg text-white/90 max-w-xl mx-auto mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
             >
               Plan een vrijblijvend gesprek. We laten je precies zien welke verbeteringen we voor jouw website kunnen maken.
             </p>
 
             <div 
-              className={`flex flex-col sm:flex-row gap-4 justify-center ${
-                isVisible ? "animate-fade-in" : "opacity-0"
-              }`}
-              style={{ animationDelay: "200ms" }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
             >
               <GradientButton 
                 size="xl" 
