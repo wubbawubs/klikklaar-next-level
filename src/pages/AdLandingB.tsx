@@ -143,7 +143,7 @@ const AdLandingB = () => {
             {/* Left: Content */}
             <div>
               <h1 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
@@ -158,7 +158,7 @@ const AdLandingB = () => {
               </h1>
               
               <p 
-                className="text-lg lg:text-xl text-muted-foreground mb-6"
+                className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6"
                 style={{
                   opacity: isLoaded ? 1 : 0,
                   transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
@@ -179,7 +179,7 @@ const AdLandingB = () => {
                   transitionDelay: '200ms'
                 }}
               >
-                <GradientButton size="lg" className="text-base px-6 py-5 shadow-glow-orange">
+                <GradientButton size="lg" className="w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-4 sm:py-5 shadow-glow-orange">
                   <Phone className="w-5 h-5 mr-2" />
                   Plan een vrijblijvend gesprek
                   <ArrowRight className="w-5 h-5 ml-2" />

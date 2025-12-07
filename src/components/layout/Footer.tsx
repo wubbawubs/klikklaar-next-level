@@ -26,11 +26,11 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container py-16 lg:py-20">
+      <div className="container px-4 sm:px-6 py-12 lg:py-20">
         {/* Top section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-12">
           {/* Brand */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-1 mb-4 lg:mb-0">
             <Link to="/" className="flex items-center mb-4">
               <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 w-auto brightness-0 invert" />
             </Link>
@@ -109,11 +109,11 @@ export function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/60">
+        <div className="mt-12 lg:mt-16 pt-6 lg:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <p className="text-xs sm:text-sm text-primary-foreground/60">
             © {new Date().getFullYear()} KlikKlaar. Alle rechten voorbehouden.
           </p>
-          <p className="text-sm text-primary-foreground/60">
+          <p className="text-xs sm:text-sm text-primary-foreground/60">
             Gemaakt met ❤️ voor lokale ondernemers in Nederland
           </p>
         </div>

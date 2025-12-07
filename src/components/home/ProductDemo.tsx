@@ -189,9 +189,9 @@ export function ProductDemo() {
         </div>
       </div>
 
-      {/* Floating KPI cards */}
+      {/* Floating KPI cards - hidden on mobile */}
       <div 
-        className="absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4 overflow-hidden"
+        className="hidden lg:block absolute -right-4 top-8 bg-card rounded-xl shadow-premium border border-border p-4 overflow-hidden"
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(12px)',

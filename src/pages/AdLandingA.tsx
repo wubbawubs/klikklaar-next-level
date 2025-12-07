@@ -149,13 +149,13 @@ const AdLandingA = () => {
               transitionDelay: '100ms'
             }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
               Meer klanten uit jouw regio.{" "}
               <span className="bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet bg-clip-text text-transparent">
                 Zonder gedoe.
               </span>
             </h1>
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Bekijk in 2 minuten hoe wij lokale ondernemers helpen groeien met automatische website optimalisatie
             </p>
           </div>
@@ -199,7 +199,7 @@ const AdLandingA = () => {
             <p className="text-lg text-muted-foreground mb-5">
               Benieuwd wat wij voor jouw bedrijf kunnen betekenen?
             </p>
-            <GradientButton size="lg" className="text-lg px-8 py-6 shadow-glow-orange">
+            <GradientButton size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow-orange">
               <Phone className="w-5 h-5 mr-2" />
               Plan een vrijblijvend gesprek
               <ArrowRight className="w-5 h-5 ml-2" />
