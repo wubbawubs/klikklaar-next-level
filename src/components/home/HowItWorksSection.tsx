@@ -29,7 +29,7 @@ export function HowItWorksSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
+    <section ref={ref} className="py-12 lg:py-16">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">

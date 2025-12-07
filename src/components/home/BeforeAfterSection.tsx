@@ -12,7 +12,7 @@ export function BeforeAfterSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
+    <section ref={ref} className="py-12 lg:py-16">
       <div className="container">
         {/* Header */}
         <div className="max-w-2xl mb-16">

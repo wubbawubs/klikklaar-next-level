@@ -12,7 +12,7 @@ export function PainSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 lg:py-32">
+    <section ref={ref} className="py-12 lg:py-16">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Header */}
