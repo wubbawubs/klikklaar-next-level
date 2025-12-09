@@ -66,15 +66,15 @@ export function HeroSection() {
 
             {/* Headline */}
             <h1 
-              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-display-lg font-bold text-foreground mb-4 lg:mb-6 leading-[1.15]"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
                 transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
               }}
             >
-              Je website verbetert zichzelf,<br className="hidden sm:block" />
-              <span className="gradient-text"> jij houdt tijd over.</span>
+              <span className="block">Je website verbetert zichzelf,</span>
+              <span className="gradient-text">jij houdt tijd over.</span>
             </h1>
 
             {/* Subheadline */}
