@@ -73,7 +73,8 @@ export function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
               }}
             >
-              Je website verbetert zichzelf, <span className="gradient-text">jij houdt tijd over.</span>
+              Je website verbetert zichzelf,<br className="hidden sm:block" />
+              <span className="gradient-text"> jij houdt tijd over.</span>
             </h1>
 
             {/* Subheadline */}
