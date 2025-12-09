@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     question: "Hoe werkt KlikKlaar precies?",
-    answer: "Na een kort kennismakingsgesprek analyseren we je website. Vervolgens voeren we wekelijks automatische verbeteringen door: betere teksten, technische optimalisaties en lokale vindbaarheid. Jij hoeft niets te doen – wij regelen alles.",
+    answer: "Na een kort kennismakingsgesprek analyseren we je website. Vervolgens voeren we wekelijks automatische verbeteringen door: betere teksten, technische optimalisaties en lokale vindbaarheid. Jij hoeft niets te doen, wij regelen alles.",
   },
   {
     question: "Moet ik technische kennis hebben?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "Wat kost het en kan ik opzeggen?",
-    answer: "We hebben pakketten vanaf €99 per maand. Geen langlopende contracten – je kunt maandelijks opzeggen. Geen gedoe, geen verborgen kosten.",
+    answer: "We hebben pakketten vanaf €99 per maand. Geen langlopende contracten, je kunt maandelijks opzeggen. Geen gedoe, geen verborgen kosten.",
   },
   {
     question: "Werkt dit voor mijn branche?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Wat als ik al een website heb?",
-    answer: "Perfect! We optimaliseren je bestaande website. Je hoeft geen nieuwe site te laten bouwen – we verbeteren wat je al hebt en zorgen dat je beter gevonden wordt.",
+    answer: "Perfect! We optimaliseren je bestaande website. Je hoeft geen nieuwe site te laten bouwen, we verbeteren wat je al hebt en zorgen dat je beter gevonden wordt.",
   },
 ];
 

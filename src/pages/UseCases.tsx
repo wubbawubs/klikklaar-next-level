@@ -96,7 +96,7 @@ const useCases = [
       { value: "Top 5", label: "Voor specifieke therapievormen" },
     ],
     testimonial: {
-      quote: "Mijn praktijk is nu vol. Ik hoef niet meer actief te werven — klanten vinden mij.",
+      quote: "Mijn praktijk is nu vol. Ik hoef niet meer actief te werven, klanten vinden mij.",
       author: "Sandra Bakker",
       role: "Fysiotherapeut, Eindhoven",
     },
@@ -190,7 +190,7 @@ function HeroSection() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
             }}
           >
-            Of je nu kapper, tandarts, coach of aannemer bent — wij helpen lokale ondernemers 
+            Of je nu kapper, tandarts, coach of aannemer bent, wij helpen lokale ondernemers 
             zoals jij beter gevonden te worden.
           </p>
 

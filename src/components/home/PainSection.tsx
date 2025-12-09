@@ -4,7 +4,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const painPoints = [
   { icon: HelpCircle, text: "Je weet dat je website beter moet, maar waar begin je?" },
   { icon: Clock, text: "SEO voelt als een raadsel waar je geen tijd voor hebt" },
-  { icon: TrendingDown, text: "Concurrenten staan hoger — en je weet niet waarom" },
+  { icon: TrendingDown, text: "Concurrenten staan hoger en je weet niet waarom" },
   { icon: DollarSign, text: "Dure bureaus beloven veel, maar leveren weinig" },
 ];
 

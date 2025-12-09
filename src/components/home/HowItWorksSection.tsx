@@ -63,7 +63,7 @@ export function HowItWorksSection() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
             }}
           >
-            We kijken altijd even mee. Geen anonieme software — écht contact.
+            We kijken altijd even mee. Geen anonieme software, écht contact.
           </p>
         </div>
 

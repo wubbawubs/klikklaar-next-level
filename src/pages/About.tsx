@@ -95,7 +95,7 @@ function HeroSection() {
               }}
             >
               We weten hoe het is om een bedrijf te runnen. Daarom bouwen we een dienst 
-              die wél werkt voor drukke ondernemers — zonder gedoe.
+              die wél werkt voor drukke ondernemers, zonder gedoe.
             </p>
 
             <div 
@@ -192,7 +192,7 @@ function StorySection() {
               </p>
               <p>
                 Wij geloofden dat het anders kon. Een dienst die écht werkt voor lokale ondernemers. 
-                Geen ingewikkelde dashboards of technische praatjes — gewoon resultaat.
+                Geen ingewikkelde dashboards of technische praatjes, gewoon resultaat.
               </p>
               <p>
                 Daarom startten we KlikKlaar. Een team van SEO-specialisten en ondernemers die 
@@ -288,7 +288,7 @@ function MissionSection() {
           
           <p className="text-sm sm:text-base lg:text-xl text-muted-foreground leading-relaxed">
             Elke lokale ondernemer verdient een website die werkt. Wij maken SEO toegankelijk, 
-            begrijpelijk en betaalbaar — zodat jij kunt focussen op waar je goed in bent.
+            begrijpelijk en betaalbaar, zodat jij kunt focussen op waar je goed in bent.
           </p>
         </div>
       </div>

@@ -62,7 +62,7 @@ const mainSteps = [
     icon: Rocket,
     title: "Jij focust, wij optimaliseren",
     subtitle: "Volledig automatisch",
-    description: "Elke week verbeteren wij je website automatisch. Nieuwe titels, betere teksten, technische optimalisaties — jij hoeft niets te doen en ziet de resultaten in je rapport.",
+    description: "Elke week verbeteren wij je website automatisch. Nieuwe titels, betere teksten, technische optimalisaties, jij hoeft niets te doen en ziet de resultaten in je rapport.",
     highlights: [
       "Wekelijkse verbeteringen automatisch doorgevoerd",
       "Geen taken of acties voor jou",
@@ -85,7 +85,7 @@ const benefits = [
   {
     icon: Users,
     title: "Persoonlijk contact",
-    description: "Geen anonieme software — je hebt altijd een vast aanspreekpunt",
+    description: "Geen anonieme software, je hebt altijd een vast aanspreekpunt",
   },
   {
     icon: Sparkles,
@@ -146,7 +146,7 @@ function HeroSection() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
             }}
           >
-            Geen ingewikkelde dashboards of technische praatjes. Wij nemen alles uit handen — 
+            Geen ingewikkelde dashboards of technische praatjes. Wij nemen alles uit handen, 
             jij focust op je klanten.
           </p>
 

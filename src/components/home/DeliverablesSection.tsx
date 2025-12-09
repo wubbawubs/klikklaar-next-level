@@ -24,7 +24,7 @@ const deliverables = [
   },
   {
     title: "Wekelijks rapport",
-    description: "Simpel overzicht in normaal Nederlands — geen jargon",
+    description: "Simpel overzicht in normaal Nederlands, geen jargon",
   },
 ];
 
