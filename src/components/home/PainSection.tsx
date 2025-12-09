@@ -36,8 +36,8 @@ export function PainSection() {
                 transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
               }}
             >
-              Je runt een bedrijf, geen{" "}
-              <span className="gradient-text">marketingbureau</span>
+              Je runt een bedrijf,<br />
+              <span className="gradient-text">geen marketingbureau</span>
             </h2>
 
             <p 
