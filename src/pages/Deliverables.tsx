@@ -162,7 +162,7 @@ function HeroSection() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
             }}
           >
-            Geen vage beloftes of ingewikkelde rapporten. Je krijgt meetbare verbeteringen aan je website — automatisch, zonder dat jij iets hoeft te doen.
+            Geen vage beloftes of ingewikkelde rapporten. Je krijgt meetbare verbeteringen aan je website, automatisch, zonder dat jij iets hoeft te doen.
           </p>
 
           <div 
@@ -318,7 +318,7 @@ function WeeklyProcess() {
                 transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
               }}
             >
-              Geen eenmalige actie, maar een doorlopend proces. Elke week analyseren, verbeteren en rapporteren we — zodat je website continu beter wordt.
+              Geen eenmalige actie, maar een doorlopend proces. Elke week analyseren, verbeteren en rapporteren we, zodat je website continu beter wordt.
             </p>
 
             <div className="flex items-center gap-4">

@@ -48,7 +48,7 @@ export function BeforeAfterSection() {
                   transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
                 }}
               >
-                Echte cijfers van een echte klant — binnen 3 maanden.
+                Echte cijfers van een echte klant, binnen 3 maanden.
               </p>
             </div>
 
