@@ -100,6 +100,10 @@ export function IndustryGridIllustration() {
               const y = Math.sin(angle) * radius;
               const isActive = i === activeIndustry;
 
+              // Calculate angle pointing back to center
+              const lineAngle = (i * 60 + 90) * (Math.PI / 180);
+              const lineLength = radius - 45; // Distance from icon edge to center hub edge
+              
               return (
                 <div
                   key={industry.label}
@@ -110,22 +114,39 @@ export function IndustryGridIllustration() {
                     transition: `opacity 0.5s ease-out ${0.4 + i * 0.08}s`
                   }}
                 >
-                  {/* Connection line */}
-                  <div 
-                    className="absolute top-1/2 left-1/2 h-0.5 origin-left"
+                  {/* Connection line - positioned between icon and center */}
+                  <svg 
+                    className="absolute pointer-events-none"
                     style={{
-                      width: '30px',
-                      transform: `translate(-100%, -50%) rotate(${(i * 60 + 90)}deg)`,
-                      background: isActive 
-                        ? 'linear-gradient(90deg, hsl(var(--kk-orange)), hsl(var(--kk-violet)))' 
-                        : 'hsl(var(--border))',
-                      transition: 'background 0.3s'
+                      width: lineLength + 10,
+                      height: 4,
+                      left: '50%',
+                      top: '50%',
+                      transformOrigin: 'left center',
+                      transform: `translate(-5px, -2px) rotate(${(i * 60 + 90)}deg)`,
                     }}
-                  />
+                  >
+                    <line 
+                      x1="0" 
+                      y1="2" 
+                      x2={lineLength} 
+                      y2="2" 
+                      stroke={isActive ? 'url(#lineGradient)' : 'hsl(var(--border))'}
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      style={{ transition: 'stroke 0.3s' }}
+                    />
+                    <defs>
+                      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="hsl(var(--kk-orange))" />
+                        <stop offset="100%" stopColor="hsl(var(--kk-violet))" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
                   
                   {/* Icon */}
                   <div 
-                    className={`w-11 h-11 rounded-xl ${industry.color} flex items-center justify-center shadow-md transition-all duration-300 ${
+                    className={`relative z-10 w-11 h-11 rounded-xl ${industry.color} flex items-center justify-center shadow-md transition-all duration-300 ${
                       isActive ? 'scale-125 ring-2 ring-kk-orange/30' : ''
                     }`}
                   >
