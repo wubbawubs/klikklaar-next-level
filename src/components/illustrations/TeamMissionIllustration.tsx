@@ -138,37 +138,6 @@ export function TeamMissionIllustration() {
         </div>
       </div>
 
-      {/* Floating mission badge */}
-      <div 
-        className="absolute -right-2 lg:-right-4 top-4 lg:top-8 bg-card rounded-xl shadow-premium border border-border p-3 max-w-[140px]"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateX(0)' : 'translateX(12px)',
-          transition: 'opacity 0.5s ease-out 0.7s, transform 0.5s ease-out 0.7s'
-        }}
-      >
-        <p className="text-xs font-semibold text-foreground">Onze missie</p>
-        <p className="text-[10px] text-muted-foreground">SEO toegankelijk voor iedereen</p>
-      </div>
-
-      {/* Floating growth indicator */}
-      <div 
-        className="hidden lg:flex absolute -left-4 bottom-16 bg-card rounded-xl shadow-premium border border-border p-3 items-center gap-2"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateX(0)' : 'translateX(-12px)',
-          transition: 'opacity 0.5s ease-out 0.9s, transform 0.5s ease-out 0.9s'
-        }}
-      >
-        <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
-          <TrendingUp className="w-4 h-4 text-green-600" />
-        </div>
-        <div>
-          <p className="text-xs font-semibold text-foreground">Sinds 2023</p>
-          <p className="text-[10px] text-muted-foreground">Actief</p>
-        </div>
-      </div>
-
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-kk-orange/5 to-kk-violet/5 rounded-full blur-3xl -z-10" />
     </div>

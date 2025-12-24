@@ -139,7 +139,8 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
               }}
             >
-              Investeer in groei,{" "}
+              Investeer in groei,
+              <br />
               <span className="gradient-text">niet in gedoe</span>
             </h1>
             

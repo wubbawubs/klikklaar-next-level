@@ -83,7 +83,8 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
               }}
             >
-              Gemaakt voor ondernemers,{" "}
+              Gemaakt voor ondernemers,
+              <br />
               <span className="gradient-text">door ondernemers</span>
             </h1>
             
