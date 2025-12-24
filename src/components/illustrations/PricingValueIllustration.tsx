@@ -155,34 +155,6 @@ export function PricingValueIllustration() {
         </div>
       </div>
 
-      {/* Floating badge */}
-      <div 
-        className="absolute -right-2 lg:-right-4 -top-2 lg:-top-4 bg-gradient-to-r from-kk-orange to-kk-violet text-white rounded-xl shadow-premium-lg px-4 py-2"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0) rotate(3deg)' : 'translateY(-8px) rotate(0deg)',
-          transition: 'opacity 0.5s ease-out 1s, transform 0.5s ease-out 1s'
-        }}
-      >
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4" />
-          <span className="text-sm font-bold">80% goedkoper</span>
-        </div>
-      </div>
-
-      {/* Floating clock */}
-      <div 
-        className="hidden lg:flex absolute -left-4 bottom-8 bg-card rounded-xl shadow-premium border border-border p-3 items-center gap-2"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateX(0)' : 'translateX(-12px)',
-          transition: 'opacity 0.5s ease-out 0.9s, transform 0.5s ease-out 0.9s'
-        }}
-      >
-        <Clock className="w-4 h-4 text-kk-orange" />
-        <span className="text-xs font-medium text-foreground">Maandelijks opzegbaar</span>
-      </div>
-
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-kk-orange/5 to-kk-violet/5 rounded-full blur-3xl -z-10" />
     </div>
