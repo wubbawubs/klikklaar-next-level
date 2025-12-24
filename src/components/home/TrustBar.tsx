@@ -6,7 +6,7 @@ const stats = [
   { icon: Users, value: "100+", label: "Tevreden klanten" },
   { icon: TrendingUp, value: "47%", label: "Gem. groei bezoekers" },
   { icon: Zap, value: "24/7", label: "Automatisch actief" },
-  { icon: Star, value: "4.2", label: "Beoordeling", href: TRUSTPILOT_URL },
+  { icon: Star, value: "4.9", label: "Beoordeling", href: TRUSTPILOT_URL },
 ];
 
 export function TrustBar() {
