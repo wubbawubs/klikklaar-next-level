@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import { Link } from "react-router-dom";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const AdLandingA = () => {
   const [isLoaded, setIsLoaded] = useState(false);

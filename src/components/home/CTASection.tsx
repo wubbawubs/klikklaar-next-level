@@ -2,7 +2,7 @@ import { Check, Phone } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const benefits = ["Gratis adviesgesprek", "Persoonlijk contact", "Geen verplichtingen"];
 

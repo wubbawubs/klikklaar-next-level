@@ -20,7 +20,7 @@ import {
   Eye
 } from "lucide-react";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const deliverableCategories = [
   {

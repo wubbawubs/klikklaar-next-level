@@ -5,7 +5,7 @@ import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import { ProductDemo } from "@/components/home/ProductDemo";
 import { Link } from "react-router-dom";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const AdLandingB = () => {
   const [isLoaded, setIsLoaded] = useState(false);
