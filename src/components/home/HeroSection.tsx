@@ -4,7 +4,7 @@ import { ProductDemo } from "./ProductDemo";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek?month=2025-12";
+const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 function LiveCounter() {
   const [count, setCount] = useState(146);
