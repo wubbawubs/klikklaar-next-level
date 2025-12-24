@@ -221,7 +221,7 @@ function HeroSection() {
           </div>
 
           <div 
-            className="hidden lg:block"
+            className="mt-8 lg:mt-0"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
