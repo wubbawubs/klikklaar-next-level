@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { PricingValueIllustration } from "@/components/illustrations/PricingValueIllustration";
 import { 
   Check, 
   Phone, 
@@ -116,52 +117,66 @@ function HeroSection() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-kk-violet/[0.03] via-transparent to-transparent" />
       </div>
 
-      <div className="container px-4 sm:px-6 text-center">
-        <span 
-          className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-          }}
-        >
-          Prijzen
-        </span>
-        
-        <h1 
-          className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-            transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
-          }}
-        >
-          Investeer in groei,{" "}
-          <span className="gradient-text">niet in gedoe</span>
-        </h1>
-        
-        <p 
-          className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 lg:mb-6"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-            transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-          }}
-        >
-          Transparante prijzen, geen verborgen kosten. Altijd maandelijks opzegbaar.
-        </p>
+      <div className="container px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <span 
+              className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
+            >
+              Prijzen
+            </span>
+            
+            <h1 
+              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
+            >
+              Investeer in groei,{" "}
+              <span className="gradient-text">niet in gedoe</span>
+            </h1>
+            
+            <p 
+              className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-4 lg:mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
+              Transparante prijzen, geen verborgen kosten. Altijd maandelijks opzegbaar.
+            </p>
 
-        <p 
-          className="text-xs sm:text-sm text-muted-foreground"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-            transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
-          }}
-        >
-          <span className="hidden sm:inline">✓ Geen langlopende contracten · ✓ Geen setup-kosten · ✓ Altijd opzegbaar</span>
-          <span className="sm:hidden">✓ Geen contracten · ✓ Geen kosten · ✓ Opzegbaar</span>
-        </p>
+            <p 
+              className="text-xs sm:text-sm text-muted-foreground"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
+            >
+              ✓ Geen langlopende contracten · ✓ Geen setup-kosten · ✓ Altijd opzegbaar
+            </p>
+          </div>
+
+          <div 
+            className="hidden lg:block"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
+            }}
+          >
+            <PricingValueIllustration />
+          </div>
+        </div>
       </div>
     </section>
   );

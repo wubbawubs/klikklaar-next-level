@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { IndustryGridIllustration } from "@/components/illustrations/IndustryGridIllustration";
 import { 
   Phone,
   ArrowRight,
@@ -158,63 +159,76 @@ function HeroSection() {
       </div>
 
       <div className="container px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <span 
-            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-3"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-            }}
-          >
-            Voorbeelden
-          </span>
-          
-          <h1 
-            className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
-            }}
-          >
-            KlikKlaar werkt voor{" "}
-            <span className="gradient-text">jouw branche</span>
-          </h1>
-          
-          <p 
-            className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-10"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-            }}
-          >
-            Of je nu kapper, tandarts, coach of aannemer bent, wij helpen lokale ondernemers 
-            zoals jij beter gevonden te worden.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <span 
+              className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-3"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
+            >
+              Voorbeelden
+            </span>
+            
+            <h1 
+              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
+            >
+              KlikKlaar werkt voor{" "}
+              <span className="gradient-text">jouw branche</span>
+            </h1>
+            
+            <p 
+              className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
+              Of je nu kapper, tandarts, coach of aannemer bent, wij helpen lokale ondernemers 
+              zoals jij beter gevonden te worden.
+            </p>
+
+            <div 
+              className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
+            >
+              {useCases.slice(0, 4).map((useCase) => {
+                const Icon = useCase.icon;
+                return (
+                  <a 
+                    key={useCase.id}
+                    href={`#${useCase.id}`}
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-card border border-border rounded-full text-xs sm:text-sm font-medium text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  >
+                    <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-kk-orange" />
+                    {useCase.title.split(' ')[0]}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
 
           <div 
-            className="flex flex-wrap justify-center gap-2 sm:gap-3"
+            className="hidden lg:block"
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
             }}
           >
-            {useCases.slice(0, 4).map((useCase) => {
-              const Icon = useCase.icon;
-              return (
-                <a 
-                  key={useCase.id}
-                  href={`#${useCase.id}`}
-                  className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-card border border-border rounded-full text-xs sm:text-sm font-medium text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
-                >
-                  <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-kk-orange" />
-                  {useCase.title.split(' ')[0]}
-                </a>
-              );
-            })}
+            <IndustryGridIllustration />
           </div>
         </div>
       </div>

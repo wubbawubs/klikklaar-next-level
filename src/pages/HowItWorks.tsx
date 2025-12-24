@@ -4,6 +4,7 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ProcessFlowIllustration } from "@/components/illustrations/ProcessFlowIllustration";
 import { 
   MessageCircle, 
   Search, 
@@ -114,62 +115,75 @@ function HeroSection() {
       </div>
 
       <div className="container px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <span 
-            className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-              transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-            }}
-          >
-            Hoe het werkt
-          </span>
-          
-          <h1 
-            className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
-            }}
-          >
-            Persoonlijk contact,{" "}
-            <span className="gradient-text">automatische resultaten</span>
-          </h1>
-          
-          <p 
-            className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-10"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-            }}
-          >
-            Geen ingewikkelde dashboards of technische praatjes. Wij nemen alles uit handen, 
-            jij focust op je klanten.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <span 
+              className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
+            >
+              Hoe het werkt
+            </span>
+            
+            <h1 
+              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
+            >
+              Persoonlijk contact,{" "}
+              <span className="gradient-text">automatische resultaten</span>
+            </h1>
+            
+            <p 
+              className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
+              Geen ingewikkelde dashboards of technische praatjes. Wij nemen alles uit handen, 
+              jij focust op je klanten.
+            </p>
+
+            <div 
+              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
+            >
+              <GradientButton size="lg" className="w-full sm:w-auto" asChild>
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-5 h-5" />
+                  Plan een vrijblijvend gesprek
+                </a>
+              </GradientButton>
+              <GradientButton variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+                <Link to="/prijzen">
+                  Bekijk prijzen
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </GradientButton>
+            </div>
+          </div>
 
           <div 
-            className="flex flex-col sm:flex-row gap-3 justify-center"
+            className="hidden lg:block"
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
             }}
           >
-            <GradientButton size="lg" className="w-full sm:w-auto" asChild>
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                <Phone className="w-5 h-5" />
-                Plan een vrijblijvend gesprek
-              </a>
-            </GradientButton>
-            <GradientButton variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-              <Link to="/prijzen">
-                Bekijk prijzen
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </GradientButton>
+            <ProcessFlowIllustration />
           </div>
         </div>
       </div>

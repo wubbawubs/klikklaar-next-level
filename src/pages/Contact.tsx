@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ContactConnectIllustration } from "@/components/illustrations/ContactConnectIllustration";
 import { 
   Phone,
   Mail,
@@ -69,41 +70,56 @@ function HeroSection() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-kk-orange/[0.03] via-transparent to-transparent" />
       </div>
 
-      <div className="container px-4 sm:px-6 text-center">
-        <span 
-          className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-          }}
-        >
-          Contact
-        </span>
-        
-        <h1 
-          className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6 max-w-3xl mx-auto"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-            transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
-          }}
-        >
-          Laten we{" "}
-          <span className="gradient-text">kennismaken</span>
-        </h1>
-        
-        <p 
-          className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-            transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-          }}
-        >
-          Heb je een vraag, wil je samenwerken of gewoon even sparren? 
-          We horen graag van je.
-        </p>
+      <div className="container px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <span 
+              className="inline-block text-xs font-semibold text-kk-orange uppercase tracking-widest mb-4"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+              }}
+            >
+              Contact
+            </span>
+            
+            <h1 
+              className="text-2xl sm:text-3xl lg:text-display-xl font-bold text-foreground mb-4 lg:mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
+              }}
+            >
+              Laten we{" "}
+              <span className="gradient-text">kennismaken</span>
+            </h1>
+            
+            <p 
+              className="text-base sm:text-lg lg:text-xl text-muted-foreground"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
+              Heb je een vraag, wil je samenwerken of gewoon even sparren? 
+              We horen graag van je.
+            </p>
+          </div>
+
+          <div 
+            className="hidden lg:block"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
+            }}
+          >
+            <ContactConnectIllustration />
+          </div>
+        </div>
       </div>
     </section>
   );

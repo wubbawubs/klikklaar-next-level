@@ -4,6 +4,7 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { TeamMissionIllustration } from "@/components/illustrations/TeamMissionIllustration";
 import { 
   Phone,
   Heart,
@@ -115,24 +116,16 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Stats grid */}
+          {/* Illustration */}
           <div 
-            className="grid grid-cols-2 gap-4"
+            className="hidden lg:block"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
               transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
             }}
           >
-            {stats.map((stat, index) => (
-              <div 
-                key={stat.label}
-                className="p-6 bg-card rounded-xl border border-border shadow-premium-sm hover:shadow-premium hover:border-kk-orange/20 hover:-translate-y-1 transition-all duration-300 text-center"
-              >
-                <p className="text-3xl font-bold text-foreground mb-1">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
+            <TeamMissionIllustration />
           </div>
         </div>
       </div>
