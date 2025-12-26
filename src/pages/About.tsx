@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import { TeamMissionIllustration } from "@/components/illustrations/TeamMissionIllustration";
 import { CTASection } from "@/components/home/CTASection";
+import teamLuuk from "@/assets/team-luuk.jpg";
 import { 
   Phone,
   Heart,
@@ -149,14 +150,12 @@ function StorySection() {
               transition: 'opacity 0.7s ease-out, transform 0.7s ease-out'
             }}
           >
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-kk-orange/20 to-kk-violet/20 border border-border shadow-premium-lg flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-24 h-24 rounded-full gradient-cta mx-auto mb-6 flex items-center justify-center">
-                  <Users className="w-12 h-12 text-white" />
-                </div>
-                <p className="text-xl font-semibold text-foreground">Het KlikKlaar Team</p>
-                <p className="text-muted-foreground">Passie voor lokale ondernemers</p>
-              </div>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium-lg">
+              <img 
+                src={teamLuuk} 
+                alt="Luuk - Oprichter KlikKlaar" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 

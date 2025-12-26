@@ -1,27 +1,30 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ExternalLink } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const testimonials = [
   {
     quote: "Service is echt on point en ze denken enorm mee in hoe alles beter te maken. Kan ze absoluut aanraden!",
-    author: "Junayd Didi",
-    role: "Ondernemer",
-    avatar: "J",
+    author: "Desley Baars",
+    role: "DYBS Coaching",
+    avatar: "D",
     featured: true,
+    trustpilotUrl: "https://nl.trustpilot.com/reviews/69344e9ac03ce642a62183da",
   },
   {
     quote: "De naam doet zijn eer aan want alles was zo ingericht en ik hoef er zelf bijna niks meer aan te doen. Zeer tevreden!",
-    author: "Ben",
-    role: "Ondernemer",
+    author: "Ben Commandeur",
+    role: "Nieuw Marketing",
     avatar: "B",
     featured: false,
+    trustpilotUrl: "https://nl.trustpilot.com/reviews/689e0b5c77221b6c6337448c",
   },
   {
-    quote: "Klikklaar steekt er met kop en schouders boven uit. Zowel op gebied van kwaliteit als klantenservice. Zeer tevreden.",
-    author: "Stephanie",
-    role: "Ondernemer",
-    avatar: "S",
+    quote: "Super club! Een poosje terug contact gekregen met KlikKlaar. Mooie club en maken hun woorden waar. Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit. Een aanrader als je snel je SEO op orde wilt hebben!",
+    author: "Dean Droste",
+    role: "Droste Consulting",
+    avatar: "D",
     featured: false,
+    trustpilotUrl: "https://nl.trustpilot.com/reviews/6936c48ce8853bf945620333",
   },
 ];
 
@@ -59,9 +62,12 @@ export function TestimonialsSection() {
         {/* Testimonials - Variable shadow weights */}
         <div className="grid md:grid-cols-3 gap-4 lg:gap-6">
           {testimonials.map((testimonial, index) => (
-            <div
+            <a
               key={testimonial.author}
-              className={`bg-card rounded-2xl border p-6 lg:p-8 group
+              href={testimonial.trustpilotUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`bg-card rounded-2xl border p-6 lg:p-8 group cursor-pointer block
                 hover:border-kk-orange/20 hover:-translate-y-1
                 transition-all duration-300
                 ${testimonial.featured 
@@ -75,7 +81,10 @@ export function TestimonialsSection() {
                 transitionDelay: `${index * 100}ms`
               }}
             >
-              <Quote className="w-8 h-8 text-kk-orange/20 mb-4 group-hover:text-kk-orange/40 transition-colors" />
+              <div className="flex items-center justify-between mb-4">
+                <Quote className="w-8 h-8 text-kk-orange/20 group-hover:text-kk-orange/40 transition-colors" />
+                <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-kk-orange transition-colors" />
+              </div>
 
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -97,7 +106,7 @@ export function TestimonialsSection() {
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
