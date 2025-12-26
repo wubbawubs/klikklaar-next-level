@@ -3,24 +3,24 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const testimonials = [
   {
-    quote: "Binnen 2 maanden stond ik op plek 3 in Google. Ik krijg nu elke week nieuwe aanvragen via mijn website.",
-    author: "Marco de Vries",
-    role: "Loodgieter, Amsterdam",
-    avatar: "M",
+    quote: "Service is echt on point en ze denken enorm mee in hoe alles beter te maken. Kan ze absoluut aanraden!",
+    author: "Junayd Didi",
+    role: "Ondernemer",
+    avatar: "J",
     featured: true,
   },
   {
-    quote: "Eindelijk iemand die het begrijpt. Geen technische praatjes, gewoon resultaat. Mijn agenda zit vol.",
-    author: "Sandra Bakker",
-    role: "Fysiotherapeut, Rotterdam",
-    avatar: "S",
+    quote: "De naam doet zijn eer aan want alles was zo ingericht en ik hoef er zelf bijna niks meer aan te doen. Zeer tevreden!",
+    author: "Ben",
+    role: "Ondernemer",
+    avatar: "B",
     featured: false,
   },
   {
-    quote: "Ik had geen idee waar ik moest beginnen met SEO. Nu hoef ik er niet meer over na te denken.",
-    author: "Pieter Janssen",
-    role: "Aannemer, Eindhoven",
-    avatar: "P",
+    quote: "Klikklaar steekt er met kop en schouders boven uit. Zowel op gebied van kwaliteit als klantenservice. Zeer tevreden.",
+    author: "Stephanie",
+    role: "Ondernemer",
+    avatar: "S",
     featured: false,
   },
 ];

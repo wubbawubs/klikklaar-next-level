@@ -6,40 +6,6 @@ import { Link } from "react-router-dom";
 
 const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
-function LiveCounter() {
-  const [count, setCount] = useState(146);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Trigger animation after mount
-    const timer = setTimeout(() => setIsVisible(true), 50);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount(prev => prev + 1);
-    }, 15000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div 
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 mb-8"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-      }}
-    >
-      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle" />
-      <span className="text-sm font-medium text-green-700">
-        <span className="font-bold">{count.toLocaleString('nl-NL')}</span> websites in optimalisatie
-      </span>
-    </div>
-  );
-}
-
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -61,8 +27,6 @@ export function HeroSection() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left content - Text */}
           <div className="order-1 lg:order-1">
-            {/* Badge */}
-            <LiveCounter />
 
             {/* Headline */}
             <h1 
