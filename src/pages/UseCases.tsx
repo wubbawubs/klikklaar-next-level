@@ -21,7 +21,7 @@ const useCases = [
   {
     id: "coaching",
     icon: Heart,
-    title: "Coaching & Consulting",
+    title: "Coaching en PT",
     description: "Bereik mensen die hulp zoeken in jouw vakgebied",
     painPoints: [
       "Potentiële klanten vinden je niet",
@@ -54,8 +54,8 @@ const useCases = [
     ],
     testimonial: {
       quote: "Super club! Een poosje terug contact gekregen met KlikKlaar. Mooie club en maken hun woorden waar. Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit.",
-      author: "Dean Droste",
-      role: "Droste Consulting",
+      author: "Ben Commandeur",
+      role: "Nieuw Marketing",
     },
   },
   {
@@ -74,68 +74,8 @@ const useCases = [
     ],
     testimonial: {
       quote: "De naam doet zijn eer aan want alles was zo ingericht en ik hoef er zelf bijna niks meer aan te doen. Zeer tevreden!",
-      author: "Ben Commandeur",
-      role: "Nieuw Marketing",
-    },
-  },
-  {
-    id: "kappers",
-    icon: Scissors,
-    title: "Kappers & Salons",
-    description: "Word gevonden door klanten die zoeken naar een kapper in de buurt",
-    painPoints: [
-      "Nieuwe klanten vinden je niet online",
-      "Concurrenten staan hoger in Google",
-      "Geen tijd om aan marketing te besteden",
-    ],
-    results: [
-      { value: "+156%", label: "Meer websitebezoekers" },
-      { value: "Top 3", label: "In Google voor 'kapper [stad]'" },
-    ],
-    testimonial: {
-      quote: "Ik krijg nu elke week nieuwe klanten via mijn website. Vroeger moest ik alles via social media doen.",
-      author: "Lisa van den Berg",
-      role: "Haarsalon, Utrecht",
-    },
-  },
-  {
-    id: "tandartsen",
-    icon: Stethoscope,
-    title: "Tandartsen & Praktijken",
-    description: "Trek nieuwe patiënten aan die zoeken naar een tandarts",
-    painPoints: [
-      "Patiënten kiezen de concurrent die hoger staat",
-      "Je website wordt niet gevonden",
-      "Geen inzicht in wat werkt",
-    ],
-    results: [
-      { value: "+89%", label: "Meer nieuwe patiënten" },
-      { value: "#1", label: "Voor 'tandarts [wijk]'" },
-    ],
-    testimonial: {
-      quote: "We hadden maanden een lege stoel. Nu is onze agenda vol dankzij betere online vindbaarheid.",
-      author: "Dr. Jansen",
-      role: "Tandartspraktijk, Rotterdam",
-    },
-  },
-  {
-    id: "aannemers",
-    icon: Wrench,
-    title: "Aannemers & Vakmensen",
-    description: "Word gebeld door klanten die zoeken naar betrouwbare vakmensen",
-    painPoints: [
-      "Werk komt alleen via mond-tot-mond",
-      "Website staat nergens in Google",
-      "Concurrenten krijgen alle leads",
-    ],
-    results: [
-      { value: "+312%", label: "Meer offerteaanvragen" },
-      { value: "#2", label: "Voor 'loodgieter [stad]'" },
-    ],
-    testimonial: {
-      quote: "Mijn telefoon staat roodgloeiend. Ik moet nu zelfs werk doorverwijzen naar collega's.",
-      author: "Pieter Janssen",
-      role: "Aannemer, Den Haag",
+      author: "Dean Droste",
+      role: "Droste Consulting",
     },
   },
 ];
