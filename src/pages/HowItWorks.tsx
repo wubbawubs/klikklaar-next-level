@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProcessFlowIllustration } from "@/components/illustrations/ProcessFlowIllustration";
+import { CTASection } from "@/components/home/CTASection";
 import { 
   MessageCircle, 
   Search, 
@@ -357,67 +358,6 @@ function BenefitsSection() {
   );
 }
 
-function CTASection() {
-  const { ref, isVisible } = useScrollReveal();
-
-  return (
-    <section ref={ref} className="py-12 lg:py-24">
-      <div className="container px-4 sm:px-6">
-        <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 gradient-cta" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
-
-          <div className="absolute top-0 right-0 w-48 lg:w-96 h-48 lg:h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-32 lg:w-64 h-32 lg:h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
-          <div className="relative px-6 py-10 sm:px-8 sm:py-12 lg:px-16 lg:py-24 text-center">
-            <h2 
-              className="text-xl sm:text-2xl lg:text-display-lg font-bold text-white mb-4 lg:mb-6 max-w-2xl mx-auto"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-              }}
-            >
-              Klaar om de eerste stap te zetten?
-            </h2>
-            
-            <p 
-              className="text-sm sm:text-base lg:text-lg text-white/90 max-w-xl mx-auto mb-6 lg:mb-10"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
-              }}
-            >
-              Plan een vrijblijvend kennismakingsgesprek. We kijken samen wat we voor jouw website kunnen betekenen.
-            </p>
-
-            <div 
-              className="flex flex-col sm:flex-row gap-3 justify-center"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-              }}
-            >
-              <GradientButton 
-                size="lg" 
-                className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
-                asChild
-              >
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Plan een vrijblijvend gesprek
-                </a>
-              </GradientButton>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 const HowItWorks = () => {
   return (

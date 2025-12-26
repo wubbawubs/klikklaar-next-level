@@ -3,16 +3,15 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { TeamMissionIllustration } from "@/components/illustrations/TeamMissionIllustration";
+import { CTASection } from "@/components/home/CTASection";
 import { 
   Phone,
   Heart,
   Target,
   Users,
   Lightbulb,
-  Shield,
-  ArrowRight
+  Shield
 } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
@@ -290,79 +289,6 @@ function MissionSection() {
   );
 }
 
-function CTASection() {
-  const { ref, isVisible } = useScrollReveal();
-
-  return (
-    <section ref={ref} className="py-12 lg:py-24">
-      <div className="container px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 gradient-cta" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
-
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
-          <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
-            <h2 
-              className="text-display-sm sm:text-display lg:text-display-lg font-bold text-white mb-6 max-w-2xl mx-auto"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-              }}
-            >
-              Wil je samenwerken?
-            </h2>
-            
-            <p 
-              className="text-lg text-white/90 max-w-xl mx-auto mb-10"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
-              }}
-            >
-              We zijn altijd benieuwd naar nieuwe ondernemers. Plan een vrijblijvend gesprek 
-              en ontdek wat we voor jou kunnen betekenen.
-            </p>
-
-            <div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-              }}
-            >
-              <GradientButton 
-                size="xl" 
-                className="bg-white text-kk-orange hover:bg-white/95 shadow-lg hover:shadow-xl transition-shadow"
-                asChild
-              >
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                  <Phone className="w-5 h-5" />
-                  Neem contact op
-                </a>
-              </GradientButton>
-              <GradientButton 
-                variant="outline" 
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
-                asChild
-              >
-                <Link to="/hoe-het-werkt">
-                  Bekijk onze aanpak
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </GradientButton>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 const About = () => {
   return (
