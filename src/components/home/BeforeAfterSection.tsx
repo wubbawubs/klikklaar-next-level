@@ -94,21 +94,26 @@ export function BeforeAfterSection() {
               transition: 'opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s'
             }}
           >
-            <div className="p-8 bg-muted/50 rounded-2xl border border-border shadow-premium-lg hover:shadow-glow-orange/30 transition-shadow duration-300 lg:mt-8">
+            <a 
+              href="https://nl.trustpilot.com/reviews/69344e9ac03ce642a62183da"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-8 bg-muted/50 rounded-2xl border border-border shadow-premium-lg hover:shadow-glow-orange/30 hover:border-kk-orange/20 transition-all duration-300 lg:mt-8 group"
+            >
               <Quote className="w-8 h-8 text-kk-orange/30 mb-4" />
               <p className="text-xl text-foreground mb-6 leading-relaxed italic">
                 "Service is echt on point en ze denken enorm mee in hoe alles beter te maken. Kan ze absoluut aanraden!"
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold text-lg shadow-glow-orange">
-                  J
+                  D
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Junayd Didi</p>
-                  <p className="text-sm text-muted-foreground">Ondernemer</p>
+                  <p className="font-semibold text-foreground">Desley Baars</p>
+                  <p className="text-sm text-muted-foreground">DYBS Coaching</p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
