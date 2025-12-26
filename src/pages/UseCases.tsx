@@ -9,7 +9,6 @@ import {
   Phone,
   Scissors,
   Stethoscope,
-  Home,
   Heart,
   Wrench,
   Monitor,
@@ -19,6 +18,66 @@ import {
 const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const useCases = [
+  {
+    id: "coaching",
+    icon: Heart,
+    title: "Coaching & Consulting",
+    description: "Bereik mensen die hulp zoeken in jouw vakgebied",
+    painPoints: [
+      "Potentiële klanten vinden je niet",
+      "Geen idee hoe SEO werkt",
+      "Afhankelijk van mond-tot-mondreclame",
+    ],
+    results: [
+      { value: "+67%", label: "Meer intake-aanvragen" },
+      { value: "Top 5", label: "Voor specifieke diensten" },
+    ],
+    testimonial: {
+      quote: "Service is echt on point en ze denken enorm mee in hoe alles beter te maken. Kan ze absoluut aanraden!",
+      author: "Desley Baars",
+      role: "DYBS Coaching",
+    },
+  },
+  {
+    id: "consulting",
+    icon: Monitor,
+    title: "Consulting & Advies",
+    description: "Word gevonden door bedrijven die zoeken naar expertise",
+    painPoints: [
+      "B2B klanten zoeken online naar oplossingen",
+      "Je website converteert niet",
+      "Geen lokale vindbaarheid",
+    ],
+    results: [
+      { value: "+178%", label: "Meer qualified leads" },
+      { value: "4x", label: "Hogere conversie" },
+    ],
+    testimonial: {
+      quote: "Super club! Een poosje terug contact gekregen met KlikKlaar. Mooie club en maken hun woorden waar. Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit.",
+      author: "Dean Droste",
+      role: "Droste Consulting",
+    },
+  },
+  {
+    id: "marketing",
+    icon: TrendingUp,
+    title: "Marketing & Bureaus",
+    description: "Laat je bureau gevonden worden door potentiële klanten",
+    painPoints: [
+      "Concurrenten staan hoger in Google",
+      "Geen tijd om aan eigen marketing te besteden",
+      "Website trekt geen leads aan",
+    ],
+    results: [
+      { value: "+156%", label: "Meer websitebezoekers" },
+      { value: "Top 3", label: "In Google voor relevante zoektermen" },
+    ],
+    testimonial: {
+      quote: "De naam doet zijn eer aan want alles was zo ingericht en ik hoef er zelf bijna niks meer aan te doen. Zeer tevreden!",
+      author: "Ben Commandeur",
+      role: "Nieuw Marketing",
+    },
+  },
   {
     id: "kappers",
     icon: Scissors,
@@ -60,46 +119,6 @@ const useCases = [
     },
   },
   {
-    id: "makelaars",
-    icon: Home,
-    title: "Makelaars & Vastgoed",
-    description: "Word het eerste aanspreekpunt voor kopers en verkopers in je regio",
-    painPoints: [
-      "Grote kantoren domineren de zoekresultaten",
-      "Lokale vindbaarheid ontbreekt",
-      "Website trekt geen leads aan",
-    ],
-    results: [
-      { value: "+234%", label: "Meer waardebepaling aanvragen" },
-      { value: "3x", label: "Meer lokale bezoekers" },
-    ],
-    testimonial: {
-      quote: "Eindelijk concurreren we met de grote jongens. Onze lokale vindbaarheid is enorm verbeterd.",
-      author: "Mark de Vries",
-      role: "Makelaar, Amsterdam-Zuid",
-    },
-  },
-  {
-    id: "coaches",
-    icon: Heart,
-    title: "Coaches & Therapeuten",
-    description: "Bereik mensen die hulp zoeken in jouw vakgebied",
-    painPoints: [
-      "Potentiële klanten vinden je niet",
-      "Geen idee hoe SEO werkt",
-      "Afhankelijk van mond-tot-mondreclame",
-    ],
-    results: [
-      { value: "+67%", label: "Meer intake-aanvragen" },
-      { value: "Top 5", label: "Voor specifieke therapievormen" },
-    ],
-    testimonial: {
-      quote: "Mijn praktijk is nu vol. Ik hoef niet meer actief te werven, klanten vinden mij.",
-      author: "Sandra Bakker",
-      role: "Fysiotherapeut, Eindhoven",
-    },
-  },
-  {
     id: "aannemers",
     icon: Wrench,
     title: "Aannemers & Vakmensen",
@@ -117,26 +136,6 @@ const useCases = [
       quote: "Mijn telefoon staat roodgloeiend. Ik moet nu zelfs werk doorverwijzen naar collega's.",
       author: "Pieter Janssen",
       role: "Aannemer, Den Haag",
-    },
-  },
-  {
-    id: "it",
-    icon: Monitor,
-    title: "IT & Webdiensten",
-    description: "Word gevonden door bedrijven die zoeken naar IT-ondersteuning",
-    painPoints: [
-      "B2B klanten zoeken online naar oplossingen",
-      "Je website converteert niet",
-      "Geen lokale vindbaarheid",
-    ],
-    results: [
-      { value: "+178%", label: "Meer qualified leads" },
-      { value: "4x", label: "Hogere conversie" },
-    ],
-    testimonial: {
-      quote: "We krijgen nu leads van bedrijven die echt op zoek zijn naar onze diensten. Kwaliteit is veel beter.",
-      author: "Tom van der Berg",
-      role: "IT-dienstverlener, Breda",
     },
   },
 ];

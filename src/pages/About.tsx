@@ -150,11 +150,11 @@ function StorySection() {
               transition: 'opacity 0.7s ease-out, transform 0.7s ease-out'
             }}
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium-lg">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-border shadow-premium-lg">
               <img 
                 src={teamLuuk} 
                 alt="Luuk - Oprichter KlikKlaar" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>

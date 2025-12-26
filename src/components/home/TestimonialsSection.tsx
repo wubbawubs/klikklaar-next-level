@@ -11,20 +11,20 @@ const testimonials = [
     trustpilotUrl: "https://nl.trustpilot.com/reviews/69344e9ac03ce642a62183da",
   },
   {
-    quote: "De naam doet zijn eer aan want alles was zo ingericht en ik hoef er zelf bijna niks meer aan te doen. Zeer tevreden!",
-    author: "Ben Commandeur",
-    role: "Nieuw Marketing",
-    avatar: "B",
-    featured: false,
-    trustpilotUrl: "https://nl.trustpilot.com/reviews/689e0b5c77221b6c6337448c",
-  },
-  {
     quote: "Super club! Een poosje terug contact gekregen met KlikKlaar. Mooie club en maken hun woorden waar. Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit. Een aanrader als je snel je SEO op orde wilt hebben!",
     author: "Dean Droste",
     role: "Droste Consulting",
     avatar: "D",
     featured: false,
     trustpilotUrl: "https://nl.trustpilot.com/reviews/6936c48ce8853bf945620333",
+  },
+  {
+    quote: "De naam doet zijn eer aan want alles was zo ingericht en ik hoef er zelf bijna niks meer aan te doen. Zeer tevreden!",
+    author: "Ben Commandeur",
+    role: "Nieuw Marketing",
+    avatar: "B",
+    featured: false,
+    trustpilotUrl: "https://nl.trustpilot.com/reviews/689e0b5c77221b6c6337448c",
   },
 ];
 
