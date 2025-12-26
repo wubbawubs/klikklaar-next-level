@@ -115,6 +115,15 @@ const Terms = () => {
                   info@klikklaar.nl
                 </a>
               </p>
+              <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">KlikKlaar</strong> is een handelsnaam van LP Impact B.V.<br />
+                  KvK-nummer: 94601186<br />
+                  Vestigingsadres: Olieslagerspoort 1, 1601AW Enkhuizen<br />
+                  E-mail: <a href="mailto:info@klikklaar.nl" className="text-kk-orange hover:underline">info@klikklaar.nl</a><br />
+                  Telefoon: <a href="tel:+31628354333" className="text-kk-orange hover:underline">06 28 35 43 33</a>
+                </p>
+              </div>
             </section>
           </div>
         </div>

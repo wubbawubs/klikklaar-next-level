@@ -22,8 +22,8 @@ const contactMethods = [
     icon: Phone,
     title: "Bel ons",
     description: "Ma-Vr 9:00 - 17:00",
-    value: "+31 (0)20 123 4567",
-    href: "tel:+31201234567",
+    value: "06 28 35 43 33",
+    href: "tel:+31628354333",
   },
   {
     icon: Mail,
@@ -36,7 +36,7 @@ const contactMethods = [
     icon: MapPin,
     title: "Adres",
     description: "Op afspraak",
-    value: "Amsterdam, Nederland",
+    value: "Olieslagerspoort 1, 1601AW Enkhuizen",
     href: null,
   },
 ];
