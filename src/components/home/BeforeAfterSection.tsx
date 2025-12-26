@@ -97,15 +97,15 @@ export function BeforeAfterSection() {
             <div className="p-8 bg-muted/50 rounded-2xl border border-border shadow-premium-lg hover:shadow-glow-orange/30 transition-shadow duration-300 lg:mt-8">
               <Quote className="w-8 h-8 text-kk-orange/30 mb-4" />
               <p className="text-xl text-foreground mb-6 leading-relaxed italic">
-                "Binnen 2 maanden stond ik op plek 3 in Google. Ik krijg nu elke week nieuwe aanvragen via mijn website."
+                "Service is echt on point en ze denken enorm mee in hoe alles beter te maken. Kan ze absoluut aanraden!"
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold text-lg shadow-glow-orange">
-                  M
+                  J
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Marco de Vries</p>
-                  <p className="text-sm text-muted-foreground">Loodgieter, Amsterdam</p>
+                  <p className="font-semibold text-foreground">Junayd Didi</p>
+                  <p className="text-sm text-muted-foreground">Ondernemer</p>
                 </div>
               </div>
             </div>
