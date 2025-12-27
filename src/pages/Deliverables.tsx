@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DeliverablesDemoIllustration } from "@/components/illustrations/DeliverablesDemoIllustration";
 import { CTASection } from "@/components/home/CTASection";
+import { SEOHead } from "@/components/SEOHead";
 import { 
   Check, 
   FileText, 
@@ -380,6 +381,11 @@ function WeeklyProcess() {
 const Deliverables = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Wat Je Krijgt | KlikKlaar - Concrete SEO Resultaten"
+        description="Ontdek wat je krijgt bij KlikKlaar: wekelijkse website-analyse, automatische content optimalisatie, lokale vindbaarheid en heldere rapporten."
+        canonical="https://klikklaar.nl/wat-je-krijgt"
+      />
       <Header />
       <main>
         <HeroSection />

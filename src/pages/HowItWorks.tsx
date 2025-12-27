@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProcessFlowIllustration } from "@/components/illustrations/ProcessFlowIllustration";
 import { CTASection } from "@/components/home/CTASection";
+import { SEOHead } from "@/components/SEOHead";
 import { 
   MessageCircle, 
   Search, 
@@ -362,6 +363,11 @@ function BenefitsSection() {
 const HowItWorks = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Hoe Het Werkt | KlikKlaar - In 3 Stappen Naar Meer Klanten"
+        description="Ontdek hoe KlikKlaar werkt: van kennismakingsgesprek tot automatische groei. Geen gedoe, geen technische kennis nodig. Wij doen het werk."
+        canonical="https://klikklaar.nl/hoe-het-werkt"
+      />
       <Header />
       <main>
         <HeroSection />

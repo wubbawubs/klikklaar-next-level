@@ -12,7 +12,7 @@ const orbitingIcons = [
 const stats = [
   { value: "100+", label: "Klanten" },
   { value: "47%", label: "Gem. groei" },
-  { value: "4.9", label: "Rating" },
+  { value: "4.2", label: "Rating" },
 ];
 
 export function TeamMissionIllustration() {

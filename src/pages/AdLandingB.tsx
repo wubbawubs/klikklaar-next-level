@@ -34,7 +34,7 @@ const AdLandingB = () => {
 
   const socialProof = [
     { icon: Users, value: "150+", label: "Tevreden ondernemers" },
-    { icon: Star, value: "4.9/5", label: "Gemiddelde beoordeling" },
+    { icon: Star, value: "4.2/5", label: "Gemiddelde beoordeling" },
     { icon: Clock, value: "< 48u", label: "Eerste resultaten" }
   ];
 

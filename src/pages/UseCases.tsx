@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import { IndustryGridIllustration } from "@/components/illustrations/IndustryGridIllustration";
 import { CTASection } from "@/components/home/CTASection";
+import { SEOHead } from "@/components/SEOHead";
 import { 
   Phone,
   Scissors,
@@ -335,6 +336,11 @@ function AllIndustriesSection() {
 const UseCases = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Voorbeelden | KlikKlaar - SEO Resultaten per Branche"
+        description="Bekijk hoe KlikKlaar werkt voor coaches, consultants, marketeers en meer. Concrete resultaten en testimonials van lokale ondernemers."
+        canonical="https://klikklaar.nl/voorbeelden"
+      />
       <Header />
       <main>
         <HeroSection />

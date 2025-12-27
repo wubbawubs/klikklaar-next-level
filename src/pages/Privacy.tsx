@@ -1,9 +1,15 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SEOHead } from "@/components/SEOHead";
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Privacybeleid | KlikKlaar"
+        description="Lees ons privacybeleid. KlikKlaar respecteert je privacy en beschermt je persoonsgegevens. Transparant over hoe we met je data omgaan."
+        canonical="https://klikklaar.nl/privacy"
+      />
       <Header />
       <main className="pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="container px-4 sm:px-6 max-w-3xl">
