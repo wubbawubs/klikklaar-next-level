@@ -13,7 +13,7 @@ const industries = [
 const successStats = [
   { value: "+156%", label: "Bezoekers", icon: TrendingUp },
   { value: "100+", label: "Klanten", icon: Users },
-  { value: "4.9★", label: "Rating", icon: Sparkles },
+  { value: "4.2★", label: "Rating", icon: Sparkles },
 ];
 
 export function IndustryGridIllustration() {

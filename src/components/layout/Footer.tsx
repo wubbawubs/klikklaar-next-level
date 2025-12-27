@@ -8,9 +8,9 @@ const footerLinks = {
     { name: "Prijzen", href: "/prijzen" },
   ],
   industries: [
-    { name: "Kappers", href: "/voorbeelden#kappers" },
-    { name: "Tandartsen", href: "/voorbeelden#tandartsen" },
-    { name: "Coaches", href: "/voorbeelden#coaches" },
+    { name: "Coaching en PT", href: "/voorbeelden#coaching" },
+    { name: "Consulting", href: "/voorbeelden#consulting" },
+    { name: "Marketing", href: "/voorbeelden#marketing" },
     { name: "Alle branches", href: "/voorbeelden" },
   ],
   company: [

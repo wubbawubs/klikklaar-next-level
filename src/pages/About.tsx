@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { TeamMissionIllustration } from "@/components/illustrations/TeamMissionIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import teamLuuk from "@/assets/team-luuk.jpg";
+import { SEOHead } from "@/components/SEOHead";
 import { 
   Phone,
   Heart,
@@ -43,7 +44,7 @@ const values = [
 const stats = [
   { value: "100+", label: "Tevreden klanten" },
   { value: "47%", label: "Gem. groei bezoekers" },
-  { value: "4.9", label: "Beoordeling" },
+  { value: "4.2", label: "Beoordeling" },
   { value: "2023", label: "Opgericht" },
 ];
 
@@ -292,6 +293,11 @@ function MissionSection() {
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Over Ons | KlikKlaar - Gemaakt voor Ondernemers, door Ondernemers"
+        description="Maak kennis met KlikKlaar. We begrijpen lokale ondernemers en maken SEO toegankelijk, begrijpelijk en betaalbaar. Ontdek ons verhaal."
+        canonical="https://klikklaar.nl/over-ons"
+      />
       <Header />
       <main>
         <HeroSection />

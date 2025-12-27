@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import { PricingValueIllustration } from "@/components/illustrations/PricingValueIllustration";
 import { CTASection } from "@/components/home/CTASection";
+import { SEOHead } from "@/components/SEOHead";
 import { 
   Check, 
   Phone, 
@@ -382,6 +383,11 @@ function FAQSection() {
 const Pricing = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Prijzen | KlikKlaar - Transparante SEO Prijzen vanaf €99/maand"
+        description="Bekijk onze transparante prijzen. Vanaf €99/maand, geen verborgen kosten, altijd maandelijks opzegbaar. Investeer in groei, niet in gedoe."
+        canonical="https://klikklaar.nl/prijzen"
+      />
       <Header />
       <main>
         <HeroSection />

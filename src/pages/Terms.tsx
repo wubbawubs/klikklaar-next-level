@@ -1,9 +1,15 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SEOHead } from "@/components/SEOHead";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Algemene Voorwaarden | KlikKlaar"
+        description="Lees onze algemene voorwaarden. Transparante afspraken over onze SEO-diensten, prijzen en opzegtermijnen. Maandelijks opzegbaar."
+        canonical="https://klikklaar.nl/voorwaarden"
+      />
       <Header />
       <main className="pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="container px-4 sm:px-6 max-w-3xl">

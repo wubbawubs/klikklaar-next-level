@@ -3,17 +3,15 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ContactConnectIllustration } from "@/components/illustrations/ContactConnectIllustration";
+import { SEOHead } from "@/components/SEOHead";
 import { 
   Phone,
   Mail,
   MapPin,
   Clock,
-  MessageCircle,
-  Send,
   CheckCircle
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
@@ -48,11 +46,11 @@ const faqs = [
   },
   {
     question: "Kan ik een gratis gesprek plannen?",
-    answer: "Ja! Via het formulier of telefonisch kun je een vrijblijvend kennismakingsgesprek van 15 minuten plannen.",
+    answer: "Ja! Via de Calendly planner hiernaast kun je direct een vrijblijvend kennismakingsgesprek van 15 minuten plannen.",
   },
   {
     question: "Ik heb een technisch probleem, waar kan ik terecht?",
-    answer: "Bestaande klanten kunnen direct contact opnemen met hun accountmanager. Nieuwe vragen kun je via dit formulier stellen.",
+    answer: "Bestaande klanten kunnen direct contact opnemen met hun accountmanager. Nieuwe vragen kun je via telefoon of e-mail stellen.",
   },
 ];
 
@@ -125,37 +123,8 @@ function HeroSection() {
   );
 }
 
-function ContactForm() {
+function ContactSection() {
   const { ref, isVisible } = useScrollReveal();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Bericht verzonden!",
-      description: "We nemen zo snel mogelijk contact met je op.",
-    });
-    
-    setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
 
   return (
     <section ref={ref} className="py-12 lg:py-32 haze-gradient-cool relative overflow-hidden">
@@ -219,7 +188,7 @@ function ContactForm() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Calendly Embed */}
           <div 
             className="lg:col-span-3"
             style={{ 
@@ -228,113 +197,28 @@ function ContactForm() {
               transition: 'opacity 0.6s ease-out 0.15s, transform 0.6s ease-out 0.15s'
             }}
           >
-            <div className="p-8 bg-card rounded-2xl border border-border shadow-premium-lg">
+            <div className="p-4 sm:p-6 lg:p-8 bg-card rounded-2xl border border-border shadow-premium-lg">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-white" />
+                  <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Stuur een bericht</h3>
-                  <p className="text-sm text-muted-foreground">We reageren binnen 24 uur</p>
+                  <h3 className="font-semibold text-foreground">Plan een gesprek</h3>
+                  <p className="text-sm text-muted-foreground">Kies een moment dat jou uitkomt</p>
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Naam *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-kk-orange/20 focus:border-kk-orange transition-colors"
-                      placeholder="Je naam"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      E-mail *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-kk-orange/20 focus:border-kk-orange transition-colors"
-                      placeholder="je@email.nl"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Telefoon
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-kk-orange/20 focus:border-kk-orange transition-colors"
-                      placeholder="06 1234 5678"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                      Bedrijf
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-kk-orange/20 focus:border-kk-orange transition-colors"
-                      placeholder="Je bedrijfsnaam"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Bericht *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-kk-orange/20 focus:border-kk-orange transition-colors resize-none"
-                    placeholder="Vertel ons waar we je mee kunnen helpen..."
-                  />
-                </div>
-
-                <GradientButton type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? (
-                    <>Verzenden...</>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      Verstuur bericht
-                    </>
-                  )}
-                </GradientButton>
-
-                <p className="text-xs text-muted-foreground text-center">
-                  Door dit formulier te versturen ga je akkoord met ons privacybeleid.
-                </p>
-              </form>
+              {/* Calendly Inline Embed */}
+              <div className="rounded-xl overflow-hidden border border-border">
+                <iframe
+                  src="https://calendly.com/luuk-klikklaar/kennismakingsgesprek?embed_type=inline&embed_domain=klikklaar.nl"
+                  width="100%"
+                  height="630"
+                  frameBorder="0"
+                  title="Plan een kennismakingsgesprek"
+                  className="bg-background"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -366,15 +250,15 @@ function CallToAction() {
           </h2>
           
           <p className="text-lg text-muted-foreground mb-8">
-            Plan direct een vrijblijvend kennismakingsgesprek van 15 minuten. 
+            Bel ons op werkdagen tussen 9:00 en 17:00. 
             We kijken samen naar je website en bespreken de mogelijkheden.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <GradientButton size="lg" asChild>
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <a href="tel:+31628354333">
                 <Phone className="w-5 h-5" />
-                Plan een vrijblijvend gesprek
+                06 28 35 43 33
               </a>
             </GradientButton>
           </div>
@@ -398,10 +282,15 @@ function CallToAction() {
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Contact | KlikKlaar - Neem Contact Op"
+        description="Neem contact op met KlikKlaar. Plan een vrijblijvend gesprek, bel ons of stuur een e-mail. We helpen je graag met je online vindbaarheid."
+        canonical="https://klikklaar.nl/contact"
+      />
       <Header />
       <main>
         <HeroSection />
-        <ContactForm />
+        <ContactSection />
         <CallToAction />
       </main>
       <Footer />
