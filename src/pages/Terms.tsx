@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 
 const Terms = () => {
   return (
@@ -9,6 +10,14 @@ const Terms = () => {
         title="Algemene Voorwaarden | KlikKlaar"
         description="Lees onze algemene voorwaarden. Transparante afspraken over onze SEO-diensten, prijzen en opzegtermijnen. Maandelijks opzegbaar."
         canonical="https://klikklaar.nl/voorwaarden"
+      />
+      <StructuredData 
+        schema={{
+          type: "WebPage",
+          name: "Algemene Voorwaarden - KlikKlaar",
+          description: "Lees onze algemene voorwaarden voor SEO-diensten.",
+          url: "https://klikklaar.nl/voorwaarden",
+        }}
       />
       <Header />
       <main className="pt-24 lg:pt-32 pb-16 lg:pb-24">

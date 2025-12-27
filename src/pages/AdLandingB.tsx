@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import { ProductDemo } from "@/components/home/ProductDemo";
 import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 
 const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
@@ -114,7 +116,29 @@ const AdLandingB = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead 
+        title="Meer Klanten, Geen Gedoe | KlikKlaar SEO"
+        description="Wij zorgen dat jouw website beter gevonden wordt. Automatisch. Jij focust op je vak, wij op je online zichtbaarheid. Vanaf €99/maand."
+        canonical="https://klikklaar.nl/ad-b"
+      />
+      <StructuredData 
+        schema={[
+          {
+            type: "LocalBusiness",
+            name: "KlikKlaar",
+            description: "Automatische SEO en website optimalisatie voor lokale ondernemers.",
+            url: "https://klikklaar.nl",
+            priceRange: "€€",
+            aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
+          },
+          {
+            type: "FAQPage",
+            questions: faqs.map(faq => ({ question: faq.q, answer: faq.a })),
+          },
+        ]}
+      />
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="py-4 border-b border-border/30">
         <div className="container mx-auto px-4 flex items-center justify-between">
@@ -630,6 +654,7 @@ const AdLandingB = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 

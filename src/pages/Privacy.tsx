@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 
 const Privacy = () => {
   return (
@@ -9,6 +10,14 @@ const Privacy = () => {
         title="Privacybeleid | KlikKlaar"
         description="Lees ons privacybeleid. KlikKlaar respecteert je privacy en beschermt je persoonsgegevens. Transparant over hoe we met je data omgaan."
         canonical="https://klikklaar.nl/privacy"
+      />
+      <StructuredData 
+        schema={{
+          type: "WebPage",
+          name: "Privacybeleid - KlikKlaar",
+          description: "Lees ons privacybeleid. KlikKlaar respecteert je privacy en beschermt je persoonsgegevens.",
+          url: "https://klikklaar.nl/privacy",
+        }}
       />
       <Header />
       <main className="pt-24 lg:pt-32 pb-16 lg:pb-24">

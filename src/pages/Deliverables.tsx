@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { DeliverablesDemoIllustration } from "@/components/illustrations/DeliverablesDemoIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { 
   Check, 
   FileText, 
@@ -385,6 +386,15 @@ const Deliverables = () => {
         title="Wat Je Krijgt | KlikKlaar - Concrete SEO Resultaten"
         description="Ontdek wat je krijgt bij KlikKlaar: wekelijkse website-analyse, automatische content optimalisatie, lokale vindbaarheid en heldere rapporten."
         canonical="https://klikklaar.nl/wat-je-krijgt"
+      />
+      <StructuredData 
+        schema={{
+          type: "Service",
+          name: "SEO Optimalisatie Diensten",
+          description: "Wekelijkse website-analyse, automatische content optimalisatie, lokale vindbaarheid en heldere rapporten.",
+          provider: "KlikKlaar",
+          areaServed: "Nederland",
+        }}
       />
       <Header />
       <main>

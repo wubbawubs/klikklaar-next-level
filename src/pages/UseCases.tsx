@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { IndustryGridIllustration } from "@/components/illustrations/IndustryGridIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { 
   Phone,
   Scissors,
@@ -340,6 +341,14 @@ const UseCases = () => {
         title="Voorbeelden | KlikKlaar - SEO Resultaten per Branche"
         description="Bekijk hoe KlikKlaar werkt voor coaches, consultants, marketeers en meer. Concrete resultaten en testimonials van lokale ondernemers."
         canonical="https://klikklaar.nl/voorbeelden"
+      />
+      <StructuredData 
+        schema={{
+          type: "WebPage",
+          name: "Voorbeelden per Branche - KlikKlaar",
+          description: "Bekijk hoe KlikKlaar werkt voor coaches, consultants, marketeers en meer.",
+          url: "https://klikklaar.nl/voorbeelden",
+        }}
       />
       <Header />
       <main>
