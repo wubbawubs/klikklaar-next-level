@@ -1,3 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: Googlebot
 Allow: /
 
@@ -12,3 +13,10 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://klikklaar.nl/sitemap.xml
+
+# Disallow admin and private paths
+Disallow: /api/
+Disallow: /admin/

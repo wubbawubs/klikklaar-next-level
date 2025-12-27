@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { PricingValueIllustration } from "@/components/illustrations/PricingValueIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { 
   Check, 
   Phone, 
@@ -387,6 +388,15 @@ const Pricing = () => {
         title="Prijzen | KlikKlaar - Transparante SEO Prijzen vanaf €99/maand"
         description="Bekijk onze transparante prijzen. Vanaf €99/maand, geen verborgen kosten, altijd maandelijks opzegbaar. Investeer in groei, niet in gedoe."
         canonical="https://klikklaar.nl/prijzen"
+      />
+      <StructuredData 
+        schema={{
+          type: "Service",
+          name: "SEO Abonnementen",
+          description: "Transparante prijzen vanaf €99/maand, geen verborgen kosten, altijd maandelijks opzegbaar.",
+          provider: "KlikKlaar",
+          areaServed: "Nederland",
+        }}
       />
       <Header />
       <main>

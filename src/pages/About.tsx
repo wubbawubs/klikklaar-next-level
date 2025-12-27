@@ -7,6 +7,7 @@ import { TeamMissionIllustration } from "@/components/illustrations/TeamMissionI
 import { CTASection } from "@/components/home/CTASection";
 import teamLuuk from "@/assets/team-luuk.jpg";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { 
   Phone,
   Heart,
@@ -297,6 +298,16 @@ const About = () => {
         title="Over Ons | KlikKlaar - Gemaakt voor Ondernemers, door Ondernemers"
         description="Maak kennis met KlikKlaar. We begrijpen lokale ondernemers en maken SEO toegankelijk, begrijpelijk en betaalbaar. Ontdek ons verhaal."
         canonical="https://klikklaar.nl/over-ons"
+      />
+      <StructuredData 
+        schema={{
+          type: "LocalBusiness",
+          name: "KlikKlaar",
+          description: "Automatische SEO en website optimalisatie voor lokale ondernemers. Meer klanten, zonder gedoe.",
+          url: "https://klikklaar.nl/over-ons",
+          priceRange: "€€",
+          aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
+        }}
       />
       <Header />
       <main>

@@ -4,6 +4,7 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ContactConnectIllustration } from "@/components/illustrations/ContactConnectIllustration";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { 
   Phone,
   Mail,
@@ -286,6 +287,22 @@ const Contact = () => {
         title="Contact | KlikKlaar - Neem Contact Op"
         description="Neem contact op met KlikKlaar. Plan een vrijblijvend gesprek, bel ons of stuur een e-mail. We helpen je graag met je online vindbaarheid."
         canonical="https://klikklaar.nl/contact"
+      />
+      <StructuredData 
+        schema={{
+          type: "LocalBusiness",
+          name: "KlikKlaar",
+          description: "Neem contact op met KlikKlaar voor automatische SEO en website optimalisatie.",
+          url: "https://klikklaar.nl/contact",
+          telephone: "+31628354333",
+          email: "info@klikklaar.nl",
+          address: {
+            streetAddress: "Olieslagerspoort 1",
+            addressLocality: "Enkhuizen",
+            postalCode: "1601AW",
+            addressCountry: "NL",
+          },
+        }}
       />
       <Header />
       <main>

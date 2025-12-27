@@ -12,6 +12,7 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { FAQSection } from "@/components/home/FAQSection";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
+import { StructuredData, klikklaarBusinessSchema } from "@/components/StructuredData";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
         description="Meer klanten uit jouw regio zonder gedoe. Automatische SEO voor MKB. Vanaf €99/maand. Sluit je aan bij 100+ tevreden ondernemers."
         canonical="https://klikklaar.nl"
       />
+      <StructuredData schema={klikklaarBusinessSchema} />
       <Header />
       <main>
         {/* 1. Hero - nieuwe wereld beloven */}
