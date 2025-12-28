@@ -28,8 +28,8 @@ const contactMethods = [
     icon: Mail,
     title: "E-mail",
     description: "Reactie binnen 24 uur",
-    value: "info@klikklaar.nl",
-    href: "mailto:info@klikklaar.nl",
+    value: "luuk@klikklaarseo.nl",
+    href: "mailto:luuk@klikklaarseo.nl",
   },
   {
     icon: MapPin,
@@ -212,10 +212,11 @@ function ContactSection() {
               {/* Calendly Inline Embed */}
               <div className="rounded-xl overflow-hidden border border-border">
                 <iframe
-                  src="https://calendly.com/luuk-klikklaar/kennismakingsgesprek?embed_type=inline&embed_domain=klikklaar.nl"
+                  src="https://calendly.com/luuk-klikklaar/kennismakingsgesprek?embed_type=inline&embed_domain=klikklaar.nl&hide_gdpr_banner=1"
                   width="100%"
-                  height="630"
+                  height="700"
                   frameBorder="0"
+                  scrolling="no"
                   title="Plan een kennismakingsgesprek"
                   className="bg-background"
                 />
@@ -295,7 +296,7 @@ const Contact = () => {
           description: "Neem contact op met KlikKlaar voor automatische SEO en website optimalisatie.",
           url: "https://klikklaar.nl/contact",
           telephone: "+31628354333",
-          email: "info@klikklaar.nl",
+          email: "luuk@klikklaarseo.nl",
           address: {
             streetAddress: "Olieslagerspoort 1",
             addressLocality: "Enkhuizen",
