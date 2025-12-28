@@ -1,8 +1,7 @@
 import { Check, Phone } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
+import { Link } from "react-router-dom";
 
 const benefits = ["Gratis adviesgesprek", "Persoonlijk contact", "Geen verplichtingen"];
 
@@ -81,10 +80,10 @@ export function CTASection() {
                 className="bg-gradient-to-r from-kk-orange to-kk-fuchsia hover:from-kk-orange/90 hover:to-kk-fuchsia/90 text-white shadow-xl hover:shadow-2xl hover:shadow-kk-orange/20 transition-all text-sm sm:text-base font-semibold px-8"
                 asChild
               >
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   Plan een vrijblijvend gesprek
-                </a>
+                </Link>
               </GradientButton>
             </div>
           </div>

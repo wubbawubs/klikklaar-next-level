@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
+
 
 const AdLandingA = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -226,11 +226,11 @@ const AdLandingA = () => {
               Benieuwd wat wij voor jouw bedrijf kunnen betekenen?
             </p>
             <GradientButton size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow-orange" asChild>
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <Link to="/contact">
                 <Phone className="w-5 h-5 mr-2" />
                 Plan een vrijblijvend gesprek
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
+              </Link>
             </GradientButton>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mt-3">
               <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> Geen verplichtingen</span>
@@ -405,10 +405,10 @@ const AdLandingA = () => {
 
           <div className="text-center mt-10">
             <GradientButton size="lg" className="text-base px-8 py-5 shadow-glow-orange" asChild>
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <Link to="/contact">
                 <Calendar className="w-5 h-5 mr-2" />
                 Start met stap 1: Plan een gesprek
-              </a>
+              </Link>
             </GradientButton>
           </div>
         </div>
@@ -489,10 +489,10 @@ const AdLandingA = () => {
                   Benieuwd wat wij voor jou kunnen doen?
                 </p>
                 <GradientButton className="w-full" size="default" asChild>
-                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Link to="/contact">
                     <Phone className="w-4 h-4 mr-2" />
                     Plan een gesprek
-                  </a>
+                  </Link>
                 </GradientButton>
               </div>
             </div>
@@ -617,11 +617,11 @@ const AdLandingA = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
               <GradientButton size="lg" className="text-base px-10 py-6 shadow-glow-orange" asChild>
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Phone className="w-5 h-5 mr-2" />
                   Plan je gratis gesprek
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </a>
+                </Link>
               </GradientButton>
             </div>
             

@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { PricingValueIllustration } from "@/components/illustrations/PricingValueIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
@@ -21,8 +22,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const pricingTiers = [
   {
@@ -260,19 +259,19 @@ function PricingCards() {
                 {/* CTA */}
                 {tier.featured ? (
                   <GradientButton className="w-full" size="lg" asChild>
-                    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                    <Link to="/contact">
                       <Phone className="w-4 h-4" />
                       {tier.cta}
-                    </a>
+                    </Link>
                   </GradientButton>
                 ) : (
                   <GradientButton variant="outline" className="w-full" size="lg" disabled={tier.comingSoon} asChild={!tier.comingSoon}>
                     {tier.comingSoon ? (
                       tier.cta
                     ) : (
-                      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                      <Link to="/contact">
                         {tier.cta}
-                      </a>
+                      </Link>
                     )}
                   </GradientButton>
                 )}
@@ -314,10 +313,10 @@ function Guarantee() {
           </p>
 
           <GradientButton size="lg" className="text-sm sm:text-base" asChild>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <Link to="/contact">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
               Plan een vrijblijvend gesprek
-            </a>
+            </Link>
           </GradientButton>
         </div>
       </div>
