@@ -214,7 +214,7 @@ function ContactSection() {
                 <iframe
                   src="https://calendly.com/luuk-klikklaar/kennismakingsgesprek?embed_type=inline&embed_domain=klikklaar.nl&hide_gdpr_banner=1"
                   width="100%"
-                  height="700"
+                  height="750"
                   frameBorder="0"
                   scrolling="no"
                   title="Plan een kennismakingsgesprek"

@@ -4,8 +4,6 @@ import { ProductDemo } from "./ProductDemo";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
-
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -89,10 +87,10 @@ export function HeroSection() {
           >
             <div className="flex flex-col gap-3 mb-4">
               <GradientButton size="lg" className="w-full text-sm sm:text-base" asChild>
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   Plan een vrijblijvend gesprek
-                </a>
+                </Link>
               </GradientButton>
               <GradientButton variant="outline" size="lg" className="w-full text-sm sm:text-base" asChild>
                 <Link to="/hoe-het-werkt">
@@ -117,10 +115,10 @@ export function HeroSection() {
           }}
         >
           <GradientButton size="lg" asChild>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <Link to="/contact">
               <Phone className="w-5 h-5" />
               Plan een vrijblijvend gesprek
-            </a>
+            </Link>
           </GradientButton>
           <GradientButton variant="outline" size="lg" asChild>
             <Link to="/hoe-het-werkt">

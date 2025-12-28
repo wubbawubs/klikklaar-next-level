@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { TeamMissionIllustration } from "@/components/illustrations/TeamMissionIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import teamLuuk from "@/assets/team-luuk.jpg";
@@ -16,8 +17,6 @@ import {
   Lightbulb,
   Shield
 } from "lucide-react";
-
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const values = [
   {
@@ -111,10 +110,10 @@ function HeroSection() {
               }}
             >
               <GradientButton size="lg" className="w-full sm:w-auto" asChild>
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Phone className="w-5 h-5" />
                   Laten we kennismaken
-                </a>
+                </Link>
               </GradientButton>
             </div>
           </div>

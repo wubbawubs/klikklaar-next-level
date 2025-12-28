@@ -5,8 +5,6 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { cn } from "@/lib/utils";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
-
 const navigation = [
   { name: "Wat je krijgt", href: "/wat-je-krijgt" },
   { name: "Hoe het werkt", href: "/hoe-het-werkt" },
@@ -45,9 +43,9 @@ export function Header() {
             Contact
           </Link>
           <GradientButton size="sm" asChild>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <Link to="/contact">
               Plan een gesprek
-            </a>
+            </Link>
           </GradientButton>
         </div>
 
@@ -88,9 +86,9 @@ export function Header() {
           </Link>
           <div className="pt-4 mt-2 border-t border-border">
             <GradientButton className="w-full" size="lg" asChild>
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 Plan een gesprek
-              </a>
+              </Link>
             </GradientButton>
           </div>
         </div>

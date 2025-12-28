@@ -23,7 +23,7 @@ import {
   Eye
 } from "lucide-react";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
+
 
 const deliverableCategories = [
   {
@@ -179,10 +179,10 @@ function HeroSection() {
               }}
             >
               <GradientButton size="lg" className="w-full sm:w-auto" asChild>
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Phone className="w-5 h-5" />
                   Plan een vrijblijvend gesprek
-                </a>
+                </Link>
               </GradientButton>
               <GradientButton variant="outline" size="lg" className="w-full sm:w-auto" asChild>
                 <Link to="/prijzen">

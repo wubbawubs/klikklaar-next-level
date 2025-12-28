@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { IndustryGridIllustration } from "@/components/illustrations/IndustryGridIllustration";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
@@ -16,8 +17,6 @@ import {
   Monitor,
   TrendingUp
 } from "lucide-react";
-
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
 
 const useCases = [
   {
@@ -237,10 +236,10 @@ function UseCasesGrid() {
                     </div>
 
                     <GradientButton size="lg" className="text-sm sm:text-base" asChild>
-                      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                      <Link to="/contact">
                         <Phone className="w-4 h-4" />
                         Start met {useCase.title.split(' ')[0]}
-                      </a>
+                      </Link>
                     </GradientButton>
                   </div>
 
@@ -322,10 +321,10 @@ function AllIndustriesSection() {
           </div>
 
           <GradientButton size="lg" className="text-sm sm:text-base" asChild>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <Link to="/contact">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
               Bekijk of het werkt voor jouw branche
-            </a>
+            </Link>
           </GradientButton>
         </div>
       </div>
