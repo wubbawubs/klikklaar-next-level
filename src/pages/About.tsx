@@ -294,7 +294,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Over Ons | KlikKlaar - Door Ondernemers"
+        title="Over Ons | AI SEO Bureau voor MKB | KlikKlaarSEO"
         description="Maak kennis met KlikKlaar. We begrijpen lokale ondernemers en maken SEO toegankelijk, begrijpelijk en betaalbaar. Ontdek ons verhaal."
         canonical="https://klikklaar.nl/over-ons"
       />

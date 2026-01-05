@@ -117,7 +117,7 @@ const AdLandingA = () => {
   return (
     <>
       <SEOHead 
-        title="Meer Klanten uit Jouw Regio | KlikKlaar SEO"
+        title="AI SEO voor Lokale Ondernemers | KlikKlaarSEO"
         description="Automatische website optimalisatie voor lokale ondernemers. Meer bezoekers, meer klanten - zonder gedoe. Vanaf €99/maand, altijd opzegbaar."
         canonical="https://klikklaar.nl/ad"
       />

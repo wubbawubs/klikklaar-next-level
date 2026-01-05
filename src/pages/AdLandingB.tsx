@@ -118,7 +118,7 @@ const AdLandingB = () => {
   return (
     <>
       <SEOHead 
-        title="Meer Klanten, Geen Gedoe | KlikKlaar SEO"
+        title="Automatische AI SEO | Meer Klanten | KlikKlaarSEO"
         description="Wij zorgen dat jouw website beter gevonden wordt. Automatisch. Jij focust op je vak, wij op je online zichtbaarheid. Vanaf €99/maand."
         canonical="https://klikklaar.nl/ad-b"
       />

@@ -283,7 +283,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Contact | KlikKlaar - Neem Contact Op"
+        title="Contact | AI SEO Experts | KlikKlaarSEO"
         description="Neem contact op met KlikKlaar. Plan een vrijblijvend gesprek, bel ons of stuur een e-mail. We helpen je graag met je online vindbaarheid."
         canonical="https://klikklaar.nl/contact"
       />
