@@ -1,5 +1,6 @@
 import { Scissors, Stethoscope, Home, Heart, Wrench, Monitor, TrendingUp, Users, Sparkles } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const industries = [
   { icon: Scissors, label: "Kappers", color: "bg-pink-100", iconColor: "text-pink-600" },
@@ -88,7 +89,7 @@ export function IndustryGridIllustration() {
                 transition: 'opacity 0.5s ease-out 0.3s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s'
               }}
             >
-              <span className="text-white font-bold text-lg">KK</span>
+              <img src={klikklaarLogo} alt="KlikKlaar" className="w-14 h-14 object-contain" />
             </div>
 
             {/* Industry icons in hexagon pattern */}
