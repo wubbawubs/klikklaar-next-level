@@ -61,7 +61,7 @@ const SEOPopup = () => {
             <Button 
               onClick={handleCTA}
               size="lg"
-              className="w-full border-0 bg-gradient-to-r from-kk-orange to-kk-violet hover:from-kk-orange-light hover:to-kk-violet-light text-white font-semibold py-6 text-base shadow-lg shadow-kk-orange/25 transition-all duration-300 hover:shadow-xl hover:shadow-kk-orange/30 hover:-translate-y-0.5"
+              className="w-full border-0 bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet hover:opacity-90 text-white font-semibold py-6 text-base shadow-md transition-all duration-300 outline-none ring-0"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Plan gratis SEO Plan call
