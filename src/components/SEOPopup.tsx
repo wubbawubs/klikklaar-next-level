@@ -40,11 +40,11 @@ const SEOPopup = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-lg p-0 overflow-hidden border-0 shadow-2xl">
         {/* Gradient header accent */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-accent" />
+        <div className="h-1.5 w-full bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet" />
         
         <div className="p-6 pt-5">
           <DialogHeader className="text-left space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-kk-orange/10 text-kk-orange text-sm font-medium w-fit">
               <Sparkles className="h-4 w-4" />
               Gratis SEO analyse
             </div>
@@ -61,7 +61,7 @@ const SEOPopup = () => {
             <Button 
               onClick={handleCTA}
               size="lg"
-              className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-6 text-base shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
+              className="w-full bg-gradient-to-r from-kk-orange to-kk-violet hover:from-kk-orange-light hover:to-kk-violet-light text-white font-semibold py-6 text-base shadow-lg shadow-kk-orange/25 transition-all duration-300 hover:shadow-xl hover:shadow-kk-orange/30 hover:-translate-y-0.5"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Plan gratis SEO Plan call
