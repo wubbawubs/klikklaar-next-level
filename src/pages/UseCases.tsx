@@ -337,7 +337,7 @@ const UseCases = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Voorbeelden | KlikKlaar - SEO Resultaten per Branche"
+        title="Voorbeelden | KlikKlaar - Per Branche"
         description="Bekijk hoe KlikKlaar werkt voor coaches, consultants, marketeers en meer. Concrete resultaten en testimonials van lokale ondernemers."
         canonical="https://klikklaar.nl/voorbeelden"
       />

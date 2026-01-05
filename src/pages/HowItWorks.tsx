@@ -365,7 +365,7 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Hoe Het Werkt | KlikKlaar - In 3 Stappen Naar Meer Klanten"
+        title="Hoe Het Werkt | KlikKlaar - 3 Stappen"
         description="Ontdek hoe KlikKlaar werkt: van kennismakingsgesprek tot automatische groei. Geen gedoe, geen technische kennis nodig. Wij doen het werk."
         canonical="https://klikklaar.nl/hoe-het-werkt"
       />

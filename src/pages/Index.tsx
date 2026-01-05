@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="KlikKlaar | Automatische Website-optimalisatie voor Lokale Ondernemers"
+        title="KlikKlaar | Automatische SEO voor Lokale Ondernemers"
         description="Meer klanten uit jouw regio zonder gedoe. Automatische SEO voor MKB. Vanaf €99/maand. Sluit je aan bij 100+ tevreden ondernemers."
         canonical="https://klikklaar.nl"
       />
