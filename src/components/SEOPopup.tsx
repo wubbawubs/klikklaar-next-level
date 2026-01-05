@@ -38,7 +38,7 @@ const SEOPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="!max-w-[90vw] sm:!max-w-lg !w-auto p-0 overflow-hidden border border-border rounded-xl bg-background shadow-2xl">
+      <DialogContent className="!max-w-[85vw] sm:!max-w-md !w-auto p-0 overflow-hidden border border-border rounded-xl bg-background shadow-2xl">
         {/* Gradient header accent */}
         <div className="h-1.5 w-full bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet" />
         
