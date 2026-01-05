@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieBanner } from "@/components/CookieBanner";
+import SEOPopup from "@/components/SEOPopup";
 import Index from "./pages/Index";
 import Deliverables from "./pages/Deliverables";
 import Pricing from "./pages/Pricing";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
+        <SEOPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
