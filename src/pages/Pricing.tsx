@@ -384,7 +384,7 @@ const Pricing = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Prijzen | KlikKlaar - Vanaf €99/maand"
+        title="AI SEO Prijzen | Vanaf €99/mnd | KlikKlaarSEO"
         description="Bekijk onze transparante prijzen. Vanaf €99/maand, geen verborgen kosten, altijd maandelijks opzegbaar. Investeer in groei, niet in gedoe."
         canonical="https://klikklaar.nl/prijzen"
       />
