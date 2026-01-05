@@ -14,8 +14,6 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const CALENDLY_URL = "https://calendly.com/luuk-klikklaar/kennismakingsgesprek";
-
 const contactMethods = [
   {
     icon: Phone,
@@ -28,8 +26,8 @@ const contactMethods = [
     icon: Mail,
     title: "E-mail",
     description: "Reactie binnen 24 uur",
-    value: "luuk@klikklaarseo.nl",
-    href: "mailto:luuk@klikklaarseo.nl",
+    value: "Info@klikklaarseo.nl",
+    href: "mailto:Info@klikklaarseo.nl",
   },
   {
     icon: MapPin,
@@ -296,7 +294,7 @@ const Contact = () => {
           description: "Neem contact op met KlikKlaar voor automatische SEO en website optimalisatie.",
           url: "https://klikklaar.nl/contact",
           telephone: "+31628354333",
-          email: "luuk@klikklaarseo.nl",
+          email: "Info@klikklaarseo.nl",
           address: {
             streetAddress: "Olieslagerspoort 1",
             addressLocality: "Enkhuizen",

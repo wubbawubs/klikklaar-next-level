@@ -174,7 +174,7 @@ export const klikklaarBusinessSchema: LocalBusinessSchema = {
   description: "Automatische SEO en website optimalisatie voor lokale ondernemers. Meer klanten, zonder gedoe.",
   url: "https://klikklaar.nl",
   telephone: "+31628354333",
-  email: "luuk@klikklaarseo.nl",
+  email: "Info@klikklaarseo.nl",
   address: {
     streetAddress: "Olieslagerspoort 1",
     addressLocality: "Enkhuizen",
