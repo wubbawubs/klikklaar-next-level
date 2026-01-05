@@ -22,7 +22,7 @@ const Privacy = () => {
       <Header />
       <main className="pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="container px-4 sm:px-6 max-w-3xl">
-          <h1 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground mb-6 lg:mb-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-display-lg font-bold text-foreground mb-6 lg:mb-8">
             Privacybeleid
           </h1>
           
