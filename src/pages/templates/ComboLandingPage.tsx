@@ -8,8 +8,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { Phone, Check, MapPin, ChevronRight, Star, TrendingUp } from "lucide-react";
 import { useState, useEffect } from "react";
-import { IndustryData } from "@/data/industries";
-import { LocationData } from "@/data/locations";
+import { IndustryData, industries } from "@/data/industries";
+import { LocationData, locations } from "@/data/locations";
+import { combos, comboExists } from "@/data/combos";
 import {
   Accordion,
   AccordionContent,
@@ -414,42 +415,150 @@ function ComboFAQ({ industry, location }: ComboLandingPageProps) {
 function RelatedPages({ industry, location }: ComboLandingPageProps) {
   const { ref, isVisible } = useScrollReveal();
 
+  // Find other combos for the same industry in different locations
+  const sameIndustryOtherLocations = combos
+    .filter(c => c.industrySlug === industry.slug && c.locationSlug !== location.slug)
+    .slice(0, 5)
+    .map(c => {
+      const loc = locations.find(l => l.slug === c.locationSlug);
+      return loc ? { slug: c.locationSlug, name: loc.name, industrySlug: c.industrySlug } : null;
+    })
+    .filter(Boolean) as { slug: string; name: string; industrySlug: string }[];
+
+  // Find other combos for the same location with different industries
+  const sameLocationOtherIndustries = combos
+    .filter(c => c.locationSlug === location.slug && c.industrySlug !== industry.slug)
+    .slice(0, 5)
+    .map(c => {
+      const ind = industries.find(i => i.slug === c.industrySlug);
+      return ind ? { slug: c.industrySlug, namePlural: ind.namePlural, locationSlug: c.locationSlug } : null;
+    })
+    .filter(Boolean) as { slug: string; namePlural: string; locationSlug: string }[];
+
+  // Find nearby areas that have combos
+  const nearbyWithCombos = location.nearbyAreas
+    .map(area => {
+      const nearbyLoc = locations.find(l => l.name.toLowerCase() === area.toLowerCase() || l.slug === area.toLowerCase().replace(/\s+/g, '-'));
+      if (nearbyLoc && comboExists(industry.slug, nearbyLoc.slug)) {
+        return { slug: nearbyLoc.slug, name: nearbyLoc.name };
+      }
+      return null;
+    })
+    .filter(Boolean)
+    .slice(0, 3) as { slug: string; name: string }[];
+
   return (
     <section ref={ref} className="py-16 lg:py-24">
       <div className="container px-4 sm:px-6">
         <div 
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">
-            Gerelateerde pagina's
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground text-center mb-8">
+            Gerelateerde SEO pagina's
           </h2>
-          <div className="flex flex-wrap justify-center gap-3">
+          
+          {/* Main navigation links */}
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
             <Link
               to={`/seo-${industry.slug}`}
-              className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+              className="p-5 bg-card border border-border rounded-xl hover:border-kk-orange/30 hover:shadow-premium transition-all duration-300 group"
             >
-              SEO voor alle {industry.namePlural}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-kk-orange/10 flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-kk-orange" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground group-hover:text-kk-orange transition-colors">
+                    SEO voor {industry.namePlural}
+                  </p>
+                  <p className="text-sm text-muted-foreground">Landelijke pagina voor alle {industry.namePlural.toLowerCase()}</p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-muted-foreground ml-auto group-hover:text-kk-orange group-hover:translate-x-1 transition-all" />
+              </div>
             </Link>
             <Link
               to={`/seo-${location.slug}`}
-              className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+              className="p-5 bg-card border border-border rounded-xl hover:border-kk-orange/30 hover:shadow-premium transition-all duration-300 group"
             >
-              Alle SEO in {location.name}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-kk-violet/10 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-kk-violet" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground group-hover:text-kk-orange transition-colors">
+                    SEO in {location.name}
+                  </p>
+                  <p className="text-sm text-muted-foreground">Alle branches in {location.name}</p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-muted-foreground ml-auto group-hover:text-kk-orange group-hover:translate-x-1 transition-all" />
+              </div>
             </Link>
-            {location.nearbyAreas.slice(0, 3).map((area) => (
-              <span
-                key={area}
-                className="px-4 py-2 bg-muted/50 border border-border rounded-full text-sm text-muted-foreground"
-              >
-                {industry.name} {area}
-              </span>
-            ))}
           </div>
+
+          {/* Same industry, other cities */}
+          {sameIndustryOtherLocations.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                {industry.namePlural} in andere steden
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {sameIndustryOtherLocations.map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    to={`/seo-${loc.industrySlug}-${loc.slug}`}
+                    className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  >
+                    {industry.name} {loc.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Same location, other industries */}
+          {sameLocationOtherIndustries.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                Andere branches in {location.name}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {sameLocationOtherIndustries.map((ind) => (
+                  <Link
+                    key={ind.slug}
+                    to={`/seo-${ind.slug}-${ind.locationSlug}`}
+                    className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  >
+                    {ind.namePlural} {location.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Nearby areas with combos */}
+          {nearbyWithCombos.length > 0 && (
+            <div>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                {industry.namePlural} in de buurt
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {nearbyWithCombos.map((nearby) => (
+                  <Link
+                    key={nearby.slug}
+                    to={`/seo-${industry.slug}-${nearby.slug}`}
+                    className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  >
+                    {industry.name} {nearby.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
