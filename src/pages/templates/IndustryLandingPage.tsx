@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
+import { KennisbankLinks } from "@/components/KennisbankLinks";
 
 interface IndustryLandingPageProps {
   industry: IndustryData;
@@ -410,6 +411,7 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
         <IndustrySolutions solutions={industry.solutions} />
         <IndustryStats stats={industry.stats} />
         <IndustryFAQ faqs={industry.faqs} industryName={industry.name} />
+        <KennisbankLinks context="lokale-seo" title="Leer meer over lokale SEO" />
         <RelatedIndustries industry={industry} />
         <CTASection />
       </main>
