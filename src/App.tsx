@@ -25,11 +25,13 @@ import NotFound from "./pages/NotFound";
 import { IndustryLandingPage } from "./pages/templates/IndustryLandingPage";
 import { LocationLandingPage } from "./pages/templates/LocationLandingPage";
 import { ServiceLandingPage } from "./pages/templates/ServiceLandingPage";
+import { ComboLandingPage } from "./pages/templates/ComboLandingPage";
 
 // Data imports
-import { industries } from "./data/industries";
-import { locations } from "./data/locations";
+import { industries, getIndustryBySlug } from "./data/industries";
+import { locations, getLocationBySlug } from "./data/locations";
 import { services } from "./data/services";
+import { combos } from "./data/combos";
 
 const queryClient = new QueryClient();
 
@@ -80,6 +82,20 @@ const App = () => (
               element={<ServiceLandingPage service={service} />}
             />
           ))}
+          
+          {/* Dynamic combo landing pages (industry + location) */}
+          {combos.map((combo) => {
+            const industry = getIndustryBySlug(combo.industrySlug);
+            const location = getLocationBySlug(combo.locationSlug);
+            if (!industry || !location) return null;
+            return (
+              <Route
+                key={`${combo.industrySlug}-${combo.locationSlug}`}
+                path={`/seo-${combo.industrySlug}-${combo.locationSlug}`}
+                element={<ComboLandingPage industry={industry} location={location} />}
+              />
+            );
+          })}
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
