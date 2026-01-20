@@ -744,6 +744,124 @@
     <priority>0.6</priority>
   </url>
   
+  <!-- Kennisbank - Knowledge Base -->
+  <url>
+    <loc>https://klikklaar.nl/kennisbank</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Kennisbank Pillars -->
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/lokale-seo</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/technische-seo</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/content-optimalisatie</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Kennisbank Articles - Lokale SEO -->
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/lokale-seo/wat-is-lokale-seo</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/lokale-seo/google-mijn-bedrijf-optimaliseren</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/lokale-seo/lokale-zoekwoorden-onderzoek</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/lokale-seo/reviews-verzamelen</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/lokale-seo/nap-consistentie</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Kennisbank Articles - Technische SEO -->
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/technische-seo/website-snelheid-verbeteren</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/technische-seo/mobiel-vriendelijke-website</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/technische-seo/structured-data-schema</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/technische-seo/xml-sitemap-robots</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/technische-seo/https-ssl-beveiliging</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Kennisbank Articles - Content Optimalisatie -->
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/content-optimalisatie/seo-teksten-schrijven</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/content-optimalisatie/zoekintentie-begrijpen</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/content-optimalisatie/meta-titels-beschrijvingen</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/kennisbank/content-optimalisatie/interne-linkbuilding</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Legal Pages -->
   <url>
     <loc>https://klikklaar.nl/privacy</loc>
