@@ -24,13 +24,13 @@ const footerLinks = {
     { name: "Personal Trainers", href: "/seo-personal-trainers" },
     { name: "Coaches", href: "/seo-coaches" },
     { name: "Kappers", href: "/seo-kappers" },
-    { name: "Alle branches", href: "/voorbeelden" },
+    { name: "Alle branches", href: "/branches" },
   ],
   locations: [
     { name: "SEO Amsterdam", href: "/seo-amsterdam" },
     { name: "SEO Rotterdam", href: "/seo-rotterdam" },
     { name: "SEO Utrecht", href: "/seo-utrecht" },
-    { name: "SEO Den Haag", href: "/seo-den-haag" },
+    { name: "Alle steden", href: "/steden" },
   ],
   company: [
     { name: "Over ons", href: "/over-ons" },

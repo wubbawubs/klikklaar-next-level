@@ -21,6 +21,8 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Kennisbank from "./pages/Kennisbank";
+import Branches from "./pages/Branches";
+import Steden from "./pages/Steden";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
 import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
@@ -63,6 +65,10 @@ const App = () => (
           <Route path="/kennisbank" element={<Kennisbank />} />
           <Route path="/kennisbank/:pillarSlug" element={<KennisbankPillar />} />
           <Route path="/kennisbank/:pillarSlug/:articleSlug" element={<KennisbankArticle />} />
+          
+          {/* Hub pages for improved crawl depth */}
+          <Route path="/branches" element={<Branches />} />
+          <Route path="/steden" element={<Steden />} />
           
           {/* Dynamic industry landing pages */}
           {industries.map((industry) => (
