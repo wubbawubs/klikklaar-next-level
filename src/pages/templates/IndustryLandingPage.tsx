@@ -116,7 +116,7 @@ function IndustryHero({ industry }: { industry: IndustryData }) {
   );
 }
 
-function IndustryPainPoints({ painPoints }: { painPoints: string[] }) {
+function IndustryPainPoints({ painPoints }: { painPoints: Array<{ icon: string; text: string }> }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -151,7 +151,7 @@ function IndustryPainPoints({ painPoints }: { painPoints: string[] }) {
                 <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-red-500 text-sm">✕</span>
                 </div>
-                <p className="text-foreground">{pain}</p>
+                <p className="text-foreground">{pain.text}</p>
               </div>
             ))}
           </div>
@@ -161,7 +161,7 @@ function IndustryPainPoints({ painPoints }: { painPoints: string[] }) {
   );
 }
 
-function IndustrySolutions({ solutions }: { solutions: string[] }) {
+function IndustrySolutions({ solutions }: { solutions: Array<{ title: string; description: string }> }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -196,7 +196,10 @@ function IndustrySolutions({ solutions }: { solutions: string[] }) {
                 <div className="w-6 h-6 rounded-full bg-kk-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-4 h-4 text-kk-orange" />
                 </div>
-                <p className="text-foreground">{solution}</p>
+                <div>
+                  <p className="font-semibold text-foreground">{solution.title}</p>
+                  <p className="text-muted-foreground text-sm mt-1">{solution.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -339,26 +342,11 @@ function RelatedIndustries({ currentSlug }: { currentSlug: string }) {
 
 export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
   const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": industry.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
+    type: "FAQPage" as const,
+    questions: industry.faqs.map(faq => ({
+      question: faq.question,
+      answer: faq.answer
     }))
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://klikklaar.nl" },
-      { "@type": "ListItem", "position": 2, "name": "Branches", "item": "https://klikklaar.nl/voorbeelden" },
-      { "@type": "ListItem", "position": 3, "name": industry.name, "item": `https://klikklaar.nl/seo-${industry.slug}` }
-    ]
   };
 
   return (
@@ -369,7 +357,6 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
         canonical={`https://klikklaar.nl/seo-${industry.slug}`}
       />
       <StructuredData schema={faqSchema} />
-      <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <IndustryHero industry={industry} />
