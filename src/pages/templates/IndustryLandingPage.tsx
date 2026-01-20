@@ -215,6 +215,18 @@ function IndustrySolutions({ solutions }: { solutions: Array<{ title: string; de
 function IndustryStats({ stats }: { stats: { value: string; label: string }[] }) {
   const { ref, isVisible } = useScrollReveal();
 
+  // Ensure we always have exactly 4 stats
+  const defaultStats = [
+    { value: "+145%", label: "Meer website bezoekers" },
+    { value: "Top 5", label: "Google ranking" },
+    { value: "4.2★", label: "Trustpilot score" },
+    { value: "€99", label: "Per maand" }
+  ];
+  
+  const displayStats = stats.length >= 4 
+    ? stats.slice(0, 4) 
+    : [...stats, ...defaultStats.slice(stats.length, 4)];
+
   return (
     <section ref={ref} className="py-16 lg:py-24 haze-gradient-cool">
       <div className="container px-4 sm:px-6">
@@ -231,7 +243,7 @@ function IndustryStats({ stats }: { stats: { value: string; label: string }[] })
           </h2>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
+            {displayStats.map((stat, index) => (
               <div 
                 key={index}
                 className="text-center p-6 bg-card rounded-xl border border-border"
