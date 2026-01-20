@@ -380,24 +380,24 @@ function LocationFAQ({ location }: { location: LocationData }) {
 function NearbyLocations({ location }: { location: LocationData }) {
   const { ref, isVisible } = useScrollReveal();
   
-  // Get combo pages for this location (industries available in this city)
+  // LIMIT: Max 4 combo links to avoid over-automated internal linking
   const locationCombos = combos
     .filter(c => c.locationSlug === location.slug)
-    .slice(0, 6)
+    .slice(0, 4) // Reduced from 6 to 4
     .map(c => {
       const ind = industries.find(i => i.slug === c.industrySlug);
       return ind ? { slug: c.industrySlug, name: ind.name, namePlural: ind.namePlural } : null;
     })
     .filter(Boolean) as { slug: string; name: string; namePlural: string }[];
 
-  // Get nearby locations from the locations data
-  const nearbyLocationSlugs = location.nearbyAreas.slice(0, 6);
+  // LIMIT: Max 4 nearby location links
+  const nearbyLocationSlugs = location.nearbyAreas.slice(0, 4); // Reduced from 6 to 4
   const nearbyLocations = locations.filter(loc => 
     nearbyLocationSlugs.some(area => 
       loc.name.toLowerCase() === area.toLowerCase() ||
       loc.slug === area.toLowerCase()
     )
-  ).slice(0, 5);
+  ).slice(0, 4); // Reduced from 5 to 4
 
   return (
     <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">
@@ -466,6 +466,9 @@ function NearbyLocations({ location }: { location: LocationData }) {
 }
 
 export function LocationLandingPage({ location }: LocationLandingPageProps) {
+  // Noindex Tier 3 locations to prevent index bloat
+  const shouldNoindex = location.tier === 3;
+
   const faqSchema = {
     type: "FAQPage" as const,
     questions: [
@@ -480,11 +483,14 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
     ]
   };
 
-  const localBusinessSchema = {
-    type: "LocalBusiness" as const,
-    name: "KlikKlaarSEO",
-    description: `SEO bureau voor lokale ondernemers in ${location.name}, ${location.province}`,
-    url: `https://klikklaar.nl/seo-${location.slug}`
+  // Use Service schema instead of LocalBusiness to avoid "fake locations" signal
+  const serviceSchema = {
+    type: "Service" as const,
+    name: `SEO diensten in ${location.name}`,
+    description: `Automatische SEO voor lokale ondernemers in ${location.name}, ${location.province}`,
+    provider: "KlikKlaarSEO",
+    areaServed: [location.name, location.province],
+    serviceType: "Lokale SEO"
   };
 
   const breadcrumbSchema = {
@@ -502,9 +508,10 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
         title={`SEO Bureau ${location.name} | Lokale Vindbaarheid | KlikKlaarSEO`}
         description={`Automatische SEO voor ondernemers in ${location.name}. Word gevonden door klanten uit ${location.province}. Vanaf €99/mnd. Geen technische kennis nodig.`}
         canonical={`https://klikklaar.nl/seo-${location.slug}`}
+        robots={shouldNoindex ? "noindex,follow" : "index,follow"}
       />
       <StructuredData schema={faqSchema} />
-      <StructuredData schema={localBusinessSchema} />
+      <StructuredData schema={serviceSchema} />
       <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
