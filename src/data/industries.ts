@@ -653,6 +653,438 @@ export const industries: IndustryData[] = [
     },
     metaTitle: "SEO voor Therapeuten | Meer Cliënten | KlikKlaarSEO",
     metaDescription: "Automatische SEO voor therapeuten. Cliënten vinden die jouw hulp nodig hebben. Vanaf €99/mnd."
+  },
+  {
+    slug: "elektriciens",
+    name: "Elektricien",
+    namePlural: "Elektriciens",
+    icon: "Zap",
+    headline: "SEO voor Elektriciens",
+    subheadline: "Word de eerste keuze bij storingen en installaties",
+    heroDescription: "Wanneer mensen een elektricien nodig hebben, zoeken ze online. Met automatische SEO word jij gevonden, niet je concurrent.",
+    painPoints: [
+      { icon: "Phone", text: "Minder telefoontjes dan vroeger" },
+      { icon: "Search", text: "Klanten vinden andere bedrijven eerst" },
+      { icon: "Clock", text: "Geen tijd voor marketing naast het werk" },
+      { icon: "TrendingDown", text: "Concurrentie groeit online" }
+    ],
+    solutions: [
+      { title: "Spoed-vindbaarheid", description: "Gevonden worden voor 'elektricien spoed' en 'storing elektra'" },
+      { title: "Lokaal dominant", description: "Eerste keuze in jouw werkgebied" },
+      { title: "Google Maps zichtbaar", description: "Bovenaan bij lokale zoekopdrachten" }
+    ],
+    stats: [
+      { value: "+156%", label: "Meer aanvragen" },
+      { value: "Top 3", label: "Voor spoedopdrachten" }
+    ],
+    faqs: [
+      { question: "Werkt SEO voor nooddiensten?", answer: "Ja, juist voor spoedopdrachten is Google vaak de eerste plek waar mensen zoeken. Wij zorgen dat je daar bovenaan staat." },
+      { question: "Hoe snel zie ik meer klussen?", answer: "De eerste verbeteringen zie je binnen 4-6 weken. Binnen 3 maanden een duidelijke stijging in aanvragen." },
+      { question: "Kan ik kiezen voor welke diensten ik gevonden word?", answer: "Ja, we optimaliseren voor jouw specialisaties, of dat nu installatie, storing of verduurzaming is." },
+      { question: "Werkt dit ook voor zakelijke klanten?", answer: "Absoluut. We kunnen focussen op zowel particuliere als zakelijke zoektermen." }
+    ],
+    keywords: {
+      primary: "SEO elektricien",
+      secondary: ["elektricien marketing", "elektra bedrijf vindbaarheid", "installateur SEO"]
+    },
+    metaTitle: "SEO voor Elektriciens | Meer Klussen | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor elektriciens. Word de eerste keuze bij storingen en installaties. Vanaf €99/mnd."
+  },
+  {
+    slug: "schilders",
+    name: "Schilder",
+    namePlural: "Schilders",
+    icon: "PaintBucket",
+    headline: "SEO voor Schilders",
+    subheadline: "Meer schilderwerk via lokale vindbaarheid",
+    heroDescription: "Huiseigenaren en bedrijven zoeken online naar schilders. Met automatische SEO word jij gevonden voor projecten in jouw regio.",
+    painPoints: [
+      { icon: "Users", text: "Te afhankelijk van mond-tot-mond" },
+      { icon: "TrendingDown", text: "Minder vaste opdrachtgevers" },
+      { icon: "Search", text: "Website levert weinig op" },
+      { icon: "Clock", text: "Marketing kost te veel tijd" }
+    ],
+    solutions: [
+      { title: "Lokale opdrachten", description: "Gevonden worden voor 'schilder [jouw stad]'" },
+      { title: "Projectfoto's optimaliseren", description: "Je werk zichtbaar in Google afbeeldingen" },
+      { title: "Reviews benutten", description: "Positieve beoordelingen prominent tonen" }
+    ],
+    stats: [
+      { value: "+178%", label: "Meer offerteaanvragen" },
+      { value: "4.8★", label: "Gemiddelde review score" }
+    ],
+    faqs: [
+      { question: "Is SEO zinvol voor schilders?", answer: "Zeer zinvol. Veel huiseigenaren zoeken online naar 'schilder in de buurt'. Met goede SEO ben jij hun eerste keuze." },
+      { question: "Hoe toon ik mijn vakmanschap online?", answer: "We optimaliseren je projectfoto's en zorgen dat ze gevonden worden in Google. Je werk spreekt voor zich." },
+      { question: "Werkt dit voor zowel binnen als buitenschilderwerk?", answer: "Ja, we optimaliseren voor al je diensten, van binnenschilderwerk tot gevelonderhoud." },
+      { question: "Kan ik me richten op zakelijke klanten?", answer: "Absoluut. We kunnen focussen op vastgoedonderhoud, VvE's of projectontwikkelaars." }
+    ],
+    keywords: {
+      primary: "SEO schilder",
+      secondary: ["schildersbedrijf marketing", "schilder website", "schilderwerk SEO"]
+    },
+    metaTitle: "SEO voor Schilders | Meer Opdrachten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor schilders. Meer schilderwerk via lokale vindbaarheid. Vanaf €99/mnd."
+  },
+  {
+    slug: "dakdekkers",
+    name: "Dakdekker",
+    namePlural: "Dakdekkers",
+    icon: "Home",
+    headline: "SEO voor Dakdekkers",
+    subheadline: "Gevonden worden bij lekkages en dakrenovaties",
+    heroDescription: "Een lekkend dak? Dan zoeken mensen direct online. Met automatische SEO ben jij de eerste die ze vinden.",
+    painPoints: [
+      { icon: "Phone", text: "Spoedklussen gaan naar concurrenten" },
+      { icon: "Search", text: "Website trekt weinig bezoekers" },
+      { icon: "MapPin", text: "Klanten buiten je gebied weten niet dat je bestaat" },
+      { icon: "Clock", text: "Te druk met werk voor marketing" }
+    ],
+    solutions: [
+      { title: "Spoed-vindbaarheid", description: "Gevonden worden voor 'lekkage dak' en 'dakdekker spoed'" },
+      { title: "Regionale dekking", description: "Zichtbaar in alle plaatsen waar je werkt" },
+      { title: "Seizoensoptimalisatie", description: "Voorbereid op piekperiodes na storm of vorst" }
+    ],
+    stats: [
+      { value: "+145%", label: "Meer spoedopdrachten" },
+      { value: "Top 5", label: "Voor dakreparatie zoektermen" }
+    ],
+    faqs: [
+      { question: "Hoe belangrijk is snelheid bij daklekkages?", answer: "Cruciaal. Bij lekkages zoeken mensen direct online. De dakdekker die bovenaan staat, krijgt de opdracht." },
+      { question: "Werkt SEO voor grote dakrenovaties?", answer: "Ja, ook mensen die planmatig een nieuw dak nodig hebben zoeken online. We optimaliseren voor beide type klanten." },
+      { question: "Kan ik specifieke daksoorten promoten?", answer: "Zeker. We optimaliseren voor jouw specialisaties, of dat nu platte daken, pannendaken of groene daken zijn." },
+      { question: "Hoe zit het met storm-seizoenen?", answer: "We zorgen dat je voorbereid bent op piekperiodes. Na een storm willen extra veel mensen je vinden." }
+    ],
+    keywords: {
+      primary: "SEO dakdekker",
+      secondary: ["dakdekkersbedrijf marketing", "daklekkage SEO", "dakrenovatie vindbaarheid"]
+    },
+    metaTitle: "SEO voor Dakdekkers | Meer Opdrachten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor dakdekkers. Gevonden worden bij lekkages en dakrenovaties. Vanaf €99/mnd."
+  },
+  {
+    slug: "bakkers",
+    name: "Bakker",
+    namePlural: "Bakkers",
+    icon: "Croissant",
+    headline: "SEO voor Bakkers",
+    subheadline: "Meer klanten naar jouw bakkerij trekken",
+    heroDescription: "Mensen zoeken online naar 'bakker in de buurt' of 'beste brood'. Met automatische SEO word jij hun vaste bakker.",
+    painPoints: [
+      { icon: "Store", text: "Supermarkten trekken klanten weg" },
+      { icon: "Search", text: "Online niet zichtbaar voor nieuwe wijkbewoners" },
+      { icon: "MessageCircle", text: "Lastig om specialiteiten te promoten" },
+      { icon: "Clock", text: "Vroege werktijden laten geen tijd voor marketing" }
+    ],
+    solutions: [
+      { title: "Lokale vindbaarheid", description: "Gevonden worden voor 'bakker [jouw wijk]'" },
+      { title: "Specialiteiten tonen", description: "Je ambachtelijke producten zichtbaar maken" },
+      { title: "Besteloptimalisatie", description: "Meer online bestellingen en afhaalorders" }
+    ],
+    stats: [
+      { value: "+98%", label: "Meer nieuwe klanten" },
+      { value: "4.9★", label: "Google reviews score" }
+    ],
+    faqs: [
+      { question: "Is SEO zinvol voor een bakkerij?", answer: "Zeer. Nieuwe bewoners en toeristen zoeken online naar een goede bakker. Met SEO vinden ze jou." },
+      { question: "Kan ik mijn specialiteiten promoten?", answer: "Ja, we optimaliseren voor jouw unieke producten, van desem tot bruidstaarten." },
+      { question: "Werkt dit voor online bestellingen?", answer: "Absoluut. We optimaliseren ook voor 'brood bestellen' en 'taart op maat'." },
+      { question: "Hoe concurreer ik met supermarkten?", answer: "Door te focussen op kwaliteit en ambacht. Mensen zoeken naar 'ambachtelijke bakker' en 'echt brood'." }
+    ],
+    keywords: {
+      primary: "SEO bakker",
+      secondary: ["bakkerij marketing", "bakker vindbaarheid", "brood bestellen SEO"]
+    },
+    metaTitle: "SEO voor Bakkers | Meer Klanten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor bakkers. Meer klanten naar jouw bakkerij trekken. Vanaf €99/mnd."
+  },
+  {
+    slug: "bloemisten",
+    name: "Bloemist",
+    namePlural: "Bloemisten",
+    icon: "Flower2",
+    headline: "SEO voor Bloemisten",
+    subheadline: "Gevonden worden voor boeketten en arrangementen",
+    heroDescription: "Mensen zoeken online naar bloemen voor elke gelegenheid. Met automatische SEO word jij hun eerste keuze.",
+    painPoints: [
+      { icon: "Store", text: "Online bloemendiensten stelen klanten" },
+      { icon: "Calendar", text: "Seizoenspieken niet optimaal benut" },
+      { icon: "Search", text: "Moeilijk gevonden voor rouwwerk en bruiloften" },
+      { icon: "TrendingDown", text: "Minder loopklanten" }
+    ],
+    solutions: [
+      { title: "Gelegenheid-SEO", description: "Gevonden worden voor bruiloften, begrafenissen, Valentijn" },
+      { title: "Lokale dominantie", description: "Eerste keuze voor 'bloemist [jouw stad]'" },
+      { title: "Afbeeldingen optimaliseren", description: "Je arrangementen zichtbaar in Google afbeeldingen" }
+    ],
+    stats: [
+      { value: "+167%", label: "Meer bestellingen" },
+      { value: "Top 3", label: "Voor lokale bloemen zoektermen" }
+    ],
+    faqs: [
+      { question: "Hoe concurreer ik met online bloemendiensten?", answer: "Door te focussen op persoonlijke service en lokale levering. Mensen zoeken 'bloemist in de buurt' voor speciale gelegenheden." },
+      { question: "Werkt SEO voor bruiloften?", answer: "Ja, bruiden zoeken maandenlang vooruit naar 'bruidsboeket' en 'wedding florist'. Wij zorgen dat ze jou vinden." },
+      { question: "Kan ik seizoenspieken beter benutten?", answer: "Absoluut. We optimaliseren vooruit voor Valentijnsdag, Moederdag en andere piekperiodes." },
+      { question: "Hoe bereik ik zakelijke klanten?", answer: "We optimaliseren ook voor kantoorplanten, hotelbloemen en evenementdecoratie." }
+    ],
+    keywords: {
+      primary: "SEO bloemist",
+      secondary: ["bloemenwinkel marketing", "bloemist online", "bruidsboeket SEO"]
+    },
+    metaTitle: "SEO voor Bloemisten | Meer Bestellingen | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor bloemisten. Gevonden worden voor boeketten en arrangementen. Vanaf €99/mnd."
+  },
+  {
+    slug: "slagers",
+    name: "Slager",
+    namePlural: "Slagers",
+    icon: "Beef",
+    headline: "SEO voor Slagers",
+    subheadline: "Meer klanten voor je ambachtelijke producten",
+    heroDescription: "Mensen zoeken naar kwaliteitsvlees en persoonlijke service. Met automatische SEO word jij hun vaste slager.",
+    painPoints: [
+      { icon: "Store", text: "Supermarkten domineren de markt" },
+      { icon: "Search", text: "Nieuwe wijkbewoners kennen je niet" },
+      { icon: "MessageCircle", text: "Specialiteiten zijn onbekend" },
+      { icon: "TrendingDown", text: "Minder vaste klanten" }
+    ],
+    solutions: [
+      { title: "Kwaliteit benadrukken", description: "Gevonden worden voor 'ambachtelijke slager'" },
+      { title: "Lokale vindbaarheid", description: "Eerste keuze in jouw wijk of stad" },
+      { title: "Bestelmogelijkheden", description: "Meer BBQ-pakketten en feestbestellingen" }
+    ],
+    stats: [
+      { value: "+112%", label: "Meer nieuwe klanten" },
+      { value: "4.8★", label: "Google reviews score" }
+    ],
+    faqs: [
+      { question: "Is SEO zinvol voor een slagerij?", answer: "Zeer. Mensen zoeken naar 'slager in de buurt' en 'kwaliteitsvlees'. Met SEO vinden ze jou." },
+      { question: "Kan ik BBQ-seizoen beter benutten?", answer: "Ja, we optimaliseren vooruit voor 'BBQ pakket' en 'vlees voor barbecue'." },
+      { question: "Werkt dit voor catering en feesten?", answer: "Absoluut. Veel mensen zoeken online naar vlees voor feesten en partijen." },
+      { question: "Hoe onderscheid ik me van supermarkten?", answer: "Door te focussen op ambacht, herkomst en persoonlijke service. Daar zoeken mensen naar." }
+    ],
+    keywords: {
+      primary: "SEO slager",
+      secondary: ["slagerij marketing", "ambachtelijke slager", "vlees bestellen SEO"]
+    },
+    metaTitle: "SEO voor Slagers | Meer Klanten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor slagers. Meer klanten voor je ambachtelijke producten. Vanaf €99/mnd."
+  },
+  {
+    slug: "juweliers",
+    name: "Juwelier",
+    namePlural: "Juweliers",
+    icon: "Gem",
+    headline: "SEO voor Juweliers",
+    subheadline: "Gevonden worden voor trouwringen en sieraden",
+    heroDescription: "Mensen zoeken online naar de perfecte ring of het bijzondere cadeau. Met automatische SEO word jij hun juwelier.",
+    painPoints: [
+      { icon: "Globe", text: "Online juweliers stelen klanten" },
+      { icon: "Search", text: "Moeilijk gevonden voor speciale gelegenheden" },
+      { icon: "TrendingDown", text: "Minder spontane winkelbezoeken" },
+      { icon: "Target", text: "Lastig om de juiste doelgroep te bereiken" }
+    ],
+    solutions: [
+      { title: "Gelegenheid-SEO", description: "Gevonden worden voor verlovingsringen, huwelijksjubilea" },
+      { title: "Luxe uitstraling online", description: "Je kwaliteit en vakmanschap tonen" },
+      { title: "Lokale expertise", description: "De vertrouwde juwelier in jouw regio" }
+    ],
+    stats: [
+      { value: "+134%", label: "Meer winkelbezoeken" },
+      { value: "Top 5", label: "Voor trouwring zoektermen" }
+    ],
+    faqs: [
+      { question: "Hoe concurreer ik met online juweliers?", answer: "Door te focussen op persoonlijk advies, maatwerk en de ervaring in de winkel. Mensen zoeken 'juwelier in de buurt' voor belangrijke aankopen." },
+      { question: "Werkt SEO voor trouwringen?", answer: "Ja, stelletjes beginnen hun zoektocht vaak online. Wij zorgen dat ze bij jou uitkomen voor advies." },
+      { question: "Kan ik reparaties promoten?", answer: "Absoluut. Veel mensen zoeken naar 'ring verkleinen' of 'horloge reparatie'. Dat optimaliseren we." },
+      { question: "Hoe bereik ik zakelijke klanten?", answer: "We optimaliseren ook voor relatiegeschenken, jubileumcadeaus en bedrijfssieraden." }
+    ],
+    keywords: {
+      primary: "SEO juwelier",
+      secondary: ["juwelierszaak marketing", "trouwringen SEO", "sieraden winkel online"]
+    },
+    metaTitle: "SEO voor Juweliers | Meer Klanten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor juweliers. Gevonden worden voor trouwringen en sieraden. Vanaf €99/mnd."
+  },
+  {
+    slug: "opticiens",
+    name: "Opticien",
+    namePlural: "Opticiens",
+    icon: "Glasses",
+    headline: "SEO voor Opticiens",
+    subheadline: "Meer klanten voor brillen en contactlenzen",
+    heroDescription: "Mensen zoeken online naar een opticien voor hun nieuwe bril of lenzen. Met automatische SEO word jij hun eerste keuze.",
+    painPoints: [
+      { icon: "Store", text: "Ketens domineren de zoekresultaten" },
+      { icon: "Search", text: "Online brillenwinkels groeien" },
+      { icon: "Target", text: "Moeilijk om je te onderscheiden" },
+      { icon: "TrendingDown", text: "Minder spontane winkelbezoeken" }
+    ],
+    solutions: [
+      { title: "Persoonlijke service benadrukken", description: "Gevonden worden voor 'opticien persoonlijk advies'" },
+      { title: "Lokale vindbaarheid", description: "Eerste keuze in jouw regio" },
+      { title: "Specialisaties tonen", description: "Kinderbrillen, sportbrillen, haute couture" }
+    ],
+    stats: [
+      { value: "+98%", label: "Meer oogmetingen" },
+      { value: "4.7★", label: "Google reviews score" }
+    ],
+    faqs: [
+      { question: "Hoe concurreer ik met brillenketens?", answer: "Door te focussen op persoonlijke service en vakmanschap. Mensen zoeken naar 'opticien met persoonlijk advies'." },
+      { question: "Werkt SEO voor contactlenzen?", answer: "Ja, veel mensen zoeken naar 'contactlenzen aanmeten' en vergelijkbare termen." },
+      { question: "Kan ik kinderbrillen promoten?", answer: "Absoluut. Ouders zoeken naar 'kinderbril' en 'opticien kinderen'. Daar optimaliseren we voor." },
+      { question: "Hoe bereik ik sportieve klanten?", answer: "We optimaliseren voor sportbrillen, fietsbrillen en zwembrillen op sterkte." }
+    ],
+    keywords: {
+      primary: "SEO opticien",
+      secondary: ["brillenwinkel marketing", "opticien vindbaarheid", "contactlenzen SEO"]
+    },
+    metaTitle: "SEO voor Opticiens | Meer Klanten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor opticiens. Meer klanten voor brillen en contactlenzen. Vanaf €99/mnd."
+  },
+  {
+    slug: "dierenartsen",
+    name: "Dierenarts",
+    namePlural: "Dierenartsen",
+    icon: "Cat",
+    headline: "SEO voor Dierenartsen",
+    subheadline: "Gevonden worden door bezorgde huisdiereigenaren",
+    heroDescription: "Wanneer een huisdier ziek is, zoeken eigenaren direct online. Met automatische SEO ben jij de dierenarts die ze vinden.",
+    painPoints: [
+      { icon: "Phone", text: "Spoedgevallen gaan naar concurrenten" },
+      { icon: "Search", text: "Nieuwe huisdiereigenaren vinden je niet" },
+      { icon: "MapPin", text: "Mensen weten niet dat je in de buurt zit" },
+      { icon: "Clock", text: "Geen tijd voor marketing tussen consulten door" }
+    ],
+    solutions: [
+      { title: "Spoed-vindbaarheid", description: "Gevonden worden voor 'dierenarts spoed' en 'dierenarts avond'" },
+      { title: "Lokale dominantie", description: "Eerste keuze voor dierenartsen in jouw regio" },
+      { title: "Specialisaties tonen", description: "Exotische dieren, tandheelkunde, chirurgie" }
+    ],
+    stats: [
+      { value: "+156%", label: "Meer nieuwe cliënten" },
+      { value: "Top 3", label: "Voor spoed zoektermen" }
+    ],
+    faqs: [
+      { question: "Hoe belangrijk is spoed-vindbaarheid?", answer: "Cruciaal. Bij zieke huisdieren zoeken eigenaren direct online. De praktijk die bovenaan staat, krijgt de patiënt." },
+      { question: "Kan ik specialisaties promoten?", answer: "Ja, we optimaliseren voor jouw expertise, of dat nu vogels, reptielen of katten is." },
+      { question: "Werkt SEO voor preventieve zorg?", answer: "Absoluut. Veel mensen zoeken naar vaccinaties, castratie en chip-service." },
+      { question: "Hoe bereik ik nieuwe huisdiereigenaren?", answer: "Nieuwe puppy- en kitteneigenaren zoeken direct naar een goede dierenarts. Wij zorgen dat ze jou vinden." }
+    ],
+    keywords: {
+      primary: "SEO dierenarts",
+      secondary: ["dierenkliniek marketing", "dierenarts online", "veterinair SEO"]
+    },
+    metaTitle: "SEO voor Dierenartsen | Meer Cliënten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor dierenartsen. Gevonden worden door bezorgde huisdiereigenaren. Vanaf €99/mnd."
+  },
+  {
+    slug: "notarissen",
+    name: "Notaris",
+    namePlural: "Notarissen",
+    icon: "Scale",
+    headline: "SEO voor Notarissen",
+    subheadline: "Gevonden worden voor aktes en juridisch advies",
+    heroDescription: "Mensen zoeken online naar een notaris voor hun huis, testament of onderneming. Met automatische SEO word jij hun eerste keuze.",
+    painPoints: [
+      { icon: "Search", text: "Grote kantoren domineren zoekresultaten" },
+      { icon: "Target", text: "Moeilijk om nieuwe klanten te bereiken" },
+      { icon: "TrendingDown", text: "Minder doorverwijzingen van makelaars" },
+      { icon: "Globe", text: "Online vergelijkers sturen klanten elders" }
+    ],
+    solutions: [
+      { title: "Dienst-specifieke SEO", description: "Gevonden worden voor testament, hypotheek, oprichten BV" },
+      { title: "Lokale autoriteit", description: "De vertrouwde notaris in jouw regio" },
+      { title: "Transparantie tonen", description: "Duidelijke tarieven en service online" }
+    ],
+    stats: [
+      { value: "+89%", label: "Meer directe aanvragen" },
+      { value: "Top 5", label: "Voor notaris zoektermen lokaal" }
+    ],
+    faqs: [
+      { question: "Is SEO zinvol voor notarissen?", answer: "Zeer. Mensen vergelijken notarissen online voordat ze kiezen. Met goede SEO en reviews word je de logische keuze." },
+      { question: "Kan ik specifieke aktes promoten?", answer: "Ja, we optimaliseren voor testament, levenstestament, samenlevingscontract en meer." },
+      { question: "Hoe concurreer ik met grote kantoren?", answer: "Door te focussen op persoonlijke service en lokale bereikbaarheid. Daar zoeken mensen naar." },
+      { question: "Werkt SEO voor zakelijke notariaat?", answer: "Absoluut. We optimaliseren ook voor BV oprichten, aandelenoverdracht en statuten." }
+    ],
+    keywords: {
+      primary: "SEO notaris",
+      secondary: ["notariskantoor marketing", "notaris vindbaarheid", "testament SEO"]
+    },
+    metaTitle: "SEO voor Notarissen | Meer Klanten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor notarissen. Gevonden worden voor aktes en juridisch advies. Vanaf €99/mnd."
+  },
+  {
+    slug: "apothekers",
+    name: "Apotheker",
+    namePlural: "Apothekers",
+    icon: "Pill",
+    headline: "SEO voor Apothekers",
+    subheadline: "Meer klanten naar jouw apotheek trekken",
+    heroDescription: "Mensen zoeken online naar een apotheek in de buurt. Met automatische SEO word jij hun vaste apotheek.",
+    painPoints: [
+      { icon: "Store", text: "Ketens domineren de markt" },
+      { icon: "Search", text: "Nieuwe wijkbewoners vinden je niet" },
+      { icon: "Clock", text: "Openingstijden zijn niet duidelijk online" },
+      { icon: "MessageCircle", text: "Extra diensten zijn onbekend" }
+    ],
+    solutions: [
+      { title: "Lokale vindbaarheid", description: "Gevonden worden voor 'apotheek [jouw wijk]'" },
+      { title: "Diensten promoten", description: "Vaccinaties, medicijncheck, bezorging" },
+      { title: "Openingstijden optimaliseren", description: "Duidelijk zichtbaar in Google" }
+    ],
+    stats: [
+      { value: "+67%", label: "Meer nieuwe klanten" },
+      { value: "4.6★", label: "Google reviews score" }
+    ],
+    faqs: [
+      { question: "Is SEO zinvol voor een apotheek?", answer: "Ja. Nieuwe bewoners en mensen onderweg zoeken naar 'apotheek in de buurt'. Met SEO vinden ze jou." },
+      { question: "Kan ik extra diensten promoten?", answer: "Absoluut. We optimaliseren voor griepvaccinatie, medicijncheck en meer." },
+      { question: "Werkt dit voor bezorgservice?", answer: "Ja, veel mensen zoeken naar 'apotheek bezorging' of 'medicijnen thuisbezorgd'." },
+      { question: "Hoe onderscheid ik me van ketens?", answer: "Door persoonlijke service en lokale betrokkenheid te benadrukken." }
+    ],
+    keywords: {
+      primary: "SEO apotheek",
+      secondary: ["apotheek marketing", "apotheek vindbaarheid", "medicijnen SEO"]
+    },
+    metaTitle: "SEO voor Apothekers | Meer Klanten | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor apothekers. Meer klanten naar jouw apotheek trekken. Vanaf €99/mnd."
+  },
+  {
+    slug: "rijscholen",
+    name: "Rijschool",
+    namePlural: "Rijscholen",
+    icon: "Car",
+    headline: "SEO voor Rijscholen",
+    subheadline: "Meer leerlingen voor jouw rijschool werven",
+    heroDescription: "Iedereen die wil leren rijden begint online met zoeken. Met automatische SEO word jij de rijschool die ze kiezen.",
+    painPoints: [
+      { icon: "TrendingDown", text: "Veel concurrentie van grote rijscholen" },
+      { icon: "Search", text: "Vergelijkingswebsites domineren zoekresultaten" },
+      { icon: "DollarSign", text: "Adverteren is duur en levert weinig op" },
+      { icon: "Users", text: "Afhankelijk van mond-tot-mond" }
+    ],
+    solutions: [
+      { title: "Lokale vindbaarheid", description: "Gevonden worden voor 'rijschool [jouw stad]'" },
+      { title: "Reviews benutten", description: "Je slagingspercentage en leerling-ervaringen tonen" },
+      { title: "Pakketten promoten", description: "Meer aanmeldingen voor lespakketten" }
+    ],
+    stats: [
+      { value: "+178%", label: "Meer proeflessen" },
+      { value: "Top 5", label: "Voor lokale rijschool zoektermen" }
+    ],
+    faqs: [
+      { question: "Is er veel concurrentie voor rijschool SEO?", answer: "Ja, maar juist daarom is het belangrijk. Met goede SEO en reviews onderscheid je je van de rest." },
+      { question: "Hoe belangrijk zijn reviews?", answer: "Zeer belangrijk. Mensen vergelijken rijscholen op basis van ervaringen. Wij helpen je meer positieve reviews te krijgen." },
+      { question: "Kan ik specifieke rijbewijzen promoten?", answer: "Ja, we optimaliseren voor motor, aanhanger, vrachtwagen of wat je ook aanbiedt." },
+      { question: "Werkt SEO voor theorie-examens?", answer: "Absoluut. Veel mensen zoeken naar theorie oefenen en theoriecursus." }
+    ],
+    keywords: {
+      primary: "SEO rijschool",
+      secondary: ["rijschool marketing", "autorijschool vindbaarheid", "rijles SEO"]
+    },
+    metaTitle: "SEO voor Rijscholen | Meer Leerlingen | KlikKlaarSEO",
+    metaDescription: "Automatische SEO voor rijscholen. Meer leerlingen voor jouw rijschool werven. Vanaf €99/mnd."
   }
 ];
 
