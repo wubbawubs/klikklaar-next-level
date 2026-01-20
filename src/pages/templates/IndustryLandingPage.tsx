@@ -385,6 +385,15 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
     }))
   };
 
+  const breadcrumbSchema = {
+    type: "BreadcrumbList" as const,
+    items: [
+      { name: "Home", url: "https://klikklaar.nl/" },
+      { name: "Branches", url: "https://klikklaar.nl/voorbeelden" },
+      { name: industry.name, url: `https://klikklaar.nl/seo-${industry.slug}` }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -393,6 +402,7 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
         canonical={`https://klikklaar.nl/seo-${industry.slug}`}
       />
       <StructuredData schema={faqSchema} />
+      <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <IndustryHero industry={industry} />

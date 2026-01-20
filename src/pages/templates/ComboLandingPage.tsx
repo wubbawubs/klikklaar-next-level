@@ -587,6 +587,15 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
     url: `https://klikklaar.nl/seo-${industry.slug}-${location.slug}`
   };
 
+  const breadcrumbSchema = {
+    type: "BreadcrumbList" as const,
+    items: [
+      { name: "Home", url: "https://klikklaar.nl/" },
+      { name: industry.namePlural, url: `https://klikklaar.nl/seo-${industry.slug}` },
+      { name: location.name, url: `https://klikklaar.nl/seo-${industry.slug}-${location.slug}` }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -596,6 +605,7 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={localBusinessSchema} />
+      <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <ComboHero industry={industry} location={location} />

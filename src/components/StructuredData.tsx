@@ -43,7 +43,15 @@ interface WebPageSchema {
   url: string;
 }
 
-type SchemaType = LocalBusinessSchema | ServiceSchema | FAQSchema | WebPageSchema;
+interface BreadcrumbSchema {
+  type: "BreadcrumbList";
+  items: Array<{
+    name: string;
+    url: string;
+  }>;
+}
+
+type SchemaType = LocalBusinessSchema | ServiceSchema | FAQSchema | WebPageSchema | BreadcrumbSchema;
 
 interface StructuredDataProps {
   schema: SchemaType | SchemaType[];
@@ -115,6 +123,19 @@ function generateWebPageSchema(data: WebPageSchema) {
   };
 }
 
+function generateBreadcrumbSchema(data: BreadcrumbSchema) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: data.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
 function generateSchema(schema: SchemaType) {
   switch (schema.type) {
     case "LocalBusiness":
@@ -125,6 +146,8 @@ function generateSchema(schema: SchemaType) {
       return generateFAQSchema(schema);
     case "WebPage":
       return generateWebPageSchema(schema);
+    case "BreadcrumbList":
+      return generateBreadcrumbSchema(schema);
     default:
       return null;
   }
