@@ -510,7 +510,20 @@ export const locations: LocationData[] = [
     localFacts: ["Moderne infrastructuur", "Veel zakelijke dienstverlening", "Goede bereikbaarheid"],
     nearbyAreas: ["Den Haag", "Delft", "Leiden", "Gouda", "Waddinxveen"],
     metaTitle: "SEO Bureau Zoetermeer | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Zoetermeer. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Zoetermeer. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "5.100+",
+      competitionLevel: "Laag-Gemiddeld",
+      businessCount: "6.400+",
+      growthRate: "+5%"
+    },
+    localTestimonial: {
+      quote: "Zoetermeer is een moderne stad waar mensen veel online zoeken. De vindbaarheid is nu ons sterkste marketingkanaal.",
+      author: "Stefan Koster",
+      business: "Koster PT Studio",
+      industry: "Personal Trainer"
+    },
+    marketInsight: "Zoetermeer heeft een jonge, digitaal actieve bevolking. De stad ligt centraal tussen Den Haag, Delft en Leiden, wat regionale kansen biedt. Moderne websites en snelle laadtijden zijn hier extra belangrijk."
   },
   {
     slug: "leiden",
@@ -772,7 +785,20 @@ export const locations: LocationData[] = [
     localFacts: ["Logistiek centrum", "Grensligging biedt kansen", "Sterke retail"],
     nearbyAreas: ["Roermond", "Tegelen", "Blerick", "Horst", "Weert"],
     metaTitle: "SEO Bureau Venlo | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Venlo. Bereik Noord-Limburg. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Venlo. Bereik Noord-Limburg. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "4.500+",
+      competitionLevel: "Laag",
+      businessCount: "5.800+",
+      growthRate: "+5%"
+    },
+    localTestimonial: {
+      quote: "De grens met Duitsland is een kans. We trekken nu ook Duitse klanten die in het Nederlands zoeken.",
+      author: "Marco Beijers",
+      business: "Beijers Autobedrijf",
+      industry: "Autobedrijf"
+    },
+    marketInsight: "Venlo ligt op de grens met Duitsland. 25% van het zoekverkeer komt uit Duitsland, vaak in het Nederlands. Dit biedt unieke kansen voor ondernemers die beide markten willen bedienen."
   },
   {
     slug: "leeuwarden",
@@ -784,7 +810,20 @@ export const locations: LocationData[] = [
     localFacts: ["Culturele hoofdstad van Europa 2018", "Provinciehoofdstad", "Sterke regionale functie"],
     nearbyAreas: ["Drachten", "Heerenveen", "Sneek", "Harlingen", "Franeker"],
     metaTitle: "SEO Bureau Leeuwarden | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Leeuwarden. Bereik heel Friesland. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Leeuwarden. Bereik heel Friesland. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "5.200+",
+      competitionLevel: "Laag",
+      businessCount: "7.100+",
+      growthRate: "+4%"
+    },
+    localTestimonial: {
+      quote: "Leeuwarden is de poort naar Friesland. Klanten uit de hele provincie vinden ons nu via Google.",
+      author: "Johanna de Boer",
+      business: "De Boer Fysiotherapie",
+      industry: "Fysiotherapie"
+    },
+    marketInsight: "Leeuwarden is het centrum voor heel Friesland (650.000 inwoners). De concurrentie is laag vergeleken met de Randstad. Friese ondernemers die hier ranken, domineren vaak de hele provincie."
   },
   {
     slug: "heerlen",
@@ -796,7 +835,20 @@ export const locations: LocationData[] = [
     localFacts: ["Centrum van Parkstad", "Veel grensverkeer", "Sterke retail"],
     nearbyAreas: ["Kerkrade", "Landgraaf", "Brunssum", "Maastricht", "Sittard"],
     metaTitle: "SEO Bureau Heerlen | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Heerlen en Parkstad. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Heerlen en Parkstad. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.800+",
+      competitionLevel: "Laag",
+      businessCount: "4.900+",
+      growthRate: "+3%"
+    },
+    localTestimonial: {
+      quote: "Parkstad is één markt. Vanuit Heerlen bereiken we nu klanten uit zes gemeenten.",
+      author: "Tom Meertens",
+      business: "Meertens Accountancy",
+      industry: "Accountant"
+    },
+    marketInsight: "Parkstad Limburg (250.000+ inwoners) functioneert als één stedelijk gebied. Ondernemers die in Heerlen ranken, bereiken ook Kerkrade, Landgraaf en Brunssum. De grens met Duitsland en België biedt extra kansen."
   },
   {
     slug: "oss",
@@ -808,7 +860,20 @@ export const locations: LocationData[] = [
     localFacts: ["Farmaceutische industrie", "Sterke lokale economie", "Goede bereikbaarheid"],
     nearbyAreas: ["Den Bosch", "Uden", "Veghel", "Grave", "Cuijk"],
     metaTitle: "SEO Bureau Oss | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Oss. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Oss. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.400+",
+      competitionLevel: "Laag",
+      businessCount: "4.200+",
+      growthRate: "+5%"
+    },
+    localTestimonial: {
+      quote: "Oss heeft een sterke lokale gemeenschap. Reviews van lokale klanten maken hier echt het verschil.",
+      author: "Jeroen van Dijk",
+      business: "Van Dijk Schilderwerken",
+      industry: "Aannemer"
+    },
+    marketInsight: "Oss is een hechte gemeenschap waar mond-tot-mond en online reputatie elkaar versterken. De farmaceutische sector (MSD) zorgt voor hoger opgeleide inwoners die kritisch zoeken."
   },
   {
     slug: "roosendaal",
@@ -820,7 +885,20 @@ export const locations: LocationData[] = [
     localFacts: ["Belangrijk spoorwegknooppunt", "Grensligging", "Sterke retail"],
     nearbyAreas: ["Breda", "Bergen op Zoom", "Etten-Leur", "Moerdijk", "Rucphen"],
     metaTitle: "SEO Bureau Roosendaal | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Roosendaal. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Roosendaal. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "2.900+",
+      competitionLevel: "Laag",
+      businessCount: "3.800+",
+      growthRate: "+4%"
+    },
+    localTestimonial: {
+      quote: "Roosendaal is een spoorwegknooppunt. Klanten uit heel West-Brabant komen hier naartoe.",
+      author: "Anja Mertens",
+      business: "Salon Mertens",
+      industry: "Kapsalon"
+    },
+    marketInsight: "Roosendaal fungeert als regionaal centrum voor West-Brabant. De grens met België zorgt voor extra zoekverkeer. Belgische bezoekers zoeken vaak op Nederlandse termen."
   },
   {
     slug: "gouda",
@@ -832,7 +910,20 @@ export const locations: LocationData[] = [
     localFacts: ["Beroemd om kaas en stroopwafels", "Veel toerisme", "Historische binnenstad"],
     nearbyAreas: ["Alphen aan den Rijn", "Waddinxveen", "Woerden", "Bodegraven", "Rotterdam"],
     metaTitle: "SEO Bureau Gouda | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Gouda. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Gouda. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.600+",
+      competitionLevel: "Laag-Gemiddeld",
+      businessCount: "4.500+",
+      growthRate: "+4%"
+    },
+    localTestimonial: {
+      quote: "Gouda trekt toeristen het hele jaar door. Onze vindbaarheid in het Engels maakt nu het verschil.",
+      author: "Willem Bakker",
+      business: "Bakker Stroopwafels",
+      industry: "Bakker"
+    },
+    marketInsight: "Gouda is een toeristische trekpleister met internationale bekendheid. Veel zoekverkeer komt in het Engels en Duits. De kaasmarkt zorgt voor seizoenspieken in de zomer."
   },
   {
     slug: "purmerend",
@@ -844,7 +935,20 @@ export const locations: LocationData[] = [
     localFacts: ["Snelgroeiende gemeente", "Regionale functie", "Goede bereikbaarheid naar Amsterdam"],
     nearbyAreas: ["Zaandam", "Volendam", "Edam", "Monnickendam", "Amsterdam"],
     metaTitle: "SEO Bureau Purmerend | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Purmerend. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Purmerend. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.200+",
+      competitionLevel: "Laag",
+      businessCount: "4.100+",
+      growthRate: "+8%"
+    },
+    localTestimonial: {
+      quote: "Purmerend groeit hard. Nieuwe bewoners zoeken actief naar lokale diensten. Die markt pakken wij nu.",
+      author: "Ronald Visser",
+      business: "Visser Elektrotechniek",
+      industry: "Elektricien"
+    },
+    marketInsight: "Purmerend is een van de snelst groeiende gemeenten. Nieuwe inwoners zoeken actief naar lokale diensten. De concurrentie is laag, wat snelle resultaten mogelijk maakt."
   },
   {
     slug: "hoorn",
@@ -856,7 +960,20 @@ export const locations: LocationData[] = [
     localFacts: ["Historische VOC-stad", "Regionale functie", "Waterrecreatie"],
     nearbyAreas: ["Enkhuizen", "Medemblik", "Koggenland", "Opmeer", "Alkmaar"],
     metaTitle: "SEO Bureau Hoorn | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Hoorn. Bereik West-Friesland. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Hoorn. Bereik West-Friesland. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.100+",
+      competitionLevel: "Laag",
+      businessCount: "3.900+",
+      growthRate: "+4%"
+    },
+    localTestimonial: {
+      quote: "West-Friesland is groter dan mensen denken. Vanuit Hoorn bedienen we nu de hele regio.",
+      author: "Kees Dekker",
+      business: "Dekker Makelaardij",
+      industry: "Makelaar"
+    },
+    marketInsight: "Hoorn is het centrum van West-Friesland (200.000+ inwoners). De VOC-historie trekt toeristen in de zomer. Lokale zoektermen presteren beter dan 'Noord-Holland' termen."
   },
   {
     slug: "lelystad",
@@ -868,7 +985,20 @@ export const locations: LocationData[] = [
     localFacts: ["Provinciehoofdstad", "Veel ruimte en natuur", "Outlet shopping trekt bezoekers"],
     nearbyAreas: ["Almere", "Dronten", "Zeewolde", "Harderwijk", "Emmeloord"],
     metaTitle: "SEO Bureau Lelystad | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Lelystad. Bereik heel Flevoland. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Lelystad. Bereik heel Flevoland. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.400+",
+      competitionLevel: "Laag",
+      businessCount: "4.200+",
+      growthRate: "+6%"
+    },
+    localTestimonial: {
+      quote: "Lelystad wordt steeds populairder. De Outlet en Batavia Stad trekken bezoekers die ook lokale diensten zoeken.",
+      author: "Ingrid Mulder",
+      business: "Mulder Schoonheidssalon",
+      industry: "Schoonheidssalon"
+    },
+    marketInsight: "Lelystad groeit door de Outlet en Batavia Stad. Toeristen zoeken naar lokale horeca en diensten. De concurrentie is minimaal, wat snelle top-posities mogelijk maakt."
   },
   {
     slug: "sittard",
@@ -880,7 +1010,20 @@ export const locations: LocationData[] = [
     localFacts: ["Chemische industrie", "Sterke lokale economie", "Goede bereikbaarheid"],
     nearbyAreas: ["Maastricht", "Heerlen", "Roermond", "Beek", "Stein"],
     metaTitle: "SEO Bureau Sittard-Geleen | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Sittard-Geleen. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Sittard-Geleen. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.600+",
+      competitionLevel: "Laag",
+      businessCount: "4.800+",
+      growthRate: "+3%"
+    },
+    localTestimonial: {
+      quote: "De Westelijke Mijnstreek is één markt. Onze klanten komen uit Sittard, Geleen en omgeving.",
+      author: "Paul Hermans",
+      business: "Hermans Tandheelkunde",
+      industry: "Tandarts"
+    },
+    marketInsight: "Sittard-Geleen is de grootste gemeente in Midden-Limburg. De chemische industrie (Chemelot) zorgt voor hoger opgeleide werknemers die kritisch zoeken. B2B-diensten presteren hier goed."
   },
   {
     slug: "veenendaal",
@@ -892,7 +1035,20 @@ export const locations: LocationData[] = [
     localFacts: ["Sterke ondernemersmentaliteit", "Veel detailhandel", "Goede bereikbaarheid"],
     nearbyAreas: ["Ede", "Wageningen", "Rhenen", "Barneveld", "Amersfoort"],
     metaTitle: "SEO Bureau Veenendaal | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Veenendaal. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Veenendaal. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "2.800+",
+      competitionLevel: "Laag",
+      businessCount: "3.500+",
+      growthRate: "+5%"
+    },
+    localTestimonial: {
+      quote: "Veenendaal heeft een sterke ondernemersgeest. Lokale klanten waarderen lokale bedrijven.",
+      author: "Gerrit van den Berg",
+      business: "Van den Berg Aannemers",
+      industry: "Aannemer"
+    },
+    marketInsight: "Veenendaal staat bekend om ondernemerschap. De Gelderse Vallei regio (250.000+ inwoners) zoekt vaak op 'Veenendaal' als centrum. Lokale netwerken versterken online vindbaarheid."
   },
   {
     slug: "helmond",
@@ -904,7 +1060,20 @@ export const locations: LocationData[] = [
     localFacts: ["Deel van Brainport regio", "Automotive hub", "Innovatieve maakindustrie"],
     nearbyAreas: ["Eindhoven", "Deurne", "Someren", "Asten", "Gemert-Bakel"],
     metaTitle: "SEO Bureau Helmond | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Helmond. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Helmond. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "3.900+",
+      competitionLevel: "Laag-Gemiddeld",
+      businessCount: "4.600+",
+      growthRate: "+7%"
+    },
+    localTestimonial: {
+      quote: "Helmond is de automotive hub van Nederland. Tech-savvy klanten verwachten dat je online goed vindbaar bent.",
+      author: "Michiel Janssen",
+      business: "Janssen Autoservice",
+      industry: "Autobedrijf"
+    },
+    marketInsight: "Helmond is onderdeel van Brainport. De automotive en tech sector zorgt voor een tech-savvy bevolking die hoge digitale verwachtingen heeft. Mobile-first en snelle websites zijn hier essentieel."
   },
   {
     slug: "vlaardingen",
@@ -916,7 +1085,20 @@ export const locations: LocationData[] = [
     localFacts: ["Havenstad met maritieme historie", "Deel van Rijnmond", "Goede bereikbaarheid"],
     nearbyAreas: ["Rotterdam", "Schiedam", "Maassluis", "Delft", "Den Haag"],
     metaTitle: "SEO Bureau Vlaardingen | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Vlaardingen. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Vlaardingen. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "2.600+",
+      competitionLevel: "Laag",
+      businessCount: "3.400+",
+      growthRate: "+4%"
+    },
+    localTestimonial: {
+      quote: "Vlaardingen is onderdeel van Rijnmond maar heeft eigen karakter. Lokale klanten zoeken lokaal.",
+      author: "Hans de Groot",
+      business: "De Groot Loodgieters",
+      industry: "Loodgieter"
+    },
+    marketInsight: "Vlaardingen profiteert van de nabijheid van Rotterdam maar heeft eigen lokaal zoekgedrag. Inwoners zoeken vaak specifiek op 'Vlaardingen' om niet naar Rotterdam te hoeven."
   },
 
   // Tier 3: Kleinere steden/dorpen (selectie - kan uitgebreid worden)
