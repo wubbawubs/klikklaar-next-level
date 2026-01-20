@@ -8,7 +8,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { Phone, Check, TrendingUp, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { IndustryData } from "@/data/industries";
+import { IndustryData, industries } from "@/data/industries";
+import { locations } from "@/data/locations";
+import { combos } from "@/data/combos";
 import {
   Accordion,
   AccordionContent,
@@ -292,47 +294,81 @@ function IndustryFAQ({ faqs, industryName }: { faqs: { question: string; answer:
   );
 }
 
-function RelatedIndustries({ currentSlug }: { currentSlug: string }) {
+function RelatedIndustries({ industry }: { industry: IndustryData }) {
   const { ref, isVisible } = useScrollReveal();
   
-  const relatedLinks = [
-    { slug: "coaches", name: "Coaches" },
-    { slug: "personal-trainers", name: "Personal Trainers" },
-    { slug: "kappers", name: "Kappers" },
-    { slug: "tandartsen", name: "Tandartsen" },
-    { slug: "fysiotherapeuten", name: "Fysiotherapeuten" },
-  ].filter(item => item.slug !== currentSlug).slice(0, 4);
+  // Get combo pages for this industry (cities where this industry has combo pages)
+  const industryCombos = combos
+    .filter(c => c.industrySlug === industry.slug)
+    .slice(0, 6)
+    .map(c => {
+      const loc = locations.find(l => l.slug === c.locationSlug);
+      return loc ? { slug: c.locationSlug, name: loc.name } : null;
+    })
+    .filter(Boolean) as { slug: string; name: string }[];
+
+  // Get other industries for cross-linking
+  const otherIndustries = industries
+    .filter(i => i.slug !== industry.slug)
+    .slice(0, 5);
 
   return (
     <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">
       <div className="container px-4 sm:px-6">
         <div 
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">
-            SEO voor andere branches
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground text-center mb-8">
+            Gerelateerde SEO pagina's
           </h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {relatedLinks.map((link) => (
+          
+          {/* Combo pages for this industry */}
+          {industryCombos.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3 text-center">
+                {industry.namePlural} per stad
+              </h3>
+              <div className="flex flex-wrap justify-center gap-2">
+                {industryCombos.map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    to={`/seo-${industry.slug}-${loc.slug}`}
+                    className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  >
+                    {industry.name} {loc.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Other industries */}
+          <div className="mb-6">
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3 text-center">
+              Andere branches
+            </h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {otherIndustries.map((ind) => (
+                <Link
+                  key={ind.slug}
+                  to={`/seo-${ind.slug}`}
+                  className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                >
+                  SEO {ind.namePlural}
+                </Link>
+              ))}
               <Link
-                key={link.slug}
-                to={`/seo-${link.slug}`}
-                className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                to="/voorbeelden"
+                className="px-4 py-2 bg-kk-orange/10 border border-kk-orange/20 rounded-full text-sm text-kk-orange font-medium hover:bg-kk-orange/20 transition-all duration-300"
               >
-                SEO voor {link.name}
+                Alle branches →
               </Link>
-            ))}
-            <Link
-              to="/voorbeelden"
-              className="px-4 py-2 bg-kk-orange/10 border border-kk-orange/20 rounded-full text-sm text-kk-orange font-medium hover:bg-kk-orange/20 transition-all duration-300"
-            >
-              Alle branches →
-            </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -364,7 +400,7 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
         <IndustrySolutions solutions={industry.solutions} />
         <IndustryStats stats={industry.stats} />
         <IndustryFAQ faqs={industry.faqs} industryName={industry.name} />
-        <RelatedIndustries currentSlug={industry.slug} />
+        <RelatedIndustries industry={industry} />
         <CTASection />
       </main>
       <Footer />

@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import { Phone, MapPin, Users, TrendingUp, Building, ChevronRight, Check, Star } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LocationData, locations } from "@/data/locations";
+import { industries } from "@/data/industries";
+import { combos } from "@/data/combos";
 import {
   Accordion,
   AccordionContent,
@@ -378,6 +380,16 @@ function LocationFAQ({ location }: { location: LocationData }) {
 function NearbyLocations({ location }: { location: LocationData }) {
   const { ref, isVisible } = useScrollReveal();
   
+  // Get combo pages for this location (industries available in this city)
+  const locationCombos = combos
+    .filter(c => c.locationSlug === location.slug)
+    .slice(0, 6)
+    .map(c => {
+      const ind = industries.find(i => i.slug === c.industrySlug);
+      return ind ? { slug: c.industrySlug, name: ind.name, namePlural: ind.namePlural } : null;
+    })
+    .filter(Boolean) as { slug: string; name: string; namePlural: string }[];
+
   // Get nearby locations from the locations data
   const nearbyLocationSlugs = location.nearbyAreas.slice(0, 6);
   const nearbyLocations = locations.filter(loc => 
@@ -385,40 +397,67 @@ function NearbyLocations({ location }: { location: LocationData }) {
       loc.name.toLowerCase() === area.toLowerCase() ||
       loc.slug === area.toLowerCase()
     )
-  ).slice(0, 4);
+  ).slice(0, 5);
 
   return (
     <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">
       <div className="container px-4 sm:px-6">
         <div 
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">
-            Ook actief in de regio
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground text-center mb-8">
+            Gerelateerde SEO pagina's
           </h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {nearbyLocations.map((loc) => (
-              <Link
-                key={loc.slug}
-                to={`/seo-${loc.slug}`}
-                className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
-              >
-                SEO {loc.name}
-              </Link>
-            ))}
-            {location.nearbyAreas.filter(area => !nearbyLocations.find(loc => loc.name.toLowerCase() === area.toLowerCase())).slice(0, 3).map((area) => (
-              <span
-                key={area}
-                className="px-4 py-2 bg-muted/50 border border-border rounded-full text-sm text-muted-foreground"
-              >
-                {area}
-              </span>
-            ))}
+          
+          {/* Combo pages for this location */}
+          {locationCombos.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3 text-center">
+                Branches in {location.name}
+              </h3>
+              <div className="flex flex-wrap justify-center gap-2">
+                {locationCombos.map((ind) => (
+                  <Link
+                    key={ind.slug}
+                    to={`/seo-${ind.slug}-${location.slug}`}
+                    className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                  >
+                    {ind.namePlural} {location.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Nearby locations */}
+          <div>
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3 text-center">
+              SEO in de regio
+            </h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {nearbyLocations.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/seo-${loc.slug}`}
+                  className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-kk-orange/30 hover:shadow-premium-sm transition-all duration-300"
+                >
+                  SEO {loc.name}
+                </Link>
+              ))}
+              {location.nearbyAreas.filter(area => !nearbyLocations.find(loc => loc.name.toLowerCase() === area.toLowerCase())).slice(0, 2).map((area) => (
+                <span
+                  key={area}
+                  className="px-4 py-2 bg-muted/50 border border-border rounded-full text-sm text-muted-foreground"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
