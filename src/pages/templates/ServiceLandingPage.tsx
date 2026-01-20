@@ -132,7 +132,7 @@ function ServiceExplanation({ service }: { service: ServiceData }) {
             Wat is {service.name}?
           </h2>
           <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
-            {service.explanation}
+            {service.heroDescription}
           </p>
         </div>
       </div>
@@ -140,7 +140,7 @@ function ServiceExplanation({ service }: { service: ServiceData }) {
   );
 }
 
-function ServiceBenefits({ benefits }: { benefits: string[] }) {
+function ServiceBenefits({ benefits }: { benefits: Array<{ icon: string; title: string; description: string }> }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -162,22 +162,28 @@ function ServiceBenefits({ benefits }: { benefits: string[] }) {
           </p>
 
           <div className="space-y-4">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:border-kk-orange/20 hover:shadow-premium transition-all duration-300"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateX(0)' : 'translateX(20px)',
-                  transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`
-                }}
-              >
-                <div className="w-6 h-6 rounded-full bg-kk-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-kk-orange" />
+            {benefits.map((benefit, index) => {
+              const IconComponent = LucideIcons[benefit.icon as keyof typeof LucideIcons] as React.ElementType;
+              return (
+                <div 
+                  key={index}
+                  className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:border-kk-orange/20 hover:shadow-premium transition-all duration-300"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateX(0)' : 'translateX(20px)',
+                    transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`
+                  }}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-kk-orange/10 flex items-center justify-center flex-shrink-0">
+                    {IconComponent && <IconComponent className="w-5 h-5 text-kk-orange" />}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{benefit.title}</p>
+                    <p className="text-muted-foreground text-sm mt-1">{benefit.description}</p>
+                  </div>
                 </div>
-                <p className="text-foreground">{benefit}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
@@ -185,7 +191,7 @@ function ServiceBenefits({ benefits }: { benefits: string[] }) {
   );
 }
 
-function ServiceProcess({ process }: { process: string[] }) {
+function ServiceProcess({ howItWorks }: { howItWorks: Array<{ step: number; title: string; description: string }> }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -207,7 +213,7 @@ function ServiceProcess({ process }: { process: string[] }) {
           </p>
 
           <div className="space-y-4">
-            {process.map((step, index) => (
+            {howItWorks.map((step, index) => (
               <div 
                 key={index}
                 className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border"
@@ -218,9 +224,12 @@ function ServiceProcess({ process }: { process: string[] }) {
                 }}
               >
                 <div className="w-8 h-8 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">
-                  {index + 1}
+                  {step.step}
                 </div>
-                <p className="text-foreground pt-1">{step}</p>
+                <div>
+                  <p className="font-semibold text-foreground">{step.title}</p>
+                  <p className="text-muted-foreground text-sm mt-1">{step.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -353,36 +362,18 @@ function RelatedServices({ currentSlug }: { currentSlug: string }) {
 
 export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
   const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": service.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
+    type: "FAQPage" as const,
+    questions: service.faqs.map(faq => ({
+      question: faq.question,
+      answer: faq.answer
     }))
   };
 
   const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": service.name,
-    "description": service.subheadline,
-    "provider": {
-      "@type": "Organization",
-      "name": "KlikKlaarSEO"
-    }
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://klikklaar.nl" },
-      { "@type": "ListItem", "position": 2, "name": service.name, "item": `https://klikklaar.nl/${service.slug}` }
-    ]
+    type: "Service" as const,
+    name: service.name,
+    description: service.subheadline,
+    provider: "KlikKlaarSEO"
   };
 
   return (
@@ -394,13 +385,12 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={serviceSchema} />
-      <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <ServiceHero service={service} />
         <ServiceExplanation service={service} />
         <ServiceBenefits benefits={service.benefits} />
-        <ServiceProcess process={service.process} />
+        <ServiceProcess howItWorks={service.howItWorks} />
         <ServiceTestimonial />
         <ServiceFAQ faqs={service.faqs} serviceName={service.name} />
         <RelatedServices currentSlug={service.slug} />

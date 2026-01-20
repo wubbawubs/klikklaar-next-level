@@ -428,50 +428,24 @@ function NearbyLocations({ location }: { location: LocationData }) {
 
 export function LocationLandingPage({ location }: LocationLandingPageProps) {
   const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    type: "FAQPage" as const,
+    questions: [
       {
-        "@type": "Question",
-        "name": `Werkt SEO ook voor kleine bedrijven in ${location.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Absoluut! Juist voor lokale ondernemers in ${location.name} is SEO essentieel.`
-        }
+        question: `Werkt SEO ook voor kleine bedrijven in ${location.name}?`,
+        answer: `Absoluut! Juist voor lokale ondernemers in ${location.name} is SEO essentieel.`
       },
       {
-        "@type": "Question",
-        "name": `Hoe snel zie ik resultaten in ${location.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `De meeste klanten zien binnen 4-8 weken de eerste verbeteringen in Google.`
-        }
+        question: `Hoe snel zie ik resultaten in ${location.name}?`,
+        answer: `De meeste klanten zien binnen 4-8 weken de eerste verbeteringen in Google.`
       }
     ]
   };
 
   const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "KlikKlaarSEO",
-    "description": `SEO bureau voor lokale ondernemers in ${location.name}, ${location.province}`,
-    "areaServed": {
-      "@type": "City",
-      "name": location.name,
-      "containedInPlace": {
-        "@type": "State",
-        "name": location.province
-      }
-    }
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://klikklaar.nl" },
-      { "@type": "ListItem", "position": 2, "name": `SEO ${location.name}`, "item": `https://klikklaar.nl/seo-${location.slug}` }
-    ]
+    type: "LocalBusiness" as const,
+    name: "KlikKlaarSEO",
+    description: `SEO bureau voor lokale ondernemers in ${location.name}, ${location.province}`,
+    url: `https://klikklaar.nl/seo-${location.slug}`
   };
 
   return (
@@ -483,7 +457,6 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={localBusinessSchema} />
-      <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <LocationHero location={location} />
