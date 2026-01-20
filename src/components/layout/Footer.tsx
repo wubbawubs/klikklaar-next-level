@@ -6,6 +6,7 @@ const footerLinks = {
     { name: "Wat je krijgt", href: "/wat-je-krijgt" },
     { name: "Hoe het werkt", href: "/hoe-het-werkt" },
     { name: "Prijzen", href: "/prijzen" },
+    { name: "Kennisbank", href: "/kennisbank" },
   ],
   services: [
     { name: "Lokale SEO", href: "/lokale-seo" },
@@ -14,10 +15,14 @@ const footerLinks = {
     { name: "Technische SEO", href: "/technische-seo" },
     { name: "Google Mijn Bedrijf", href: "/google-mijn-bedrijf-optimalisatie" },
   ],
+  kennisbank: [
+    { name: "Lokale SEO Gids", href: "/kennisbank/lokale-seo" },
+    { name: "Technische SEO Gids", href: "/kennisbank/technische-seo" },
+    { name: "Content Optimalisatie", href: "/kennisbank/content-optimalisatie" },
+  ],
   industries: [
     { name: "Personal Trainers", href: "/seo-personal-trainers" },
     { name: "Coaches", href: "/seo-coaches" },
-    { name: "Interieur Designers", href: "/seo-interieur-design" },
     { name: "Kappers", href: "/seo-kappers" },
     { name: "Alle branches", href: "/voorbeelden" },
   ],
@@ -26,7 +31,6 @@ const footerLinks = {
     { name: "SEO Rotterdam", href: "/seo-rotterdam" },
     { name: "SEO Utrecht", href: "/seo-utrecht" },
     { name: "SEO Den Haag", href: "/seo-den-haag" },
-    { name: "SEO Eindhoven", href: "/seo-eindhoven" },
   ],
   company: [
     { name: "Over ons", href: "/over-ons" },
@@ -43,14 +47,14 @@ export function Footer() {
     <footer className="bg-slate-900 text-white">
       <div className="container px-4 sm:px-6 py-10 lg:py-16">
         {/* Top section */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-2 mb-4 lg:mb-0">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
             <Link to="/" className="flex items-center mb-4">
               <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 w-auto brightness-0 invert" />
             </Link>
             <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
-              Automatische website-verbeteringen voor lokale ondernemers. Meer klanten, zonder gedoe.
+              Automatische SEO voor lokale ondernemers. Meer klanten, zonder gedoe.
             </p>
           </div>
 
@@ -71,11 +75,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Kennisbank */}
           <div>
-            <h4 className="font-semibold text-white mb-3 lg:mb-4 text-sm">Diensten</h4>
+            <h4 className="font-semibold text-white mb-3 lg:mb-4 text-sm">Kennisbank</h4>
             <ul className="space-y-2 lg:space-y-3">
-              {footerLinks.services.map((link) => (
+              {footerLinks.kennisbank.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}

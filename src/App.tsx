@@ -20,6 +20,9 @@ import AdLandingB from "./pages/AdLandingB";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import Kennisbank from "./pages/Kennisbank";
+import KennisbankPillar from "./pages/templates/KennisbankPillar";
+import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
 // Template imports
 import { IndustryLandingPage } from "./pages/templates/IndustryLandingPage";
@@ -55,6 +58,11 @@ const App = () => (
           <Route path="/ad-b" element={<AdLandingB />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/voorwaarden" element={<Terms />} />
+          
+          {/* Kennisbank routes */}
+          <Route path="/kennisbank" element={<Kennisbank />} />
+          <Route path="/kennisbank/:pillarSlug" element={<KennisbankPillar />} />
+          <Route path="/kennisbank/:pillarSlug/:articleSlug" element={<KennisbankArticle />} />
           
           {/* Dynamic industry landing pages */}
           {industries.map((industry) => (
