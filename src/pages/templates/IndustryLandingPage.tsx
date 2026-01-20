@@ -297,20 +297,20 @@ function IndustryFAQ({ faqs, industryName }: { faqs: { question: string; answer:
 function RelatedIndustries({ industry }: { industry: IndustryData }) {
   const { ref, isVisible } = useScrollReveal();
   
-  // Get combo pages for this industry (cities where this industry has combo pages)
+  // LIMIT: Max 4 combo links to avoid over-automated internal linking
   const industryCombos = combos
     .filter(c => c.industrySlug === industry.slug)
-    .slice(0, 6)
+    .slice(0, 4) // Reduced from 6 to 4
     .map(c => {
       const loc = locations.find(l => l.slug === c.locationSlug);
       return loc ? { slug: c.locationSlug, name: loc.name } : null;
     })
     .filter(Boolean) as { slug: string; name: string }[];
 
-  // Get other industries for cross-linking
+  // LIMIT: Max 4 other industry links
   const otherIndustries = industries
     .filter(i => i.slug !== industry.slug)
-    .slice(0, 5);
+    .slice(0, 4); // Reduced from 5 to 4
 
   return (
     <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">

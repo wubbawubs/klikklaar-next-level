@@ -146,6 +146,64 @@ function ComboHero({ industry, location }: ComboLandingPageProps) {
   );
 }
 
+// AI-Citable Definition Section - helps AI interfaces cite this content
+function ComboDefinition({ industry, location }: ComboLandingPageProps) {
+  const { ref, isVisible } = useScrollReveal();
+
+  return (
+    <section ref={ref} className="py-12 lg:py-16">
+      <div className="container px-4 sm:px-6">
+        <div 
+          className="max-w-3xl mx-auto"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+          }}
+        >
+          {/* Definition block for AI citability */}
+          <div className="p-6 bg-muted/30 rounded-xl border border-border mb-8">
+            <h2 className="text-lg font-semibold text-foreground mb-3">
+              Wat is lokale SEO voor {industry.namePlural.toLowerCase()} in {location.name}?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Lokale SEO voor {industry.namePlural.toLowerCase()} in {location.name} is het proces om jouw {industry.name.toLowerCase()} 
+              praktijk of bedrijf beter vindbaar te maken in Google voor mensen in {location.name} en {location.province}. 
+              Dit omvat optimalisatie van je website, Google Mijn Bedrijf profiel, en lokale zoektermen 
+              zoals "{industry.name.toLowerCase()} {location.name}" en "{industry.name.toLowerCase()} in de buurt".
+            </p>
+          </div>
+
+          {/* Numbered steps for AI citability */}
+          <div className="space-y-4">
+            <h3 className="text-base font-semibold text-foreground">
+              Hoe werkt SEO voor {industry.namePlural.toLowerCase()} in {location.name}?
+            </h3>
+            <ol className="space-y-3">
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-kk-orange/10 flex items-center justify-center text-sm font-semibold text-kk-orange">1</span>
+                <span className="text-muted-foreground"><strong className="text-foreground">Website analyse</strong> – We analyseren je huidige website op technische SEO, content en lokale signalen.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-kk-orange/10 flex items-center justify-center text-sm font-semibold text-kk-orange">2</span>
+                <span className="text-muted-foreground"><strong className="text-foreground">Automatische optimalisatie</strong> – Onze technologie optimaliseert je website voor zoektermen als "{industry.name.toLowerCase()} {location.name}".</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-kk-orange/10 flex items-center justify-center text-sm font-semibold text-kk-orange">3</span>
+                <span className="text-muted-foreground"><strong className="text-foreground">Google Mijn Bedrijf</strong> – We optimaliseren je profiel zodat je verschijnt in Google Maps voor {location.name}.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-kk-orange/10 flex items-center justify-center text-sm font-semibold text-kk-orange">4</span>
+                <span className="text-muted-foreground"><strong className="text-foreground">Maandelijkse rapportage</strong> – Je ontvangt wekelijks een overzicht van je rankings en bezoekers uit {location.province}.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ComboPainPoints({ industry, location }: ComboLandingPageProps) {
   const { ref, isVisible } = useScrollReveal();
 
@@ -415,27 +473,27 @@ function ComboFAQ({ industry, location }: ComboLandingPageProps) {
 function RelatedPages({ industry, location }: ComboLandingPageProps) {
   const { ref, isVisible } = useScrollReveal();
 
-  // Find other combos for the same industry in different locations
+  // LIMIT: Max 4 links per section to avoid over-automated internal linking
   const sameIndustryOtherLocations = combos
     .filter(c => c.industrySlug === industry.slug && c.locationSlug !== location.slug)
-    .slice(0, 5)
+    .slice(0, 4) // Reduced from 5 to 4
     .map(c => {
       const loc = locations.find(l => l.slug === c.locationSlug);
       return loc ? { slug: c.locationSlug, name: loc.name, industrySlug: c.industrySlug } : null;
     })
     .filter(Boolean) as { slug: string; name: string; industrySlug: string }[];
 
-  // Find other combos for the same location with different industries
+  // LIMIT: Max 4 links
   const sameLocationOtherIndustries = combos
     .filter(c => c.locationSlug === location.slug && c.industrySlug !== industry.slug)
-    .slice(0, 5)
+    .slice(0, 4) // Reduced from 5 to 4
     .map(c => {
       const ind = industries.find(i => i.slug === c.industrySlug);
       return ind ? { slug: c.industrySlug, namePlural: ind.namePlural, locationSlug: c.locationSlug } : null;
     })
     .filter(Boolean) as { slug: string; namePlural: string; locationSlug: string }[];
 
-  // Find nearby areas that have combos
+  // LIMIT: Max 2 nearby links
   const nearbyWithCombos = location.nearbyAreas
     .map(area => {
       const nearbyLoc = locations.find(l => l.name.toLowerCase() === area.toLowerCase() || l.slug === area.toLowerCase().replace(/\s+/g, '-'));
@@ -445,7 +503,7 @@ function RelatedPages({ industry, location }: ComboLandingPageProps) {
       return null;
     })
     .filter(Boolean)
-    .slice(0, 3) as { slug: string; name: string }[];
+    .slice(0, 2) as { slug: string; name: string }[]; // Reduced from 3 to 2
 
   return (
     <section ref={ref} className="py-16 lg:py-24">
@@ -566,6 +624,9 @@ function RelatedPages({ industry, location }: ComboLandingPageProps) {
 }
 
 export function ComboLandingPage({ industry, location }: ComboLandingPageProps) {
+  // Noindex Tier 3 locations to prevent doorway/index bloat
+  const shouldNoindex = location.tier === 3;
+
   const faqSchema = {
     type: "FAQPage" as const,
     questions: [
@@ -580,11 +641,14 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
     ]
   };
 
-  const localBusinessSchema = {
-    type: "LocalBusiness" as const,
-    name: "KlikKlaarSEO",
-    description: `SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}, ${location.province}`,
-    url: `https://klikklaar.nl/seo-${industry.slug}-${location.slug}`
+  // Use Service schema instead of LocalBusiness to avoid "fake locations" signal
+  const serviceSchema = {
+    type: "Service" as const,
+    name: `SEO voor ${industry.namePlural} in ${location.name}`,
+    description: `Automatische SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}, ${location.province}`,
+    provider: "KlikKlaarSEO",
+    areaServed: [location.name, location.province],
+    serviceType: `SEO voor ${industry.namePlural}`
   };
 
   const breadcrumbSchema = {
@@ -602,13 +666,15 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
         title={`SEO voor ${industry.namePlural} ${location.name} | Lokale Vindbaarheid | KlikKlaarSEO`}
         description={`Automatische SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}. Word de best vindbare ${industry.name.toLowerCase()} in ${location.province}. Vanaf €99/mnd.`}
         canonical={`https://klikklaar.nl/seo-${industry.slug}-${location.slug}`}
+        robots={shouldNoindex ? "noindex,follow" : "index,follow"}
       />
       <StructuredData schema={faqSchema} />
-      <StructuredData schema={localBusinessSchema} />
+      <StructuredData schema={serviceSchema} />
       <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <ComboHero industry={industry} location={location} />
+        <ComboDefinition industry={industry} location={location} />
         <ComboPainPoints industry={industry} location={location} />
         <ComboSolutions industry={industry} location={location} />
         <ComboStats industry={industry} location={location} />

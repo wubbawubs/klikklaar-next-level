@@ -25,7 +25,24 @@ interface ServiceSchema {
   name: string;
   description: string;
   provider: string;
-  areaServed?: string;
+  areaServed?: string | string[];
+  serviceType?: string;
+}
+
+interface OrganizationSchema {
+  type: "Organization";
+  name: string;
+  description: string;
+  url: string;
+  telephone?: string;
+  email?: string;
+  address?: {
+    streetAddress: string;
+    addressLocality: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  sameAs?: string[];
 }
 
 interface FAQSchema {
@@ -51,7 +68,7 @@ interface BreadcrumbSchema {
   }>;
 }
 
-type SchemaType = LocalBusinessSchema | ServiceSchema | FAQSchema | WebPageSchema | BreadcrumbSchema;
+type SchemaType = LocalBusinessSchema | ServiceSchema | FAQSchema | WebPageSchema | BreadcrumbSchema | OrganizationSchema;
 
 interface StructuredDataProps {
   schema: SchemaType | SchemaType[];
@@ -136,6 +153,26 @@ function generateBreadcrumbSchema(data: BreadcrumbSchema) {
   };
 }
 
+function generateOrganizationSchema(data: OrganizationSchema) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    telephone: data.telephone,
+    email: data.email,
+    address: data.address ? {
+      "@type": "PostalAddress",
+      streetAddress: data.address.streetAddress,
+      addressLocality: data.address.addressLocality,
+      postalCode: data.address.postalCode,
+      addressCountry: data.address.addressCountry,
+    } : undefined,
+    sameAs: data.sameAs,
+  };
+}
+
 function generateSchema(schema: SchemaType) {
   switch (schema.type) {
     case "LocalBusiness":
@@ -148,6 +185,8 @@ function generateSchema(schema: SchemaType) {
       return generateWebPageSchema(schema);
     case "BreadcrumbList":
       return generateBreadcrumbSchema(schema);
+    case "Organization":
+      return generateOrganizationSchema(schema);
     default:
       return null;
   }
@@ -190,10 +229,10 @@ export function StructuredData({ schema }: StructuredDataProps) {
   return null;
 }
 
-// Pre-configured schema for KlikKlaar
+// Pre-configured schema for KlikKlaar - ONLY use on pages with real physical presence
 export const klikklaarBusinessSchema: LocalBusinessSchema = {
   type: "LocalBusiness",
-  name: "KlikKlaar",
+  name: "KlikKlaarSEO",
   description: "Automatische SEO en website optimalisatie voor lokale ondernemers. Meer klanten, zonder gedoe.",
   url: "https://klikklaar.nl",
   telephone: "+31628354333",
@@ -209,4 +248,23 @@ export const klikklaarBusinessSchema: LocalBusinessSchema = {
     ratingValue: 4.2,
     reviewCount: 150,
   },
+};
+
+// Organization schema for use on service/location pages (NOT LocalBusiness)
+export const klikklaarOrganizationSchema: OrganizationSchema = {
+  type: "Organization",
+  name: "KlikKlaarSEO",
+  description: "Automatische SEO voor lokale ondernemers in heel Nederland. Meer klanten, zonder gedoe.",
+  url: "https://klikklaar.nl",
+  telephone: "+31628354333",
+  email: "Info@klikklaarseo.nl",
+  address: {
+    streetAddress: "Olieslagerspoort 1",
+    addressLocality: "Enkhuizen",
+    postalCode: "1601AW",
+    addressCountry: "NL",
+  },
+  sameAs: [
+    "https://www.trustpilot.com/review/klikklaarseo.nl"
+  ]
 };

@@ -4,9 +4,10 @@ interface SEOHeadProps {
   title: string;
   description: string;
   canonical?: string;
+  robots?: "index,follow" | "noindex,follow" | "noindex,nofollow";
 }
 
-export function SEOHead({ title, description, canonical }: SEOHeadProps) {
+export function SEOHead({ title, description, canonical, robots = "index,follow" }: SEOHeadProps) {
   useEffect(() => {
     // Update document title
     document.title = title;
@@ -20,6 +21,17 @@ export function SEOHead({ title, description, canonical }: SEOHeadProps) {
       metaDescription.setAttribute("name", "description");
       metaDescription.setAttribute("content", description);
       document.head.appendChild(metaDescription);
+    }
+
+    // Update or create robots meta
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (metaRobots) {
+      metaRobots.setAttribute("content", robots);
+    } else {
+      metaRobots = document.createElement("meta");
+      metaRobots.setAttribute("name", "robots");
+      metaRobots.setAttribute("content", robots);
+      document.head.appendChild(metaRobots);
     }
 
     // Update or create Open Graph title
@@ -56,7 +68,7 @@ export function SEOHead({ title, description, canonical }: SEOHeadProps) {
         document.head.appendChild(canonicalLink);
       }
     }
-  }, [title, description, canonical]);
+  }, [title, description, canonical, robots]);
 
   return null;
 }
