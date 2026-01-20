@@ -10,6 +10,7 @@ const navigation = [
   { name: "Hoe het werkt", href: "/hoe-het-werkt" },
   { name: "Prijzen", href: "/prijzen" },
   { name: "Voorbeelden", href: "/voorbeelden" },
+  { name: "Kennisbank", href: "/kennisbank" },
   { name: "Over ons", href: "/over-ons" },
 ];
 
