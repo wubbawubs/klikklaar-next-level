@@ -315,7 +315,13 @@ function ComboSolutions({ industry, location }: ComboLandingPageProps) {
 function ComboStats({ industry, location }: ComboLandingPageProps) {
   const { ref, isVisible } = useScrollReveal();
 
-  const stats = [
+  // Use location-specific stats if available, otherwise use defaults
+  const stats = location.localStats ? [
+    { value: location.localStats.avgSearchVolume, label: `Maandelijkse zoekopdrachten in ${location.name}` },
+    { value: location.localStats.competitionLevel, label: "Concurrentieniveau" },
+    { value: location.localStats.businessCount, label: `Bedrijven in ${location.name}` },
+    { value: location.localStats.growthRate, label: "Jaarlijkse groei" }
+  ] : [
     { value: "+145%", label: "Meer website bezoekers" },
     { value: "Top 5", label: "Google ranking" },
     { value: "4.2★", label: "Trustpilot score" },
@@ -333,9 +339,12 @@ function ComboStats({ industry, location }: ComboLandingPageProps) {
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground text-center mb-10">
-            Resultaten voor {industry.namePlural.toLowerCase()} in {location.province}
+          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground text-center mb-4">
+            De markt voor {industry.namePlural.toLowerCase()} in {location.name}
           </h2>
+          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+            {location.marketInsight || `Cijfers die laten zien waarom lokale SEO werkt voor ${industry.namePlural.toLowerCase()} in ${location.province}`}
+          </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
@@ -348,8 +357,8 @@ function ComboStats({ industry, location }: ComboLandingPageProps) {
                   transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`
                 }}
               >
-                <p className="text-3xl lg:text-4xl font-bold text-kk-orange mb-2">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <p className="text-2xl lg:text-3xl font-bold text-kk-orange mb-2">{stat.value}</p>
+                <p className="text-xs text-muted-foreground">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -361,6 +370,14 @@ function ComboStats({ industry, location }: ComboLandingPageProps) {
 
 function ComboTestimonial({ industry, location }: ComboLandingPageProps) {
   const { ref, isVisible } = useScrollReveal();
+
+  // Use location-specific testimonial if available
+  const testimonial = location.localTestimonial || {
+    quote: `Sinds we met KlikKlaar werken, krijgen we veel meer aanvragen uit ${location.name} en omgeving. Als ${industry.name.toLowerCase()} is het fijn dat ik me kan focussen op mijn werk terwijl zij de vindbaarheid regelen.`,
+    author: `Tevreden ${industry.name.toLowerCase()}`,
+    business: location.name,
+    industry: industry.name
+  };
 
   return (
     <section ref={ref} className="py-16 lg:py-24">
@@ -374,7 +391,7 @@ function ComboTestimonial({ industry, location }: ComboLandingPageProps) {
           }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground text-center mb-10">
-            {industry.namePlural} in {location.province} gingen je voor
+            Ondernemers in {location.name} gingen je voor
           </h2>
 
           <div className="p-8 bg-card rounded-2xl border border-border shadow-premium-lg">
@@ -385,17 +402,16 @@ function ComboTestimonial({ industry, location }: ComboLandingPageProps) {
             </div>
             
             <p className="text-lg text-foreground mb-6 italic leading-relaxed">
-              "Sinds we met KlikKlaar werken, krijgen we veel meer aanvragen uit {location.name} en omgeving. 
-              Als {industry.name.toLowerCase()} is het fijn dat ik me kan focussen op mijn werk terwijl zij de vindbaarheid regelen."
+              "{testimonial.quote}"
             </p>
             
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">
-                {industry.name.charAt(0)}
+                {testimonial.author.charAt(0)}
               </div>
               <div>
-                <p className="font-semibold text-foreground">Tevreden {industry.name.toLowerCase()}</p>
-                <p className="text-sm text-muted-foreground">{location.name}, {location.province}</p>
+                <p className="font-semibold text-foreground">{testimonial.author}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.business} | {testimonial.industry}</p>
               </div>
             </div>
           </div>
