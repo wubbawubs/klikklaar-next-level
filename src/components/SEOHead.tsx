@@ -5,55 +5,72 @@ interface SEOHeadProps {
   description: string;
   canonical?: string;
   robots?: "index,follow" | "noindex,follow" | "noindex,nofollow";
+  ogImage?: string;
+  ogType?: "website" | "article" | "product";
+  ogSiteName?: string;
+  ogLocale?: string;
+  twitterCard?: "summary" | "summary_large_image";
 }
 
-export function SEOHead({ title, description, canonical, robots = "index,follow" }: SEOHeadProps) {
+const DEFAULT_OG_IMAGE = "https://klikklaar.nl/og-image.png";
+const DEFAULT_SITE_NAME = "KlikKlaarSEO";
+const DEFAULT_LOCALE = "nl_NL";
+
+export function SEOHead({ 
+  title, 
+  description, 
+  canonical, 
+  robots = "index,follow",
+  ogImage = DEFAULT_OG_IMAGE,
+  ogType = "website",
+  ogSiteName = DEFAULT_SITE_NAME,
+  ogLocale = DEFAULT_LOCALE,
+  twitterCard = "summary_large_image"
+}: SEOHeadProps) {
   useEffect(() => {
     // Update document title
     document.title = title;
 
-    // Update or create meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
-    } else {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      metaDescription.setAttribute("content", description);
-      document.head.appendChild(metaDescription);
+    // Helper function to update or create meta tags
+    const setMetaTag = (selector: string, content: string, isProperty = false) => {
+      let tag = document.querySelector(selector);
+      if (tag) {
+        tag.setAttribute("content", content);
+      } else {
+        tag = document.createElement("meta");
+        if (isProperty) {
+          tag.setAttribute("property", selector.replace('meta[property="', '').replace('"]', ''));
+        } else {
+          tag.setAttribute("name", selector.replace('meta[name="', '').replace('"]', ''));
+        }
+        tag.setAttribute("content", content);
+        document.head.appendChild(tag);
+      }
+    };
+
+    // Standard meta tags
+    setMetaTag('meta[name="description"]', description);
+    setMetaTag('meta[name="robots"]', robots);
+
+    // Open Graph meta tags (required: og:title, og:type, og:image, og:url)
+    setMetaTag('meta[property="og:title"]', title, true);
+    setMetaTag('meta[property="og:description"]', description, true);
+    setMetaTag('meta[property="og:type"]', ogType, true);
+    setMetaTag('meta[property="og:image"]', ogImage, true);
+    setMetaTag('meta[property="og:site_name"]', ogSiteName, true);
+    setMetaTag('meta[property="og:locale"]', ogLocale, true);
+    
+    if (canonical) {
+      setMetaTag('meta[property="og:url"]', canonical, true);
     }
 
-    // Update or create robots meta
-    let metaRobots = document.querySelector('meta[name="robots"]');
-    if (metaRobots) {
-      metaRobots.setAttribute("content", robots);
-    } else {
-      metaRobots = document.createElement("meta");
-      metaRobots.setAttribute("name", "robots");
-      metaRobots.setAttribute("content", robots);
-      document.head.appendChild(metaRobots);
-    }
-
-    // Update or create Open Graph title
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", title);
-    } else {
-      ogTitle = document.createElement("meta");
-      ogTitle.setAttribute("property", "og:title");
-      ogTitle.setAttribute("content", title);
-      document.head.appendChild(ogTitle);
-    }
-
-    // Update or create Open Graph description
-    let ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute("content", description);
-    } else {
-      ogDescription = document.createElement("meta");
-      ogDescription.setAttribute("property", "og:description");
-      ogDescription.setAttribute("content", description);
-      document.head.appendChild(ogDescription);
+    // Twitter Card meta tags
+    setMetaTag('meta[name="twitter:card"]', twitterCard);
+    setMetaTag('meta[name="twitter:title"]', title);
+    setMetaTag('meta[name="twitter:description"]', description);
+    setMetaTag('meta[name="twitter:image"]', ogImage);
+    if (canonical) {
+      setMetaTag('meta[name="twitter:url"]', canonical);
     }
 
     // Update or create canonical link
@@ -68,7 +85,7 @@ export function SEOHead({ title, description, canonical, robots = "index,follow"
         document.head.appendChild(canonicalLink);
       }
     }
-  }, [title, description, canonical, robots]);
+  }, [title, description, canonical, robots, ogImage, ogType, ogSiteName, ogLocale, twitterCard]);
 
   return null;
 }
