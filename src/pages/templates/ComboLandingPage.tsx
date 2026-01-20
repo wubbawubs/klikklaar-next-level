@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
-import { StructuredData } from "@/components/StructuredData";
+import { StructuredData, klikklaarOrganizationSchema } from "@/components/StructuredData";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
@@ -424,26 +424,53 @@ function ComboTestimonial({ industry, location }: ComboLandingPageProps) {
 function ComboFAQ({ industry, location }: ComboLandingPageProps) {
   const { ref, isVisible } = useScrollReveal();
 
+  // Mix industry-specific FAQs (3x) + location-specific (2x) + combo-specific (2x) + proof (1x) = 8 FAQs
+  // This maximizes content uniqueness per combo page and avoids "template" feel
+  
+  // Take 2 industry-specific FAQs if available
+  const industryFaqs = industry.faqs?.slice(0, 2) || [];
+  
+  // Build unique FAQ mix: industry + location + combo-specific + proof
   const faqs = [
+    // 1. Combo-specific: Werkt het in deze stad? (unique per combo)
     {
       question: `Werkt SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}?`,
-      answer: `Absoluut! Veel mensen in ${location.name} zoeken online naar een ${industry.name.toLowerCase()}. Met automatische SEO word je gevonden voor zoektermen als '${industry.name.toLowerCase()} ${location.name}' en '${industry.name.toLowerCase()} in de buurt'.`
+      answer: `Absoluut! ${location.localStats ? `Er zijn gemiddeld ${location.localStats.avgSearchVolume} maandelijkse zoekopdrachten naar ${industry.namePlural.toLowerCase()} in ${location.name}.` : `Veel mensen in ${location.name} zoeken online naar een ${industry.name.toLowerCase()}.`} Met automatische SEO word je gevonden voor zoektermen als '${industry.name.toLowerCase()} ${location.name}' en '${industry.name.toLowerCase()} in de buurt'.`
     },
+    // 2. Industry-specific FAQ 1 (from industries.ts)
+    ...(industryFaqs[0] ? [{
+      question: industryFaqs[0].question,
+      answer: industryFaqs[0].answer
+    }] : []),
+    // 3. Location-specific: Concurrentie in deze stad
     {
-      question: `Hoe snel zie ik resultaten in ${location.name}?`,
-      answer: `De eerste verbeteringen zijn vaak binnen 4-6 weken zichtbaar. Voor lokale zoektermen in ${location.name} kan dit zelfs sneller zijn omdat de concurrentie vaak lager is dan landelijk.`
+      question: `Hoe is de concurrentie voor ${industry.namePlural.toLowerCase()} in ${location.name}?`,
+      answer: `${location.localStats ? `Het concurrentieniveau in ${location.name} is ${location.localStats.competitionLevel.toLowerCase()}. ${location.localStats.growthRate.includes('+') ? `Met een groei van ${location.localStats.growthRate} per jaar is er veel potentie.` : ''}` : `De concurrentie in ${location.name} varieert per wijk en zoekterm.`} Wij analyseren jouw specifieke situatie en zorgen dat je opvalt tussen de ${location.localStats?.businessCount || 'lokale'} bedrijven.`
     },
+    // 4. Industry-specific FAQ 2 (from industries.ts)
+    ...(industryFaqs[1] ? [{
+      question: industryFaqs[1].question,
+      answer: industryFaqs[1].answer
+    }] : []),
+    // 5. Combo-specific: Prijs voor deze combinatie
     {
       question: `Wat kost SEO voor een ${industry.name.toLowerCase()} in ${location.name}?`,
-      answer: `Onze pakketten starten vanaf €99 per maand. Geen verborgen kosten, geen lange contracten. Je kunt maandelijks opzeggen.`
+      answer: `Onze pakketten starten vanaf €99 per maand, ook voor ${industry.namePlural.toLowerCase()} in ${location.name}. Dit is een vast bedrag zonder verborgen kosten. Je kunt maandelijks opzeggen als je niet tevreden bent.`
     },
+    // 6. Location-specific: Resultaten timing
     {
-      question: `Moet ik als ${industry.name.toLowerCase()} technische kennis hebben?`,
-      answer: `Nee, helemaal niet. Wij regelen alles: van technische optimalisatie tot content verbetering. Jij ontvangt alleen wekelijks een duidelijk rapport.`
+      question: `Hoe snel zie ik resultaten in ${location.name}?`,
+      answer: `De eerste verbeteringen zijn vaak binnen 4-6 weken zichtbaar. ${location.tier === 1 ? `In een grote stad als ${location.name} kan dit iets langer duren door hogere concurrentie, maar de potentiële klantenbase is ook groter.` : location.tier === 2 ? `In ${location.name} zien we vaak snellere resultaten dan in de Randstad, terwijl het klantenvolume prima is.` : `In ${location.name} is de concurrentie vaak lager, wat snellere resultaten mogelijk maakt.`}`
     },
+    // 7. Location-specific: Regio dekking
     {
-      question: `Werken jullie ook voor ${industry.namePlural.toLowerCase()} buiten ${location.name}?`,
-      answer: `Ja! We werken voor ${industry.namePlural.toLowerCase()} door heel ${location.province} en de rest van Nederland. Of je nu in ${location.nearbyAreas.slice(0, 2).join(", ")} of elders zit.`
+      question: `Werken jullie ook voor ${industry.namePlural.toLowerCase()} in omliggende plaatsen?`,
+      answer: `Ja! We werken voor ${industry.namePlural.toLowerCase()} door heel ${location.province}. Of je nu in ${location.nearbyAreas.slice(0, 3).join(", ")} of elders zit, we optimaliseren voor jouw specifieke regio.`
+    },
+    // 8. Proof question: Concrete resultaten
+    {
+      question: `Welke resultaten zien jullie meestal voor ${industry.namePlural.toLowerCase()}?`,
+      answer: `Onze klanten zien gemiddeld +145% meer organisch verkeer binnen 3-6 maanden. ${location.localTestimonial ? `Een ${location.localTestimonial.industry.toLowerCase()} in ${location.name} behaalde zelfs: "${location.localTestimonial.quote.substring(0, 80)}..."` : `${industry.namePlural} ervaren vaak een significante toename in lokale aanvragen via Google.`} We delen maandelijks concrete cijfers via onze rapporten.`
     }
   ];
 
@@ -644,12 +671,32 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
   // Noindex Tier 3 locations to prevent doorway/index bloat
   const shouldNoindex = location.tier === 3;
 
+  // Take industry FAQs for schema (to match visible content on page)
+  const industryFaqs = industry.faqs?.slice(0, 2) || [];
+
+  // Enhanced FAQ schema with 6-8 questions matching visible content
   const faqSchema = {
     type: "FAQPage" as const,
     questions: [
       {
         question: `Werkt SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}?`,
-        answer: `Absoluut! Veel mensen in ${location.name} zoeken online naar een ${industry.name.toLowerCase()}.`
+        answer: `Absoluut! ${location.localStats ? `Er zijn gemiddeld ${location.localStats.avgSearchVolume} maandelijkse zoekopdrachten naar ${industry.namePlural.toLowerCase()} in ${location.name}.` : `Veel mensen in ${location.name} zoeken online naar een ${industry.name.toLowerCase()}.`}`
+      },
+      ...(industryFaqs[0] ? [{
+        question: industryFaqs[0].question,
+        answer: industryFaqs[0].answer
+      }] : []),
+      {
+        question: `Hoe is de concurrentie voor ${industry.namePlural.toLowerCase()} in ${location.name}?`,
+        answer: `${location.localStats ? `Het concurrentieniveau in ${location.name} is ${location.localStats.competitionLevel.toLowerCase()}.` : `De concurrentie in ${location.name} varieert per wijk en zoekterm.`}`
+      },
+      ...(industryFaqs[1] ? [{
+        question: industryFaqs[1].question,
+        answer: industryFaqs[1].answer
+      }] : []),
+      {
+        question: `Wat kost SEO voor een ${industry.name.toLowerCase()} in ${location.name}?`,
+        answer: `Onze pakketten starten vanaf €99 per maand, ook voor ${industry.namePlural.toLowerCase()} in ${location.name}. Geen verborgen kosten, maandelijks opzegbaar.`
       },
       {
         question: `Hoe snel zie ik resultaten in ${location.name}?`,
@@ -684,10 +731,12 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
         description={`Automatische SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}. Word de best vindbare ${industry.name.toLowerCase()} in ${location.province}. Vanaf €99/mnd.`}
         canonical={`https://klikklaar.nl/seo-${industry.slug}-${location.slug}`}
         robots={shouldNoindex ? "noindex,follow" : "index,follow"}
+        ogType="website"
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={serviceSchema} />
       <StructuredData schema={breadcrumbSchema} />
+      <StructuredData schema={klikklaarOrganizationSchema} />
       <Header />
       <main>
         <ComboHero industry={industry} location={location} />
