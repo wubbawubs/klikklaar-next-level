@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { KennisbankLinks } from "@/components/KennisbankLinks";
 
 interface LocationLandingPageProps {
   location: LocationData;
@@ -520,6 +521,7 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
         <LocalServices location={location} />
         <LocalTestimonial location={location} />
         <LocationFAQ location={location} />
+        <KennisbankLinks context="lokale-seo" title="Leer meer over lokale SEO" />
         <NearbyLocations location={location} />
         <CTASection />
       </main>
