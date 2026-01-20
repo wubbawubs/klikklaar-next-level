@@ -487,6 +487,15 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
     url: `https://klikklaar.nl/seo-${location.slug}`
   };
 
+  const breadcrumbSchema = {
+    type: "BreadcrumbList" as const,
+    items: [
+      { name: "Home", url: "https://klikklaar.nl/" },
+      { name: "Steden", url: "https://klikklaar.nl/" },
+      { name: `SEO ${location.name}`, url: `https://klikklaar.nl/seo-${location.slug}` }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -496,6 +505,7 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={localBusinessSchema} />
+      <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <LocationHero location={location} />
