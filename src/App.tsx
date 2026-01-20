@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieBanner } from "@/components/CookieBanner";
 import SEOPopup from "@/components/SEOPopup";
+
+// Page imports
 import Index from "./pages/Index";
 import Deliverables from "./pages/Deliverables";
 import Pricing from "./pages/Pricing";
@@ -19,6 +21,16 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
+// Template imports
+import { IndustryLandingPage } from "./pages/templates/IndustryLandingPage";
+import { LocationLandingPage } from "./pages/templates/LocationLandingPage";
+import { ServiceLandingPage } from "./pages/templates/ServiceLandingPage";
+
+// Data imports
+import { industries } from "./data/industries";
+import { locations } from "./data/locations";
+import { services } from "./data/services";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -29,6 +41,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
+          {/* Core pages */}
           <Route path="/" element={<Index />} />
           <Route path="/wat-je-krijgt" element={<Deliverables />} />
           <Route path="/prijzen" element={<Pricing />} />
@@ -40,6 +53,34 @@ const App = () => (
           <Route path="/ad-b" element={<AdLandingB />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/voorwaarden" element={<Terms />} />
+          
+          {/* Dynamic industry landing pages */}
+          {industries.map((industry) => (
+            <Route
+              key={industry.slug}
+              path={`/seo-${industry.slug}`}
+              element={<IndustryLandingPage industry={industry} />}
+            />
+          ))}
+          
+          {/* Dynamic location landing pages */}
+          {locations.map((location) => (
+            <Route
+              key={location.slug}
+              path={`/seo-${location.slug}`}
+              element={<LocationLandingPage location={location} />}
+            />
+          ))}
+          
+          {/* Dynamic service landing pages */}
+          {services.map((service) => (
+            <Route
+              key={service.slug}
+              path={`/${service.slug}`}
+              element={<ServiceLandingPage service={service} />}
+            />
+          ))}
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
