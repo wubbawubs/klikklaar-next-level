@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
+import { LocationProofBlock } from "@/components/LocationProofBlock";
 
 interface LocationLandingPageProps {
   location: LocationData;
@@ -519,6 +520,7 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
         <LocationHero location={location} />
         <LocalBenefits location={location} />
         <LocalServices location={location} />
+        <LocationProofBlock location={location} />
         <LocalTestimonial location={location} />
         <LocationFAQ location={location} />
         <KennisbankLinks context="lokale-seo" title="Leer meer over lokale SEO" />
