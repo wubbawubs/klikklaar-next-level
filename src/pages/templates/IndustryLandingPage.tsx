@@ -411,8 +411,8 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`${industry.headline} | Meer Klanten | KlikKlaarSEO`}
-        description={`${industry.subheadline}. Automatische SEO speciaal voor ${industry.name.toLowerCase()}. Vanaf €99/mnd. Geen technische kennis nodig.`}
+        title={`${industry.name}? Meer Klanten via Google | €99/mnd | KlikKlaar`}
+        description={`${industry.namePlural}: krijg meer klanten uit jouw regio. Automatische SEO die écht werkt. Geen gedoe, altijd opzegbaar. 100+ tevreden ondernemers gingen je voor.`}
         canonical={`https://klikklaar.nl/seo-${industry.slug}`}
       />
       <StructuredData schema={faqSchema} />

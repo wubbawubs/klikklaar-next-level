@@ -282,8 +282,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Contact | AI SEO Experts | KlikKlaarSEO"
-        description="Neem contact op met KlikKlaar. Plan een vrijblijvend gesprek, bel ons of stuur een e-mail. We helpen je graag met je online vindbaarheid."
+        title="Gratis Gesprek Plannen | Contact | KlikKlaar"
+        description="Plan een vrijblijvend gesprek van 15 minuten. Geen verkooppraatje, gewoon een eerlijk gesprek over jouw online vindbaarheid."
         canonical="https://klikklaar.nl/contact"
       />
       <StructuredData 

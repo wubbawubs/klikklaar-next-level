@@ -185,8 +185,8 @@ export default function Branches() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO voor Alle Branches | Lokale Vindbaarheid per Sector | KlikKlaarSEO"
-        description={`Automatische SEO voor ${industries.length} branches: van kappers tot accountants. Ontdek gespecialiseerde oplossingen voor jouw sector. Vanaf €99/mnd.`}
+        title="SEO per Branche | Kappers, Tandartsen, Coaches & Meer | €99/mnd"
+        description={`SEO speciaal voor jouw branche. ${industries.length} sectoren: van kappers tot accountants. Meer klanten uit jouw regio. Geen gedoe, altijd opzegbaar.`}
         canonical="https://klikklaar.nl/branches"
         ogType="website"
       />

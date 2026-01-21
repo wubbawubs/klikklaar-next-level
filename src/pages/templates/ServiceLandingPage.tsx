@@ -380,8 +380,8 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`${service.name} | Automatisch | KlikKlaarSEO`}
-        description={`${service.subheadline}. Automatische ${service.name.toLowerCase()} voor MKB. Vanaf €99/mnd.`}
+        title={`${service.name} | Automatisch & Betaalbaar | €99/mnd`}
+        description={`${service.subheadline}. Volledig automatisch, geen gedoe. Voor MKB ondernemers die willen groeien. Altijd opzegbaar.`}
         canonical={`https://klikklaar.nl/${service.slug}`}
       />
       <StructuredData schema={faqSchema} />

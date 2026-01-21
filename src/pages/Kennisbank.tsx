@@ -220,8 +220,8 @@ export default function Kennisbank() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO Kennisbank | Gratis SEO Gidsen & Tips | KlikKlaarSEO"
-        description="Leer alles over SEO in begrijpelijke taal. Gratis artikelen over lokale SEO, technische optimalisatie en content. Praktische tips die je direct kunt toepassen."
+        title="Gratis SEO Kennis | Artikelen & Tips in Normaal Nederlands"
+        description="Leer SEO in begrijpelijke taal. Gratis artikelen over lokale SEO, technische optimalisatie en content. Tips die je direct kunt toepassen."
         canonical="https://klikklaar.nl/kennisbank"
       />
       <StructuredData schema={breadcrumbSchema} />

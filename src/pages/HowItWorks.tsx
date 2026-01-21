@@ -365,8 +365,8 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Hoe AI SEO Werkt | Automatische Optimalisatie | KlikKlaarSEO"
-        description="Ontdek hoe KlikKlaar werkt: van kennismakingsgesprek tot automatische groei. Geen gedoe, geen technische kennis nodig. Wij doen het werk."
+        title="Hoe Het Werkt | 3 Stappen naar Meer Klanten | KlikKlaar"
+        description="Van kennismaking tot resultaat in 3 simpele stappen. Geen gedoe, geen technische kennis nodig. Wij doen het werk, jij krijgt klanten."
         canonical="https://klikklaar.nl/hoe-het-werkt"
       />
       <StructuredData 

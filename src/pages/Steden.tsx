@@ -208,8 +208,8 @@ export default function Steden() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO in Alle Nederlandse Steden | Lokale Vindbaarheid | KlikKlaarSEO"
-        description={`Automatische SEO voor ${locations.length}+ steden in Nederland. Van Amsterdam tot Maastricht. Ontdek lokale SEO voor jouw stad. Vanaf €99/mnd.`}
+        title="Lokale SEO per Stad | 80+ Nederlandse Steden | €99/mnd"
+        description={`SEO voor ondernemers in ${locations.length}+ steden. Van Amsterdam tot Maastricht. Gevonden worden in jouw regio. Geen gedoe, altijd opzegbaar.`}
         canonical="https://klikklaar.nl/steden"
         ogType="website"
       />
