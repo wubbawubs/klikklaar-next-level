@@ -383,8 +383,8 @@ const Deliverables = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="AI SEO Resultaten | Wat Je Krijgt | KlikKlaarSEO"
-        description="Ontdek wat je krijgt bij KlikKlaar: wekelijkse website-analyse, automatische content optimalisatie, lokale vindbaarheid en heldere rapporten."
+        title="Dit Krijg Je | Wekelijkse SEO Verbeteringen | KlikKlaar"
+        description="Automatische content optimalisatie, technische fixes, lokale vindbaarheid en heldere rapporten. Alles wat je nodig hebt voor meer klanten."
         canonical="https://klikklaar.nl/wat-je-krijgt"
       />
       <StructuredData 

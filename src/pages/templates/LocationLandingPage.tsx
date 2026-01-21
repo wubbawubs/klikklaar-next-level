@@ -507,8 +507,8 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`SEO Bureau ${location.name} | Lokale Vindbaarheid | KlikKlaarSEO`}
-        description={`Automatische SEO voor ondernemers in ${location.name}. Word gevonden door klanten uit ${location.province}. Vanaf €99/mnd. Geen technische kennis nodig.`}
+        title={`SEO ${location.name} | Meer Klanten uit ${location.province} | €99/mnd`}
+        description={`Ondernemer in ${location.name}? Word gevonden door klanten uit jouw regio. Automatische SEO zonder gedoe. Geen contract, altijd opzegbaar. Start vandaag.`}
         canonical={`https://klikklaar.nl/seo-${location.slug}`}
         robots={shouldNoindex ? "noindex,follow" : "index,follow"}
       />

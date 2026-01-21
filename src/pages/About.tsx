@@ -294,8 +294,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Over Ons | AI SEO Bureau voor MKB | KlikKlaarSEO"
-        description="Maak kennis met KlikKlaar. We begrijpen lokale ondernemers en maken SEO toegankelijk, begrijpelijk en betaalbaar. Ontdek ons verhaal."
+        title="Over KlikKlaar | SEO voor Ondernemers, door Ondernemers"
+        description="Wij snappen lokale ondernemers. Daarom maken we SEO toegankelijk, begrijpelijk en betaalbaar. Geen gedoe, gewoon resultaat. Ontdek ons verhaal."
         canonical="https://klikklaar.nl/over-ons"
       />
       <StructuredData 

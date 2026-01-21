@@ -744,8 +744,8 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`SEO voor ${industry.namePlural} ${location.name} | Lokale Vindbaarheid | KlikKlaarSEO`}
-        description={`Automatische SEO voor ${industry.namePlural.toLowerCase()} in ${location.name}. Word de best vindbare ${industry.name.toLowerCase()} in ${location.province}. Vanaf €99/mnd.`}
+        title={`${industry.name} ${location.name} | Gevonden Worden in Google | €99/mnd`}
+        description={`${industry.name} in ${location.name}? Word #1 in Google. Automatische SEO voor ${industry.namePlural.toLowerCase()} in ${location.province}. Geen gedoe, altijd opzegbaar. Start vandaag.`}
         canonical={`https://klikklaar.nl/seo-${industry.slug}-${location.slug}`}
         robots={shouldNoindex ? "noindex,follow" : "index,follow"}
         ogType="website"
