@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
+import { ProofBlock } from "@/components/ProofBlock";
 
 interface ComboLandingPageProps {
   industry: IndustryData;
@@ -744,6 +745,7 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
         <ComboPainPoints industry={industry} location={location} />
         <ComboSolutions industry={industry} location={location} />
         <ComboStats industry={industry} location={location} />
+        <ProofBlock industry={industry} location={location} />
         <ComboTestimonial industry={industry} location={location} />
         <ComboFAQ industry={industry} location={location} />
         <KennisbankLinks context="lokale-seo" title="Leer meer over lokale SEO" />

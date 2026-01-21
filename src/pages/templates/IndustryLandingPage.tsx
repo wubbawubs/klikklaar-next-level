@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
+import { ProofBlock } from "@/components/ProofBlock";
 
 interface IndustryLandingPageProps {
   industry: IndustryData;
@@ -422,6 +423,7 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
         <IndustryPainPoints painPoints={industry.painPoints} />
         <IndustrySolutions solutions={industry.solutions} />
         <IndustryStats stats={industry.stats} />
+        <ProofBlock industry={industry} />
         <IndustryFAQ faqs={industry.faqs} industryName={industry.name} />
         <KennisbankLinks context="lokale-seo" title="Leer meer over lokale SEO" />
         <RelatedIndustries industry={industry} />
