@@ -20,6 +20,7 @@ import {
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { ProofBlock } from "@/components/ProofBlock";
+import { ComboHeroIllustration } from "@/components/illustrations/ComboHeroIllustration";
 
 interface ComboLandingPageProps {
   industry: IndustryData;
@@ -36,111 +37,126 @@ function ComboHero({ industry, location }: ComboLandingPageProps) {
   }, []);
 
   return (
-    <section className="relative pt-24 lg:pt-40 pb-12 lg:pb-24 overflow-hidden">
+    <section className="relative pt-24 lg:pt-32 pb-12 lg:pb-20 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-kk-orange/[0.03] via-transparent to-transparent" />
         <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-kk-violet/[0.03] via-transparent to-transparent" />
       </div>
 
       <div className="container px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Breadcrumb */}
-          <nav 
-            className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6 flex-wrap"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-              transition: 'opacity 0.5s ease-out, transform 0.5s ease-out'
-            }}
-          >
-            <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <Link to={`/seo-${industry.slug}`} className="hover:text-foreground transition-colors">{industry.namePlural}</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground">{location.name}</span>
-          </nav>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left column - Content */}
+          <div className="text-center lg:text-left">
+            {/* Breadcrumb */}
+            <nav 
+              className="flex items-center justify-center lg:justify-start gap-2 text-sm text-muted-foreground mb-6 flex-wrap"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.5s ease-out, transform 0.5s ease-out'
+              }}
+            >
+              <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link to={`/seo-${industry.slug}`} className="hover:text-foreground transition-colors">{industry.namePlural}</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-foreground">{location.name}</span>
+            </nav>
 
-          <div 
-            className="inline-flex items-center gap-2 px-4 py-2 bg-kk-orange/10 rounded-full mb-6"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-              transition: 'opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s'
-            }}
-          >
-            {IconComponent && <IconComponent className="w-4 h-4 text-kk-orange" />}
-            <span className="text-sm font-medium text-kk-orange">{industry.name}</span>
-            <span className="text-kk-orange/50">•</span>
-            <MapPin className="w-4 h-4 text-kk-orange" />
-            <span className="text-sm font-medium text-kk-orange">{location.name}</span>
+            <div 
+              className="inline-flex items-center gap-2 px-4 py-2 bg-kk-orange/10 rounded-full mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s'
+              }}
+            >
+              {IconComponent && <IconComponent className="w-4 h-4 text-kk-orange" />}
+              <span className="text-sm font-medium text-kk-orange">{industry.name}</span>
+              <span className="text-kk-orange/50">•</span>
+              <MapPin className="w-4 h-4 text-kk-orange" />
+              <span className="text-sm font-medium text-kk-orange">{location.name}</span>
+            </div>
+
+            <h1 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.15s, transform 0.6s ease-out 0.15s'
+              }}
+            >
+              SEO voor {industry.namePlural} in{" "}
+              <span className="gradient-text">{location.name}</span>
+            </h1>
+
+            <p 
+              className="text-base sm:text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+              }}
+            >
+              Word de best vindbare {industry.name.toLowerCase()} in {location.name}. 
+              Automatische SEO zodat klanten uit {location.province} jou vinden, niet je concurrent.
+            </p>
+
+            <div 
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.25s, transform 0.6s ease-out 0.25s'
+              }}
+            >
+              <GradientButton size="lg" asChild>
+                <Link to="/contact">
+                  <Phone className="w-4 h-4" />
+                  Gratis adviesgesprek
+                </Link>
+              </GradientButton>
+              <GradientButton variant="outline" size="lg" asChild>
+                <Link to="/prijzen">
+                  Bekijk prijzen
+                </Link>
+              </GradientButton>
+            </div>
+
+            {/* Stats bar */}
+            <div 
+              className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
+              }}
+            >
+              <div className="text-center lg:text-left">
+                <p className="text-xl sm:text-2xl font-bold text-kk-orange">{location.population}</p>
+                <p className="text-xs text-muted-foreground">inwoners</p>
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="text-xl sm:text-2xl font-bold text-kk-orange">Top 5</p>
+                <p className="text-xs text-muted-foreground">Google ranking</p>
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="text-xl sm:text-2xl font-bold text-kk-orange">€99</p>
+                <p className="text-xs text-muted-foreground">per maand</p>
+              </div>
+            </div>
           </div>
 
-          <h1 
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-display-lg font-bold text-foreground mb-6"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.15s, transform 0.6s ease-out 0.15s'
-            }}
-          >
-            SEO voor {industry.namePlural} in{" "}
-            <span className="gradient-text">{location.name}</span>
-          </h1>
-
-          <p 
-            className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
-            }}
-          >
-            Word de best vindbare {industry.name.toLowerCase()} in {location.name}. 
-            Automatische SEO zodat klanten uit {location.province} jou vinden, niet je concurrent.
-          </p>
-
+          {/* Right column - Illustration */}
           <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+            className="hidden lg:block"
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.6s ease-out 0.25s, transform 0.6s ease-out 0.25s'
-            }}
-          >
-            <GradientButton size="lg" asChild>
-              <Link to="/contact">
-                <Phone className="w-4 h-4" />
-                Gratis adviesgesprek
-              </Link>
-            </GradientButton>
-            <GradientButton variant="outline" size="lg" asChild>
-              <Link to="/prijzen">
-                Bekijk prijzen
-              </Link>
-            </GradientButton>
-          </div>
-
-          {/* Stats bar */}
-          <div 
-            className="grid grid-cols-3 gap-4 max-w-lg mx-auto"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
+              transform: isVisible ? 'translateX(0)' : 'translateX(20px)',
               transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
             }}
           >
-            <div className="text-center">
-              <p className="text-2xl font-bold text-kk-orange">{location.population}</p>
-              <p className="text-xs text-muted-foreground">inwoners</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-kk-orange">Top 5</p>
-              <p className="text-xs text-muted-foreground">Google ranking</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-kk-orange">€99</p>
-              <p className="text-xs text-muted-foreground">per maand</p>
-            </div>
+            <ComboHeroIllustration industry={industry} location={location} />
           </div>
         </div>
       </div>
