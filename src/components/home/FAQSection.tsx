@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "Werkt dit voor mijn branche?",
-    answer: "KlikKlaar werkt voor alle lokale ondernemers: kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en meer. Als je klanten uit je regio wilt aantrekken, kunnen we je helpen.",
+    answer: "KlikKlaar werkt voor alle ondernemers: kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en meer. Als je klanten wilt aantrekken, kunnen we je helpen.",
   },
   {
     question: "Wat als ik al een website heb?",

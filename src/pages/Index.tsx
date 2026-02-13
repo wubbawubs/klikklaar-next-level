@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Meer Klanten via Google & AI | Automatische SEO | €99/mnd | KlikKlaar"
+        title="Meer Klanten via Google & AI | Automatische SEO | €99/mnd | KlikKlaarSEO"
         description="Ondernemer? Word gevonden in Google én AI-zoekmachines. Automatische SEO zonder gedoe. Geen contract, altijd opzegbaar. 100+ tevreden ondernemers."
         canonical="https://klikklaar.nl"
       />

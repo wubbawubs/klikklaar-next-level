@@ -233,7 +233,7 @@ export function StructuredData({ schema }: StructuredDataProps) {
 export const klikklaarBusinessSchema: LocalBusinessSchema = {
   type: "LocalBusiness",
   name: "KlikKlaarSEO",
-  description: "Automatische SEO en website optimalisatie voor lokale ondernemers. Meer klanten, zonder gedoe.",
+  description: "Automatische SEO en website optimalisatie voor ondernemers. Meer klanten, zonder gedoe.",
   url: "https://klikklaar.nl",
   telephone: "+31628354333",
   email: "Info@klikklaarseo.nl",
@@ -254,7 +254,7 @@ export const klikklaarBusinessSchema: LocalBusinessSchema = {
 export const klikklaarOrganizationSchema: OrganizationSchema = {
   type: "Organization",
   name: "KlikKlaarSEO",
-  description: "Automatische SEO voor lokale ondernemers in heel Nederland. Meer klanten, zonder gedoe.",
+  description: "Automatische SEO voor ondernemers in heel Nederland. Meer klanten, zonder gedoe.",
   url: "https://klikklaar.nl",
   telephone: "+31628354333",
   email: "Info@klikklaarseo.nl",

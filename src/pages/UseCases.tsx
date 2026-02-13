@@ -129,7 +129,7 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
               }}
             >
-              Of je nu kapper, tandarts, coach of aannemer bent, wij helpen lokale ondernemers 
+              Of je nu kapper, tandarts, coach of aannemer bent, wij helpen ondernemers 
               zoals jij beter gevonden te worden.
             </p>
 
@@ -302,7 +302,7 @@ function AllIndustriesSection() {
           </span>
           <h2 className="text-xl sm:text-2xl lg:text-display font-bold text-foreground mb-4 lg:mb-6">
             Werkt voor{" "}
-            <span className="gradient-text">alle lokale ondernemers</span>
+            <span className="gradient-text">alle ondernemers</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 lg:mb-10">
             Als je klanten uit je regio wilt aantrekken, kunnen we je helpen. 

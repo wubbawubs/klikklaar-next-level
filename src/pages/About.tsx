@@ -184,7 +184,7 @@ function StorySection() {
                 weinig concreets.
               </p>
               <p>
-                Wij geloofden dat het anders kon. Een dienst die écht werkt voor lokale ondernemers. 
+                Wij geloofden dat het anders kon. Een dienst die écht werkt voor ondernemers. 
                 Geen ingewikkelde dashboards of technische praatjes, gewoon resultaat.
               </p>
               <p>
@@ -280,7 +280,7 @@ function MissionSection() {
           </h2>
           
           <p className="text-sm sm:text-base lg:text-xl text-muted-foreground leading-relaxed">
-            Elke lokale ondernemer verdient een website die werkt. Wij maken SEO toegankelijk, 
+            Elke ondernemer verdient een website die werkt. Wij maken SEO toegankelijk, 
             begrijpelijk en betaalbaar, zodat jij kunt focussen op waar je goed in bent.
           </p>
         </div>
@@ -295,14 +295,14 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Over KlikKlaar | SEO voor Ondernemers, door Ondernemers"
-        description="Wij snappen lokale ondernemers. Daarom maken we SEO toegankelijk, begrijpelijk en betaalbaar. Geen gedoe, gewoon resultaat. Ontdek ons verhaal."
+        description="Wij snappen ondernemers. Daarom maken we SEO toegankelijk, begrijpelijk en betaalbaar. Geen gedoe, gewoon resultaat. Ontdek ons verhaal."
         canonical="https://klikklaar.nl/over-ons"
       />
       <StructuredData 
         schema={{
           type: "LocalBusiness",
           name: "KlikKlaar",
-          description: "Automatische SEO en website optimalisatie voor lokale ondernemers. Meer klanten, zonder gedoe.",
+          description: "Automatische SEO en website optimalisatie voor ondernemers. Meer klanten, zonder gedoe.",
           url: "https://klikklaar.nl/over-ons",
           priceRange: "€€",
           aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
