@@ -28,7 +28,7 @@ const pricingTiers = [
     id: "basis",
     name: "Basis",
     price: "99",
-    description: "Alles wat je nodig hebt om beter gevonden te worden",
+    description: "Beter gevonden worden in Google én AI-zoekmachines",
     icon: Zap,
     featured: false,
     features: [
@@ -36,6 +36,7 @@ const pricingTiers = [
       "Automatische content optimalisatie",
       "Lokale vindbaarheid verbeteren",
       "Technische SEO fixes",
+      "AI-vindbaarheid optimalisatie",
       "Maandelijks rapport",
       "E-mail support",
     ],
@@ -45,7 +46,7 @@ const pricingTiers = [
     id: "pro",
     name: "Pro",
     price: "149",
-    description: "Voor ondernemers die sneller willen groeien",
+    description: "Sneller groeien in Google, AI-zoekresultaten én Maps",
     icon: Star,
     featured: true,
     badge: "Meest gekozen",
@@ -53,32 +54,30 @@ const pricingTiers = [
       "Alles van Basis, plus:",
       "2-wekelijkse optimalisatie cyclus",
       "Uitgebreide concurrentie-analyse",
+      "AI-citatie monitoring",
       "Prioriteit bij verbeteringen",
       "Wekelijks rapport",
       "Telefonische support",
-      "Persoonlijke accountmanager",
     ],
     cta: "Start met Pro",
   },
   {
-    id: "dominantie",
-    name: "Dominantie",
+    id: "proplus",
+    name: "Pro+",
     price: "249",
-    description: "Maximale groei met persoonlijke begeleiding",
+    description: "Maximale groei met persoonlijke begeleiding en AI-strategie",
     icon: Crown,
     featured: false,
-    badge: "Lanceert Q3 2026",
-    comingSoon: true,
     features: [
       "Alles van Pro, plus:",
+      "Persoonlijke accountmanager",
       "Wekelijkse consulting call",
       "Blog posting engine",
+      "AI-zoekstrategie op maat",
       "Content creatie ondersteuning",
-      "Geavanceerde keyword strategie",
-      "Dedicated SEO specialist",
       "Custom rapportages",
     ],
-    cta: "Kom op de wachtlijst",
+    cta: "Start met Pro+",
   },
 ];
 
@@ -220,7 +219,7 @@ function PricingCards() {
                     ? 'bg-card border-kk-orange/30 shadow-premium-lg ring-2 ring-kk-orange/20' 
                     : 'bg-card border-border shadow-premium-sm hover:shadow-premium'
                   }
-                  ${tier.comingSoon ? 'opacity-90' : ''}`}
+                `}
                 style={{ 
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
@@ -283,14 +282,10 @@ function PricingCards() {
                     </Link>
                   </GradientButton>
                 ) : (
-                  <GradientButton variant="outline" className="w-full" size="lg" disabled={tier.comingSoon} asChild={!tier.comingSoon}>
-                    {tier.comingSoon ? (
-                      tier.cta
-                    ) : (
-                      <Link to="/contact">
-                        {tier.cta}
-                      </Link>
-                    )}
+                  <GradientButton variant="outline" className="w-full" size="lg" asChild>
+                    <Link to="/contact">
+                      {tier.cta}
+                    </Link>
                   </GradientButton>
                 )}
               </div>
@@ -457,8 +452,8 @@ const Pricing = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO Prijzen | Basis €99 · Pro €149 · Dominantie €249 | KlikKlaar"
-        description="Transparante SEO prijzen zonder verborgen kosten. Maandelijks opzegbaar. Investeer in groei, niet in gedoe. 100+ ondernemers gingen je voor."
+        title="SEO Prijzen | Basis €99 · Pro €149 · Pro+ €249 | KlikKlaar"
+        description="Transparante SEO & AI-vindbaarheid prijzen zonder verborgen kosten. Maandelijks opzegbaar. Investeer in groei, niet in gedoe. 100+ ondernemers gingen je voor."
         canonical="https://klikklaar.nl/prijzen"
       />
       <StructuredData 
