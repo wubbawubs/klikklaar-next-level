@@ -11,7 +11,7 @@ const usps = [
   {
     icon: Globe,
     title: "Gevonden worden door de juiste klanten",
-    description: "Of je nu lokaal werkt of online diensten levert — wij zorgen dat jouw ideale klant jou vindt. In Google, in AI-zoekmachines en op Maps.",
+    description: "Of je nu lokaal, nationaal of internationaal werkt — wij zorgen dat jouw ideale klant jou vindt. In Google, in AI-zoekmachines en overal online.",
     featured: true,
   },
   {

@@ -48,7 +48,7 @@ const deliverableCategories = [
     items: [
       "Zoekwoorden strategisch ingebouwd",
       "AI-vindbaarheid optimalisatie (LLM's)",
-      "Google Mijn Bedrijf signalen versterkt",
+      "Online autoriteit en citaties versterkt",
       "Schema markup voor AI-zoekmachines",
     ],
     stats: { value: "3x", label: "Meer zichtbaarheid" },
