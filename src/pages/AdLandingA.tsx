@@ -24,7 +24,7 @@ const AdLandingA = () => {
     {
       icon: Target,
       title: "Gevonden worden door de juiste klanten",
-      description: "Word beter gevonden door mensen die actief zoeken naar wat jij aanbiedt — lokaal of online."
+      description: "Word beter gevonden door mensen die actief zoeken naar wat jij aanbiedt, lokaal of online."
     },
     {
       icon: BarChart3,
