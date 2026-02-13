@@ -34,7 +34,7 @@ const pricingTiers = [
     features: [
       "Wekelijkse website-analyse",
       "Automatische content optimalisatie",
-      "Lokale vindbaarheid verbeteren",
+      "Vindbaarheid verbeteren (Google & AI)",
       "Technische SEO fixes",
       "AI-vindbaarheid optimalisatie",
       "Maandelijks rapport",

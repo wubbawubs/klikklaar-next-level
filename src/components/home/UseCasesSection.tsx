@@ -12,7 +12,7 @@ interface UseCase {
 
 const useCases: UseCase[] = [
   { icon: Scissors, title: "Kappers & Salons", description: "Meer boekingen via Google", href: "/use-cases/kappers" },
-  { icon: Stethoscope, title: "Tandartsen & Zorg", description: "Meer patiënten uit de regio", href: "/use-cases/tandartsen" },
+  { icon: Stethoscope, title: "Tandartsen & Zorg", description: "Meer patiënten via Google & AI", href: "/use-cases/tandartsen" },
   { icon: Building2, title: "IT Bedrijven", description: "Meer leads, meer autoriteit", href: "/use-cases/it" },
   { icon: ShoppingBag, title: "E-commerce", description: "Meer organisch verkeer", href: "/use-cases/ecommerce" },
 ];
