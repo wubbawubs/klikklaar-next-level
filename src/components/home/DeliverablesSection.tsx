@@ -11,8 +11,8 @@ const deliverables = [
     description: "Teksten die zorgen dat mensen doorklikken in Google",
   },
   {
-    title: "Lokale zoekwoorden ingebouwd",
-    description: "Gevonden worden door klanten uit jouw regio",
+    title: "AI-vindbaarheid optimalisatie",
+    description: "Gevonden worden in ChatGPT, Gemini en andere AI-zoekmachines",
   },
   {
     title: "Snelheidsverbeteringen",
