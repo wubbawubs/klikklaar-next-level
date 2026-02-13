@@ -23,8 +23,8 @@ const AdLandingA = () => {
     },
     {
       icon: Target,
-      title: "Meer klanten uit je regio",
-      description: "Word beter gevonden door mensen die actief zoeken naar wat jij aanbiedt, precies in jouw buurt."
+      title: "Gevonden worden door de juiste klanten",
+      description: "Word beter gevonden door mensen die actief zoeken naar wat jij aanbiedt — lokaal of online."
     },
     {
       icon: BarChart3,
@@ -60,7 +60,7 @@ const AdLandingA = () => {
   const deliverables = [
     "Nieuwe H1 & H2 koppen die converteren",
     "Geoptimaliseerde meta-descriptions",
-    "Lokale zoekwoorden strategisch ingebouwd",
+    "Relevante zoekwoorden strategisch ingebouwd",
     "Snelheidsverbeteringen doorgevoerd",
     "Technische fixes (schema, structuur)",
     "Wekelijks helder rapport"
@@ -102,7 +102,7 @@ const AdLandingA = () => {
     },
     {
       q: "Werkt dit voor mijn branche?",
-      a: "We werken met kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en nog veel meer. Als je lokale klanten wilt bereiken, kunnen we je helpen."
+      a: "We werken met kappers, tandartsen, coaches, IT-bedrijven, consultants, aannemers, en nog veel meer. Of je nu lokaal of online werkt, wij helpen je groeien."
     },
     {
       q: "Wat kost het precies?",
@@ -117,8 +117,8 @@ const AdLandingA = () => {
   return (
     <>
       <SEOHead 
-        title="AI SEO voor Lokale Ondernemers | KlikKlaarSEO"
-        description="Automatische website optimalisatie voor lokale ondernemers. Meer bezoekers, meer klanten - zonder gedoe. Vanaf €99/maand, altijd opzegbaar."
+        title="AI SEO voor Ondernemers | KlikKlaarSEO"
+        description="Automatische website optimalisatie voor ondernemers. Meer bezoekers, meer klanten - zonder gedoe. Vanaf €99/maand, altijd opzegbaar."
         canonical="https://klikklaar.nl/ad"
       />
       <StructuredData 
@@ -126,7 +126,7 @@ const AdLandingA = () => {
           {
             type: "LocalBusiness",
             name: "KlikKlaar",
-            description: "Automatische SEO en website optimalisatie voor lokale ondernemers.",
+            description: "Automatische SEO en website optimalisatie voor ondernemers.",
             url: "https://klikklaar.nl",
             priceRange: "€€",
             aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
@@ -176,13 +176,13 @@ const AdLandingA = () => {
             }}
           >
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Meer klanten uit jouw regio.{" "}
+              Meer klanten via Google & AI.{" "}
               <span className="bg-gradient-to-r from-kk-orange via-kk-fuchsia to-kk-violet bg-clip-text text-transparent">
                 Zonder gedoe.
               </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Bekijk in 2 minuten hoe wij lokale ondernemers helpen groeien met automatische website optimalisatie
+              Bekijk in 2 minuten hoe wij ondernemers helpen groeien met automatische website optimalisatie
             </p>
           </div>
 
@@ -371,7 +371,7 @@ const AdLandingA = () => {
               Hoe werkt het?
             </h2>
             <p className="text-lg text-muted-foreground">
-              In drie simpele stappen naar meer klanten uit jouw regio
+              In drie simpele stappen naar meer klanten
             </p>
           </div>
 
@@ -514,7 +514,7 @@ const AdLandingA = () => {
               Wat ondernemers zeggen
             </h2>
             <p className="text-lg text-muted-foreground">
-              Ontdek hoe andere lokale ondernemers groeien met KlikKlaar
+              Ontdek hoe andere ondernemers groeien met KlikKlaar
             </p>
           </div>
 
