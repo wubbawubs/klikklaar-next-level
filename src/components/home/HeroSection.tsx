@@ -48,7 +48,7 @@ export function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
               }}
             >
-              Wij zorgen dat je online groeit. Jij focust op je klanten.
+              Wij zorgen dat je gevonden wordt in Google én AI. Jij focust op je klanten.
             </p>
 
             {/* Mini proof - Desktop only */}
