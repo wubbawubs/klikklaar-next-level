@@ -12,7 +12,7 @@ import {
   Check, 
   FileText, 
   Search, 
-  MapPin, 
+   
   Zap, 
   Settings, 
   BarChart3,
@@ -41,17 +41,17 @@ const deliverableCategories = [
     featured: true,
   },
   {
-    id: "local",
-    icon: MapPin,
-    title: "Lokale vindbaarheid",
-    description: "Word gevonden door klanten in jouw regio",
+    id: "visibility",
+    icon: Search,
+    title: "Google & AI-vindbaarheid",
+    description: "Gevonden worden in Google, ChatGPT, Gemini en meer",
     items: [
-      "Lokale zoekwoorden strategisch ingebouwd",
-      "Plaatsnamen en regio's geoptimaliseerd",
+      "Zoekwoorden strategisch ingebouwd",
+      "AI-vindbaarheid optimalisatie (LLM's)",
       "Google Mijn Bedrijf signalen versterkt",
-      "Lokale schema markup toegevoegd",
+      "Schema markup voor AI-zoekmachines",
     ],
-    stats: { value: "3x", label: "Meer lokale bezoekers" },
+    stats: { value: "3x", label: "Meer zichtbaarheid" },
     featured: false,
   },
   {
@@ -384,14 +384,14 @@ const Deliverables = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Dit Krijg Je | Wekelijkse SEO Verbeteringen | KlikKlaar"
-        description="Automatische content optimalisatie, technische fixes, lokale vindbaarheid en heldere rapporten. Alles wat je nodig hebt voor meer klanten."
+        description="Automatische content optimalisatie, technische fixes, AI-vindbaarheid en heldere rapporten. Alles wat je nodig hebt voor meer klanten."
         canonical="https://klikklaar.nl/wat-je-krijgt"
       />
       <StructuredData 
         schema={{
           type: "Service",
           name: "SEO Optimalisatie Diensten",
-          description: "Wekelijkse website-analyse, automatische content optimalisatie, lokale vindbaarheid en heldere rapporten.",
+          description: "Wekelijkse website-analyse, automatische content optimalisatie, AI-vindbaarheid en heldere rapporten.",
           provider: "KlikKlaar",
           areaServed: "Nederland",
         }}
