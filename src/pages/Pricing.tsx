@@ -182,7 +182,7 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s'
               }}
             >
-              ✓ Geen langlopende contracten · ✓ Geen setup-kosten · ✓ Altijd opzegbaar
+              ✓ Geen langlopende contracten · ✓ Altijd opzegbaar
             </p>
           </div>
 
