@@ -1,4 +1,4 @@
-import { Zap, MapPin, BarChart3 } from "lucide-react";
+import { Zap, Globe, BarChart3 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const usps = [
@@ -9,9 +9,9 @@ const usps = [
     featured: false,
   },
   {
-    icon: MapPin,
-    title: "Meer klanten uit je eigen regio",
-    description: "We optimaliseren je website specifiek op jouw plaats, beroep en doelgroep. Zodat je wordt gevonden door mensen die écht in de buurt zoeken.",
+    icon: Globe,
+    title: "Gevonden worden door de juiste klanten",
+    description: "Of je nu lokaal werkt of online diensten levert — wij zorgen dat jouw ideale klant jou vindt. In Google, in AI-zoekmachines en op Maps.",
     featured: true,
   },
   {

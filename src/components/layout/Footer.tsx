@@ -54,7 +54,7 @@ export function Footer() {
               <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 w-auto brightness-0 invert" />
             </Link>
             <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
-              Automatische SEO voor lokale ondernemers. Meer klanten, zonder gedoe.
+              Automatische SEO & AI-vindbaarheid voor ondernemers. Meer klanten, zonder gedoe.
             </p>
           </div>
 
@@ -163,7 +163,7 @@ export function Footer() {
             © {new Date().getFullYear()} KlikKlaar. Alle rechten voorbehouden.
           </p>
           <p className="text-xs text-slate-500">
-            Gemaakt met ❤️ voor lokale ondernemers in Nederland
+            Gemaakt met ❤️ voor ondernemers in Nederland
           </p>
         </div>
       </div>
