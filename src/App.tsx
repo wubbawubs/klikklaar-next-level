@@ -21,6 +21,8 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Kennisbank from "./pages/Kennisbank";
+import SeoAbonnement from "./pages/SeoAbonnement";
+import SeoUitbesteden from "./pages/SeoUitbesteden";
 import Branches from "./pages/Branches";
 import Steden from "./pages/Steden";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
@@ -60,6 +62,10 @@ const App = () => (
           <Route path="/ad-b" element={<AdLandingB />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/voorwaarden" element={<Terms />} />
+          
+          {/* Diensten pillar pages */}
+          <Route path="/diensten/seo-abonnement" element={<SeoAbonnement />} />
+          <Route path="/diensten/seo-uitbesteden" element={<SeoUitbesteden />} />
           
           {/* Kennisbank routes */}
           <Route path="/kennisbank" element={<Kennisbank />} />
