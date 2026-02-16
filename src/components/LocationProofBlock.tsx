@@ -46,7 +46,7 @@ function getLocationProofData(tier: 1 | 2 | 3, locationName: string) {
       improvement: "+215%",
       timeframe: "3-4 maanden",
       quote: `Perfecte balans tussen concurrentie en mogelijkheden`,
-      keyResult: "meer lokale leads",
+      keyResult: "meer leads",
       marketContext: "Gemiddelde concurrentie, gericht bereik"
     },
     3: {

@@ -125,8 +125,8 @@ function BranchesGrid() {
             {industries.length} Branches
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Van kappers tot accountants, van makelaars tot tandartsen. 
-            Wij optimaliseren voor elke lokale onderneming.
+            Van kappers tot accountants, van consultants tot IT-bedrijven. 
+            Wij optimaliseren voor elke onderneming.
           </p>
         </div>
 

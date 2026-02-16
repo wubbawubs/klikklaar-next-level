@@ -70,7 +70,7 @@ function KennisbankHero() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
             }}
           >
-            Leer alles over SEO in begrijpelijke taal. Van lokale vindbaarheid tot technische optimalisatie - 
+            Leer alles over SEO in begrijpelijke taal. Van online vindbaarheid tot technische optimalisatie - 
             zonder jargon, met praktische tips die je direct kunt toepassen.
           </p>
         </div>

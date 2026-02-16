@@ -71,7 +71,7 @@ const pricingTiers = [
     features: [
       "Alles van Pro, plus:",
       "Persoonlijke accountmanager",
-      "Wekelijkse consulting call",
+      "Maandelijkse consulting call",
       "Blog posting engine",
       "AI-zoekstrategie op maat",
       "Content creatie ondersteuning",
