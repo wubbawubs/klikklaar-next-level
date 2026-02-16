@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     question: "Hoe werkt KlikKlaar precies?",
-    answer: "Na een kort kennismakingsgesprek analyseren we je website. Vervolgens voeren we wekelijks automatische verbeteringen door: betere teksten, technische optimalisaties en lokale vindbaarheid. Jij hoeft niets te doen, wij regelen alles.",
+    answer: "Na een kort kennismakingsgesprek analyseren we je website. Vervolgens voeren we wekelijks automatische verbeteringen door: betere teksten, technische optimalisaties en online vindbaarheid. Jij hoeft niets te doen, wij regelen alles.",
   },
   {
     question: "Moet ik technische kennis hebben?",

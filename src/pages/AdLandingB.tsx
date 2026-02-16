@@ -103,7 +103,7 @@ const AdLandingB = () => {
     },
     {
       q: "Werkt dit voor mijn branche?",
-      a: "We werken met kappers, tandartsen, coaches, aannemers, en nog veel meer lokale ondernemers."
+      a: "We werken met coaches, consultants, IT-bedrijven, kappers, aannemers, en nog veel meer ondernemers."
     },
     {
       q: "Wat kost het precies?",

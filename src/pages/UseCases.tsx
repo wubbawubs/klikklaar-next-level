@@ -47,7 +47,7 @@ const useCases = [
     painPoints: [
       "B2B klanten zoeken online naar oplossingen",
       "Je website converteert niet",
-      "Geen lokale vindbaarheid",
+      "Geen online vindbaarheid",
     ],
     results: [
       { value: "+178%", label: "Meer qualified leads" },
@@ -129,7 +129,7 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
               }}
             >
-              Of je nu kapper, tandarts, coach of aannemer bent, wij helpen ondernemers 
+              Of je nu coach, consultant, IT-bedrijf of e-commerce ondernemer bent, wij helpen ondernemers 
               zoals jij beter gevonden te worden.
             </p>
 

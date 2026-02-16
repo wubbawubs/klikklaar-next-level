@@ -44,7 +44,7 @@ const industryProofData: Record<string, {
     improvement: "+245%",
     timeframe: "5 maanden",
     quote: "Eindelijk gevonden door patiënten uit onze wijk",
-    keyResult: "meer lokale vindbaarheid"
+    keyResult: "meer online vindbaarheid"
   },
   "psycholoog": {
     caseTitle: "Praktijk voor psychologische zorg",
@@ -337,7 +337,7 @@ export function ProofBlock({ industry, location }: ProofBlockProps) {
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">Onze methodiek</strong> is gebaseerd op de officiële richtlijnen van Google Search Central 
-                voor lokale vindbaarheid en E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness).
+                voor vindbaarheid en E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness).
               </p>
             </div>
             <a 

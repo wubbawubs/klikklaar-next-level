@@ -48,7 +48,7 @@ const mainSteps = [
     icon: Search,
     title: "We analyseren samen",
     subtitle: "Gratis inzicht in je website",
-    description: "Onze AI bekijkt je website grondig: technische aspecten, content, lokale vindbaarheid en meer. We bespreken de kansen en laten zien wat er beter kan.",
+    description: "Onze AI bekijkt je website grondig: technische aspecten, content, online vindbaarheid en meer. We bespreken de kansen en laten zien wat er beter kan.",
     highlights: [
       "Volledige website-analyse",
       "Concrete verbeterpunten",
