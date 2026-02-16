@@ -59,7 +59,7 @@ export function USPSection() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
             }}
           >
-            Geen lastige termen, geen dashboards met honderd grafieken. KlikKlaar doet alles voor je.
+            Geen lastige termen, geen dashboards met honderd grafieken. KlikKlaarSEO doet alles voor je.
           </p>
         </div>
 

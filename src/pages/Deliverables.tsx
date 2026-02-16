@@ -383,7 +383,7 @@ const Deliverables = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Dit Krijg Je | Wekelijkse SEO Verbeteringen | KlikKlaar"
+        title="Dit Krijg Je | Wekelijkse SEO Verbeteringen | KlikKlaarSEO"
         description="Automatische content optimalisatie, technische fixes, AI-vindbaarheid en heldere rapporten. Alles wat je nodig hebt voor meer klanten."
         canonical="https://klikklaar.nl/wat-je-krijgt"
       />
@@ -392,7 +392,7 @@ const Deliverables = () => {
           type: "Service",
           name: "SEO Optimalisatie Diensten",
           description: "Wekelijkse website-analyse, automatische content optimalisatie, AI-vindbaarheid en heldere rapporten.",
-          provider: "KlikKlaar",
+          provider: "KlikKlaarSEO",
           areaServed: "Nederland",
         }}
       />

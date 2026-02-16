@@ -46,7 +46,7 @@ const teamMembers = [
     role: "COO",
     tag: "Directs",
     image: teamJuliette,
-    description: "Bureau manager en BI specialist. Het financiële en operationele geweten van KlikKlaar.",
+    description: "Bureau manager en BI specialist. Het financiële en operationele geweten van KlikKlaarSEO.",
     linkedin: "https://www.linkedin.com/in/juliette-welten-ab566061/",
   },
   {
@@ -145,7 +145,7 @@ function HeroSection() {
               transition: "opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s",
             }}
           >
-            KlikKlaar is gebouwd door ondernemers, voor ondernemers. Wij maken SEO
+            KlikKlaarSEO is gebouwd door ondernemers, voor ondernemers. Wij maken SEO
             toegankelijk, begrijpelijk en betaalbaar.
           </p>
         </div>
@@ -220,7 +220,7 @@ function MissionSection() {
             <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-border shadow-premium-lg">
               <img
                 src={teamLuuk}
-                alt="Luuk Wubs - Founder & CTO KlikKlaar"
+                alt="Luuk Wubs - Founder & CTO KlikKlaarSEO"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -320,7 +320,7 @@ function TeamSection() {
             }}
           >
             De mensen achter{" "}
-            <span className="gradient-text">KlikKlaar</span>
+            <span className="gradient-text">KlikKlaarSEO</span>
           </h2>
           <p
             className="text-muted-foreground"
@@ -330,7 +330,7 @@ function TeamSection() {
               transition: "opacity 0.6s ease-out 0.15s, transform 0.6s ease-out 0.15s",
             }}
           >
-            KlikKlaar is niet gebouwd door marketeers die gokten op problemen. Het is gebouwd
+            KlikKlaarSEO is niet gebouwd door marketeers die gokten op problemen. Het is gebouwd
             door ondernemers die ze jarenlang hebben geleefd.
           </p>
         </div>
@@ -388,14 +388,14 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Over KlikKlaar | SEO voor Ondernemers, door Ondernemers"
+        title="Over KlikKlaarSEO | SEO voor Ondernemers, door Ondernemers"
         description="Wij snappen ondernemers. Daarom maken we SEO toegankelijk, begrijpelijk en betaalbaar. Geen gedoe, gewoon resultaat. Ontdek ons verhaal."
         canonical="https://klikklaar.nl/over-ons"
       />
       <StructuredData
         schema={{
           type: "LocalBusiness",
-          name: "KlikKlaar",
+          name: "KlikKlaarSEO",
           description: "Automatische SEO en website optimalisatie voor ondernemers. Meer klanten, zonder gedoe.",
           url: "https://klikklaar.nl/over-ons",
           priceRange: "€€",

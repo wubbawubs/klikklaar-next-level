@@ -69,7 +69,7 @@ const AdLandingB = () => {
 
   const testimonials = [
     {
-      quote: "Eindelijk iemand die het gewoon voor me regelt. Ik snap niks van websites, maar mijn telefoon gaat veel vaker over sinds ik met KlikKlaar werk.",
+      quote: "Eindelijk iemand die het gewoon voor me regelt. Ik snap niks van websites, maar mijn telefoon gaat veel vaker over sinds ik met KlikKlaarSEO werk.",
       name: "Sandra van Dam",
       role: "Kapsalon De Knip, Amsterdam",
       result: "+47% meer afspraken"
@@ -126,7 +126,7 @@ const AdLandingB = () => {
         schema={[
           {
             type: "LocalBusiness",
-            name: "KlikKlaar",
+            name: "KlikKlaarSEO",
             description: "Automatische SEO en website optimalisatie voor lokale ondernemers.",
             url: "https://klikklaar.nl",
             priceRange: "€€",
@@ -142,7 +142,7 @@ const AdLandingB = () => {
       {/* Header */}
       <header className="py-4 border-b border-border/30">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <img src={klikklaarLogo} alt="KlikKlaar" className="h-10 lg:h-12 w-auto" />
+          <img src={klikklaarLogo} alt="KlikKlaarSEO" className="h-10 lg:h-12 w-auto" />
           <div className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-kk-orange to-kk-violet text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">
             <span>Vanaf €99/maand</span>
             <span className="text-white/60">•</span>
@@ -641,9 +641,9 @@ const AdLandingB = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-3">
-              <img src={klikklaarLogo} alt="KlikKlaar" className="h-6 w-auto" />
+              <img src={klikklaarLogo} alt="KlikKlaarSEO" className="h-6 w-auto" />
               <p className="text-xs text-muted-foreground">
-                © 2024 KlikKlaar
+                © 2024 KlikKlaarSEO
               </p>
             </div>
             <div className="flex gap-6 text-xs text-muted-foreground">

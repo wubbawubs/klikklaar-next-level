@@ -293,7 +293,7 @@ function LocalTestimonial({ location }: { location: LocationData }) {
             </div>
             
             <p className="text-lg text-foreground mb-6 italic leading-relaxed">
-              "Sinds we met KlikKlaar werken, krijgen we veel meer aanvragen uit {location.name} en omgeving. 
+              "Sinds we met KlikKlaarSEO werken, krijgen we veel meer aanvragen uit {location.name} en omgeving. 
               De rapportages zijn helder en we hoeven er zelf niets voor te doen. Precies wat we zochten!"
             </p>
             

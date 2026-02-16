@@ -365,15 +365,15 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Hoe Het Werkt | 3 Stappen naar Meer Klanten | KlikKlaar"
+        title="Hoe Het Werkt | 3 Stappen naar Meer Klanten | KlikKlaarSEO"
         description="Van kennismaking tot resultaat in 3 simpele stappen. Geen gedoe, geen technische kennis nodig. Wij doen het werk, jij krijgt klanten."
         canonical="https://klikklaar.nl/hoe-het-werkt"
       />
       <StructuredData 
         schema={{
           type: "WebPage",
-          name: "Hoe Het Werkt - KlikKlaar",
-          description: "Ontdek hoe KlikKlaar werkt: van kennismakingsgesprek tot automatische groei.",
+          name: "Hoe Het Werkt - KlikKlaarSEO",
+          description: "Ontdek hoe KlikKlaarSEO werkt: van kennismakingsgesprek tot automatische groei.",
           url: "https://klikklaar.nl/hoe-het-werkt",
         }}
       />

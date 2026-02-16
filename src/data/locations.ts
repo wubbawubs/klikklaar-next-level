@@ -49,7 +49,7 @@ export const locations: LocationData[] = [
       growthRate: "+8%"
     },
     localTestimonial: {
-      quote: "In Amsterdam is de concurrentie moordend. Dankzij KlikKlaar sta ik nu bovenaan voor mijn wijk en krijg ik wekelijks nieuwe klanten.",
+      quote: "In Amsterdam is de concurrentie moordend. Dankzij KlikKlaarSEO sta ik nu bovenaan voor mijn wijk en krijg ik wekelijks nieuwe klanten.",
       author: "Marieke de Vries",
       business: "Studio M Styling",
       industry: "Kapsalon"
@@ -78,7 +78,7 @@ export const locations: LocationData[] = [
       growthRate: "+12%"
     },
     localTestimonial: {
-      quote: "Rotterdam is een stad waar je moet opvallen. Sinds KlikKlaar onze SEO doet, komen klanten uit heel Zuid-Holland naar ons toe.",
+      quote: "Rotterdam is een stad waar je moet opvallen. Sinds KlikKlaarSEO onze SEO doet, komen klanten uit heel Zuid-Holland naar ons toe.",
       author: "Dennis Bakker",
       business: "Bakker Fysio",
       industry: "Fysiotherapie"

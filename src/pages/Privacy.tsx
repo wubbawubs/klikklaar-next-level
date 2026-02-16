@@ -7,15 +7,15 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Privacybeleid | KlikKlaar"
-        description="Lees ons privacybeleid. KlikKlaar respecteert je privacy en beschermt je persoonsgegevens. Transparant over hoe we met je data omgaan."
+        title="Privacybeleid | KlikKlaarSEO"
+        description="Lees ons privacybeleid. KlikKlaarSEO respecteert je privacy en beschermt je persoonsgegevens. Transparant over hoe we met je data omgaan."
         canonical="https://klikklaar.nl/privacy"
       />
       <StructuredData 
         schema={{
           type: "WebPage",
-          name: "Privacybeleid - KlikKlaar",
-          description: "Lees ons privacybeleid. KlikKlaar respecteert je privacy en beschermt je persoonsgegevens.",
+          name: "Privacybeleid - KlikKlaarSEO",
+          description: "Lees ons privacybeleid. KlikKlaarSEO respecteert je privacy en beschermt je persoonsgegevens.",
           url: "https://klikklaar.nl/privacy",
         }}
       />
@@ -34,7 +34,7 @@ const Privacy = () => {
             <section className="mb-8">
               <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-3">1. Inleiding</h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
-                KlikKlaar ("wij", "ons", "onze") respecteert de privacy van alle gebruikers van onze website 
+                KlikKlaarSEO ("wij", "ons", "onze") respecteert de privacy van alle gebruikers van onze website 
                 en diensten. Dit privacybeleid beschrijft hoe wij persoonsgegevens verzamelen, gebruiken, 
                 delen en beschermen.
               </p>
@@ -116,7 +116,7 @@ const Privacy = () => {
               </p>
               <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">KlikKlaar</strong> is een handelsnaam van LP Impact B.V.<br />
+                  <strong className="text-foreground">KlikKlaarSEO</strong> is een handelsnaam van LP Impact B.V.<br />
                   KvK-nummer: 94601186<br />
                   Vestigingsadres: Olieslagerspoort 1, 1601AW Enkhuizen<br />
                   E-mail: <a href="mailto:Info@klikklaarseo.nl" className="text-kk-orange hover:underline">Info@klikklaarseo.nl</a><br />

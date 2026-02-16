@@ -262,7 +262,7 @@ function ServiceTestimonial() {
             </div>
             
             <p className="text-lg text-foreground mb-6 italic leading-relaxed">
-              "Super club! Een poosje terug contact gekregen met KlikKlaar. Mooie club en maken hun woorden waar. 
+              "Super club! Een poosje terug contact gekregen met KlikKlaarSEO. Mooie club en maken hun woorden waar. 
               Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit."
             </p>
             

@@ -452,7 +452,7 @@ const Pricing = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO Prijzen | Basis €99 · Pro €149 · Pro+ €249 | KlikKlaar"
+        title="SEO Prijzen | Basis €99 · Pro €149 · Pro+ €249 | KlikKlaarSEO"
         description="Transparante SEO & AI-vindbaarheid prijzen zonder verborgen kosten. Maandelijks opzegbaar. Investeer in groei, niet in gedoe. 100+ ondernemers gingen je voor."
         canonical="https://klikklaar.nl/prijzen"
       />
@@ -461,7 +461,7 @@ const Pricing = () => {
           type: "Service",
           name: "SEO Abonnementen",
           description: "Transparante prijzen vanaf €99/maand, geen verborgen kosten, altijd maandelijks opzegbaar.",
-          provider: "KlikKlaar",
+          provider: "KlikKlaarSEO",
           areaServed: "Nederland",
         }}
       />

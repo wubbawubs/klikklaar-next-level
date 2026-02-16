@@ -55,7 +55,7 @@ export function TestimonialsSection() {
             }}
           >
             Ondernemers zoals jij{" "}
-            <span className="gradient-text">groeien al met KlikKlaar</span>
+            <span className="gradient-text">groeien al met KlikKlaarSEO</span>
           </h2>
         </div>
 

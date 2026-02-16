@@ -8,12 +8,12 @@ import {
 
 const faqs = [
   {
-    question: "Hoe werkt KlikKlaar precies?",
+    question: "Hoe werkt KlikKlaarSEO precies?",
     answer: "Na een kort kennismakingsgesprek analyseren we je website. Vervolgens voeren we wekelijks automatische verbeteringen door: betere teksten, technische optimalisaties en online vindbaarheid. Jij hoeft niets te doen, wij regelen alles.",
   },
   {
     question: "Moet ik technische kennis hebben?",
-    answer: "Absoluut niet. KlikKlaar is gemaakt voor ondernemers, niet voor marketeers. We doen alles voor je en rapporteren in begrijpelijk Nederlands zonder vakjargon.",
+    answer: "Absoluut niet. KlikKlaarSEO is gemaakt voor ondernemers, niet voor marketeers. We doen alles voor je en rapporteren in begrijpelijk Nederlands zonder vakjargon.",
   },
   {
     question: "Hoe snel zie ik resultaat?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "Werkt dit voor mijn branche?",
-    answer: "KlikKlaar werkt voor alle ondernemers: kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en meer. Als je klanten wilt aantrekken, kunnen we je helpen.",
+    answer: "KlikKlaarSEO werkt voor alle ondernemers: kappers, tandartsen, coaches, aannemers, fysiotherapeuten, en meer. Als je klanten wilt aantrekken, kunnen we je helpen.",
   },
   {
     question: "Wat als ik al een website heb?",

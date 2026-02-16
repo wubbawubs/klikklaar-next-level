@@ -89,7 +89,7 @@ export function IndustryGridIllustration() {
                 transition: 'opacity 0.5s ease-out 0.3s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s'
               }}
             >
-              <img src={klikklaarIcon} alt="KlikKlaar" className="w-16 h-16 object-contain rounded-xl" />
+              <img src={klikklaarIcon} alt="KlikKlaarSEO" className="w-16 h-16 object-contain rounded-xl" />
             </div>
 
             {/* Industry icons in hexagon pattern */}

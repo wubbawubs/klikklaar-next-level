@@ -229,7 +229,7 @@ export function StructuredData({ schema }: StructuredDataProps) {
   return null;
 }
 
-// Pre-configured schema for KlikKlaar - ONLY use on pages with real physical presence
+// Pre-configured schema for KlikKlaarSEO - ONLY use on pages with real physical presence
 export const klikklaarBusinessSchema: LocalBusinessSchema = {
   type: "LocalBusiness",
   name: "KlikKlaarSEO",
