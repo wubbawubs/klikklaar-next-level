@@ -34,7 +34,7 @@ const Index = () => {
         {/* 2. Pijn - herkenning creëren */}
         <PainSection />
         
-        {/* 3. USP - waarom KlikKlaar uniek is */}
+        {/* 3. USP - waarom KlikKlaarSEO uniek is */}
         <USPSection />
         
         {/* 4. Flow - hoe het werkt */}

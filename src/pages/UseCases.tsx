@@ -54,7 +54,7 @@ const useCases = [
       { value: "4x", label: "Hogere conversie" },
     ],
     testimonial: {
-      quote: "Super club! Een poosje terug contact gekregen met KlikKlaar. Mooie club en maken hun woorden waar. Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit.",
+      quote: "Super club! Een poosje terug contact gekregen met KlikKlaarSEO. Mooie club en maken hun woorden waar. Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit.",
       author: "Ben Commandeur",
       role: "Nieuw Marketing",
     },
@@ -117,7 +117,7 @@ function HeroSection() {
                 transition: 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s'
               }}
             >
-              KlikKlaar werkt voor{" "}
+              KlikKlaarSEO werkt voor{" "}
               <span className="gradient-text">jouw branche</span>
             </h1>
             
@@ -337,15 +337,15 @@ const UseCases = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO Resultaten per Branche | Echte Voorbeelden | KlikKlaar"
+        title="SEO Resultaten per Branche | Echte Voorbeelden | KlikKlaarSEO"
         description="Bekijk concrete SEO resultaten voor coaches, kappers, tandartsen en meer. +145% meer verkeer gemiddeld. Ontdek wat wij voor jou kunnen doen."
         canonical="https://klikklaar.nl/voorbeelden"
       />
       <StructuredData 
         schema={{
           type: "WebPage",
-          name: "Voorbeelden per Branche - KlikKlaar",
-          description: "Bekijk hoe KlikKlaar werkt voor coaches, consultants, marketeers en meer.",
+          name: "Voorbeelden per Branche - KlikKlaarSEO",
+          description: "Bekijk hoe KlikKlaarSEO werkt voor coaches, consultants, marketeers en meer.",
           url: "https://klikklaar.nl/voorbeelden",
         }}
       />

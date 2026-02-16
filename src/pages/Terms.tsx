@@ -7,14 +7,14 @@ const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Algemene Voorwaarden | KlikKlaar"
+        title="Algemene Voorwaarden | KlikKlaarSEO"
         description="Lees onze algemene voorwaarden. Transparante afspraken over onze SEO-diensten, prijzen en opzegtermijnen. Maandelijks opzegbaar."
         canonical="https://klikklaar.nl/voorwaarden"
       />
       <StructuredData 
         schema={{
           type: "WebPage",
-          name: "Algemene Voorwaarden - KlikKlaar",
+          name: "Algemene Voorwaarden - KlikKlaarSEO",
           description: "Lees onze algemene voorwaarden voor SEO-diensten.",
           url: "https://klikklaar.nl/voorwaarden",
         }}
@@ -37,10 +37,10 @@ const Terms = () => {
                 In deze algemene voorwaarden wordt verstaan onder:
               </p>
               <ul className="list-disc pl-6 text-muted-foreground text-sm sm:text-base space-y-2 mb-4">
-                <li><strong>KlikKlaar:</strong> de aanbieder van de SEO-optimalisatiediensten</li>
-                <li><strong>Klant:</strong> de natuurlijke of rechtspersoon die een overeenkomst aangaat met KlikKlaar</li>
-                <li><strong>Diensten:</strong> de door KlikKlaar aangeboden website-optimalisatiediensten</li>
-                <li><strong>Overeenkomst:</strong> de afspraken tussen KlikKlaar en de Klant</li>
+                <li><strong>KlikKlaarSEO:</strong> de aanbieder van de SEO-optimalisatiediensten</li>
+                <li><strong>Klant:</strong> de natuurlijke of rechtspersoon die een overeenkomst aangaat met KlikKlaarSEO</li>
+                <li><strong>Diensten:</strong> de door KlikKlaarSEO aangeboden website-optimalisatiediensten</li>
+                <li><strong>Overeenkomst:</strong> de afspraken tussen KlikKlaarSEO en de Klant</li>
               </ul>
             </section>
 
@@ -48,7 +48,7 @@ const Terms = () => {
               <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-3">2. Toepasselijkheid</h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
                 Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, offertes en 
-                overeenkomsten tussen KlikKlaar en de Klant. Afwijkingen zijn alleen geldig indien 
+                overeenkomsten tussen KlikKlaarSEO en de Klant. Afwijkingen zijn alleen geldig indien 
                 schriftelijk overeengekomen.
               </p>
             </section>
@@ -56,7 +56,7 @@ const Terms = () => {
             <section className="mb-8">
               <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-3">3. Dienstverlening</h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
-                KlikKlaar levert automatische website-optimalisatiediensten gericht op het verbeteren 
+                KlikKlaarSEO levert automatische website-optimalisatiediensten gericht op het verbeteren 
                 van de vindbaarheid van de website van de Klant. De specifieke diensten en voorwaarden 
                 worden vastgelegd in de gekozen abonnementsvorm.
               </p>
@@ -67,7 +67,7 @@ const Terms = () => {
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
                 Alle prijzen zijn in euro's en exclusief btw, tenzij anders vermeld. Betaling geschiedt 
                 maandelijks vooraf via automatische incasso of factuur. Bij niet-tijdige betaling is 
-                KlikKlaar gerechtigd de dienstverlening op te schorten.
+                KlikKlaarSEO gerechtigd de dienstverlening op te schorten.
               </p>
             </section>
 
@@ -83,8 +83,8 @@ const Terms = () => {
             <section className="mb-8">
               <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-3">6. Aansprakelijkheid</h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
-                KlikKlaar spant zich in om de beste resultaten te behalen, maar garandeert geen 
-                specifieke posities in zoekmachines. De aansprakelijkheid van KlikKlaar is beperkt 
+                KlikKlaarSEO spant zich in om de beste resultaten te behalen, maar garandeert geen 
+                specifieke posities in zoekmachines. De aansprakelijkheid van KlikKlaarSEO is beperkt 
                 tot het bedrag dat de Klant in de drie maanden voorafgaand aan de schade heeft betaald.
               </p>
             </section>
@@ -92,8 +92,8 @@ const Terms = () => {
             <section className="mb-8">
               <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-3">7. Intellectueel eigendom</h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
-                Alle intellectuele eigendomsrechten op de door KlikKlaar ontwikkelde materialen, 
-                analyses en rapporten blijven eigendom van KlikKlaar, tenzij schriftelijk anders 
+                Alle intellectuele eigendomsrechten op de door KlikKlaarSEO ontwikkelde materialen, 
+                analyses en rapporten blijven eigendom van KlikKlaarSEO, tenzij schriftelijk anders 
                 overeengekomen.
               </p>
             </section>
@@ -109,7 +109,7 @@ const Terms = () => {
             <section className="mb-8">
               <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-3">9. Wijzigingen</h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4">
-                KlikKlaar behoudt zich het recht voor deze algemene voorwaarden te wijzigen. 
+                KlikKlaarSEO behoudt zich het recht voor deze algemene voorwaarden te wijzigen. 
                 Wijzigingen worden minimaal 30 dagen voor inwerkingtreding aangekondigd via e-mail.
               </p>
             </section>
@@ -132,7 +132,7 @@ const Terms = () => {
               </p>
               <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">KlikKlaar</strong> is een handelsnaam van LP Impact B.V.<br />
+                  <strong className="text-foreground">KlikKlaarSEO</strong> is een handelsnaam van LP Impact B.V.<br />
                   KvK-nummer: 94601186<br />
                   Vestigingsadres: Olieslagerspoort 1, 1601AW Enkhuizen<br />
                   E-mail: <a href="mailto:Info@klikklaarseo.nl" className="text-kk-orange hover:underline">Info@klikklaarseo.nl</a><br />

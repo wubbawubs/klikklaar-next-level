@@ -51,7 +51,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
             <Link to="/" className="flex items-center mb-4">
-              <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-8 w-auto brightness-0 invert" />
+              <img src={klikklaarLogo} alt="KlikKlaarSEO" className="h-8 w-auto brightness-0 invert" />
             </Link>
             <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
               Automatische SEO & AI-vindbaarheid voor ondernemers. Meer klanten, zonder gedoe.
@@ -160,7 +160,7 @@ export function Footer() {
         {/* Bottom section */}
         <div className="mt-10 lg:mt-14 pt-6 lg:pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} KlikKlaar. Alle rechten voorbehouden.
+            © {new Date().getFullYear()} KlikKlaarSEO. Alle rechten voorbehouden.
           </p>
           <p className="text-xs text-slate-500">
             Gemaakt met ❤️ voor ondernemers in Nederland

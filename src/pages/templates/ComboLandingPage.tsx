@@ -390,7 +390,7 @@ function ComboTestimonial({ industry, location }: ComboLandingPageProps) {
 
   // Use location-specific testimonial if available
   const testimonial = location.localTestimonial || {
-    quote: `Sinds we met KlikKlaar werken, krijgen we veel meer aanvragen uit ${location.name} en omgeving. Als ${industry.name.toLowerCase()} is het fijn dat ik me kan focussen op mijn werk terwijl zij de vindbaarheid regelen.`,
+    quote: `Sinds we met KlikKlaarSEO werken, krijgen we veel meer aanvragen uit ${location.name} en omgeving. Als ${industry.name.toLowerCase()} is het fijn dat ik me kan focussen op mijn werk terwijl zij de vindbaarheid regelen.`,
     author: `Tevreden ${industry.name.toLowerCase()}`,
     business: location.name,
     industry: industry.name

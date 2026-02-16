@@ -49,7 +49,7 @@ export const industries: IndustryData[] = [
       { value: "Top 5", label: "Voor lokale zoektermen" }
     ],
     testimonial: {
-      quote: "Sinds KlikKlaar krijg ik wekelijks aanvragen van nieuwe klanten die me via Google hebben gevonden. Precies waar ik naar zocht.",
+      quote: "Sinds KlikKlaarSEO krijg ik wekelijks aanvragen van nieuwe klanten die me via Google hebben gevonden. Precies waar ik naar zocht.",
       author: "Lisa van der Berg",
       role: "Interieur Designer",
       company: "Studio LB Interiors"

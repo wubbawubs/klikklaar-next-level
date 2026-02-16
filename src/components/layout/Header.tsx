@@ -22,7 +22,7 @@ export function Header() {
       <nav className="container px-4 sm:px-6 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={klikklaarLogo} alt="KlikKlaar SEO" className="h-12 sm:h-14 lg:h-[80px] w-auto" />
+          <img src={klikklaarLogo} alt="KlikKlaarSEO" className="h-12 sm:h-14 lg:h-[80px] w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

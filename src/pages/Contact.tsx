@@ -282,15 +282,15 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Gratis Gesprek Plannen | Contact | KlikKlaar"
+        title="Gratis Gesprek Plannen | Contact | KlikKlaarSEO"
         description="Plan een vrijblijvend gesprek van 15 minuten. Geen verkooppraatje, gewoon een eerlijk gesprek over jouw online vindbaarheid."
         canonical="https://klikklaar.nl/contact"
       />
       <StructuredData 
         schema={{
           type: "LocalBusiness",
-          name: "KlikKlaar",
-          description: "Neem contact op met KlikKlaar voor automatische SEO en website optimalisatie.",
+          name: "KlikKlaarSEO",
+          description: "Neem contact op met KlikKlaarSEO voor automatische SEO en website optimalisatie.",
           url: "https://klikklaar.nl/contact",
           telephone: "+31628354333",
           email: "Info@klikklaarseo.nl",

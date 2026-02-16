@@ -106,7 +106,7 @@ export function PricingValueIllustration() {
             
             <div>
               <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-foreground font-medium">KlikKlaar</span>
+                <span className="text-foreground font-medium">KlikKlaarSEO</span>
                 <span className="text-kk-orange font-bold">€99/maand</span>
               </div>
               <div className="h-3 bg-muted rounded-full overflow-hidden">
@@ -149,7 +149,7 @@ export function PricingValueIllustration() {
             ))}
             <div className="flex justify-end gap-6 text-[10px] text-muted-foreground pt-1 pr-2">
               <span>Bureau</span>
-              <span className="text-kk-orange font-medium">KlikKlaar</span>
+              <span className="text-kk-orange font-medium">KlikKlaarSEO</span>
             </div>
           </div>
         </div>
