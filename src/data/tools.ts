@@ -197,32 +197,46 @@ const defaultRelatedServices: Record<ToolCategory, ServiceSlug[]> = {
   concurrentie: ["seo-voor-mkb", "automatische-seo"],
 };
 
+import { toolUniqueContent } from "./tools-unique-content";
+
 function createTool(input: ToolInput): ToolData {
+  // Auto-merge unique content from separate file if not already on the input
+  const unique = toolUniqueContent[input.slug];
+  const mergedInput = unique
+    ? {
+        ...input,
+        uniqueIntro: input.uniqueIntro || unique.uniqueIntro,
+        whatThisToolChecks: input.whatThisToolChecks || unique.whatThisToolChecks,
+        uniqueFaqs: input.uniqueFaqs || unique.uniqueFaqs,
+        commonIssuesAndFixes: input.commonIssuesAndFixes || unique.commonIssuesAndFixes,
+      }
+    : input;
+
   // Merge unique FAQs with 1 category FAQ (to reduce duplication)
-  const catFaqs = categoryFaqs[input.category](input.name);
-  const faqs = input.uniqueFaqs
-    ? [...input.uniqueFaqs, catFaqs[catFaqs.length - 1]] // only 1 shared FAQ
+  const catFaqs = categoryFaqs[mergedInput.category](mergedInput.name);
+  const faqs = mergedInput.uniqueFaqs
+    ? [...mergedInput.uniqueFaqs, catFaqs[catFaqs.length - 1]] // only 1 shared FAQ
     : catFaqs;
 
   return {
-    slug: input.slug,
-    name: input.name,
-    icon: input.icon,
-    category: input.category,
-    shortDescription: input.short,
-    headline: `Gratis ${input.name}`,
-    subheadline: input.short,
-    whatItDoes: input.what,
-    benefits: categoryBenefits[input.category](input.name),
-    howToUse: input.steps,
+    slug: mergedInput.slug,
+    name: mergedInput.name,
+    icon: mergedInput.icon,
+    category: mergedInput.category,
+    shortDescription: mergedInput.short,
+    headline: `Gratis ${mergedInput.name}`,
+    subheadline: mergedInput.short,
+    whatItDoes: mergedInput.what,
+    benefits: categoryBenefits[mergedInput.category](mergedInput.name),
+    howToUse: mergedInput.steps,
     faqs,
-    uniqueIntro: input.uniqueIntro,
-    whatThisToolChecks: input.whatThisToolChecks,
-    howToInterpret: input.howToInterpret,
-    commonIssuesAndFixes: input.commonIssuesAndFixes,
-    uniqueFaqs: input.uniqueFaqs,
-    relatedPillars: input.relatedPillars || defaultRelatedPillars[input.category],
-    relatedServices: input.relatedServices || defaultRelatedServices[input.category],
+    uniqueIntro: mergedInput.uniqueIntro,
+    whatThisToolChecks: mergedInput.whatThisToolChecks,
+    howToInterpret: mergedInput.howToInterpret,
+    commonIssuesAndFixes: mergedInput.commonIssuesAndFixes,
+    uniqueFaqs: mergedInput.uniqueFaqs,
+    relatedPillars: mergedInput.relatedPillars || defaultRelatedPillars[mergedInput.category],
+    relatedServices: mergedInput.relatedServices || defaultRelatedServices[mergedInput.category],
   };
 }
 
