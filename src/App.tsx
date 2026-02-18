@@ -40,7 +40,7 @@ import { DienstBureauPage } from "./pages/templates/DienstBureauPage";
 import { DienstScanPage } from "./pages/templates/DienstScanPage";
 
 // Data imports
-import { industries, getIndustryBySlug } from "./data/industries";
+import { allIndustries, getIndustryBySlug } from "./data/industries";
 import { locations, getLocationBySlug } from "./data/locations";
 import { services } from "./data/services";
 import { combos } from "./data/combos";
@@ -147,7 +147,7 @@ const App = () => (
           <Route path="/steden" element={<Steden />} />
           
           {/* Dynamic industry landing pages */}
-          {industries.map((industry) => (
+          {allIndustries.map((industry) => (
             <Route
               key={industry.slug}
               path={`/seo-${industry.slug}`}

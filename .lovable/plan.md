@@ -1,14 +1,18 @@
 
 # Plan: SEO Blueprint — KlikKlaarSEO 900 pagina's
 
-## Voortgang: ~151 / 900 pagina's (17%)
+## Voortgang: ~371 / 900 pagina's (41%)
 
 ## Template-overzicht
 
 | # | Template | Code | Doel | Gebouwd | Resterend | Priority mix |
 |---|----------|------|------|---------|-----------|-------------|
-| 1 | Diensten | SRV | 60 | ~22 | ~38 | P1✅, P2 resterend |
-| 2 | Branches/Industries | IND | 250 | ~29 | ~221 | P2 grotendeels |
+| 1 | Diensten | SRV | 60 | 60 ✅ | 0 | Compleet |
+| 2 | Branches/Industries | IND | 250 | ~250 ✅ | ~0 | Compleet |
+| 3 | Platforms | PLAT | 100 | 0 | 100 | P2+P3 (50/50) |
+| 4 | Locaties | LOC | 120 | ~80 | ~40 | P2+P3 |
+| 5 | Tools | TOOL | 150 | 0 | 150 | P2+P3 (75/75) |
+| 6 | Kennisbank/Resources | RES | 220 | ~20 | ~200 | P2 grotendeels |
 | 3 | Platforms | PLAT | 100 | 0 | 100 | P2+P3 (50/50) |
 | 4 | Locaties | LOC | 120 | ~80 | ~40 | P2+P3 |
 | 5 | Tools | TOOL | 150 | 0 | 150 | P2+P3 (75/75) |

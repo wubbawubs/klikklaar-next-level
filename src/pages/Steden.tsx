@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight, MapPin, Building2, Users } from "lucide-react";
 import { locations, LocationData } from "@/data/locations";
-import { industries } from "@/data/industries";
+import { allIndustries } from "@/data/industries";
 import { combos, comboExists } from "@/data/combos";
 
 function StedenHero() {
@@ -42,7 +42,7 @@ function CityCard({ location }: { location: LocationData }) {
   const { ref, isVisible } = useScrollReveal();
 
   // Get top 4 industries with combos for this location
-  const topIndustries = industries
+  const topIndustries = allIndustries
     .filter(ind => comboExists(ind.slug, location.slug))
     .slice(0, 4);
 
@@ -106,7 +106,7 @@ function CityCard({ location }: { location: LocationData }) {
                 {ind.name}
               </Link>
             ))}
-            {topIndustries.length < industries.filter(i => comboExists(i.slug, location.slug)).length && (
+            {topIndustries.length < allIndustries.filter(i => comboExists(i.slug, location.slug)).length && (
               <Link
                 to={`/seo-${location.slug}`}
                 className="px-2.5 py-1 text-xs text-kk-orange hover:underline"
