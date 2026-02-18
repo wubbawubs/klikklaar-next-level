@@ -9,7 +9,8 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { Phone, Check, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ToolData, tools, toolCategories, isToolContentComplete } from "@/data/tools";
+import { ToolData, tools, toolCategories } from "@/data/tools";
+import { isToolIndexReady, getToolScore } from "@/lib/indexation-governance";
 import {
   Accordion,
   AccordionContent,
@@ -325,7 +326,7 @@ function getKennisbankContext(tool: ToolData): "lokale-seo" | "technische-seo" |
 }
 
 export function ToolLandingPage({ tool }: ToolLandingPageProps) {
-  const contentComplete = isToolContentComplete(tool);
+  const contentComplete = isToolIndexReady(tool);
   
   const faqSchema = {
     type: "FAQPage" as const,
