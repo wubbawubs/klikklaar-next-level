@@ -1,7 +1,7 @@
 
 # Plan: SEO Blueprint — KlikKlaarSEO 900 pagina's
 
-## Voortgang: ~537 / 900 pagina's (60%)
+## Voortgang: ~737 / 900 pagina's (82%)
 
 ## Template-overzicht
 
@@ -12,7 +12,7 @@
 | 3 | Platforms | PLAT | 100 | 51 ✅ | 49 | Hub + 50 landing pages |
 | 4 | Locaties | LOC | 120 | ~120 ✅ | 0 | Compleet (noindex Tier 3) |
 | 5 | Tools | TOOL | 150 | 76 ✅ | 74 | Hub + 75 landing pages |
-| 6 | Kennisbank/Resources | RES | 220 | ~20 | ~200 | P2 grotendeels |
+| 6 | Kennisbank/Resources | RES | 220 | ~200 ✅ | ~20 | 14 pillars + ~200 artikelen |
 
 ## Fase 1 — Fundament (nu → week 2)
 - [x] P1 dienst-pagina's (uitbesteden + abonnement)

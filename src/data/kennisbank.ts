@@ -736,8 +736,12 @@ Er is geen exact maximum, maar:
   }
 ];
 
+import { expandedPillars } from "./kennisbank-expanded";
+
+export const allPillars: KennisbankPillar[] = [...pillars, ...expandedPillars];
+
 export function getPillarBySlug(slug: string): KennisbankPillar | undefined {
-  return pillars.find(p => p.slug === slug);
+  return allPillars.find(p => p.slug === slug);
 }
 
 export function getArticleBySlug(pillarSlug: string, articleSlug: string): KennisbankArticle | undefined {
@@ -746,7 +750,7 @@ export function getArticleBySlug(pillarSlug: string, articleSlug: string): Kenni
 }
 
 export function getAllArticles(): Array<{ pillar: KennisbankPillar; article: KennisbankArticle }> {
-  return pillars.flatMap(pillar => 
+  return allPillars.flatMap(pillar => 
     pillar.articles.map(article => ({ pillar, article }))
   );
 }
