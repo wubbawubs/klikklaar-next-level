@@ -1800,4 +1800,52 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Dienst-variant Pages (P3) - Uitbesteden -->
+  <url><loc>https://klikklaar.nl/diensten/content-optimalisatie-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-teksten-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/linkbuilding-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/google-bedrijfsprofiel-optimalisatie-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-monitoring-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-rapportages-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-voor-webshops-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-voor-dienstverleners-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-migratie-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/conversie-optimalisatie-uitbesteden</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Dienst-variant Pages (P3) - Abonnement -->
+  <url><loc>https://klikklaar.nl/diensten/content-optimalisatie-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-teksten-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/linkbuilding-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/google-bedrijfsprofiel-optimalisatie-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-monitoring-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-rapportages-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-voor-webshops-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-voor-dienstverleners-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-migratie-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/conversie-optimalisatie-abonnement</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Dienst-variant Pages (P4) - Bureau -->
+  <url><loc>https://klikklaar.nl/diensten/content-optimalisatie-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-teksten-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/linkbuilding-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/google-bedrijfsprofiel-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-monitoring-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-rapportages-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-webshops-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-dienstverleners-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-migratie-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/conversie-optimalisatie-bureau</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+
+  <!-- Dienst-variant Pages (P4) - Scan -->
+  <url><loc>https://klikklaar.nl/diensten/content-optimalisatie-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-teksten-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/linkbuilding-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/google-bedrijfsprofiel-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-monitoring-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-rapportages-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-webshops-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-dienstverleners-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/seo-migratie-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://klikklaar.nl/diensten/conversie-optimalisatie-scan</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 </urlset>
