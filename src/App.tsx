@@ -25,6 +25,7 @@ import SeoAbonnement from "./pages/SeoAbonnement";
 import SeoUitbesteden from "./pages/SeoUitbesteden";
 import Branches from "./pages/Branches";
 import Steden from "./pages/Steden";
+import Diensten from "./pages/Diensten";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
 import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
@@ -69,7 +70,8 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/voorwaarden" element={<Terms />} />
           
-          {/* Diensten pillar pages */}
+          {/* Diensten hub + pillar pages */}
+          <Route path="/diensten" element={<Diensten />} />
           <Route path="/diensten/seo-abonnement" element={<SeoAbonnement />} />
           
           {/* Dynamic dienst-variant pages (P1) */}
