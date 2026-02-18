@@ -6,6 +6,7 @@ import { ProductDemo } from "@/components/home/ProductDemo";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 
 
 
@@ -120,7 +121,7 @@ const AdLandingB = () => {
       <SEOHead 
         title="Automatische AI SEO | Meer Klanten | KlikKlaarSEO"
         description="Wij zorgen dat jouw website beter gevonden wordt. Automatisch. Jij focust op je vak, wij op je online zichtbaarheid. Vanaf €99/maand."
-        canonical="https://klikklaar.nl/ad-b"
+        canonical={`${SITE_URL}/ad-b`}
       />
       <StructuredData 
         schema={[
@@ -128,7 +129,7 @@ const AdLandingB = () => {
             type: "LocalBusiness",
             name: "KlikKlaarSEO",
             description: "Automatische SEO en website optimalisatie voor lokale ondernemers.",
-            url: "https://klikklaar.nl",
+            url: SITE_URL,
             priceRange: "€€",
             aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
           },

@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData, klikklaarOrganizationSchema } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight, MapPin } from "lucide-react";
@@ -177,8 +178,8 @@ export default function Branches() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Branches", url: "https://klikklaar.nl/branches" }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Branches", url: `${SITE_URL}/branches` }
     ]
   };
 
@@ -187,7 +188,7 @@ export default function Branches() {
       <SEOHead 
         title="SEO per Branche | Kappers, Tandartsen, Coaches & Meer | €99/mnd"
         description={`SEO speciaal voor jouw branche. ${allIndustries.length} sectoren: van kappers tot accountants. Meer klanten uit jouw regio. Geen gedoe, altijd opzegbaar.`}
-        canonical="https://klikklaar.nl/branches"
+        canonical={`${SITE_URL}/branches`}
         ogType="website"
       />
       <StructuredData schema={breadcrumbSchema} />

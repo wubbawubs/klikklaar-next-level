@@ -747,7 +747,7 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
       <SEOHead 
         title={`${industry.name} ${location.name} | Gevonden Worden in Google | €99/mnd`}
         description={`${industry.name} in ${location.name}? Word #1 in Google. Automatische SEO voor ${industry.namePlural.toLowerCase()} in ${location.province}. Geen gedoe, altijd opzegbaar. Start vandaag.`}
-        canonical={`https://klikklaar.nl/seo-${industry.slug}-${location.slug}`}
+        canonical={`${SITE_URL}/seo-${industry.slug}-${location.slug}`}
         robots={shouldNoindex ? "noindex,follow" : "index,follow"}
         ogType="website"
       />

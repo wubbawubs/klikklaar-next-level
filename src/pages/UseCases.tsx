@@ -8,6 +8,7 @@ import { IndustryGridIllustration } from "@/components/illustrations/IndustryGri
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { 
   Phone,
   Scissors,
@@ -339,14 +340,14 @@ const UseCases = () => {
       <SEOHead 
         title="SEO Resultaten per Branche | Echte Voorbeelden | KlikKlaarSEO"
         description="Bekijk concrete SEO resultaten voor coaches, kappers, tandartsen en meer. +145% meer verkeer gemiddeld. Ontdek wat wij voor jou kunnen doen."
-        canonical="https://klikklaar.nl/voorbeelden"
+        canonical={`${SITE_URL}/voorbeelden`}
       />
       <StructuredData 
         schema={{
           type: "WebPage",
           name: "Voorbeelden per Branche - KlikKlaarSEO",
           description: "Bekijk hoe KlikKlaarSEO werkt voor coaches, consultants, marketeers en meer.",
-          url: "https://klikklaar.nl/voorbeelden",
+          url: `${SITE_URL}/voorbeelden`,
         }}
       />
       <Header />

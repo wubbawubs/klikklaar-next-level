@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ContactConnectIllustration } from "@/components/illustrations/ContactConnectIllustration";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { 
   Phone,
   Mail,
@@ -284,14 +285,14 @@ const Contact = () => {
       <SEOHead 
         title="Gratis Gesprek Plannen | Contact | KlikKlaarSEO"
         description="Plan een vrijblijvend gesprek van 15 minuten. Geen verkooppraatje, gewoon een eerlijk gesprek over jouw online vindbaarheid."
-        canonical="https://klikklaar.nl/contact"
+        canonical={`${SITE_URL}/contact`}
       />
       <StructuredData 
         schema={{
           type: "LocalBusiness",
           name: "KlikKlaarSEO",
           description: "Neem contact op met KlikKlaarSEO voor automatische SEO en website optimalisatie.",
-          url: "https://klikklaar.nl/contact",
+          url: `${SITE_URL}/contact`,
           telephone: "+31628354333",
           email: "Info@klikklaarseo.nl",
           address: {

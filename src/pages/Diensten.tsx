@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { SITE_URL } from "@/lib/site-config";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "@/data/service-variants";
@@ -47,7 +48,7 @@ export default function Diensten() {
       <SEOHead
         title="Alle SEO Diensten | KlikKlaarSEO"
         description="Ontdek alle SEO diensten van KlikKlaarSEO: uitbesteden, abonnementen, bureau-alternatief en scans. Vanaf €99/mnd, altijd opzegbaar."
-        canonical="https://klikklaar-next-level.lovable.app/diensten"
+        canonical={`${SITE_URL}/diensten`}
       />
       <Header />
       <main className="pt-20 lg:pt-24">

@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 
 const Terms = () => {
   return (
@@ -9,14 +10,14 @@ const Terms = () => {
       <SEOHead 
         title="Algemene Voorwaarden | KlikKlaarSEO"
         description="Lees onze algemene voorwaarden. Transparante afspraken over onze SEO-diensten, prijzen en opzegtermijnen. Maandelijks opzegbaar."
-        canonical="https://klikklaar.nl/voorwaarden"
+        canonical={`${SITE_URL}/voorwaarden`}
       />
       <StructuredData 
         schema={{
           type: "WebPage",
           name: "Algemene Voorwaarden - KlikKlaarSEO",
           description: "Lees onze algemene voorwaarden voor SEO-diensten.",
-          url: "https://klikklaar.nl/voorwaarden",
+          url: `${SITE_URL}/voorwaarden`,
         }}
       />
       <Header />
