@@ -40,6 +40,24 @@ export default function KennisbankArticle() {
     ]
   };
 
+  const articleSchema = {
+    type: "Article" as const,
+    headline: article.title,
+    description: article.metaDescription,
+    url: `${SITE_URL}/kennisbank/${pillar.slug}/${article.slug}`,
+    datePublished: "2026-02-01",
+    dateModified: "2026-02-18",
+    author: "KlikKlaarSEO",
+    publisher: "KlikKlaarSEO",
+  };
+
+  const speakableSchema = {
+    type: "Speakable" as const,
+    name: article.title,
+    url: `${SITE_URL}/kennisbank/${pillar.slug}/${article.slug}`,
+    cssSelectors: ["h1", "[data-speakable='description']", ".prose"],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -48,6 +66,8 @@ export default function KennisbankArticle() {
         canonical={`${SITE_URL}/kennisbank/${pillar.slug}/${article.slug}`}
       />
       <StructuredData schema={breadcrumbSchema} />
+      <StructuredData schema={articleSchema} />
+      <StructuredData schema={speakableSchema} />
       <Header />
       <main>
         <article className="pt-24 lg:pt-32 pb-16 lg:pb-24">
@@ -82,6 +102,7 @@ export default function KennisbankArticle() {
               </h1>
 
               <p 
+                data-speakable="description"
                 className="text-lg text-muted-foreground mb-10"
                 style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.6s ease-out 0.2s' }}
               >

@@ -69,7 +69,36 @@ interface BreadcrumbSchema {
   }>;
 }
 
-type SchemaType = LocalBusinessSchema | ServiceSchema | FAQSchema | WebPageSchema | BreadcrumbSchema | OrganizationSchema;
+interface HowToSchema {
+  type: "HowTo";
+  name: string;
+  description: string;
+  steps: Array<{
+    name: string;
+    text: string;
+  }>;
+}
+
+interface ArticleSchema {
+  type: "Article";
+  headline: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  dateModified?: string;
+  author?: string;
+  publisher?: string;
+  image?: string;
+}
+
+interface SpeakableSchema {
+  type: "Speakable";
+  name: string;
+  url: string;
+  cssSelectors: string[];
+}
+
+type SchemaType = LocalBusinessSchema | ServiceSchema | FAQSchema | WebPageSchema | BreadcrumbSchema | OrganizationSchema | HowToSchema | ArticleSchema | SpeakableSchema;
 
 interface StructuredDataProps {
   schema: SchemaType | SchemaType[];
@@ -174,6 +203,56 @@ function generateOrganizationSchema(data: OrganizationSchema) {
   };
 }
 
+function generateHowToSchema(data: HowToSchema) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: data.name,
+    description: data.description,
+    step: data.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
+function generateArticleSchema(data: ArticleSchema) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: data.headline,
+    description: data.description,
+    url: data.url,
+    datePublished: data.datePublished,
+    dateModified: data.dateModified,
+    author: data.author ? {
+      "@type": "Organization",
+      name: data.author,
+    } : undefined,
+    publisher: data.publisher ? {
+      "@type": "Organization",
+      name: data.publisher,
+    } : undefined,
+    image: data.image,
+    inLanguage: "nl",
+  };
+}
+
+function generateSpeakableSchema(data: SpeakableSchema) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: data.name,
+    url: data.url,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: data.cssSelectors,
+    },
+  };
+}
+
 function generateSchema(schema: SchemaType) {
   switch (schema.type) {
     case "LocalBusiness":
@@ -188,6 +267,12 @@ function generateSchema(schema: SchemaType) {
       return generateBreadcrumbSchema(schema);
     case "Organization":
       return generateOrganizationSchema(schema);
+    case "HowTo":
+      return generateHowToSchema(schema);
+    case "Article":
+      return generateArticleSchema(schema);
+    case "Speakable":
+      return generateSpeakableSchema(schema);
     default:
       return null;
   }
