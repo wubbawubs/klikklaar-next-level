@@ -233,6 +233,66 @@ const platformInputs: PlatformInput[] = [
   { slug: "linkedin", name: "LinkedIn", icon: "Users", category: "marketing", snippet: "B2B marketing + SEO: word gevonden door zakelijke klanten." },
   { slug: "google-my-business", name: "Google Bedrijfsprofiel", icon: "MapPin", category: "marketing", snippet: "Lokale SEO begint bij je Google Bedrijfsprofiel." },
   { slug: "trustpilot", name: "Trustpilot", icon: "Star", category: "marketing", snippet: "Reviews + SEO: sociale bewijskracht die je ranking verbetert." },
+
+  // ─── P2: Extra CMS (8) ────────────────────────────────────────
+  { slug: "wordpress-multisite", name: "WordPress Multisite", icon: "Globe", category: "cms", snippet: "Beheer meerdere WordPress sites met gecentraliseerde SEO." },
+  { slug: "sitecore", name: "Sitecore", icon: "Globe", category: "cms", snippet: "Enterprise CMS met geavanceerde personalisatie en SEO-uitdagingen." },
+  { slug: "kentico", name: "Kentico", icon: "Globe", category: "cms", snippet: ".NET CMS met ingebouwde SEO-modules die configuratie vereisen." },
+  { slug: "umbraco", name: "Umbraco", icon: "Globe", category: "cms", snippet: "Open-source .NET CMS met flexibele SEO-mogelijkheden." },
+  { slug: "episerver", name: "Optimizely CMS", icon: "Globe", category: "cms", snippet: "Enterprise CMS met A/B testing en SEO-integratie." },
+  { slug: "aem", name: "Adobe Experience Manager", icon: "Globe", category: "cms", snippet: "Enterprise content platform, SEO vereist specialistische kennis." },
+  { slug: "directus", name: "Directus", icon: "Globe", category: "cms", snippet: "Open-source headless CMS met database-first benadering." },
+  { slug: "payload-cms", name: "Payload CMS", icon: "Globe", category: "cms", snippet: "Moderne headless CMS gebouwd op Node.js met goede SEO-basis." },
+
+  // ─── P2: Extra E-commerce (10) ─────────────────────────────────
+  { slug: "shopify-plus", name: "Shopify Plus", icon: "ShoppingCart", category: "ecommerce", snippet: "Enterprise Shopify met uitgebreide SEO-aanpassingsmogelijkheden." },
+  { slug: "woocommerce-b2b", name: "WooCommerce B2B", icon: "ShoppingCart", category: "ecommerce", snippet: "B2B webshop op WordPress met specifieke SEO-uitdagingen." },
+  { slug: "magento-2", name: "Magento 2 (Adobe Commerce)", icon: "ShoppingCart", category: "ecommerce", snippet: "Enterprise e-commerce met krachtige maar complexe SEO-configuratie." },
+  { slug: "sylius", name: "Sylius", icon: "ShoppingCart", category: "ecommerce", snippet: "PHP e-commerce framework met volledige SEO-controle." },
+  { slug: "medusa", name: "Medusa", icon: "ShoppingCart", category: "ecommerce", snippet: "Open-source headless e-commerce, SEO via je eigen frontend." },
+  { slug: "vendure", name: "Vendure", icon: "ShoppingCart", category: "ecommerce", snippet: "TypeScript headless e-commerce met GraphQL API." },
+  { slug: "bol-com", name: "Bol.com", icon: "ShoppingCart", category: "ecommerce", snippet: "Marketplace SEO: opvallen op het grootste Nederlandse platform." },
+  { slug: "amazon", name: "Amazon", icon: "ShoppingCart", category: "ecommerce", snippet: "Amazon SEO: producten laten opvallen in de grootste webshop." },
+  { slug: "opencart", name: "OpenCart", icon: "ShoppingCart", category: "ecommerce", snippet: "Open-source webshop met eenvoudige SEO-extensies." },
+  { slug: "zen-cart", name: "Zen Cart", icon: "ShoppingCart", category: "ecommerce", snippet: "Klassieke open-source webshop met basale SEO-functies." },
+
+  // ─── P2: Extra Website Builders (8) ────────────────────────────
+  { slug: "elementor", name: "Elementor", icon: "Layout", category: "website-builder", snippet: "WordPress page builder met SEO-aandachtspunten voor snelheid." },
+  { slug: "beaver-builder", name: "Beaver Builder", icon: "Layout", category: "website-builder", snippet: "WordPress builder met schone code en goede SEO-basis." },
+  { slug: "divi", name: "Divi", icon: "Layout", category: "website-builder", snippet: "Populaire WordPress builder, SEO vereist snelheidsoptimalisatie." },
+  { slug: "gutenberg", name: "Gutenberg", icon: "Layout", category: "website-builder", snippet: "WordPress' native editor met groeiende SEO-mogelijkheden." },
+  { slug: "oxygen", name: "Oxygen Builder", icon: "Layout", category: "website-builder", snippet: "WordPress builder voor developers met schone output." },
+  { slug: "bubble", name: "Bubble", icon: "Layout", category: "website-builder", snippet: "No-code platform met specifieke SEO-beperkingen en -oplossingen." },
+  { slug: "softr", name: "Softr", icon: "Layout", category: "website-builder", snippet: "No-code builder op Airtable met basale SEO-opties." },
+  { slug: "cargo", name: "Cargo", icon: "Layout", category: "website-builder", snippet: "Creatieve portfolio builder met beperkte maar aanwezige SEO." },
+
+  // ─── P2: Extra Frameworks (10) ─────────────────────────────────
+  { slug: "svelte", name: "SvelteKit", icon: "Code", category: "custom", snippet: "Modern framework met SSR en snelle laadtijden voor SEO." },
+  { slug: "remix", name: "Remix", icon: "Code", category: "custom", snippet: "Full-stack framework met uitstekende SEO door server-rendering." },
+  { slug: "astro", name: "Astro", icon: "Code", category: "custom", snippet: "Content-first framework met zero JS by default, ideaal voor SEO." },
+  { slug: "eleventy", name: "Eleventy (11ty)", icon: "Code", category: "custom", snippet: "Eenvoudige static site generator met perfecte SEO-controle." },
+  { slug: "hugo", name: "Hugo", icon: "Code", category: "custom", snippet: "Snelste static site generator, ideaal voor content-heavy SEO-sites." },
+  { slug: "jekyll", name: "Jekyll", icon: "Code", category: "custom", snippet: "Ruby static site generator, populair voor blogs en documentatie." },
+  { slug: "django", name: "Django", icon: "Code", category: "custom", snippet: "Python framework met krachtige SEO-mogelijkheden." },
+  { slug: "ruby-on-rails", name: "Ruby on Rails", icon: "Code", category: "custom", snippet: "Full-stack framework met goede SEO via server-side rendering." },
+  { slug: "spring-boot", name: "Spring Boot", icon: "Code", category: "custom", snippet: "Java framework, SEO vereist specifieke frontend-configuratie." },
+  { slug: "flask", name: "Flask", icon: "Code", category: "custom", snippet: "Python microframework met volledige controle over SEO-output." },
+
+  // ─── P2: Extra Marketing (14) ──────────────────────────────────
+  { slug: "activecampaign", name: "ActiveCampaign", icon: "Mail", category: "marketing", snippet: "Marketing automation + SEO: bereik klanten op elk touchpoint." },
+  { slug: "sendinblue", name: "Brevo (Sendinblue)", icon: "Mail", category: "marketing", snippet: "E-mail en CRM platform met landing pages die SEO nodig hebben." },
+  { slug: "klaviyo", name: "Klaviyo", icon: "Mail", category: "marketing", snippet: "E-commerce e-mail marketing, SEO versterkt je acquisitiekanalen." },
+  { slug: "hubspot-marketing", name: "HubSpot Marketing", icon: "Target", category: "marketing", snippet: "Inbound marketing platform met geïntegreerde SEO-tools." },
+  { slug: "semrush-platform", name: "SEMrush", icon: "BarChart", category: "marketing", snippet: "SEO platform dat je strategie ondersteunt met data en tools." },
+  { slug: "ahrefs-platform", name: "Ahrefs", icon: "BarChart", category: "marketing", snippet: "Backlink en SEO analyse platform voor professionals." },
+  { slug: "moz-platform", name: "Moz", icon: "BarChart", category: "marketing", snippet: "SEO software suite met Domain Authority als kernmetric." },
+  { slug: "google-analytics", name: "Google Analytics", icon: "BarChart", category: "marketing", snippet: "Web analytics + SEO: meet je organisch verkeer en conversies." },
+  { slug: "google-tag-manager", name: "Google Tag Manager", icon: "Code", category: "marketing", snippet: "Tag management + SEO tracking zonder developer nodig." },
+  { slug: "hotjar", name: "Hotjar", icon: "Eye", category: "marketing", snippet: "Heatmaps en gedragsanalyse om je SEO-landingpagina's te verbeteren." },
+  { slug: "pinterest", name: "Pinterest", icon: "Target", category: "marketing", snippet: "Visueel platform met sterke SEO-mogelijkheden voor productontdekking." },
+  { slug: "tiktok", name: "TikTok", icon: "Target", category: "marketing", snippet: "Video platform dat steeds meer als zoekmachine wordt gebruikt." },
+  { slug: "youtube-platform", name: "YouTube", icon: "Target", category: "marketing", snippet: "De op één na grootste zoekmachine, video SEO is essentieel." },
+  { slug: "whatsapp-business", name: "WhatsApp Business", icon: "MessageCircle", category: "marketing", snippet: "Klantcommunicatie + lokale SEO: versterk je online aanwezigheid." },
 ];
 
 export const platforms: PlatformData[] = platformInputs.map(createPlatform);
