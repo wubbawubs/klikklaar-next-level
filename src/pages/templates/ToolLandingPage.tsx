@@ -16,6 +16,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
+import { KennisbankLinks } from "@/components/KennisbankLinks";
+import { RelatedDienstenSection, getKennisbankContextForTool } from "@/components/CrossLinks";
 
 interface ToolLandingPageProps {
   tool: ToolData;
@@ -280,6 +282,8 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
         <ToolHowToUse steps={tool.howToUse} />
         <ToolBenefits benefits={tool.benefits} />
         <ToolCTA />
+        <KennisbankLinks context={getKennisbankContextForTool(tool.category)} title={`Meer leren over ${tool.name.toLowerCase()}?`} />
+        <RelatedDienstenSection toolCategory={tool.category} />
         <ToolFAQ faqs={tool.faqs} toolName={tool.name} />
         <RelatedTools tool={tool} />
         <CTASection />

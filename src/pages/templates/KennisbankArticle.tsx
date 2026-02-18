@@ -7,6 +7,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ChevronRight, Clock, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
 import { useState, useEffect } from "react";
 import { getPillarBySlug, getArticleBySlug } from "@/data/kennisbank";
+import { RelatedToolsSection, RelatedDienstenSection } from "@/components/CrossLinks";
 
 export default function KennisbankArticle() {
   const { pillarSlug, articleSlug } = useParams();
@@ -95,6 +96,10 @@ export default function KennisbankArticle() {
                   dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br/>').replace(/#{2,3}\s/g, (m) => m.includes('###') ? '<h3>' : '<h2>').replace(/<br\/><br\/>/g, '</p><p>') }}
                 />
               </div>
+
+              {/* Cross-links */}
+              <RelatedToolsSection pillarSlug={pillar.slug} />
+              <RelatedDienstenSection pillarSlug={pillar.slug} />
 
               {/* Navigation between articles */}
               <div className="flex flex-col sm:flex-row gap-4 mt-12 pt-8 border-t border-border">
