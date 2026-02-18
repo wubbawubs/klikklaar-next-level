@@ -6,6 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
+import { DienstLinksSection } from "@/components/DienstLinksSection";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
@@ -491,6 +492,7 @@ const SeoAbonnement = () => {
         <WhatIsSection />
         <BenefitsSection />
         <PricingSection />
+        <DienstLinksSection variant="abonnement" />
         <FAQSection />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <CTASection />
