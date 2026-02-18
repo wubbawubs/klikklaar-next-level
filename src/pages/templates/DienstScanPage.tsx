@@ -8,8 +8,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Phone, ChevronRight, HelpCircle, ArrowRight, CheckCircle2, Search } from "lucide-react";
+import { Phone, ChevronRight, HelpCircle, ArrowRight, CheckCircle2, Search, Star, FileBarChart, AlertTriangle } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import { getTestimonialForSlug } from "@/data/testimonials";
 import {
   Accordion,
   AccordionContent,
@@ -208,6 +209,97 @@ function ScanVsOthersSection({ data }: Props) {
   );
 }
 
+function ExampleReportSection({ data }: Props) {
+  const { ref, isVisible } = useScrollReveal();
+  const reportItems = [
+    { status: "good", label: "HTTPS & SSL beveiliging", score: "100%" },
+    { status: "good", label: "Mobiel-vriendelijkheid", score: "Goed" },
+    { status: "warning", label: "Laadsnelheid (LCP)", score: "3.2s" },
+    { status: "warning", label: "Meta descriptions", score: "60% uniek" },
+    { status: "bad", label: "Alt-teksten afbeeldingen", score: "25% ontbreekt" },
+    { status: "bad", label: "Structured data", score: "Niet aanwezig" },
+  ];
+
+  return (
+    <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">
+      <div className="container px-4 sm:px-6">
+        <div className="text-center mb-12" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground mb-4">
+            Voorbeeldrapport: zo ziet jouw scan eruit
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Een voorbeeld van wat je ontvangt na onze {data.serviceName.toLowerCase()} scan
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-card rounded-2xl border border-border shadow-premium-lg overflow-hidden">
+            <div className="p-4 bg-muted/50 border-b border-border flex items-center gap-3">
+              <FileBarChart className="w-5 h-5 text-kk-orange" />
+              <p className="font-semibold text-foreground text-sm">SEO Scan Rapport — jouwwebsite.nl</p>
+              <span className="ml-auto text-xs text-muted-foreground">Score: 62/100</span>
+            </div>
+            <div className="divide-y divide-border">
+              {reportItems.map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-3 p-4"
+                  style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateX(0)' : 'translateX(12px)', transition: `opacity 0.4s ease-out ${index * 0.08}s, transform 0.4s ease-out ${index * 0.08}s` }}
+                >
+                  <div className={`w-3 h-3 rounded-full flex-shrink-0 ${
+                    item.status === "good" ? "bg-kk-orange" : 
+                    item.status === "warning" ? "bg-amber-400" : "bg-destructive"
+                  }`} />
+                  <p className="text-sm text-foreground flex-1">{item.label}</p>
+                  <p className={`text-sm font-medium ${
+                    item.status === "good" ? "text-kk-orange" : 
+                    item.status === "warning" ? "text-amber-600" : "text-destructive"
+                  }`}>{item.score}</p>
+                </div>
+              ))}
+            </div>
+            <div className="p-4 bg-muted/30 border-t border-border">
+              <div className="flex items-start gap-2">
+                <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground">Top prioriteit:</span> Structured data toevoegen kan je CTR met 20-30% verhogen. Alt-teksten fixen verbetert toegankelijkheid én image SEO.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialSection({ slug }: { slug: string }) {
+  const { ref, isVisible } = useScrollReveal();
+  const testimonial = getTestimonialForSlug(slug);
+  return (
+    <section ref={ref} className="py-16 lg:py-24">
+      <div className="container px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <div className="p-8 bg-card rounded-2xl border border-border shadow-premium-lg">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (<Star key={i} className="w-5 h-5 text-kk-orange fill-kk-orange" />))}
+            </div>
+            <p className="text-lg text-foreground mb-6 italic leading-relaxed">
+              "{testimonial.quote}"
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">{testimonial.initial}</div>
+              <div>
+                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FAQSection({ data }: Props) {
   const { ref, isVisible } = useScrollReveal();
   return (
@@ -312,7 +404,9 @@ export function DienstScanPage({ data }: Props) {
         <WhatIsSection data={data} />
         <WhatWeCheckSection data={data} />
         <ProcessSection data={data} />
+        <ExampleReportSection data={data} />
         <ScanVsOthersSection data={data} />
+        <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <CrossLinks currentSlug={data.slug} serviceName={data.serviceName} />

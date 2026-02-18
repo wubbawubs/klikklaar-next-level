@@ -8,8 +8,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Phone, Check, ChevronRight, Star, HelpCircle, Building2, User, Cpu } from "lucide-react";
+import { Phone, Check, ChevronRight, Star, HelpCircle, Building2, User, Cpu, Calendar, FileCheck, Clock } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import { getTestimonialForSlug, getCtaForSlug } from "@/data/testimonials";
 import {
   Accordion,
   AccordionContent,
@@ -243,8 +244,72 @@ function GuaranteesSection({ data }: Props) {
   );
 }
 
-function TestimonialSection() {
+function SlaSection({ data }: Props) {
   const { ref, isVisible } = useScrollReveal();
+  const slaItems = [
+    { icon: Calendar, label: "Wekelijkse optimalisatiecyclus", detail: "Elke week worden verbeteringen doorgevoerd" },
+    { icon: FileCheck, label: "Wekelijks voortgangsrapport", detail: "Heldere update over rankings, verkeer en acties" },
+    { icon: Clock, label: "Reactietijd < 24 uur", detail: "Vragen of wijzigingen? Binnen een werkdag reactie" },
+    { icon: Check, label: "Maandelijks strategiegesprek", detail: "15 minuten call over resultaten en volgende stappen" },
+  ];
+
+  return (
+    <section ref={ref} className="py-16 lg:py-24">
+      <div className="container px-4 sm:px-6">
+        <div className="text-center mb-12" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground mb-4">
+            Onze SLA & maandplanning
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Duidelijke afspraken zodat je weet wat je kunt verwachten
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto space-y-4">
+          {slaItems.map((item, index) => (
+            <div 
+              key={index}
+              className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:border-kk-orange/20 hover:shadow-premium transition-all duration-300"
+              style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateX(0)' : 'translateX(20px)', transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s` }}
+            >
+              <div className="w-10 h-10 rounded-xl bg-kk-orange/10 flex items-center justify-center flex-shrink-0">
+                <item.icon className="w-5 h-5 text-kk-orange" />
+              </div>
+              <div>
+                <p className="font-semibold text-foreground">{item.label}</p>
+                <p className="text-sm text-muted-foreground mt-1">{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="max-w-3xl mx-auto mt-8 p-6 bg-muted/30 rounded-xl border border-border">
+          <h3 className="font-semibold text-foreground mb-3">Typische maandplanning voor {data.serviceName.toLowerCase()}</h3>
+          <div className="grid sm:grid-cols-4 gap-4 text-sm">
+            <div className="p-3 bg-card rounded-lg border border-border">
+              <p className="font-medium text-kk-orange mb-1">Week 1</p>
+              <p className="text-muted-foreground">Technische scan & quick wins</p>
+            </div>
+            <div className="p-3 bg-card rounded-lg border border-border">
+              <p className="font-medium text-kk-orange mb-1">Week 2</p>
+              <p className="text-muted-foreground">Content & on-page optimalisatie</p>
+            </div>
+            <div className="p-3 bg-card rounded-lg border border-border">
+              <p className="font-medium text-kk-orange mb-1">Week 3</p>
+              <p className="text-muted-foreground">Linkbuilding & autoriteit</p>
+            </div>
+            <div className="p-3 bg-card rounded-lg border border-border">
+              <p className="font-medium text-kk-orange mb-1">Week 4</p>
+              <p className="text-muted-foreground">Rapportage & strategiegesprek</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialSection({ slug }: { slug: string }) {
+  const { ref, isVisible } = useScrollReveal();
+  const testimonial = getTestimonialForSlug(slug);
   return (
     <section ref={ref} className="py-16 lg:py-24">
       <div className="container px-4 sm:px-6">
@@ -254,14 +319,13 @@ function TestimonialSection() {
               {[...Array(5)].map((_, i) => (<Star key={i} className="w-5 h-5 text-kk-orange fill-kk-orange" />))}
             </div>
             <p className="text-lg text-foreground mb-6 italic leading-relaxed">
-              "Super club! Een poosje terug contact gekregen met KlikKlaarSEO. Mooie club en maken hun woorden waar. 
-              Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit."
+              "{testimonial.quote}"
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">B</div>
+              <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">{testimonial.initial}</div>
               <div>
-                <p className="font-semibold text-foreground">Ben Commandeur</p>
-                <p className="text-sm text-muted-foreground">Nieuw Marketing</p>
+                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
               </div>
             </div>
           </div>
@@ -349,8 +413,9 @@ export function DienstUitbestedenPage({ data }: Props) {
         <ComparisonSection data={data} />
         <BenefitsSection data={data} />
         <ProcessSection data={data} />
+        <SlaSection data={data} />
         <GuaranteesSection data={data} />
-        <TestimonialSection />
+        <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <RelatedVariants currentSlug={data.slug} />
