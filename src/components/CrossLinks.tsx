@@ -233,7 +233,7 @@ export function RelatedDienstenSection({ toolCategory, pillarSlug, max = 3 }: Re
   );
 }
 
-// ── Tool → Kennisbank context mapping ──────────────────────────────
+// ── Tool → Kennisbank context mapping (DEPRECATED: use tool.relatedPillars directly) ──
 
 export function getKennisbankContextForTool(category: ToolCategory): "lokale-seo" | "technische-seo" | "content" | "general" {
   const map: Partial<Record<ToolCategory, "lokale-seo" | "technische-seo" | "content" | "general">> = {
