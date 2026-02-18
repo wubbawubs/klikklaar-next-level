@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Core pages + Hub pages + Service landing pages (21 URLs) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- CORE PAGES (8) -->
+  <url><loc>https://www.klikklaarseo.nl/</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten</loc><lastmod>2026-02-14</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/wat-je-krijgt</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/hoe-het-werkt</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/prijzen</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/over-ons</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/voorbeelden</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/contact</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- HUB PAGES (5) -->
+  <url><loc>https://www.klikklaarseo.nl/branches</loc><lastmod>2026-01-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/steden</loc><lastmod>2026-01-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/platforms</loc><lastmod>2026-02-05</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools</loc><lastmod>2026-02-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/kennisbank</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- SERVICE LANDING PAGES (8) -->
+  <url><loc>https://www.klikklaarseo.nl/lokale-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/google-mijn-bedrijf-optimalisatie</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/technische-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/ai-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/geo-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-content-optimalisatie</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-voor-mkb</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/automatische-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+</urlset>
