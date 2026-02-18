@@ -8,7 +8,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { Phone, Check, MapPin, ChevronRight, Star, TrendingUp } from "lucide-react";
 import { useState, useEffect } from "react";
-import { IndustryData, industries } from "@/data/industries";
+import { IndustryData, allIndustries } from "@/data/industries";
 import { LocationData, locations } from "@/data/locations";
 import { combos, comboExists } from "@/data/combos";
 import {
@@ -549,7 +549,7 @@ function RelatedPages({ industry, location }: ComboLandingPageProps) {
     .filter(c => c.locationSlug === location.slug && c.industrySlug !== industry.slug)
     .slice(0, 4) // Reduced from 5 to 4
     .map(c => {
-      const ind = industries.find(i => i.slug === c.industrySlug);
+      const ind = allIndustries.find(i => i.slug === c.industrySlug);
       return ind ? { slug: c.industrySlug, namePlural: ind.namePlural, locationSlug: c.locationSlug } : null;
     })
     .filter(Boolean) as { slug: string; namePlural: string; locationSlug: string }[];

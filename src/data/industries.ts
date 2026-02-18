@@ -1088,6 +1088,13 @@ export const industries: IndustryData[] = [
   }
 ];
 
+// Import and merge P2 + P3 industries
+import { industriesP2 } from "./industries-p2";
+import { industriesP3 } from "./industries-p3";
+
+// Combined array of all industries
+export const allIndustries: IndustryData[] = [...industries, ...industriesP2, ...industriesP3];
+
 export function getIndustryBySlug(slug: string): IndustryData | undefined {
-  return industries.find(i => i.slug === slug);
+  return allIndustries.find(i => i.slug === slug);
 }

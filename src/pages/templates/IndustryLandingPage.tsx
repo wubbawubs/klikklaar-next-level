@@ -8,7 +8,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { Phone, Check, TrendingUp, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { IndustryData, industries } from "@/data/industries";
+import { IndustryData, allIndustries } from "@/data/industries";
 import { locations } from "@/data/locations";
 import { combos } from "@/data/combos";
 import {
@@ -322,9 +322,9 @@ function RelatedIndustries({ industry }: { industry: IndustryData }) {
     .filter(Boolean) as { slug: string; name: string }[];
 
   // LIMIT: Max 4 other industry links
-  const otherIndustries = industries
+  const otherIndustries = allIndustries
     .filter(i => i.slug !== industry.slug)
-    .slice(0, 4); // Reduced from 5 to 4
+    .slice(0, 4);
 
   return (
     <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">

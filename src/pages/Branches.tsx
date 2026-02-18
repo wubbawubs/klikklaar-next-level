@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight, MapPin } from "lucide-react";
 import * as LucideIcons from "lucide-react";
-import { industries, IndustryData } from "@/data/industries";
+import { allIndustries, IndustryData } from "@/data/industries";
 import { locations } from "@/data/locations";
 import { combos, comboExists } from "@/data/combos";
 
@@ -122,7 +122,7 @@ function BranchesGrid() {
           }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-            {industries.length} Branches
+            {allIndustries.length} Branches
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Van kappers tot accountants, van consultants tot IT-bedrijven. 
@@ -131,7 +131,7 @@ function BranchesGrid() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {industries.map((industry) => (
+          {allIndustries.map((industry) => (
             <IndustryCard key={industry.slug} industry={industry} />
           ))}
         </div>
@@ -144,7 +144,7 @@ function BranchesStats() {
   const { ref, isVisible } = useScrollReveal();
 
   const stats = [
-    { value: `${industries.length}`, label: "Branches" },
+    { value: `${allIndustries.length}`, label: "Branches" },
     { value: `${combos.length}+`, label: "Combo pagina's" },
     { value: "2 clicks", label: "Naar elke combo" },
     { value: "€99", label: "Per maand" }
@@ -186,7 +186,7 @@ export default function Branches() {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="SEO per Branche | Kappers, Tandartsen, Coaches & Meer | €99/mnd"
-        description={`SEO speciaal voor jouw branche. ${industries.length} sectoren: van kappers tot accountants. Meer klanten uit jouw regio. Geen gedoe, altijd opzegbaar.`}
+        description={`SEO speciaal voor jouw branche. ${allIndustries.length} sectoren: van kappers tot accountants. Meer klanten uit jouw regio. Geen gedoe, altijd opzegbaar.`}
         canonical="https://klikklaar.nl/branches"
         ogType="website"
       />

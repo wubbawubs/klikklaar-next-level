@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { Phone, MapPin, Users, TrendingUp, Building, ChevronRight, Check, Star } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LocationData, locations } from "@/data/locations";
-import { industries } from "@/data/industries";
+import { allIndustries } from "@/data/industries";
 import { combos } from "@/data/combos";
 import {
   Accordion,
@@ -387,7 +387,7 @@ function NearbyLocations({ location }: { location: LocationData }) {
     .filter(c => c.locationSlug === location.slug)
     .slice(0, 4) // Reduced from 6 to 4
     .map(c => {
-      const ind = industries.find(i => i.slug === c.industrySlug);
+      const ind = allIndustries.find(i => i.slug === c.industrySlug);
       return ind ? { slug: c.industrySlug, name: ind.name, namePlural: ind.namePlural } : null;
     })
     .filter(Boolean) as { slug: string; name: string; namePlural: string }[];
