@@ -2083,4 +2083,57 @@
   <url><loc>https://klikklaar.nl/seo-milieuadviesbureaus</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://klikklaar.nl/seo-veiligheidsadviseurs</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://klikklaar.nl/seo-expat-services</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Platform Hub -->
+  <url><loc>https://klikklaar.nl/platforms</loc><lastmod>2026-02-18</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <!-- Platform Landing Pages -->
+  <url><loc>https://klikklaar.nl/seo-wordpress</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://klikklaar.nl/seo-joomla</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-drupal</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-typo3</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-craft-cms</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-contentful</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-strapi</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-ghost</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-sanity</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-hubspot-cms</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-storyblok</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-prismic</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-shopify</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://klikklaar.nl/seo-woocommerce</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://klikklaar.nl/seo-magento</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-prestashop</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-bigcommerce</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-lightspeed</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-shopware</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-ecwid</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-saleor</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-mijnwebwinkel</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-ccvshop</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-etsy</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-wix</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://klikklaar.nl/seo-squarespace</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-webflow</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://klikklaar.nl/seo-weebly</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-jimdo</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-one-com</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-strikingly</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-carrd</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-duda</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-google-sites</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-notion-sites</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-framer</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-nextjs</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-nuxtjs</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-gatsby</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-laravel</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-angular</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-react</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-html-css</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-asp-net</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-mailchimp</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-google-ads</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-meta-ads</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-linkedin</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-google-my-business</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://klikklaar.nl/seo-trustpilot</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
 </urlset>

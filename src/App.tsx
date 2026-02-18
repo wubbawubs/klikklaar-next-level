@@ -26,6 +26,7 @@ import SeoUitbesteden from "./pages/SeoUitbesteden";
 import Branches from "./pages/Branches";
 import Steden from "./pages/Steden";
 import Diensten from "./pages/Diensten";
+import Platforms from "./pages/Platforms";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
 import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
@@ -38,6 +39,7 @@ import { DienstUitbestedenPage } from "./pages/templates/DienstUitbestedenPage";
 import { DienstAbonnementPage } from "./pages/templates/DienstAbonnementPage";
 import { DienstBureauPage } from "./pages/templates/DienstBureauPage";
 import { DienstScanPage } from "./pages/templates/DienstScanPage";
+import { PlatformLandingPage } from "./pages/templates/PlatformLandingPage";
 
 // Data imports
 import { allIndustries, getIndustryBySlug } from "./data/industries";
@@ -48,6 +50,7 @@ import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "./data/se
 import { serviceVariantsBureau, serviceVariantsScan } from "./data/service-variants-p2";
 import { serviceVariantsUitbestedenP3, serviceVariantsAbonnementP3 } from "./data/service-variants-p3";
 import { serviceVariantsBureauP4, serviceVariantsScanP4 } from "./data/service-variants-p4";
+import { platforms } from "./data/platforms";
 
 const queryClient = new QueryClient();
 
@@ -145,7 +148,16 @@ const App = () => (
           {/* Hub pages for improved crawl depth */}
           <Route path="/branches" element={<Branches />} />
           <Route path="/steden" element={<Steden />} />
+          <Route path="/platforms" element={<Platforms />} />
           
+          {/* Dynamic platform landing pages */}
+          {platforms.map((platform) => (
+            <Route
+              key={platform.slug}
+              path={`/seo-${platform.slug}`}
+              element={<PlatformLandingPage platform={platform} />}
+            />
+          ))}
           {/* Dynamic industry landing pages */}
           {allIndustries.map((industry) => (
             <Route
