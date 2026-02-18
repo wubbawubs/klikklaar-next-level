@@ -58,6 +58,70 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Dienst-variant Pages (P1) - Uitbesteden -->
+  <url>
+    <loc>https://klikklaar.nl/diensten/automatische-seo-uitbesteden</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/lokale-seo-uitbesteden</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/technische-seo-uitbesteden</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-audit-uitbesteden</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-strategie-uitbesteden</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Dienst-variant Pages (P1) - Abonnement -->
+  <url>
+    <loc>https://klikklaar.nl/diensten/automatische-seo-abonnement</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/lokale-seo-abonnement</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/technische-seo-abonnement</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-audit-abonnement</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-strategie-abonnement</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
   <!-- Hub Pages (for improved crawl depth) -->
   <url>
     <loc>https://klikklaar.nl/branches</loc>
