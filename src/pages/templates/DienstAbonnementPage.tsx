@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ServiceVariantData, serviceVariantsAbonnement } from "@/data/service-variants";
+import { SITE_URL } from "@/lib/site-config";
 
 const pricingTiers = [
   {
@@ -403,7 +404,7 @@ export function DienstAbonnementPage({ data }: Props) {
       <SEOHead
         title={data.metaTitle}
         description={data.metaDescription}
-        canonical={`https://klikklaar.nl/diensten/${data.slug}`}
+        canonical={`${SITE_URL}/diensten/${data.slug}`}
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={serviceSchema} />

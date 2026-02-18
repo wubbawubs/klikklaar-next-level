@@ -7,6 +7,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ChevronRight, Clock, MapPin, Settings, FileText, BookOpen } from "lucide-react";
 import { useState, useEffect } from "react";
 import { getPillarBySlug } from "@/data/kennisbank";
+import { SITE_URL } from "@/lib/site-config";
 
 export default function KennisbankPillar() {
   const { pillarSlug } = useParams();
@@ -37,15 +38,15 @@ export default function KennisbankPillar() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Kennisbank", url: "https://klikklaar.nl/kennisbank" },
-      { name: pillar.title, url: `https://klikklaar.nl/kennisbank/${pillar.slug}` }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Kennisbank", url: `${SITE_URL}/kennisbank` },
+      { name: pillar.title, url: `${SITE_URL}/kennisbank/${pillar.slug}` }
     ]
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title={pillar.metaTitle} description={pillar.metaDescription} canonical={`https://klikklaar.nl/kennisbank/${pillar.slug}`} />
+      <SEOHead title={pillar.metaTitle} description={pillar.metaDescription} canonical={`${SITE_URL}/kennisbank/${pillar.slug}`} />
       <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>

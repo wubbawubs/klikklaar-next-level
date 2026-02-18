@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SITE_URL, SITE_NAME, SITE_LOCALE, DEFAULT_OG_IMAGE } from "@/lib/site-config";
 
 interface SEOHeadProps {
   title: string;
@@ -12,10 +13,6 @@ interface SEOHeadProps {
   twitterCard?: "summary" | "summary_large_image";
 }
 
-const DEFAULT_OG_IMAGE = "https://klikklaar.nl/og-image.png";
-const DEFAULT_SITE_NAME = "KlikKlaarSEO";
-const DEFAULT_LOCALE = "nl_NL";
-
 export function SEOHead({ 
   title, 
   description, 
@@ -23,15 +20,13 @@ export function SEOHead({
   robots = "index,follow",
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
-  ogSiteName = DEFAULT_SITE_NAME,
-  ogLocale = DEFAULT_LOCALE,
+  ogSiteName = SITE_NAME,
+  ogLocale = SITE_LOCALE,
   twitterCard = "summary_large_image"
 }: SEOHeadProps) {
   useEffect(() => {
-    // Update document title
     document.title = title;
 
-    // Helper function to update or create meta tags
     const setMetaTag = (selector: string, content: string, isProperty = false) => {
       let tag = document.querySelector(selector);
       if (tag) {
@@ -48,11 +43,9 @@ export function SEOHead({
       }
     };
 
-    // Standard meta tags
     setMetaTag('meta[name="description"]', description);
     setMetaTag('meta[name="robots"]', robots);
 
-    // Open Graph meta tags (required: og:title, og:type, og:image, og:url)
     setMetaTag('meta[property="og:title"]', title, true);
     setMetaTag('meta[property="og:description"]', description, true);
     setMetaTag('meta[property="og:type"]', ogType, true);
@@ -64,7 +57,6 @@ export function SEOHead({
       setMetaTag('meta[property="og:url"]', canonical, true);
     }
 
-    // Twitter Card meta tags
     setMetaTag('meta[name="twitter:card"]', twitterCard);
     setMetaTag('meta[name="twitter:title"]', title);
     setMetaTag('meta[name="twitter:description"]', description);
@@ -73,7 +65,6 @@ export function SEOHead({
       setMetaTag('meta[name="twitter:url"]', canonical);
     }
 
-    // Update or create canonical link
     if (canonical) {
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (canonicalLink) {

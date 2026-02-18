@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { ServiceVariantData } from "@/data/service-variants";
 import { serviceVariantsScan } from "@/data/service-variants-p2";
+import { SITE_URL } from "@/lib/site-config";
 
 interface Props {
   data: ServiceVariantData;
@@ -394,7 +395,7 @@ export function DienstScanPage({ data }: Props) {
       <SEOHead
         title={data.metaTitle}
         description={data.metaDescription}
-        canonical={`https://klikklaar.nl/diensten/${data.slug}`}
+        canonical={`${SITE_URL}/diensten/${data.slug}`}
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={serviceSchema} />
