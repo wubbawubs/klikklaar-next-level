@@ -8,8 +8,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Phone, Check, ChevronRight, Star, Zap, Crown, HelpCircle } from "lucide-react";
+import { Phone, Check, ChevronRight, Star, Zap, Crown, HelpCircle, Package, BarChart3, Wrench, FileText } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import { getTestimonialForSlug } from "@/data/testimonials";
 import {
   Accordion,
   AccordionContent,
@@ -223,8 +224,8 @@ function PricingSection({ data }: Props) {
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${i === 0 && tier.id !== "basis" ? "bg-transparent" : "bg-green-100"}`}>
-                        {i === 0 && tier.id !== "basis" ? null : <Check className="w-3 h-3 text-green-600" />}
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${i === 0 && tier.id !== "basis" ? "bg-transparent" : "bg-kk-orange/10"}`}>
+                        {i === 0 && tier.id !== "basis" ? null : <Check className="w-3 h-3 text-kk-orange" />}
                       </div>
                       <span className={`text-sm ${i === 0 && tier.id !== "basis" ? "font-semibold text-foreground" : "text-foreground"}`}>{feature}</span>
                     </li>
@@ -248,25 +249,87 @@ function PricingSection({ data }: Props) {
   );
 }
 
-function ProcessSection({ data }: Props) {
+function DeliverablesSection({ data }: Props) {
   const { ref, isVisible } = useScrollReveal();
+  const deliverables = [
+    { icon: Wrench, title: "Technische optimalisatie", description: "Wekelijkse scan en automatische fixes van technische issues, snelheid en indexering" },
+    { icon: BarChart3, title: "Rankings & verkeer rapport", description: "Wekelijks overzicht van je zoekposities, organisch verkeer en concurrentiepositie" },
+    { icon: FileText, title: "Content aanbevelingen", description: "Maandelijkse suggesties voor content updates en nieuwe zoekwoord-kansen" },
+    { icon: Package, title: "AI-vindbaarheid check", description: "Monitoring hoe je scoort in ChatGPT, Perplexity en Google AI Overview" },
+  ];
+
   return (
-    <section ref={ref} className="py-16 lg:py-24">
+    <section ref={ref} className="py-16 lg:py-24 haze-gradient-warm">
       <div className="container px-4 sm:px-6">
         <div className="text-center mb-12" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
-          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground mb-4">Hoe werkt het?</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Van aanmelding tot resultaat</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground mb-4">
+            Wat krijg je <span className="gradient-text">elke maand</span>?
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Concrete deliverables bij je {data.serviceName.toLowerCase()} abonnement
+          </p>
         </div>
         <div className="max-w-3xl mx-auto space-y-4">
-          {data.processSteps.map((step, index) => (
-            <div key={index} className="flex items-start gap-4 p-6 bg-card rounded-xl border border-border hover:border-kk-orange/20 hover:shadow-premium transition-all duration-300" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateX(0)' : 'translateX(20px)', transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s` }}>
-              <div className="w-10 h-10 rounded-full gradient-cta flex items-center justify-center flex-shrink-0 text-white font-bold">{step.step}</div>
+          {deliverables.map((item, index) => (
+            <div 
+              key={index}
+              className="flex items-start gap-4 p-6 bg-card rounded-xl border border-border hover:border-kk-orange/20 hover:shadow-premium transition-all duration-300"
+              style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateX(0)' : 'translateX(20px)', transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s` }}
+            >
+              <div className="w-10 h-10 rounded-xl bg-kk-orange/10 flex items-center justify-center flex-shrink-0">
+                <item.icon className="w-5 h-5 text-kk-orange" />
+              </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.description}</p>
+                <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             </div>
           ))}
+        </div>
+        <div className="max-w-3xl mx-auto mt-8 p-6 bg-card rounded-xl border border-kk-orange/20 shadow-premium-sm text-center">
+          <p className="text-sm text-muted-foreground mb-2">Gemiddeld resultaat na 3 maanden</p>
+          <div className="flex justify-center gap-8">
+            <div>
+              <p className="text-2xl font-bold text-foreground">+40%</p>
+              <p className="text-xs text-muted-foreground">organisch verkeer</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-foreground">+25</p>
+              <p className="text-xs text-muted-foreground">zoekwoorden in top 10</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-foreground">3x</p>
+              <p className="text-xs text-muted-foreground">snellere laadtijd</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialSection({ slug }: { slug: string }) {
+  const { ref, isVisible } = useScrollReveal();
+  const testimonial = getTestimonialForSlug(slug);
+  return (
+    <section ref={ref} className="py-16 lg:py-24">
+      <div className="container px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <div className="p-8 bg-card rounded-2xl border border-border shadow-premium-lg">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (<Star key={i} className="w-5 h-5 text-kk-orange fill-kk-orange" />))}
+            </div>
+            <p className="text-lg text-foreground mb-6 italic leading-relaxed">
+              "{testimonial.quote}"
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">{testimonial.initial}</div>
+              <div>
+                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -349,8 +412,10 @@ export function DienstAbonnementPage({ data }: Props) {
         <HeroSection data={data} />
         <WhatIsSection data={data} />
         <BenefitsSection data={data} />
+        <DeliverablesSection data={data} />
         <PricingSection data={data} />
-        <ProcessSection data={data} />
+        
+        <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <RelatedVariants currentSlug={data.slug} />

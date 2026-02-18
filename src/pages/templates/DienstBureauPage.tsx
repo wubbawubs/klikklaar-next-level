@@ -8,8 +8,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Phone, ChevronRight, Star, HelpCircle, Building2, User, Cpu, ArrowRight } from "lucide-react";
+import { Phone, ChevronRight, Star, HelpCircle, Building2, User, Cpu, ArrowRight, Users, Target, TrendingUp, Award } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import { getTestimonialForSlug } from "@/data/testimonials";
 import {
   Accordion,
   AccordionContent,
@@ -252,8 +253,63 @@ function GuaranteesSection({ data }: Props) {
   );
 }
 
-function TestimonialSection() {
+function ApproachSection({ data }: Props) {
   const { ref, isVisible } = useScrollReveal();
+  const approaches = [
+    { icon: Users, title: "Klein team, grote impact", description: "Geen bureaucratie of account managers die alleen doorgeefluik spelen. Je werkt direct met de specialisten die aan je account werken." },
+    { icon: Target, title: "Data-gedreven aanpak", description: "Elke beslissing is gebaseerd op data, niet op onderbuikgevoel. We testen, meten en optimaliseren continu." },
+    { icon: TrendingUp, title: "Resultaatgericht", description: "Geen uren factureren voor rapporten die in een la verdwijnen. Je betaalt voor concrete verbeteringen en meetbare groei." },
+    { icon: Award, title: "Transparante rapportage", description: "Wekelijks een helder rapport in normaal Nederlands. Je weet altijd precies wat we doen en wat het oplevert." },
+  ];
+
+  return (
+    <section ref={ref} className="py-16 lg:py-24">
+      <div className="container px-4 sm:px-6">
+        <div className="text-center mb-12" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground mb-4">
+            Onze aanpak: hoe wij anders werken
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Waarom steeds meer bedrijven overstappen van een traditioneel {data.serviceName.toLowerCase()} bureau
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {approaches.map((item, index) => (
+            <div 
+              key={index}
+              className="p-6 bg-card rounded-xl border border-border hover:border-kk-orange/20 hover:shadow-premium transition-all duration-300"
+              style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s` }}
+            >
+              <div className="w-10 h-10 rounded-xl bg-kk-orange/10 flex items-center justify-center mb-4">
+                <item.icon className="w-5 h-5 text-kk-orange" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="max-w-4xl mx-auto mt-10 grid sm:grid-cols-3 gap-4">
+          <div className="p-5 bg-muted/30 rounded-xl border border-border text-center">
+            <p className="text-2xl font-bold text-foreground">200+</p>
+            <p className="text-sm text-muted-foreground mt-1">MKB-bedrijven geholpen</p>
+          </div>
+          <div className="p-5 bg-muted/30 rounded-xl border border-border text-center">
+            <p className="text-2xl font-bold text-foreground">4.8/5</p>
+            <p className="text-sm text-muted-foreground mt-1">Gemiddelde klantscore</p>
+          </div>
+          <div className="p-5 bg-muted/30 rounded-xl border border-border text-center">
+            <p className="text-2xl font-bold text-foreground">93%</p>
+            <p className="text-sm text-muted-foreground mt-1">Klantretentie na 6 maanden</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialSection({ slug }: { slug: string }) {
+  const { ref, isVisible } = useScrollReveal();
+  const testimonial = getTestimonialForSlug(slug);
   return (
     <section ref={ref} className="py-16 lg:py-24">
       <div className="container px-4 sm:px-6">
@@ -263,13 +319,13 @@ function TestimonialSection() {
               {[...Array(5)].map((_, i) => (<Star key={i} className="w-5 h-5 text-kk-orange fill-kk-orange" />))}
             </div>
             <p className="text-lg text-foreground mb-6 italic leading-relaxed">
-              "We hadden eerst een bureau, maar de resultaten waren traag en duur. Bij KlikKlaarSEO zagen we binnen weken verbetering — en het kost een kwart van wat we eerder betaalden."
+              "{testimonial.quote}"
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">M</div>
+              <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">{testimonial.initial}</div>
               <div>
-                <p className="font-semibold text-foreground">Marketing Manager</p>
-                <p className="text-sm text-muted-foreground">MKB-ondernemer</p>
+                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
               </div>
             </div>
           </div>
@@ -377,8 +433,9 @@ export function DienstBureauPage({ data }: Props) {
         <ComparisonSection data={data} />
         <BenefitsSection data={data} />
         <ProcessSection data={data} />
+        <ApproachSection data={data} />
         <GuaranteesSection data={data} />
-        <TestimonialSection />
+        <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <CrossLinks currentSlug={data.slug} serviceName={data.serviceName} />
