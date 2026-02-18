@@ -3,6 +3,7 @@ import type { KennisbankPillar, KennisbankArticle } from "./kennisbank";
 
 function article(slug: string, title: string, description: string, readTime: string, sections: string[], metaTitleOverride?: string): KennisbankArticle {
   const metaTitle = metaTitleOverride || `${title} | KlikKlaarSEO Kennisbank`;
+  // metaDescription will be enriched post-build per pillar context
   const metaDescription = description.length > 155 ? description.slice(0, 152) + "..." : description;
   const content = sections.map((s, i) => {
     if (i === 0) return `## ${title}\n\n${s}`;
@@ -11,7 +12,41 @@ function article(slug: string, title: string, description: string, readTime: str
   return { slug, title, description, readTime, content, metaTitle, metaDescription };
 }
 
-export const expandedPillars: KennisbankPillar[] = [
+// Meta description enrichment per pillar for uniqueness
+const metaSuffixes: Record<string, string> = {
+  linkbuilding: "Inclusief praktische tips en voorbeelden voor meer backlinks.",
+  "seo-strategie": "Praktische gids met templates en stappenplannen.",
+  "seo-voor-beginners": "Start vandaag zonder technische kennis.",
+  "e-commerce-seo": "Verhoog je organisch verkeer en conversies.",
+  "ai-en-seo": "Ontdek hoe AI jouw SEO-resultaten versnelt.",
+  "analytics-meten": "Maak data-gedreven beslissingen voor betere rankings.",
+  "conversie-optimalisatie": "Zet meer bezoekers om in klanten.",
+  "google-ads-seo": "Combineer betaald en organisch voor maximaal rendement.",
+  "social-media-seo": "Versterk je online zichtbaarheid via social kanalen.",
+  "seo-checklists": "Gebruik deze checklist om niets over het hoofd te zien.",
+  "branche-seo": "Specifieke tips voor jouw sector en doelgroep.",
+  "international-seo": "Bereik klanten in meerdere landen en talen.",
+};
+
+function enrichMetaDescriptions(pillarList: KennisbankPillar[]): KennisbankPillar[] {
+  return pillarList.map(pillar => {
+    const suffix = metaSuffixes[pillar.slug];
+    if (!suffix) return pillar;
+    return {
+      ...pillar,
+      articles: pillar.articles.map(a => {
+        const base = `${a.title}: ${a.description}`;
+        const enriched = `${base} ${suffix}`;
+        return {
+          ...a,
+          metaDescription: enriched.length > 160 ? enriched.slice(0, 157) + "..." : enriched,
+        };
+      }),
+    };
+  });
+}
+
+const rawPillars: KennisbankPillar[] = [
   {
     slug: "linkbuilding",
     title: "Linkbuilding",
@@ -702,3 +737,5 @@ export const expandedPillars: KennisbankPillar[] = [
     ]
   }
 ];
+
+export const expandedPillars: KennisbankPillar[] = enrichMetaDescriptions(rawPillars);
