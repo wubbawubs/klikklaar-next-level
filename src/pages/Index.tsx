@@ -24,6 +24,12 @@ const Index = () => {
         canonical={SITE_URL}
       />
       <StructuredData schema={klikklaarBusinessSchema} />
+      <StructuredData schema={{
+        type: "Speakable",
+        name: "KlikKlaarSEO — Automatische SEO voor Ondernemers",
+        url: SITE_URL,
+        cssSelectors: ["h1", ".hero-description", ".faq-section h2", ".faq-section [data-state]"]
+      }} />
       <Header />
       <main>
         {/* 1. Hero - nieuwe wereld beloven */}

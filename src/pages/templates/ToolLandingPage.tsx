@@ -94,7 +94,7 @@ function ToolWhatItDoes({ tool }: { tool: ToolData }) {
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Wat doet deze tool?</h2>
           </div>
-          <p className="text-lg text-muted-foreground leading-relaxed">{tool.whatItDoes}</p>
+          <p data-speakable="what-it-does" className="text-lg text-muted-foreground leading-relaxed">{tool.whatItDoes}</p>
         </div>
       </div>
     </section>
@@ -263,7 +263,7 @@ function ToolUniqueIntro({ tool }: { tool: ToolData }) {
     <section ref={ref} className="py-12 lg:py-16">
       <div className="container px-4 sm:px-6">
         <div className="max-w-3xl mx-auto" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
-          <p className="text-lg text-muted-foreground leading-relaxed">{tool.uniqueIntro}</p>
+          <p data-speakable="intro" className="text-lg text-muted-foreground leading-relaxed">{tool.uniqueIntro}</p>
         </div>
       </div>
     </section>
@@ -342,6 +342,23 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
     ],
   };
 
+  const howToSchema = {
+    type: "HowTo" as const,
+    name: `Hoe gebruik je de ${tool.name}?`,
+    description: tool.shortDescription,
+    steps: tool.howToUse.map((step, i) => ({
+      name: `Stap ${i + 1}`,
+      text: step,
+    })),
+  };
+
+  const speakableSchema = {
+    type: "Speakable" as const,
+    name: tool.name,
+    url: `${SITE_URL}/tools/${tool.slug}`,
+    cssSelectors: ["h1", "[data-speakable='intro']", "[data-speakable='what-it-does']"],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
@@ -352,6 +369,8 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={breadcrumbSchema} />
+      <StructuredData schema={howToSchema} />
+      <StructuredData schema={speakableSchema} />
       <Header />
       <main>
         <ToolHero tool={tool} />

@@ -135,7 +135,7 @@ function ServiceExplanation({ service }: { service: ServiceData }) {
           <h2 className="text-2xl sm:text-3xl lg:text-display font-bold text-foreground text-center mb-4">
             Wat is {service.name}?
           </h2>
-          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p data-speakable="explanation" className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
             {service.heroDescription}
           </p>
         </div>
@@ -380,6 +380,23 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
     provider: "KlikKlaarSEO"
   };
 
+  const howToSchema = {
+    type: "HowTo" as const,
+    name: `Hoe werkt ${service.name}?`,
+    description: service.subheadline,
+    steps: service.howItWorks.map(step => ({
+      name: step.title,
+      text: step.description,
+    })),
+  };
+
+  const speakableSchema = {
+    type: "Speakable" as const,
+    name: service.name,
+    url: `${SITE_URL}/${service.slug}`,
+    cssSelectors: ["h1", "[data-speakable='explanation']"],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -389,6 +406,8 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={serviceSchema} />
+      <StructuredData schema={howToSchema} />
+      <StructuredData schema={speakableSchema} />
       <Header />
       <main>
         <ServiceHero service={service} />
