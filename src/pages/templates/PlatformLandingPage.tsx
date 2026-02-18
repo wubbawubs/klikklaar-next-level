@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
 import { SITE_URL } from "@/lib/site-config";
+import { EvidenceBlock, getPlatformEvidenceCase } from "@/components/EvidenceBlock";
 
 interface PlatformLandingPageProps {
   platform: PlatformData;
@@ -289,6 +290,12 @@ export function PlatformLandingPage({ platform }: PlatformLandingPageProps) {
         <PlatformHero platform={platform} />
         <PlatformPainPoints painPoints={platform.painPoints} />
         <PlatformSolutions solutions={platform.solutions} />
+        <EvidenceBlock
+          contextLabel={`SEO voor ${platform.name}`}
+          heading={`Concrete resultaten met ${platform.name} SEO`}
+          subtext={`Geen beloftes, maar meetbare verbeteringen voor ${platform.name}-websites.`}
+          caseStudy={getPlatformEvidenceCase(platform.category)}
+        />
         <PlatformStats stats={platform.stats} />
         <PlatformFAQ faqs={platform.faqs} platformName={platform.name} />
         <RelatedPlatforms platform={platform} />

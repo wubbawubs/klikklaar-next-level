@@ -20,6 +20,7 @@ import {
 import { ServiceVariantData } from "@/data/service-variants";
 import { serviceVariantsBureau } from "@/data/service-variants-p2";
 import { SITE_URL } from "@/lib/site-config";
+import { EvidenceBlock, getServiceEvidenceCase } from "@/components/EvidenceBlock";
 
 interface Props {
   data: ServiceVariantData;
@@ -435,6 +436,12 @@ export function DienstBureauPage({ data }: Props) {
         <BenefitsSection data={data} />
         <ProcessSection data={data} />
         <ApproachSection data={data} />
+        <EvidenceBlock
+          contextLabel={data.serviceName}
+          heading={`Waarom klanten overstappen van een bureau`}
+          subtext={`Concrete resultaten van bedrijven die kozen voor het slimme alternatief.`}
+          caseStudy={getServiceEvidenceCase(data.slug)}
+        />
         <GuaranteesSection data={data} />
         <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
