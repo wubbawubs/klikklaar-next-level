@@ -21,6 +21,7 @@ import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { ProofBlock } from "@/components/ProofBlock";
 import { SITE_URL } from "@/lib/site-config";
+import { isComboIndexReady } from "@/lib/indexation-governance";
 import { ComboHeroIllustration } from "@/components/illustrations/ComboHeroIllustration";
 
 interface ComboLandingPageProps {
@@ -686,8 +687,8 @@ function RelatedPages({ industry, location }: ComboLandingPageProps) {
 }
 
 export function ComboLandingPage({ industry, location }: ComboLandingPageProps) {
-  // Noindex Tier 3 locations to prevent doorway/index bloat
-  const shouldNoindex = location.tier === 3;
+  // Indexation governance: score-based noindex (threshold: 80/100)
+  const shouldNoindex = !isComboIndexReady(industry, location);
 
   // Take industry FAQs for schema (to match visible content on page)
   const industryFaqs = industry.faqs?.slice(0, 2) || [];
