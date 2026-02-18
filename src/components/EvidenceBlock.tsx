@@ -31,9 +31,147 @@ const defaultBenchmarks = [
   { value: "93%", label: "Klanten ziet verbetering binnen 8 weken" },
 ];
 
-// Pre-built case studies per service type for Dienst templates
-const serviceEvidenceCases: Record<string, EvidenceCase> = {
-  // Generic fallbacks by variant type
+// Unique case studies per service base name (stripped of variant suffix)
+const serviceBaseCases: Record<string, EvidenceCase> = {
+  "automatische-seo": {
+    title: "MKB-ondernemer met automatische SEO",
+    beforeMetric: "Pagina 3 in Google",
+    afterMetric: "Top 3 positie",
+    improvement: "+198%",
+    timeframe: "4 maanden",
+    quote: "Het systeem draait 24/7 — ik hoef er niks voor te doen",
+    keyResult: "meer organisch verkeer",
+  },
+  "lokale-seo": {
+    title: "Lokale ondernemer met Google Bedrijfsprofiel",
+    beforeMetric: "Niet in lokale top 10",
+    afterMetric: "Top 3 in Maps + organisch",
+    improvement: "+245%",
+    timeframe: "3 maanden",
+    quote: "Klanten uit de buurt vinden ons nu direct via Google",
+    keyResult: "meer lokale leads",
+  },
+  "technische-seo": {
+    title: "Webshop met technische SEO-problemen",
+    beforeMetric: "Core Web Vitals: rood",
+    afterMetric: "Core Web Vitals: groen",
+    improvement: "+167%",
+    timeframe: "6 weken",
+    quote: "Onze site laadt nu 3x sneller en Google beloont dat",
+    keyResult: "betere technische score",
+  },
+  "seo-audit": {
+    title: "Bedrijf na uitvoering SEO-audit",
+    beforeMetric: "Score 38/100",
+    afterMetric: "Score 91/100",
+    improvement: "+139%",
+    timeframe: "8 weken",
+    quote: "De audit gaf precies de 12 knelpunten die ons tegenhielden",
+    keyResult: "meer geïndexeerde pagina's",
+  },
+  "seo-strategie": {
+    title: "Scale-up met SEO-strategie op maat",
+    beforeMetric: "Geen keyword-focus",
+    afterMetric: "Top 5 op 18 zoektermen",
+    improvement: "+312%",
+    timeframe: "5 maanden",
+    quote: "Eindelijk een duidelijk plan dat ook echt werkt",
+    keyResult: "meer gerichte zoekwoord-rankings",
+  },
+  "content-optimalisatie": {
+    title: "Dienstverlener met bestaande content",
+    beforeMetric: "Pagina 2-4 in Google",
+    afterMetric: "Pagina 1 voor 8 artikelen",
+    improvement: "+189%",
+    timeframe: "3 maanden",
+    quote: "Onze bestaande blogs scoren nu eindelijk",
+    keyResult: "meer verkeer uit bestaande content",
+  },
+  "seo-teksten": {
+    title: "Adviesbureau met SEO-geoptimaliseerde teksten",
+    beforeMetric: "0 organische leads/maand",
+    afterMetric: "12 leads/maand via blog",
+    improvement: "+∞",
+    timeframe: "4 maanden",
+    quote: "Onze expertise is nu vindbaar voor wie erop zoekt",
+    keyResult: "meer leads via content",
+  },
+  "linkbuilding": {
+    title: "SaaS-bedrijf met linkbuilding-campagne",
+    beforeMetric: "Domain Authority 15",
+    afterMetric: "Domain Authority 34",
+    improvement: "+127%",
+    timeframe: "5 maanden",
+    quote: "Kwalitatieve backlinks maken écht het verschil",
+    keyResult: "meer domeinautoriteit",
+  },
+  "google-bedrijfsprofiel": {
+    title: "Fysieke winkel met GBP-optimalisatie",
+    beforeMetric: "20 profiel-weergaven/mnd",
+    afterMetric: "185 weergaven/mnd",
+    improvement: "+825%",
+    timeframe: "6 weken",
+    quote: "We staan nu bovenaan bij 'in de buurt' zoekopdrachten",
+    keyResult: "meer Google Maps-weergaven",
+  },
+  "seo-monitoring": {
+    title: "E-commerce bedrijf met 24/7 monitoring",
+    beforeMetric: "Problemen pas na weken ontdekt",
+    afterMetric: "Alerts binnen 1 uur",
+    improvement: "+94%",
+    timeframe: "Direct",
+    quote: "We missen geen enkele ranking-daling meer",
+    keyResult: "snellere probleemdetectie",
+  },
+  "seo-rapportages": {
+    title: "Marketingmanager met heldere rapportages",
+    beforeMetric: "Onduidelijke bureau-rapporten",
+    afterMetric: "Wekelijks helder dashboard",
+    improvement: "+78%",
+    timeframe: "Week 1",
+    quote: "Eindelijk snap ik wat er met onze SEO gebeurt",
+    keyResult: "meer inzicht in SEO-prestaties",
+  },
+  "seo-webshops": {
+    title: "Webshop met 500+ producten",
+    beforeMetric: "45 producten geïndexeerd",
+    afterMetric: "480 producten geïndexeerd",
+    improvement: "+267%",
+    timeframe: "3 maanden",
+    quote: "Onze producten verschijnen nu in Google Shopping",
+    keyResult: "meer product-indexatie",
+  },
+  "seo-wordpress": {
+    title: "WordPress-site met SEO-optimalisatie",
+    beforeMetric: "Langzaam, slecht geïndexeerd",
+    afterMetric: "Snel, top 5 voor 6 termen",
+    improvement: "+201%",
+    timeframe: "10 weken",
+    quote: "WordPress kan wél goed scoren met de juiste setup",
+    keyResult: "meer organisch verkeer",
+  },
+  "ai-seo": {
+    title: "Consultant vindbaar in AI-zoekmachines",
+    beforeMetric: "Niet genoemd in ChatGPT",
+    afterMetric: "Aanbevolen in 4 AI-tools",
+    improvement: "Nieuw kanaal",
+    timeframe: "8 weken",
+    quote: "Klanten vertellen dat ze ons via ChatGPT vonden",
+    keyResult: "meer AI-citaties",
+  },
+  "seo-migratie": {
+    title: "Bedrijf na website-migratie",
+    beforeMetric: "-60% verkeer na migratie",
+    afterMetric: "+15% boven pre-migratie",
+    improvement: "Volledig herstel",
+    timeframe: "6 weken",
+    quote: "Zonder begeleiding waren we maanden verkeer kwijt geweest",
+    keyResult: "behoud van rankings na migratie",
+  },
+};
+
+// Variant-level fallbacks (used when no service-specific case exists)
+const variantFallbackCases: Record<string, EvidenceCase> = {
   "uitbesteden": {
     title: "MKB-ondernemer die SEO volledig uitbesteedde",
     beforeMetric: "Pagina 3 in Google",
@@ -122,14 +260,28 @@ const platformEvidenceCases: Record<string, EvidenceCase> = {
 };
 
 /**
- * Get an evidence case for a dienst variant based on slug suffix.
+ * Get an evidence case for a dienst variant based on slug.
+ * First tries service-specific case (e.g. "technische-seo"), then falls back to variant type.
  */
 export function getServiceEvidenceCase(slug: string): EvidenceCase {
-  if (slug.includes("-uitbesteden")) return serviceEvidenceCases["uitbesteden"];
-  if (slug.includes("-abonnement")) return serviceEvidenceCases["abonnement"];
-  if (slug.includes("-bureau")) return serviceEvidenceCases["bureau"];
-  if (slug.includes("-scan")) return serviceEvidenceCases["scan"];
-  return serviceEvidenceCases["uitbesteden"];
+  // Extract the service base name (remove variant suffix)
+  const baseSlug = slug
+    .replace(/-uitbesteden$/, "")
+    .replace(/-abonnement$/, "")
+    .replace(/-bureau$/, "")
+    .replace(/-scan$/, "");
+
+  // Try service-specific case first
+  if (serviceBaseCases[baseSlug]) {
+    return serviceBaseCases[baseSlug];
+  }
+
+  // Fall back to variant type
+  if (slug.includes("-uitbesteden")) return variantFallbackCases["uitbesteden"];
+  if (slug.includes("-abonnement")) return variantFallbackCases["abonnement"];
+  if (slug.includes("-bureau")) return variantFallbackCases["bureau"];
+  if (slug.includes("-scan")) return variantFallbackCases["scan"];
+  return variantFallbackCases["uitbesteden"];
 }
 
 /**
