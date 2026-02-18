@@ -27,6 +27,7 @@ import Branches from "./pages/Branches";
 import Steden from "./pages/Steden";
 import Diensten from "./pages/Diensten";
 import Platforms from "./pages/Platforms";
+import Tools from "./pages/Tools";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
 import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
@@ -40,6 +41,7 @@ import { DienstAbonnementPage } from "./pages/templates/DienstAbonnementPage";
 import { DienstBureauPage } from "./pages/templates/DienstBureauPage";
 import { DienstScanPage } from "./pages/templates/DienstScanPage";
 import { PlatformLandingPage } from "./pages/templates/PlatformLandingPage";
+import { ToolLandingPage } from "./pages/templates/ToolLandingPage";
 
 // Data imports
 import { allIndustries, getIndustryBySlug } from "./data/industries";
@@ -51,6 +53,7 @@ import { serviceVariantsBureau, serviceVariantsScan } from "./data/service-varia
 import { serviceVariantsUitbestedenP3, serviceVariantsAbonnementP3 } from "./data/service-variants-p3";
 import { serviceVariantsBureauP4, serviceVariantsScanP4 } from "./data/service-variants-p4";
 import { platforms } from "./data/platforms";
+import { tools } from "./data/tools";
 
 const queryClient = new QueryClient();
 
@@ -149,6 +152,16 @@ const App = () => (
           <Route path="/branches" element={<Branches />} />
           <Route path="/steden" element={<Steden />} />
           <Route path="/platforms" element={<Platforms />} />
+          <Route path="/tools" element={<Tools />} />
+          
+          {/* Dynamic tool landing pages */}
+          {tools.map((tool) => (
+            <Route
+              key={tool.slug}
+              path={`/tools/${tool.slug}`}
+              element={<ToolLandingPage tool={tool} />}
+            />
+          ))}
           
           {/* Dynamic platform landing pages */}
           {platforms.map((platform) => (
