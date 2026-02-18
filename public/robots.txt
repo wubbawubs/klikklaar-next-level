@@ -15,7 +15,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.klikklaar.nl/sitemap.xml
+Sitemap: https://www.klikklaarseo.nl/sitemap.xml
 
 # Disallow admin and private paths
 Disallow: /api/
