@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SITE_URL } from "@/lib/site-config";
 
 interface LocalBusinessSchema {
   type: "LocalBusiness";
@@ -201,13 +202,11 @@ export function StructuredData({ schema }: StructuredDataProps) {
       const scriptId = `structured-data-${s.type}-${index}`;
       scriptIds.push(scriptId);
 
-      // Remove existing script if present
       const existingScript = document.getElementById(scriptId);
       if (existingScript) {
         existingScript.remove();
       }
 
-      // Create new script
       const script = document.createElement("script");
       script.id = scriptId;
       script.type = "application/ld+json";
@@ -215,7 +214,6 @@ export function StructuredData({ schema }: StructuredDataProps) {
       document.head.appendChild(script);
     });
 
-    // Cleanup on unmount
     return () => {
       scriptIds.forEach((id) => {
         const script = document.getElementById(id);
@@ -234,7 +232,7 @@ export const klikklaarBusinessSchema: LocalBusinessSchema = {
   type: "LocalBusiness",
   name: "KlikKlaarSEO",
   description: "Automatische SEO en website optimalisatie voor ondernemers. Meer klanten, zonder gedoe.",
-  url: "https://klikklaar.nl",
+  url: SITE_URL,
   telephone: "+31628354333",
   email: "Info@klikklaarseo.nl",
   address: {
@@ -255,7 +253,7 @@ export const klikklaarOrganizationSchema: OrganizationSchema = {
   type: "Organization",
   name: "KlikKlaarSEO",
   description: "Automatische SEO voor ondernemers in heel Nederland. Meer klanten, zonder gedoe.",
-  url: "https://klikklaar.nl",
+  url: SITE_URL,
   telephone: "+31628354333",
   email: "Info@klikklaarseo.nl",
   address: {

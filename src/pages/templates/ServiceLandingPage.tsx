@@ -19,6 +19,7 @@ import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { RelatedToolsSection } from "@/components/CrossLinks";
 import { getTestimonialForSlug, getCtaForSlug } from "@/data/testimonials";
+import { SITE_URL } from "@/lib/site-config";
 
 interface ServiceLandingPageProps {
   service: ServiceData;
@@ -384,7 +385,7 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
       <SEOHead 
         title={`${service.name} | Automatisch & Betaalbaar | €99/mnd`}
         description={`${service.subheadline}. Volledig automatisch, geen gedoe. Voor MKB ondernemers die willen groeien. Altijd opzegbaar.`}
-        canonical={`https://klikklaar.nl/${service.slug}`}
+        canonical={`${SITE_URL}/${service.slug}`}
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={serviceSchema} />

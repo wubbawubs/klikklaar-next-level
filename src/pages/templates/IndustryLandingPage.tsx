@@ -20,6 +20,7 @@ import {
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { ProofBlock } from "@/components/ProofBlock";
+import { SITE_URL } from "@/lib/site-config";
 
 interface IndustryLandingPageProps {
   industry: IndustryData;
@@ -43,7 +44,6 @@ function IndustryHero({ industry }: { industry: IndustryData }) {
 
       <div className="container px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Breadcrumb */}
           <nav 
             className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6"
             style={{
@@ -216,7 +216,6 @@ function IndustrySolutions({ solutions }: { solutions: Array<{ title: string; de
 function IndustryStats({ stats }: { stats: { value: string; label: string }[] }) {
   const { ref, isVisible } = useScrollReveal();
 
-  // Ensure we always have exactly 4 stats
   const defaultStats = [
     { value: "+145%", label: "Meer website bezoekers" },
     { value: "Top 5", label: "Google ranking" },
@@ -311,17 +310,15 @@ function IndustryFAQ({ faqs, industryName }: { faqs: { question: string; answer:
 function RelatedIndustries({ industry }: { industry: IndustryData }) {
   const { ref, isVisible } = useScrollReveal();
   
-  // LIMIT: Max 4 combo links to avoid over-automated internal linking
   const industryCombos = combos
     .filter(c => c.industrySlug === industry.slug)
-    .slice(0, 4) // Reduced from 6 to 4
+    .slice(0, 4)
     .map(c => {
       const loc = locations.find(l => l.slug === c.locationSlug);
       return loc ? { slug: c.locationSlug, name: loc.name } : null;
     })
     .filter(Boolean) as { slug: string; name: string }[];
 
-  // LIMIT: Max 4 other industry links
   const otherIndustries = allIndustries
     .filter(i => i.slug !== industry.slug)
     .slice(0, 4);
@@ -341,7 +338,6 @@ function RelatedIndustries({ industry }: { industry: IndustryData }) {
             Gerelateerde SEO pagina's
           </h2>
           
-          {/* Combo pages for this industry */}
           {industryCombos.length > 0 && (
             <div className="mb-8">
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3 text-center">
@@ -361,7 +357,6 @@ function RelatedIndustries({ industry }: { industry: IndustryData }) {
             </div>
           )}
 
-          {/* Other industries */}
           <div className="mb-6">
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3 text-center">
               Andere branches
@@ -402,9 +397,9 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Branches", url: "https://klikklaar.nl/voorbeelden" },
-      { name: industry.name, url: `https://klikklaar.nl/seo-${industry.slug}` }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Branches", url: `${SITE_URL}/voorbeelden` },
+      { name: industry.name, url: `${SITE_URL}/seo-${industry.slug}` }
     ]
   };
 
@@ -413,7 +408,7 @@ export function IndustryLandingPage({ industry }: IndustryLandingPageProps) {
       <SEOHead 
         title={`${industry.name}? Meer Klanten via Google | €99/mnd | KlikKlaarSEO`}
         description={`${industry.namePlural}: word gevonden door de juiste klanten. Automatische SEO & AI-vindbaarheid die écht werkt. Geen gedoe, altijd opzegbaar. 100+ ondernemers gingen je voor.`}
-        canonical={`https://klikklaar.nl/seo-${industry.slug}`}
+        canonical={`${SITE_URL}/seo-${industry.slug}`}
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={breadcrumbSchema} />

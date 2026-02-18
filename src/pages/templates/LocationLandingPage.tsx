@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { LocationProofBlock } from "@/components/LocationProofBlock";
+import { SITE_URL } from "@/lib/site-config";
 
 interface LocationLandingPageProps {
   location: LocationData;
@@ -498,9 +499,9 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Steden", url: "https://klikklaar.nl/" },
-      { name: `SEO ${location.name}`, url: `https://klikklaar.nl/seo-${location.slug}` }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Steden", url: `${SITE_URL}/steden` },
+      { name: `SEO ${location.name}`, url: `${SITE_URL}/seo-${location.slug}` }
     ]
   };
 
@@ -509,7 +510,7 @@ export function LocationLandingPage({ location }: LocationLandingPageProps) {
       <SEOHead 
         title={`SEO ${location.name} | Meer Klanten uit ${location.province} | €99/mnd`}
         description={`Ondernemer in ${location.name}? Word gevonden door klanten uit jouw regio. Automatische SEO zonder gedoe. Geen contract, altijd opzegbaar. Start vandaag.`}
-        canonical={`https://klikklaar.nl/seo-${location.slug}`}
+        canonical={`${SITE_URL}/seo-${location.slug}`}
         robots={shouldNoindex ? "noindex,follow" : "index,follow"}
       />
       <StructuredData schema={faqSchema} />

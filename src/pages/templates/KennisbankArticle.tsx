@@ -8,6 +8,7 @@ import { ChevronRight, Clock, ArrowLeft, ArrowRight, BookOpen } from "lucide-rea
 import { useState, useEffect } from "react";
 import { getPillarBySlug, getArticleBySlug } from "@/data/kennisbank";
 import { RelatedToolsSection, RelatedDienstenSection } from "@/components/CrossLinks";
+import { SITE_URL } from "@/lib/site-config";
 
 export default function KennisbankArticle() {
   const { pillarSlug, articleSlug } = useParams();
@@ -32,10 +33,10 @@ export default function KennisbankArticle() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Kennisbank", url: "https://klikklaar.nl/kennisbank" },
-      { name: pillar.title, url: `https://klikklaar.nl/kennisbank/${pillar.slug}` },
-      { name: article.title, url: `https://klikklaar.nl/kennisbank/${pillar.slug}/${article.slug}` }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Kennisbank", url: `${SITE_URL}/kennisbank` },
+      { name: pillar.title, url: `${SITE_URL}/kennisbank/${pillar.slug}` },
+      { name: article.title, url: `${SITE_URL}/kennisbank/${pillar.slug}/${article.slug}` }
     ]
   };
 
@@ -44,7 +45,7 @@ export default function KennisbankArticle() {
       <SEOHead 
         title={article.metaTitle}
         description={article.metaDescription}
-        canonical={`https://klikklaar.nl/kennisbank/${pillar.slug}/${article.slug}`}
+        canonical={`${SITE_URL}/kennisbank/${pillar.slug}/${article.slug}`}
       />
       <StructuredData schema={breadcrumbSchema} />
       <Header />

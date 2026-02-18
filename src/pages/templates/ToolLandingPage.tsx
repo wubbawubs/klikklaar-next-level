@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
@@ -334,9 +335,9 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "SEO Tools", url: "https://klikklaar.nl/tools" },
-      { name: tool.name, url: `https://klikklaar.nl/tools/${tool.slug}` },
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "SEO Tools", url: `${SITE_URL}/tools` },
+      { name: tool.name, url: `${SITE_URL}/tools/${tool.slug}` },
     ],
   };
 
@@ -345,7 +346,7 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
       <SEOHead
         title={`Gratis ${tool.name} | Check je Website | KlikKlaarSEO`}
         description={`${tool.shortDescription} Gratis, zonder registratie. Verbeter je SEO met concrete actiepunten.`}
-        canonical={`https://klikklaar.nl/tools/${tool.slug}`}
+        canonical={`${SITE_URL}/tools/${tool.slug}`}
         robots={contentComplete ? "index,follow" : "noindex,follow"}
       />
       <StructuredData schema={faqSchema} />

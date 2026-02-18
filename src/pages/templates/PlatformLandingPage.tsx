@@ -16,6 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
+import { SITE_URL } from "@/lib/site-config";
 
 interface PlatformLandingPageProps {
   platform: PlatformData;
@@ -268,9 +269,9 @@ export function PlatformLandingPage({ platform }: PlatformLandingPageProps) {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Platforms", url: "https://klikklaar.nl/platforms" },
-      { name: `SEO ${platform.name}`, url: `https://klikklaar.nl/seo-${platform.slug}` },
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Platforms", url: `${SITE_URL}/platforms` },
+      { name: `SEO ${platform.name}`, url: `${SITE_URL}/seo-${platform.slug}` },
     ],
   };
 
@@ -279,7 +280,7 @@ export function PlatformLandingPage({ platform }: PlatformLandingPageProps) {
       <SEOHead
         title={`${platform.name} SEO? | Hoger in Google | €99/mnd | KlikKlaarSEO`}
         description={`${platform.name} SEO laten doen? Wij optimaliseren je ${platform.name}-website voor Google. Meer bezoekers, meer klanten. Vanaf €99/mnd, altijd opzegbaar.`}
-        canonical={`https://klikklaar.nl/seo-${platform.slug}`}
+        canonical={`${SITE_URL}/seo-${platform.slug}`}
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={breadcrumbSchema} />

@@ -20,6 +20,7 @@ import {
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { ProofBlock } from "@/components/ProofBlock";
+import { SITE_URL } from "@/lib/site-config";
 import { ComboHeroIllustration } from "@/components/illustrations/ComboHeroIllustration";
 
 interface ComboLandingPageProps {
@@ -735,9 +736,9 @@ export function ComboLandingPage({ industry, location }: ComboLandingPageProps) 
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: industry.namePlural, url: `https://klikklaar.nl/seo-${industry.slug}` },
-      { name: location.name, url: `https://klikklaar.nl/seo-${industry.slug}-${location.slug}` }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: industry.namePlural, url: `${SITE_URL}/seo-${industry.slug}` },
+      { name: location.name, url: `${SITE_URL}/seo-${industry.slug}-${location.slug}` }
     ]
   };
 
