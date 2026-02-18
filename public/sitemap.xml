@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Governance-filtered sitemap: only pages with quality score ≥ 80/100 -->
-<!-- Total URLs: 591 | Generated: 2026-02-18 -->
+<!-- Total URLs: 611 | Generated: 2026-02-18 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ══════════════════════════════════════════ -->
@@ -240,7 +240,7 @@
   <url><loc>https://www.klikklaarseo.nl/seo-rijscholen</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ══════════════════════════════════════════ -->
-  <!-- LOCATION PAGES — Tier 1 (12 van 15, 3 excluded: enschede, apeldoorn, amersfoort) -->
+  <!-- LOCATION PAGES — Tier 1 (15) -->
   <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/seo-amsterdam</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-rotterdam</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -254,6 +254,9 @@
   <url><loc>https://www.klikklaarseo.nl/seo-nijmegen</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-arnhem</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-haarlem</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-apeldoorn</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- ══════════════════════════════════════════ -->
   <!-- LOCATION PAGES — Tier 2 (27) -->
@@ -287,7 +290,7 @@
   <url><loc>https://www.klikklaarseo.nl/seo-vlaardingen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ══════════════════════════════════════════ -->
-  <!-- COMBO PAGES — Governance score ≥ 80 (137) -->
+  <!-- COMBO PAGES — Governance score ≥ 80 (154) -->
   <!-- ══════════════════════════════════════════ -->
   <!-- T1 cities -->
   <url><loc>https://www.klikklaarseo.nl/seo-kappers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -365,6 +368,26 @@
   <url><loc>https://www.klikklaarseo.nl/seo-rijscholen-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-bakkers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-bakkers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Enschede combos (6) -->
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-enschede</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Apeldoorn combos (5) -->
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-apeldoorn</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-apeldoorn</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-apeldoorn</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-apeldoorn</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-hoveniers-apeldoorn</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Amersfoort combos (6) -->
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-amersfoort</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <!-- T1 extra cities -->
   <url><loc>https://www.klikklaarseo.nl/seo-kappers-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-kappers-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
