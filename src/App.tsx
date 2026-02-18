@@ -35,6 +35,8 @@ import { ServiceLandingPage } from "./pages/templates/ServiceLandingPage";
 import { ComboLandingPage } from "./pages/templates/ComboLandingPage";
 import { DienstUitbestedenPage } from "./pages/templates/DienstUitbestedenPage";
 import { DienstAbonnementPage } from "./pages/templates/DienstAbonnementPage";
+import { DienstBureauPage } from "./pages/templates/DienstBureauPage";
+import { DienstScanPage } from "./pages/templates/DienstScanPage";
 
 // Data imports
 import { industries, getIndustryBySlug } from "./data/industries";
@@ -42,6 +44,7 @@ import { locations, getLocationBySlug } from "./data/locations";
 import { services } from "./data/services";
 import { combos } from "./data/combos";
 import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "./data/service-variants";
+import { serviceVariantsBureau, serviceVariantsScan } from "./data/service-variants-p2";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +85,20 @@ const App = () => (
               key={data.slug}
               path={`/diensten/${data.slug}`}
               element={<DienstAbonnementPage data={data} />}
+            />
+          ))}
+          {serviceVariantsBureau.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstBureauPage data={data} />}
+            />
+          ))}
+          {serviceVariantsScan.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstScanPage data={data} />}
             />
           ))}
           <Route path="/diensten/seo-uitbesteden" element={<SeoUitbesteden />} />
