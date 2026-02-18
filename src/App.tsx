@@ -33,12 +33,15 @@ import { IndustryLandingPage } from "./pages/templates/IndustryLandingPage";
 import { LocationLandingPage } from "./pages/templates/LocationLandingPage";
 import { ServiceLandingPage } from "./pages/templates/ServiceLandingPage";
 import { ComboLandingPage } from "./pages/templates/ComboLandingPage";
+import { DienstUitbestedenPage } from "./pages/templates/DienstUitbestedenPage";
+import { DienstAbonnementPage } from "./pages/templates/DienstAbonnementPage";
 
 // Data imports
 import { industries, getIndustryBySlug } from "./data/industries";
 import { locations, getLocationBySlug } from "./data/locations";
 import { services } from "./data/services";
 import { combos } from "./data/combos";
+import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "./data/service-variants";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +68,22 @@ const App = () => (
           
           {/* Diensten pillar pages */}
           <Route path="/diensten/seo-abonnement" element={<SeoAbonnement />} />
+          
+          {/* Dynamic dienst-variant pages (P1) */}
+          {serviceVariantsUitbesteden.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstUitbestedenPage data={data} />}
+            />
+          ))}
+          {serviceVariantsAbonnement.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstAbonnementPage data={data} />}
+            />
+          ))}
           <Route path="/diensten/seo-uitbesteden" element={<SeoUitbesteden />} />
           
           {/* Kennisbank routes */}
