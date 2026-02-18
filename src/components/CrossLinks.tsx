@@ -76,6 +76,47 @@ function LinkCard({ to, label, sublabel, index, isVisible }: {
   );
 }
 
+// ── Context-aware labels ───────────────────────────────────────────
+
+const toolSectionTitles: Partial<Record<ToolCategory, string>> = {
+  analyse: "Analyseer je site zelf met deze gratis tools",
+  technisch: "Check je technische SEO met deze gratis tools",
+  content: "Verbeter je content met deze gratis tools",
+  linkbuilding: "Analyseer je backlinks met deze gratis tools",
+  lokaal: "Test je lokale vindbaarheid met deze gratis tools",
+  snelheid: "Meet je website snelheid met deze gratis tools",
+  "structured-data": "Valideer je structured data met deze gratis tools",
+  keyword: "Onderzoek je zoekwoorden met deze gratis tools",
+  monitoring: "Monitor je SEO prestaties met deze gratis tools",
+  concurrentie: "Vergelijk je met concurrenten via deze gratis tools",
+};
+
+const toolSublabels: Partial<Record<ToolCategory, string>> = {
+  analyse: "Direct je site analyseren",
+  technisch: "Technische check uitvoeren",
+  content: "Content score berekenen",
+  linkbuilding: "Backlink profiel bekijken",
+  lokaal: "Lokale SEO testen",
+  snelheid: "Laadtijd meten",
+  "structured-data": "Schema valideren",
+  keyword: "Zoekwoorden ontdekken",
+  monitoring: "Prestaties monitoren",
+  concurrentie: "Concurrentie analyseren",
+};
+
+const toolCtaTexts: Partial<Record<ToolCategory, string>> = {
+  analyse: "Bekijk alle analyse tools",
+  technisch: "Bekijk alle technische SEO tools",
+  content: "Bekijk alle content tools",
+  linkbuilding: "Bekijk alle linkbuilding tools",
+  lokaal: "Bekijk alle lokale SEO tools",
+  snelheid: "Bekijk alle snelheidstools",
+  "structured-data": "Bekijk alle structured data tools",
+  keyword: "Bekijk alle keyword tools",
+  monitoring: "Bekijk alle monitoring tools",
+  concurrentie: "Bekijk alle concurrentie tools",
+};
+
 // ── Related Tools (for Kennisbank & Diensten pages) ────────────────
 
 interface RelatedToolsProps {
@@ -91,7 +132,6 @@ export function RelatedToolsSection({ pillarSlug, serviceSlug, max = 4 }: Relate
   if (pillarSlug && kennisbankToToolCategories[pillarSlug]) {
     categories = kennisbankToToolCategories[pillarSlug];
   } else if (serviceSlug) {
-    // Map service to tool categories
     const service = services.find(s => s.slug === serviceSlug);
     if (service) {
       const mapping: Record<string, ToolCategory[]> = {
@@ -113,6 +153,10 @@ export function RelatedToolsSection({ pillarSlug, serviceSlug, max = 4 }: Relate
 
   if (relevantTools.length === 0) return null;
 
+  const primaryCategory = categories[0];
+  const sectionTitle = toolSectionTitles[primaryCategory] || "Gratis tools om zelf te checken";
+  const ctaText = toolCtaTexts[primaryCategory] || `Bekijk alle ${tools.length} gratis tools`;
+
   return (
     <section ref={ref} className="py-12 lg:py-16">
       <div className="container px-4 sm:px-6">
@@ -128,7 +172,7 @@ export function RelatedToolsSection({ pillarSlug, serviceSlug, max = 4 }: Relate
             <div className="flex items-center gap-2 mb-4">
               <Wrench className="w-5 h-5 text-kk-orange" />
               <h3 className="text-base font-semibold text-foreground">
-                Gratis tools om zelf te checken
+                {sectionTitle}
               </h3>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -137,7 +181,7 @@ export function RelatedToolsSection({ pillarSlug, serviceSlug, max = 4 }: Relate
                   key={tool.slug}
                   to={`/tools/${tool.slug}`}
                   label={tool.name}
-                  sublabel="Gratis tool"
+                  sublabel={toolSublabels[tool.category] || "Gratis tool"}
                   index={i}
                   isVisible={isVisible}
                 />
@@ -147,7 +191,7 @@ export function RelatedToolsSection({ pillarSlug, serviceSlug, max = 4 }: Relate
               to="/tools"
               className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-kk-orange hover:gap-3 transition-all"
             >
-              Bekijk alle {tools.length} gratis tools
+              {ctaText}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -156,6 +200,25 @@ export function RelatedToolsSection({ pillarSlug, serviceSlug, max = 4 }: Relate
     </section>
   );
 }
+
+// ── Context-aware diensten labels ──────────────────────────────────
+
+const dienstenSectionTitles: Record<string, string> = {
+  "lokale-seo": "Lokale SEO liever laten doen? Wij regelen het",
+  "technische-seo": "Technische SEO uitbesteden? Bekijk onze aanpak",
+  "content-optimalisatie": "Content laten schrijven door SEO-specialisten",
+  linkbuilding: "Linkbuilding uitbesteden aan ons team",
+  "seo-strategie": "Een SEO-strategie op maat laten maken",
+  "analytics-en-data": "Data-analyse en SEO-monitoring uitbesteden",
+  "keyword-research": "Zoekwoordonderzoek laten uitvoeren",
+};
+
+const dienstenCtaTexts: Record<string, string> = {
+  "lokale-seo": "Bekijk alle lokale SEO diensten",
+  "technische-seo": "Bekijk alle technische diensten",
+  "content-optimalisatie": "Bekijk alle content diensten",
+  linkbuilding: "Bekijk alle linkbuilding diensten",
+};
 
 // ── Related Diensten (for Kennisbank & Tool pages) ─────────────────
 
@@ -169,6 +232,8 @@ export function RelatedDienstenSection({ toolCategory, pillarSlug, max = 3 }: Re
   const { ref, isVisible } = useScrollReveal();
 
   let serviceSlugs: string[] = [];
+  const contextKey = pillarSlug || (toolCategory ? Object.entries(toolCategoryToKennisbank).find(([k]) => k === toolCategory)?.[1]?.[0] : undefined);
+
   if (toolCategory && toolCategoryToServices[toolCategory]) {
     serviceSlugs = toolCategoryToServices[toolCategory]!;
   } else if (pillarSlug) {
@@ -189,6 +254,9 @@ export function RelatedDienstenSection({ toolCategory, pillarSlug, max = 3 }: Re
   const relevantServices = services.filter(s => serviceSlugs.includes(s.slug)).slice(0, max);
   if (relevantServices.length === 0) return null;
 
+  const sectionTitle = (contextKey && dienstenSectionTitles[contextKey]) || "Liever laten doen? Bekijk onze diensten";
+  const ctaText = (contextKey && dienstenCtaTexts[contextKey]) || "Alle diensten bekijken";
+
   return (
     <section ref={ref} className="py-12 lg:py-16">
       <div className="container px-4 sm:px-6">
@@ -204,7 +272,7 @@ export function RelatedDienstenSection({ toolCategory, pillarSlug, max = 3 }: Re
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-5 h-5 text-kk-orange" />
               <h3 className="text-base font-semibold text-foreground">
-                Liever laten doen? Bekijk onze diensten
+                {sectionTitle}
               </h3>
             </div>
             <div className="space-y-3">
@@ -213,7 +281,7 @@ export function RelatedDienstenSection({ toolCategory, pillarSlug, max = 3 }: Re
                   key={service.slug}
                   to={`/${service.slug}`}
                   label={service.name}
-                  sublabel="Vanaf €99/mnd"
+                  sublabel={`${service.name} vanaf €99/mnd`}
                   index={i}
                   isVisible={isVisible}
                 />
@@ -223,7 +291,7 @@ export function RelatedDienstenSection({ toolCategory, pillarSlug, max = 3 }: Re
               to="/diensten"
               className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-kk-orange hover:gap-3 transition-all"
             >
-              Alle diensten bekijken
+              {ctaText}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

@@ -5,6 +5,20 @@ import { pillars, KennisbankArticle } from "@/data/kennisbank";
 
 type LinkContext = "lokale-seo" | "technische-seo" | "content" | "general";
 
+const contextTitles: Record<LinkContext, string> = {
+  "lokale-seo": "Verdiep je in lokale SEO",
+  "technische-seo": "Leer meer over technische SEO",
+  content: "Verbeter je content met deze gidsen",
+  general: "Meer leren over SEO?",
+};
+
+const contextCtas: Record<LinkContext, string> = {
+  "lokale-seo": "Bekijk alle lokale SEO artikelen",
+  "technische-seo": "Bekijk alle technische SEO artikelen",
+  content: "Bekijk alle content optimalisatie artikelen",
+  general: "Ontdek de volledige kennisbank",
+};
+
 interface KennisbankLinksProps {
   context: LinkContext;
   maxLinks?: number;
@@ -69,7 +83,7 @@ export function KennisbankLinks({ context, maxLinks = 3, title }: KennisbankLink
             <div className="flex items-center gap-2 mb-4">
               <BookOpen className="w-5 h-5 text-kk-orange" />
               <h3 className="text-base font-semibold text-foreground">
-                {title || "Meer leren over SEO?"}
+                {title || contextTitles[context]}
               </h3>
             </div>
 
@@ -102,7 +116,7 @@ export function KennisbankLinks({ context, maxLinks = 3, title }: KennisbankLink
               to="/kennisbank"
               className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-kk-orange hover:gap-3 transition-all"
             >
-              Bekijk alle kennisbank artikelen
+              {contextCtas[context]}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
