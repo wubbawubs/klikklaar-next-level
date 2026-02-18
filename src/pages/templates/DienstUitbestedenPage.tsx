@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { ServiceVariantData, serviceVariantsUitbesteden } from "@/data/service-variants";
 import { SITE_URL } from "@/lib/site-config";
+import { EvidenceBlock, getServiceEvidenceCase } from "@/components/EvidenceBlock";
 
 interface Props {
   data: ServiceVariantData;
@@ -415,6 +416,12 @@ export function DienstUitbestedenPage({ data }: Props) {
         <BenefitsSection data={data} />
         <ProcessSection data={data} />
         <SlaSection data={data} />
+        <EvidenceBlock
+          contextLabel={data.serviceName}
+          heading={`Resultaten met ${data.serviceName.toLowerCase()} uitbesteden`}
+          subtext={`Dit bereiken klanten die hun ${data.serviceName.toLowerCase()} aan ons uitbesteden.`}
+          caseStudy={getServiceEvidenceCase(data.slug)}
+        />
         <GuaranteesSection data={data} />
         <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />

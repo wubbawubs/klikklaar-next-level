@@ -20,6 +20,7 @@ import {
 import { ServiceVariantData } from "@/data/service-variants";
 import { serviceVariantsScan } from "@/data/service-variants-p2";
 import { SITE_URL } from "@/lib/site-config";
+import { EvidenceBlock, getServiceEvidenceCase } from "@/components/EvidenceBlock";
 
 interface Props {
   data: ServiceVariantData;
@@ -407,6 +408,12 @@ export function DienstScanPage({ data }: Props) {
         <ProcessSection data={data} />
         <ExampleReportSection data={data} />
         <ScanVsOthersSection data={data} />
+        <EvidenceBlock
+          contextLabel={data.serviceName}
+          heading={`Resultaten na de ${data.serviceName.toLowerCase()} scan`}
+          subtext={`Dit bereiken klanten die onze scan-aanbevelingen uitvoeren.`}
+          caseStudy={getServiceEvidenceCase(data.slug)}
+        />
         <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />

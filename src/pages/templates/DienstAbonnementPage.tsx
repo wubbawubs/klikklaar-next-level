@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { ServiceVariantData, serviceVariantsAbonnement } from "@/data/service-variants";
 import { SITE_URL } from "@/lib/site-config";
+import { EvidenceBlock, getServiceEvidenceCase } from "@/components/EvidenceBlock";
 
 const pricingTiers = [
   {
@@ -415,7 +416,12 @@ export function DienstAbonnementPage({ data }: Props) {
         <BenefitsSection data={data} />
         <DeliverablesSection data={data} />
         <PricingSection data={data} />
-        
+        <EvidenceBlock
+          contextLabel={data.serviceName}
+          heading={`Resultaten met een ${data.serviceName.toLowerCase()} abonnement`}
+          subtext={`Dit bereiken klanten met een vast ${data.serviceName.toLowerCase()} abonnement.`}
+          caseStudy={getServiceEvidenceCase(data.slug)}
+        />
         <TestimonialSection slug={data.slug} />
         <FAQSection data={data} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
