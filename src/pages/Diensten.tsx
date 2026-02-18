@@ -6,6 +6,8 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "@/data/service-variants";
 import { serviceVariantsBureau, serviceVariantsScan } from "@/data/service-variants-p2";
+import { serviceVariantsUitbestedenP3, serviceVariantsAbonnementP3 } from "@/data/service-variants-p3";
+import { serviceVariantsBureauP4, serviceVariantsScanP4 } from "@/data/service-variants-p4";
 import { ArrowRight, Briefcase, RefreshCw, Building2, Search } from "lucide-react";
 
 const categories = [
@@ -14,26 +16,26 @@ const categories = [
     description: "Laat de SEO volledig uit handen nemen — zonder gedoe, vanaf €99/mnd.",
     icon: Briefcase,
     pillar: "/diensten/seo-uitbesteden",
-    items: serviceVariantsUitbesteden,
+    items: [...serviceVariantsUitbesteden, ...serviceVariantsUitbestedenP3],
   },
   {
     title: "SEO Abonnement",
     description: "Kies een vast maandelijks abonnement dat bij jouw bedrijf past.",
     icon: RefreshCw,
     pillar: "/diensten/seo-abonnement",
-    items: serviceVariantsAbonnement,
+    items: [...serviceVariantsAbonnement, ...serviceVariantsAbonnementP3],
   },
   {
     title: "SEO Bureau",
     description: "Bureaukwaliteit zonder bureaukosten — vergelijk en bespaar.",
     icon: Building2,
-    items: serviceVariantsBureau,
+    items: [...serviceVariantsBureau, ...serviceVariantsBureauP4],
   },
   {
     title: "SEO Scan",
     description: "Laat je website scannen op specifieke SEO-onderdelen.",
     icon: Search,
-    items: serviceVariantsScan,
+    items: [...serviceVariantsScan, ...serviceVariantsScanP4],
   },
 ];
 

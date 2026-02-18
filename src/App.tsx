@@ -46,6 +46,8 @@ import { services } from "./data/services";
 import { combos } from "./data/combos";
 import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "./data/service-variants";
 import { serviceVariantsBureau, serviceVariantsScan } from "./data/service-variants-p2";
+import { serviceVariantsUitbestedenP3, serviceVariantsAbonnementP3 } from "./data/service-variants-p3";
+import { serviceVariantsBureauP4, serviceVariantsScanP4 } from "./data/service-variants-p4";
 
 const queryClient = new QueryClient();
 
@@ -97,6 +99,36 @@ const App = () => (
             />
           ))}
           {serviceVariantsScan.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+          element={<DienstScanPage data={data} />}
+            />
+          ))}
+          {/* P3 routes */}
+          {serviceVariantsUitbestedenP3.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstUitbestedenPage data={data} />}
+            />
+          ))}
+          {serviceVariantsAbonnementP3.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstAbonnementPage data={data} />}
+            />
+          ))}
+          {/* P4 routes */}
+          {serviceVariantsBureauP4.map((data) => (
+            <Route
+              key={data.slug}
+              path={`/diensten/${data.slug}`}
+              element={<DienstBureauPage data={data} />}
+            />
+          ))}
+          {serviceVariantsScanP4.map((data) => (
             <Route
               key={data.slug}
               path={`/diensten/${data.slug}`}
