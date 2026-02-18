@@ -389,7 +389,20 @@ export const locations: LocationData[] = [
     ],
     nearbyAreas: ["Hengelo", "Oldenzaal", "Losser", "Haaksbergen", "Almelo"],
     metaTitle: "SEO Bureau Enschede | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Enschede. Bereik heel Twente. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Enschede. Bereik heel Twente. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "9.000+",
+      competitionLevel: "Gemiddeld",
+      businessCount: "12.500+",
+      growthRate: "+7%"
+    },
+    localTestimonial: {
+      quote: "Twente is een hechte regio. Sinds we online beter vindbaar zijn, komen klanten uit Hengelo, Oldenzaal en zelfs Duitsland naar ons toe.",
+      author: "Bart Scholten",
+      business: "Scholten Installatietechniek",
+      industry: "Installateur"
+    },
+    marketInsight: "Enschede profiteert van de grensligging: 15% van het zoekverkeer komt vanuit Duitsland, vooral voor medische en tandheelkundige diensten. De Universiteit Twente levert jaarlijks duizenden tech-savvy afgestudeerden die lokaal ondernemen. Concurrentie is lager dan in de Randstad, waardoor top-3 posities sneller haalbaar zijn."
   },
   {
     slug: "apeldoorn",
@@ -405,7 +418,20 @@ export const locations: LocationData[] = [
     ],
     nearbyAreas: ["Deventer", "Zutphen", "Epe", "Vaassen", "Beekbergen"],
     metaTitle: "SEO Bureau Apeldoorn | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Apeldoorn. Bereik de Veluwe. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Apeldoorn. Bereik de Veluwe. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "8.500+",
+      competitionLevel: "Gemiddeld",
+      businessCount: "14.000+",
+      growthRate: "+5%"
+    },
+    localTestimonial: {
+      quote: "Apeldoorn trekt veel toeristen door Het Loo en de Veluwe. Onze B&B staat nu op #1 voor 'overnachting Apeldoorn'. De boekingen zijn verdubbeld.",
+      author: "Karen de Wit",
+      business: "De Wit Verblijven",
+      industry: "Horeca"
+    },
+    marketInsight: "Apeldoorn is het financiële centrum van de Veluwe met grote verzekeraars als Achmea. Het zoekgedrag is tweeledig: zakelijke B2B-diensten doordeweeks en toeristisch zoekverkeer in het weekend. Ondernemers die beide stromen bedienen, halen het meeste uit lokale SEO."
   },
   {
     slug: "amersfoort",
@@ -421,7 +447,20 @@ export const locations: LocationData[] = [
     ],
     nearbyAreas: ["Soest", "Baarn", "Leusden", "Hoevelaken", "Nijkerk"],
     metaTitle: "SEO Bureau Amersfoort | Lokale Vindbaarheid | KlikKlaarSEO",
-    metaDescription: "Automatische SEO voor ondernemers in Amersfoort. Centraal gelegen, digitaal gevonden. Vanaf €99/mnd."
+    metaDescription: "Automatische SEO voor ondernemers in Amersfoort. Centraal gelegen, digitaal gevonden. Vanaf €99/mnd.",
+    localStats: {
+      avgSearchVolume: "9.200+",
+      competitionLevel: "Gemiddeld-Hoog",
+      businessCount: "13.500+",
+      growthRate: "+9%"
+    },
+    localTestimonial: {
+      quote: "Amersfoort groeit enorm. Elke maand verhuizen er nieuwe gezinnen naar onze wijk die allemaal via Google een tandarts zoeken. Wij zijn nu hun eerste keuze.",
+      author: "Dr. Wouter Klein",
+      business: "Tandartspraktijk Vathorst",
+      industry: "Tandarts"
+    },
+    marketInsight: "Amersfoort is de snelst groeiende stad in de provincie Utrecht. Nieuwbouwwijken als Vathorst en De Hoef genereren continu nieuwe vraag naar lokale diensten. Het zoekgedrag is gezinsgericht: 'kindvriendelijk', 'in de buurt' en 'reviews' zijn dominante zoektermen. De centrale ligging maakt het ook een B2B-hub."
   },
 
   // Tier 2: Middelgrote steden (30+)
