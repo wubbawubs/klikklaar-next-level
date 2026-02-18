@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { serviceVariantsUitbesteden, serviceVariantsAbonnement } from "@/data/service-variants";
+import { serviceVariantsBureau, serviceVariantsScan } from "@/data/service-variants-p2";
 import { ArrowRight } from "lucide-react";
 
 interface DienstLinksSectionProps {
-  variant: "uitbesteden" | "abonnement";
+  variant: "uitbesteden" | "abonnement" | "bureau" | "scan";
 }
+
+const variantConfig = {
+  uitbesteden: { items: serviceVariantsUitbesteden, title: "SEO uitbesteden per dienst", subtitle: "Bekijk per dienst hoe uitbesteden werkt en wat het kost", label: "Vergelijk & bespaar" },
+  abonnement: { items: serviceVariantsAbonnement, title: "SEO abonnementen per dienst", subtitle: "Bekijk per dienst welk abonnement bij je past", label: "Vanaf €99/mnd" },
+  bureau: { items: serviceVariantsBureau, title: "SEO bureau per dienst", subtitle: "Vergelijk bureau-opties per dienst met ons slimme alternatief", label: "Bureau-alternatief" },
+  scan: { items: serviceVariantsScan, title: "SEO scans per dienst", subtitle: "Laat je website scannen op specifieke SEO-onderdelen", label: "Direct inzicht" },
+};
 
 export function DienstLinksSection({ variant }: DienstLinksSectionProps) {
   const { ref, isVisible } = useScrollReveal();
-  const items = variant === "uitbesteden" ? serviceVariantsUitbesteden : serviceVariantsAbonnement;
-  const title = variant === "uitbesteden" ? "SEO uitbesteden per dienst" : "SEO abonnementen per dienst";
-  const subtitle = variant === "uitbesteden"
-    ? "Bekijk per dienst hoe uitbesteden werkt en wat het kost"
-    : "Bekijk per dienst welk abonnement bij je past";
+  const { items, title, subtitle, label } = variantConfig[variant];
 
   return (
     <section ref={ref} className="py-16 lg:py-24">
@@ -50,7 +54,7 @@ export function DienstLinksSection({ variant }: DienstLinksSectionProps) {
                     {item.serviceName}
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    {variant === "uitbesteden" ? "Vergelijk & bespaar" : "Vanaf €99/mnd"}
+                    {label}
                   </p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-kk-orange group-hover:translate-x-1 transition-all" />

@@ -453,6 +453,8 @@ const SeoUitbesteden = () => {
         <ProcessSection />
         <GuaranteesSection />
         <DienstLinksSection variant="uitbesteden" />
+        <DienstLinksSection variant="bureau" />
+        <DienstLinksSection variant="scan" />
         <FAQSection />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <CTASection />

@@ -122,6 +122,70 @@
     <priority>0.85</priority>
   </url>
   
+  <!-- Dienst-variant Pages (P2) - Bureau -->
+  <url>
+    <loc>https://klikklaar.nl/diensten/automatische-seo-bureau</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/lokale-seo-bureau</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/technische-seo-bureau</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-audit-bureau</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-strategie-bureau</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Dienst-variant Pages (P2) - Scan -->
+  <url>
+    <loc>https://klikklaar.nl/diensten/automatische-seo-scan</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/lokale-seo-scan</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/technische-seo-scan</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-audit-scan</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://klikklaar.nl/diensten/seo-strategie-scan</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
   <!-- Hub Pages (for improved crawl depth) -->
   <url>
     <loc>https://klikklaar.nl/branches</loc>

@@ -493,6 +493,8 @@ const SeoAbonnement = () => {
         <BenefitsSection />
         <PricingSection />
         <DienstLinksSection variant="abonnement" />
+        <DienstLinksSection variant="bureau" />
+        <DienstLinksSection variant="scan" />
         <FAQSection />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <CTASection />
