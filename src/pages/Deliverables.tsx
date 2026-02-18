@@ -8,6 +8,7 @@ import { DeliverablesDemoIllustration } from "@/components/illustrations/Deliver
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { 
   Check, 
   FileText, 
@@ -385,7 +386,7 @@ const Deliverables = () => {
       <SEOHead 
         title="Dit Krijg Je | Wekelijkse SEO Verbeteringen | KlikKlaarSEO"
         description="Automatische content optimalisatie, technische fixes, AI-vindbaarheid en heldere rapporten. Alles wat je nodig hebt voor meer klanten."
-        canonical="https://klikklaar.nl/wat-je-krijgt"
+        canonical={`${SITE_URL}/wat-je-krijgt`}
       />
       <StructuredData 
         schema={{

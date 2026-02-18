@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
@@ -472,9 +473,9 @@ const SeoAbonnement = () => {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Diensten", url: "https://klikklaar.nl/diensten/seo-abonnement" },
-      { name: "SEO Abonnement", url: "https://klikklaar.nl/diensten/seo-abonnement" },
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Diensten", url: `${SITE_URL}/diensten/seo-abonnement` },
+      { name: "SEO Abonnement", url: `${SITE_URL}/diensten/seo-abonnement` },
     ],
   };
 
@@ -483,7 +484,7 @@ const SeoAbonnement = () => {
       <SEOHead
         title="SEO Abonnement | Automatische SEO vanaf €99/mnd | KlikKlaarSEO"
         description="SEO abonnement voor Google & AI-vindbaarheid. Automatische optimalisatie, wekelijkse rapportages, altijd opzegbaar. Vanaf €99/mnd. 100+ ondernemers gingen je voor."
-        canonical="https://klikklaar.nl/diensten/seo-abonnement"
+        canonical={`${SITE_URL}/diensten/seo-abonnement`}
       />
       <StructuredData schema={[faqSchema, serviceSchema, breadcrumbSchema]} />
       <Header />

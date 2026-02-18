@@ -8,6 +8,7 @@ import { ProcessFlowIllustration } from "@/components/illustrations/ProcessFlowI
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { 
   MessageCircle, 
   Search, 
@@ -367,14 +368,14 @@ const HowItWorks = () => {
       <SEOHead 
         title="Hoe Het Werkt | 3 Stappen naar Meer Klanten | KlikKlaarSEO"
         description="Van kennismaking tot resultaat in 3 simpele stappen. Geen gedoe, geen technische kennis nodig. Wij doen het werk, jij krijgt klanten."
-        canonical="https://klikklaar.nl/hoe-het-werkt"
+        canonical={`${SITE_URL}/hoe-het-werkt`}
       />
       <StructuredData 
         schema={{
           type: "WebPage",
           name: "Hoe Het Werkt - KlikKlaarSEO",
           description: "Ontdek hoe KlikKlaarSEO werkt: van kennismakingsgesprek tot automatische groei.",
-          url: "https://klikklaar.nl/hoe-het-werkt",
+          url: `${SITE_URL}/hoe-het-werkt`,
         }}
       />
       <Header />

@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
@@ -432,9 +433,9 @@ const SeoUitbesteden = () => {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Diensten", url: "https://klikklaar.nl/diensten/seo-uitbesteden" },
-      { name: "SEO Uitbesteden", url: "https://klikklaar.nl/diensten/seo-uitbesteden" },
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Diensten", url: `${SITE_URL}/diensten/seo-uitbesteden` },
+      { name: "SEO Uitbesteden", url: `${SITE_URL}/diensten/seo-uitbesteden` },
     ],
   };
 
@@ -443,7 +444,7 @@ const SeoUitbesteden = () => {
       <SEOHead
         title="SEO Uitbesteden? | Bureau vs Freelancer vs Automatisch | KlikKlaarSEO"
         description="SEO uitbesteden aan een bureau, freelancer of automatisch? Vergelijk kosten, resultaten en contracten. Automatische SEO vanaf €99/mnd bij KlikKlaarSEO."
-        canonical="https://klikklaar.nl/diensten/seo-uitbesteden"
+        canonical={`${SITE_URL}/diensten/seo-uitbesteden`}
       />
       <StructuredData schema={[faqSchema, serviceSchema, breadcrumbSchema]} />
       <Header />

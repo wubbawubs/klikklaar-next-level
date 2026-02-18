@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData, klikklaarOrganizationSchema } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
@@ -118,8 +119,8 @@ export default function Platforms() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Platforms", url: "https://klikklaar.nl/platforms" },
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Platforms", url: `${SITE_URL}/platforms` },
     ],
   };
 
@@ -128,7 +129,7 @@ export default function Platforms() {
       <SEOHead
         title="SEO per Platform | WordPress, Shopify, Wix & Meer | KlikKlaarSEO"
         description={`SEO voor ${platforms.length} platforms: WordPress, Shopify, Wix, Webflow en meer. Wij optimaliseren elk platform voor Google. Vanaf €99/mnd.`}
-        canonical="https://klikklaar.nl/platforms"
+        canonical={`${SITE_URL}/platforms`}
       />
       <StructuredData schema={breadcrumbSchema} />
       <StructuredData schema={klikklaarOrganizationSchema} />

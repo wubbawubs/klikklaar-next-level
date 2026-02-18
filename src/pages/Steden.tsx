@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData, klikklaarOrganizationSchema } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight, MapPin, Building2, Users } from "lucide-react";
@@ -200,8 +201,8 @@ export default function Steden() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Steden", url: "https://klikklaar.nl/steden" }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Steden", url: `${SITE_URL}/steden` }
     ]
   };
 
@@ -210,7 +211,7 @@ export default function Steden() {
       <SEOHead 
         title="Lokale SEO per Stad | 80+ Nederlandse Steden | €99/mnd"
         description={`SEO voor ondernemers in ${locations.length}+ steden. Van Amsterdam tot Maastricht. Gevonden worden in jouw regio. Geen gedoe, altijd opzegbaar.`}
-        canonical="https://klikklaar.nl/steden"
+        canonical={`${SITE_URL}/steden`}
         ogType="website"
       />
       <StructuredData schema={breadcrumbSchema} />

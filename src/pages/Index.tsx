@@ -13,6 +13,7 @@ import { FAQSection } from "@/components/home/FAQSection";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData, klikklaarBusinessSchema } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 
 const Index = () => {
   return (
@@ -20,7 +21,7 @@ const Index = () => {
       <SEOHead 
         title="Meer Klanten via Google & AI | Automatische SEO | €99/mnd | KlikKlaarSEO"
         description="Ondernemer? Word gevonden in Google én AI-zoekmachines. Automatische SEO zonder gedoe. Geen contract, altijd opzegbaar. 100+ tevreden ondernemers."
-        canonical="https://klikklaar.nl"
+        canonical={SITE_URL}
       />
       <StructuredData schema={klikklaarBusinessSchema} />
       <Header />

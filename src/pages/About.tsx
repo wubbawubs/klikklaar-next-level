@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { 
   Phone,
   Heart,
@@ -390,14 +391,14 @@ const About = () => {
       <SEOHead
         title="Over KlikKlaarSEO | SEO voor Ondernemers, door Ondernemers"
         description="Wij snappen ondernemers. Daarom maken we SEO toegankelijk, begrijpelijk en betaalbaar. Geen gedoe, gewoon resultaat. Ontdek ons verhaal."
-        canonical="https://klikklaar.nl/over-ons"
+        canonical={`${SITE_URL}/over-ons`}
       />
       <StructuredData
         schema={{
           type: "LocalBusiness",
           name: "KlikKlaarSEO",
           description: "Automatische SEO en website optimalisatie voor ondernemers. Meer klanten, zonder gedoe.",
-          url: "https://klikklaar.nl/over-ons",
+          url: `${SITE_URL}/over-ons`,
           priceRange: "€€",
           aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
         }}

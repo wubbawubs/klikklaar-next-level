@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData, klikklaarOrganizationSchema } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
@@ -120,8 +121,8 @@ export default function Tools() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "SEO Tools", url: "https://klikklaar.nl/tools" },
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "SEO Tools", url: `${SITE_URL}/tools` },
     ],
   };
 
@@ -130,7 +131,7 @@ export default function Tools() {
       <SEOHead
         title={`${tools.length} Gratis SEO Tools | Check, Analyseer & Optimaliseer | KlikKlaarSEO`}
         description={`${tools.length} gratis SEO tools: van SEO checker tot schema validator. Analyseer je website zonder account. Direct bruikbaar.`}
-        canonical="https://klikklaar.nl/tools"
+        canonical={`${SITE_URL}/tools`}
       />
       <StructuredData schema={breadcrumbSchema} />
       <StructuredData schema={klikklaarOrganizationSchema} />

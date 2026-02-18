@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
@@ -212,8 +213,8 @@ export default function Kennisbank() {
   const breadcrumbSchema = {
     type: "BreadcrumbList" as const,
     items: [
-      { name: "Home", url: "https://klikklaar.nl/" },
-      { name: "Kennisbank", url: "https://klikklaar.nl/kennisbank" }
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Kennisbank", url: `${SITE_URL}/kennisbank` }
     ]
   };
 
@@ -222,7 +223,7 @@ export default function Kennisbank() {
       <SEOHead 
         title="Gratis SEO Kennis | Artikelen & Tips in Normaal Nederlands"
         description="Leer SEO in begrijpelijke taal. Gratis artikelen over lokale SEO, technische optimalisatie en content. Tips die je direct kunt toepassen."
-        canonical="https://klikklaar.nl/kennisbank"
+        canonical={`${SITE_URL}/kennisbank`}
       />
       <StructuredData schema={breadcrumbSchema} />
       <Header />

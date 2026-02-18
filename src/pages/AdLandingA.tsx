@@ -5,6 +5,7 @@ import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 
 
 
@@ -119,7 +120,7 @@ const AdLandingA = () => {
       <SEOHead 
         title="AI SEO voor Ondernemers | KlikKlaarSEO"
         description="Automatische website optimalisatie voor ondernemers. Meer bezoekers, meer klanten - zonder gedoe. Vanaf €99/maand, altijd opzegbaar."
-        canonical="https://klikklaar.nl/ad"
+        canonical={`${SITE_URL}/ad`}
       />
       <StructuredData 
         schema={[
@@ -127,7 +128,7 @@ const AdLandingA = () => {
             type: "LocalBusiness",
             name: "KlikKlaarSEO",
             description: "Automatische SEO en website optimalisatie voor ondernemers.",
-            url: "https://klikklaar.nl",
+            url: SITE_URL,
             priceRange: "€€",
             aggregateRating: { ratingValue: 4.2, reviewCount: 150 },
           },

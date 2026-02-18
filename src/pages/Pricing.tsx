@@ -8,6 +8,7 @@ import { PricingValueIllustration } from "@/components/illustrations/PricingValu
 import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site-config";
 import { 
   Check, 
   Phone, 
@@ -454,7 +455,7 @@ const Pricing = () => {
       <SEOHead 
         title="SEO Prijzen | Basis €99 · Pro €149 · Pro+ €249 | KlikKlaarSEO"
         description="Transparante SEO & AI-vindbaarheid prijzen zonder verborgen kosten. Maandelijks opzegbaar. Investeer in groei, niet in gedoe. 100+ ondernemers gingen je voor."
-        canonical="https://klikklaar.nl/prijzen"
+        canonical={`${SITE_URL}/prijzen`}
       />
       <StructuredData 
         schema={{
