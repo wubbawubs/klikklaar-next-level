@@ -14,7 +14,7 @@ Allow: /
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap Index
 Sitemap: https://www.klikklaarseo.nl/sitemap.xml
 
 # Disallow admin and private paths

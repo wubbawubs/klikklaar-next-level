@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Platform landing pages (15 URLs) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url><loc>https://www.klikklaarseo.nl/seo-wordpress</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-shopify</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-woocommerce</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-wix</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-webflow</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-joomla</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-drupal</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-magento</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-squarespace</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-prestashop</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-lightspeed</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-bigcommerce</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-nextjs</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-laravel</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+
+</urlset>
