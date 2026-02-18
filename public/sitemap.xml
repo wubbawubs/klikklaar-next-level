@@ -1,102 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Governance-filtered sitemap: only pages with quality score ≥ 80/100 -->
+<!-- Total URLs: 591 | Generated: 2026-02-18 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
-  <url>
-    <loc>https://www.klikklaarseo.nl/diensten</loc>
-    <lastmod>2026-02-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/</loc>
-    <lastmod>2026-02-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/wat-je-krijgt</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/hoe-het-werkt</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/prijzen</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/over-ons</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/voorbeelden</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/contact</loc>
-    <lastmod>2026-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Diensten Pillar Pages -->
-  <url>
-    <loc>https://www.klikklaarseo.nl/diensten/seo-abonnement</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.klikklaarseo.nl/diensten/seo-uitbesteden</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Dienst-variant Pages (P1) - Uitbesteden -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- CORE PAGES (8) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten</loc><lastmod>2026-02-14</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/wat-je-krijgt</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/hoe-het-werkt</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/prijzen</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/over-ons</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/voorbeelden</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/contact</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DIENSTEN PILLAR PAGES (2) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-abonnement</loc><lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-uitbesteden</loc><lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DIENST-VARIANTEN P1 — Uitbesteden (5) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/diensten/automatische-seo-uitbesteden</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/lokale-seo-uitbesteden</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/technische-seo-uitbesteden</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-audit-uitbesteden</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-strategie-uitbesteden</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  
-  <!-- Dienst-variant Pages (P1) - Abonnement -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DIENST-VARIANTEN P1 — Abonnement (5) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/diensten/automatische-seo-abonnement</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/lokale-seo-abonnement</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/technische-seo-abonnement</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-audit-abonnement</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-strategie-abonnement</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  
-  <!-- Dienst-variant Pages (P2) - Bureau -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DIENST-VARIANTEN P2 — Bureau (5) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/diensten/automatische-seo-bureau</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/lokale-seo-bureau</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/technische-seo-bureau</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-audit-bureau</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-strategie-bureau</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  
-  <!-- Dienst-variant Pages (P2) - Scan -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DIENST-VARIANTEN P2 — Scan (5) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/diensten/automatische-seo-scan</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/lokale-seo-scan</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/technische-seo-scan</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-audit-scan</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/diensten/seo-strategie-scan</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  
-  <!-- Hub Pages -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- P3 DIENST-VARIANTEN — Uitbesteden (10) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-optimalisatie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-webshops-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-dienstverleners-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- P3 DIENST-VARIANTEN — Abonnement (10) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-optimalisatie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-webshops-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-dienstverleners-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- P3 DIENST-VARIANTEN — Bureau (10) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-webshops-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-dienstverleners-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- P3 DIENST-VARIANTEN — Scan (10) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-webshops-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-dienstverleners-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- HUB PAGES (5) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/branches</loc><lastmod>2026-01-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.klikklaarseo.nl/steden</loc><lastmod>2026-01-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  
-  <!-- Service Landing Pages -->
+  <url><loc>https://www.klikklaarseo.nl/platforms</loc><lastmod>2026-02-05</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools</loc><lastmod>2026-02-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/kennisbank</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE LANDING PAGES (8) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/lokale-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/google-mijn-bedrijf-optimalisatie</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/technische-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -105,8 +133,10 @@
   <url><loc>https://www.klikklaarseo.nl/seo-content-optimalisatie</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-voor-mkb</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.klikklaarseo.nl/automatische-seo</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  
-  <!-- Industry Landing Pages (P1) -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- INDUSTRY LANDING PAGES — P1 (30) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/seo-interieur-design</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-interieur-advies</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -136,217 +166,10 @@
   <url><loc>https://www.klikklaarseo.nl/seo-notarissen</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-apothekers</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-rijscholen</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  
-  <!-- Location Landing Pages - Tier 1 -->
-  <url><loc>https://www.klikklaarseo.nl/seo-amsterdam</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-rotterdam</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-den-haag</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-utrecht</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-eindhoven</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tilburg</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-groningen</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-almere</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-breda</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-nijmegen</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-arnhem</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-haarlem</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-enschede</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-apeldoorn</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-amersfoort</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  
-  <!-- Location Landing Pages - Tier 2 (noindex tier 3 removed) -->
-  <url><loc>https://www.klikklaarseo.nl/seo-zaandam</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-s-hertogenbosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-zoetermeer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-ede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-alphen-aan-den-rijn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-alkmaar</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-hilversum</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-deventer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-amstelveen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-delft</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-venlo</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-leeuwarden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-hengelo</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-roosendaal</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-oss</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-gouda</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- Tier 1 City Combos -->
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-coaches-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-accountants-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-loodgieters-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-aannemers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-coaches-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-hoveniers-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-breda</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-breda</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-breda</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-breda</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-aannemers-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-haarlem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-haarlem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-haarlem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-haarlem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-haarlem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <!-- Tier 2 City Combos -->
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-coaches-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-hotels-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-accountants-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-coaches-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-rijscholen-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-enschede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-enschede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-enschede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-enschede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-enschede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-enschede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-apeldoorn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-apeldoorn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-apeldoorn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-apeldoorn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-hoveniers-apeldoorn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-amersfoort</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-amersfoort</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-amersfoort</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-amersfoort</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-amersfoort</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-coaches-amersfoort</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-coaches-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-s-hertogenbosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-s-hertogenbosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-s-hertogenbosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-s-hertogenbosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-accountants-s-hertogenbosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-zaanstad</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-zaanstad</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-loodgieters-zaanstad</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-zaanstad</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-haarlemmermeer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-haarlemmermeer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-haarlemmermeer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-kappers-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/seo-loodgieters-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <!-- P3 Dienst-varianten -->
-  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-optimalisatie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-webshops-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-dienstverleners-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-uitbesteden</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-optimalisatie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-webshops-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-voor-dienstverleners-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-abonnement</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-webshops-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-dienstverleners-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-bureau</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/content-optimalisatie-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-teksten-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/linkbuilding-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/google-bedrijfsprofiel-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-monitoring-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-rapportages-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-webshops-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-dienstverleners-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/seo-migratie-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/diensten/conversie-optimalisatie-scan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-
-  <!-- Industry P2/P3 -->
+  <!-- ══════════════════════════════════════════ -->
+  <!-- INDUSTRY LANDING PAGES — P2/P3 (69) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/seo-huisartsen</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-psychologen</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-logopedisten</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -416,8 +239,200 @@
   <url><loc>https://www.klikklaarseo.nl/seo-kinderopvang</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-rijscholen</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- Platform Hub + Pages -->
-  <url><loc>https://www.klikklaarseo.nl/platforms</loc><lastmod>2026-02-05</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LOCATION PAGES — Tier 1 (12 van 15, 3 excluded: enschede, apeldoorn, amersfoort) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/seo-amsterdam</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-rotterdam</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-den-haag</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-utrecht</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-eindhoven</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tilburg</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-groningen</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-almere</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-breda</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-nijmegen</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-arnhem</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-haarlem</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LOCATION PAGES — Tier 2 (27) -->
+  <!-- ══════════════════════════════════════════ -->
+  <url><loc>https://www.klikklaarseo.nl/seo-zaandam</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-den-bosch</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-zoetermeer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-ede</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-alphen-aan-den-rijn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-alkmaar</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-hilversum</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-deventer</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-amstelveen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-delft</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-venlo</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-leeuwarden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-heerlen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-oss</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-roosendaal</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-gouda</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-purmerend</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-hoorn</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-lelystad</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-sittard</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-veenendaal</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-helmond</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-vlaardingen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- COMBO PAGES — Governance score ≥ 80 (137) -->
+  <!-- ══════════════════════════════════════════ -->
+  <!-- T1 cities -->
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-accountants-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-accountants-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-accountants-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-accountants-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-accountants-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-utrecht</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-den-haag</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-elektriciens-eindhoven</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-aannemers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-aannemers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-autobedrijven-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-autobedrijven-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-dierenartsen-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-dierenartsen-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-rijscholen-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-rijscholen-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-bakkers-amsterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-bakkers-rotterdam</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- T1 extra cities -->
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-breda</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-tilburg</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-groningen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-haarlem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-arnhem</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-nijmegen</loc><lastmod>2026-01-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- T2 city combos -->
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-leiden</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-restaurants-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-advocaten-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-hotels-maastricht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-accountants-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-zwolle</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-rijscholen-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-almere</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-coaches-nijmegen</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-haarlem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-haarlem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-haarlem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-schoonheidssalons-haarlem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fotografen-haarlem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-personal-trainers-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-fysiotherapeuten-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-interieur-design-arnhem</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-kappers-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-tandartsen-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/seo-makelaars-dordrecht</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PLATFORM PAGES (15) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/seo-wordpress</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-shopify</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-woocommerce</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
@@ -433,28 +448,159 @@
   <url><loc>https://www.klikklaarseo.nl/seo-nextjs</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/seo-laravel</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
 
-  <!-- Tools Hub + Key Tools (only indexable tools with unique content) -->
-  <url><loc>https://www.klikklaarseo.nl/tools</loc><lastmod>2026-02-08</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TOOLS — All 145 index-ready (score ≥ 80) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/tools/seo-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/website-analyse</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/seo-score-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/serp-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/seo-audit-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/mobile-friendly-test</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-benchmark</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-rapport-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/indexatie-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/robots-txt-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/meta-tag-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/heading-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/canonical-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/robots-txt-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/sitemap-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/pagespeed-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/schema-validator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/alt-tekst-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/tools/redirect-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/indexatie-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.klikklaarseo.nl/tools/seo-benchmark</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/hreflang-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/sitemap-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/ssl-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/http-header-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/keyword-density-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/leesbaarheid-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/woordenteller</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/plagiaatchecker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/meta-description-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/title-tag-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/content-gap-analyse</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/alt-tekst-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/backlink-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/broken-link-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/domain-authority-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/anchor-text-analyse</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/link-intersect-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/toxic-link-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/interne-link-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/google-bedrijfsprofiel-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lokale-ranking-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/nap-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/review-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lokale-concurrentie-analyse</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/citation-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lokale-zoekwoord-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/ranking-tracker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/uptime-monitor</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-verandering-tracker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/search-console-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/google-update-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/penalty-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/crawl-budget-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/pagespeed-test</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/core-web-vitals-test</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/afbeelding-optimizer</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/css-minifier</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/javascript-minifier</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/gzip-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/render-blocking-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/schema-validator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/rich-snippet-preview</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/faq-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/local-business-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/product-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/breadcrumb-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/json-ld-validator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/zoekwoord-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/long-tail-keyword-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/zoekvolume-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/zoekintentie-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/keyword-groepering-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/vraag-zoekwoord-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seizoens-zoekwoord-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/concurrentie-analyse-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/concurrentie-keyword-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/concurrentie-backlink-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/concurrentie-content-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/marktaandeel-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/serp-vergelijking-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/technische-vergelijking-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-grader</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/404-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/duplicate-content-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-spider-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/pagina-autoriteit-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-health-check</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/url-structuur-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/wachtwoord-pagina-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/open-graph-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/twitter-card-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/amp-validator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/structured-data-tester</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/link-juice-calculator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/log-file-analyzer</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/dns-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/mixed-content-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/heading-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/content-score-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/seo-schrijfassistent</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/slug-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/internal-link-suggestie</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/featured-snippet-optimizer</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/faq-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/content-brief-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/link-building-kansen</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/gastblog-finder</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/resource-pagina-finder</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/mention-finder</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/infographic-submitter</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/link-reclamation-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/broken-link-finder</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/disavow-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lokale-seo-audit</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/google-maps-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/review-link-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/opening-uren-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lokale-schema-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/bedrijvengids-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/qr-code-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lokale-content-suggestie</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/backlink-monitor</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/keyword-positie-alert</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/site-wijziging-detector</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/concurrentie-monitor</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/content-veroudering-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/indexatie-monitor</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/ssl-verloop-monitor</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lighthouse-tester</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/ttfb-tester</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/waterfall-analyzer</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/cdn-tester</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/font-optimizer</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/third-party-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/caching-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/article-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/event-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/review-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/video-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/howto-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/recipe-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/software-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/organization-schema-generator</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/related-keyword-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/keyword-moeilijkheid-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/zoekwoord-combinatie-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/lsi-keyword-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/zoekwoord-positie-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/people-also-ask-tool</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/autocomplete-scraper</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/zoektrend-analyzer</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.klikklaarseo.nl/tools/pagespeed-checker</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
 
-  <!-- Kennisbank -->
-  <url><loc>https://www.klikklaarseo.nl/kennisbank</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <!-- ══════════════════════════════════════════ -->
+  <!-- KENNISBANK — Pillars (12) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
@@ -467,7 +613,10 @@
   <url><loc>https://www.klikklaarseo.nl/kennisbank/conversie-optimalisatie</loc><lastmod>2026-02-06</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-checklists</loc><lastmod>2026-02-06</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo</loc><lastmod>2026-02-06</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <!-- Kennisbank articles - lokale-seo -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- KENNISBANK — Articles (54) -->
+  <!-- ══════════════════════════════════════════ -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo/google-mijn-bedrijf-optimaliseren</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo/lokale-zoekwoorden-vinden</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo/reviews-krijgen-en-beheren</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
@@ -475,7 +624,6 @@
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo/local-pack-optimalisatie</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo/lokale-linkbuilding</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/lokale-seo/service-area-pages</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - technische-seo -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo/core-web-vitals</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo/xml-sitemap-optimalisatie</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo/canonicalization</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
@@ -483,7 +631,6 @@
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo/crawlbudget-optimalisatie</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo/https-migratie</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/technische-seo/javascript-seo</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - content-optimalisatie -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie/zoekintentie-begrijpen</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie/seo-teksten-schrijven</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie/heading-structuur</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
@@ -491,37 +638,31 @@
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie/featured-snippets</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie/content-updaten</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/content-optimalisatie/evergreen-content</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - linkbuilding -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/linkbuilding/wat-is-linkbuilding</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/linkbuilding/gastbloggen</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/linkbuilding/broken-link-building</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/linkbuilding/digitale-pr-linkbuilding</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/linkbuilding/interne-linkbuilding</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - seo-strategie -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-strategie/seo-strategie-opzetten</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-strategie/zoekwoord-onderzoek</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-strategie/seo-concurrentie-analyse</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-strategie/seo-roadmap-maken</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-strategie/seo-budget-bepalen</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - seo-voor-beginners -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-voor-beginners/seo-uitleg-simpel</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-voor-beginners/waarom-seo-belangrijk</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-voor-beginners/google-search-console-instellen</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-voor-beginners/eerste-seo-stappen</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/seo-voor-beginners/seo-begrippen-woordenlijst</loc><lastmod>2026-02-04</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - e-commerce-seo -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/e-commerce-seo/webshop-seo-basis</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/e-commerce-seo/product-pagina-optimalisatie</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/e-commerce-seo/categorie-pagina-seo</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/e-commerce-seo/webshop-structured-data</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/e-commerce-seo/webshop-site-structuur</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - ai-en-seo -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/ai-en-seo/ai-zoeken-uitgelegd</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/ai-en-seo/ai-citeerbaarheid</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/ai-en-seo/google-sge-voorbereiden</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/ai-en-seo/chatgpt-seo-impact</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/ai-en-seo/ai-content-seo</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <!-- Kennisbank articles - branche-seo -->
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo/seo-voor-restaurants</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo/seo-voor-makelaars</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo/seo-voor-tandartsen</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
@@ -530,4 +671,5 @@
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo/seo-voor-zorg</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo/seo-voor-bouw</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.klikklaarseo.nl/kennisbank/branche-seo/seo-voor-schoonheid</loc><lastmod>2026-02-06</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+
 </urlset>
