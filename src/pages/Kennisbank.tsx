@@ -7,7 +7,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { ChevronRight, BookOpen, MapPin, Settings, FileText, Clock, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { pillars, KennisbankPillar } from "@/data/kennisbank";
+import { allPillars as pillars, KennisbankPillar } from "@/data/kennisbank";
 
 function KennisbankHero() {
   const [isVisible, setIsVisible] = useState(false);
