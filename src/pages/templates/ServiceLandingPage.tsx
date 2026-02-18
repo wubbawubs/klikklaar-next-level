@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
+import { RelatedToolsSection } from "@/components/CrossLinks";
 
 interface ServiceLandingPageProps {
   service: ServiceData;
@@ -395,6 +396,7 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
         <ServiceTestimonial />
         <ServiceFAQ faqs={service.faqs} serviceName={service.name} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
+        <RelatedToolsSection serviceSlug={service.slug} />
         <RelatedServices currentSlug={service.slug} />
         <CTASection />
       </main>
