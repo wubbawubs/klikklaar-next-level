@@ -1,3 +1,6 @@
+export type PillarSlug = "lokale-seo" | "technische-seo" | "content-optimalisatie" | "linkbuilding" | "keyword-research" | "analytics-en-data" | "seo-strategie" | "mobile-seo" | "internationale-seo" | "ai-en-seo" | "e-commerce-seo" | "video-en-visual-seo" | "seo-voor-starters" | "concurrentie-analyse";
+export type ServiceSlug = "lokale-seo" | "google-mijn-bedrijf-optimalisatie" | "technische-seo" | "ai-seo" | "geo-seo" | "seo-content-optimalisatie" | "seo-voor-mkb" | "automatische-seo";
+
 export interface ToolData {
   slug: string;
   name: string;
@@ -10,6 +13,15 @@ export interface ToolData {
   benefits: Array<{ title: string; description: string }>;
   howToUse: string[];
   faqs: Array<{ question: string; answer: string }>;
+  // Unique per-tool content (SEO quality gate)
+  uniqueIntro?: string;
+  whatThisToolChecks?: string[];
+  howToInterpret?: string[];
+  commonIssuesAndFixes?: string[];
+  uniqueFaqs?: Array<{ question: string; answer: string }>;
+  // Direct cross-link relations (prevents mapping drift)
+  relatedPillars?: PillarSlug[];
+  relatedServices?: ServiceSlug[];
 }
 
 export type ToolCategory =
@@ -32,6 +44,14 @@ interface ToolInput {
   short: string;
   what: string;
   steps: string[];
+  // Optional unique content
+  uniqueIntro?: string;
+  whatThisToolChecks?: string[];
+  howToInterpret?: string[];
+  commonIssuesAndFixes?: string[];
+  uniqueFaqs?: Array<{ question: string; answer: string }>;
+  relatedPillars?: PillarSlug[];
+  relatedServices?: ServiceSlug[];
 }
 
 const categoryBenefits: Record<ToolCategory, (name: string) => Array<{ title: string; description: string }>> = {
@@ -150,7 +170,40 @@ const categoryFaqs: Record<ToolCategory, (name: string) => Array<{ question: str
   ],
 };
 
+// Default pillar/service mappings per category (fallback when not specified per-tool)
+const defaultRelatedPillars: Record<ToolCategory, PillarSlug[]> = {
+  analyse: ["technische-seo", "seo-strategie"],
+  technisch: ["technische-seo"],
+  content: ["content-optimalisatie"],
+  linkbuilding: ["linkbuilding"],
+  lokaal: ["lokale-seo"],
+  monitoring: ["analytics-en-data"],
+  snelheid: ["technische-seo", "mobile-seo"],
+  "structured-data": ["technische-seo"],
+  keyword: ["keyword-research", "content-optimalisatie"],
+  concurrentie: ["concurrentie-analyse", "seo-strategie"],
+};
+
+const defaultRelatedServices: Record<ToolCategory, ServiceSlug[]> = {
+  analyse: ["technische-seo", "automatische-seo"],
+  technisch: ["technische-seo"],
+  content: ["seo-content-optimalisatie"],
+  linkbuilding: ["automatische-seo"],
+  lokaal: ["lokale-seo", "google-mijn-bedrijf-optimalisatie"],
+  monitoring: ["automatische-seo"],
+  snelheid: ["technische-seo"],
+  "structured-data": ["technische-seo"],
+  keyword: ["seo-content-optimalisatie"],
+  concurrentie: ["seo-voor-mkb", "automatische-seo"],
+};
+
 function createTool(input: ToolInput): ToolData {
+  // Merge unique FAQs with 1 category FAQ (to reduce duplication)
+  const catFaqs = categoryFaqs[input.category](input.name);
+  const faqs = input.uniqueFaqs
+    ? [...input.uniqueFaqs, catFaqs[catFaqs.length - 1]] // only 1 shared FAQ
+    : catFaqs;
+
   return {
     slug: input.slug,
     name: input.name,
@@ -162,16 +215,60 @@ function createTool(input: ToolInput): ToolData {
     whatItDoes: input.what,
     benefits: categoryBenefits[input.category](input.name),
     howToUse: input.steps,
-    faqs: categoryFaqs[input.category](input.name),
+    faqs,
+    uniqueIntro: input.uniqueIntro,
+    whatThisToolChecks: input.whatThisToolChecks,
+    howToInterpret: input.howToInterpret,
+    commonIssuesAndFixes: input.commonIssuesAndFixes,
+    uniqueFaqs: input.uniqueFaqs,
+    relatedPillars: input.relatedPillars || defaultRelatedPillars[input.category],
+    relatedServices: input.relatedServices || defaultRelatedServices[input.category],
   };
 }
 
 const toolInputs: ToolInput[] = [
   // Analyse (10)
-  { slug: "seo-checker", name: "SEO Checker", icon: "Search", category: "analyse", short: "Analyseer je website op de belangrijkste SEO-factoren.", what: "De SEO Checker scant je website op meta tags, headings, content kwaliteit, interne links en meer. Je krijgt een duidelijk rapport met verbeterpunten.", steps: ["Vul je URL in", "De tool scant je pagina", "Bekijk je SEO-score en verbeterpunten", "Pas de suggesties toe"] },
-  { slug: "website-analyse", name: "Website Analyse Tool", icon: "BarChart", category: "analyse", short: "Complete analyse van je website prestaties.", what: "Analyseer je website op SEO, snelheid, mobiel-vriendelijkheid en meer. Krijg een compleet overzicht van je online prestaties.", steps: ["Voer je website URL in", "Wacht op de analyse", "Bekijk je scores per categorie", "Volg de aanbevelingen op"] },
-  { slug: "seo-score-checker", name: "SEO Score Checker", icon: "Award", category: "analyse", short: "Bereken je SEO-score van 0 tot 100.", what: "De SEO Score Checker geeft je website een score van 0 tot 100 op basis van technische SEO, content en autoriteit.", steps: ["Vul je URL in", "De tool berekent je score", "Bekijk je score per categorie", "Werk aan de laagste scores"] },
-  { slug: "serp-checker", name: "SERP Checker", icon: "Eye", category: "analyse", short: "Bekijk hoe je website verschijnt in Google.", what: "De SERP Checker toont hoe je pagina eruitziet in de zoekresultaten van Google, inclusief titel en beschrijving.", steps: ["Vul je URL in", "Bekijk je SERP-weergave", "Optimaliseer titel en beschrijving", "Check opnieuw"] },
+  { slug: "seo-checker", name: "SEO Checker", icon: "Search", category: "analyse", short: "Analyseer je website op de belangrijkste SEO-factoren.", what: "De SEO Checker scant je website op meta tags, headings, content kwaliteit, interne links en meer. Je krijgt een duidelijk rapport met verbeterpunten.",
+    steps: ["Vul je URL in", "De tool scant je pagina", "Bekijk je SEO-score en verbeterpunten", "Pas de suggesties toe"],
+    uniqueIntro: "De SEO Checker is je eerste stap naar betere vindbaarheid. In tegenstelling tot generieke website scanners focust deze tool specifiek op de factoren die Google gebruikt om je positie te bepalen. Van title tags tot heading structuur, van interne links tot afbeeldingen - je krijgt een concreet overzicht van wat je direct kunt verbeteren.",
+    whatThisToolChecks: ["Title tag aanwezigheid, lengte en zoekwoord-gebruik", "Meta description kwaliteit en CTR-potentieel", "Heading hiërarchie (H1 t/m H6)", "Afbeeldingen zonder alt-tekst", "Interne en externe links kwaliteit"],
+    howToInterpret: ["Groen = goed geoptimaliseerd, geen actie nodig", "Oranje = verbeterbaar, pak deze punten als tweede aan", "Rood = kritiek probleem, dit schaadt je rankings actief"],
+    commonIssuesAndFixes: ["Ontbrekende H1: voeg één duidelijke H1 toe per pagina", "Title tag te lang: houd het onder 60 tekens", "Geen meta description: schrijf een unieke beschrijving van 120-160 tekens", "Afbeeldingen zonder alt: voeg beschrijvende alt-teksten toe", "Geen interne links: link naar minimaal 2-3 relevante pagina's"],
+    uniqueFaqs: [
+      { question: "Wat is het verschil tussen de SEO Checker en een volledige SEO audit?", answer: "De SEO Checker geeft een snelle scan van één pagina op de belangrijkste on-page factoren. Een volledige SEO audit analyseert je hele website, inclusief technische aspecten, backlinks en concurrentie." },
+      { question: "Hoe vaak moet ik de SEO Checker gebruiken?", answer: "Check elke pagina na het publiceren of updaten. Voor je belangrijkste landingspagina's raden we een maandelijkse check aan." }
+    ],
+    relatedPillars: ["technische-seo", "content-optimalisatie"],
+    relatedServices: ["technische-seo", "seo-content-optimalisatie"]
+  },
+  { slug: "website-analyse", name: "Website Analyse Tool", icon: "BarChart", category: "analyse", short: "Complete analyse van je website prestaties.", what: "Analyseer je website op SEO, snelheid, mobiel-vriendelijkheid en meer. Krijg een compleet overzicht van je online prestaties.",
+    steps: ["Voer je website URL in", "Wacht op de analyse", "Bekijk je scores per categorie", "Volg de aanbevelingen op"],
+    uniqueIntro: "De Website Analyse Tool geeft je een helikopterview van je complete online prestaties. Anders dan tools die zich op één aspect richten, combineert deze tool SEO, snelheid, mobiele gebruiksvriendelijkheid en beveiliging in één overzichtelijk dashboard.",
+    whatThisToolChecks: ["Algehele SEO-gezondheid en on-page factoren", "Laadsnelheid en Core Web Vitals", "Mobiele responsiviteit en touch-vriendelijkheid", "SSL/HTTPS beveiliging", "Toegankelijkheid (accessibility) basis"],
+    commonIssuesAndFixes: ["Lage snelheidsscore: comprimeer afbeeldingen en activeer caching", "Niet mobiel-vriendelijk: gebruik responsive design of pas viewport aan", "Geen HTTPS: installeer een SSL-certificaat (Let's Encrypt is gratis)", "Slechte accessibility: voeg alt-teksten en ARIA labels toe"],
+    uniqueFaqs: [
+      { question: "Verschilt de Website Analyse van Google PageSpeed Insights?", answer: "Ja. PageSpeed focust alleen op snelheid. Deze tool combineert snelheid met SEO, beveiliging en mobiele analyse in één rapport." },
+      { question: "Kan ik de resultaten exporteren of delen?", answer: "Je kunt de URL van de resultaten delen met je webdeveloper of het rapport kopiëren voor intern gebruik." }
+    ]
+  },
+  { slug: "seo-score-checker", name: "SEO Score Checker", icon: "Award", category: "analyse", short: "Bereken je SEO-score van 0 tot 100.", what: "De SEO Score Checker geeft je website een score van 0 tot 100 op basis van technische SEO, content en autoriteit.",
+    steps: ["Vul je URL in", "De tool berekent je score", "Bekijk je score per categorie", "Werk aan de laagste scores"],
+    uniqueIntro: "Je SEO-score is een indicatie van hoe goed je website presteert in de ogen van Google. De SEO Score Checker weegt meer dan 40 factoren en geeft je een helder cijfer van 0 tot 100 zodat je weet waar je staat en waar je naartoe moet werken.",
+    whatThisToolChecks: ["Technische SEO factoren (indexeerbaarheid, snelheid, mobiel)", "On-page SEO (meta tags, headings, content lengte)", "Content kwaliteit (leesbaarheid, zoekwoord gebruik)", "Autoriteit signalen (backlink indicatie)", "Gebruikerservaring (CLS, interactiviteit)"],
+    uniqueFaqs: [
+      { question: "Wat is een goede SEO-score?", answer: "Boven de 80 is goed, boven de 90 is excellent. De meeste MKB-websites scoren tussen de 40 en 70, dus er is bijna altijd ruimte voor verbetering." },
+      { question: "Telt Google mijn SEO-score als rankingfactor?", answer: "Nee, een 'SEO-score' is geen officiële Google metric. Het is een samenvatting van factoren die wél meetellen. Focus op de individuele verbeterpunten." }
+    ]
+  },
+  { slug: "serp-checker", name: "SERP Checker", icon: "Eye", category: "analyse", short: "Bekijk hoe je website verschijnt in Google.", what: "De SERP Checker toont hoe je pagina eruitziet in de zoekresultaten van Google, inclusief titel en beschrijving.",
+    steps: ["Vul je URL in", "Bekijk je SERP-weergave", "Optimaliseer titel en beschrijving", "Check opnieuw"],
+    uniqueIntro: "Hoe je pagina eruitziet in Google bepaalt of iemand klikt. De SERP Checker toont een pixel-perfecte preview van je zoekresultaat, inclusief hoe Google je title tag en meta description afkapt. Zo kun je optimaliseren voor maximale click-through rate.",
+    whatThisToolChecks: ["Title tag weergave en afkaplengte in Google", "Meta description preview en pixel-breedte", "URL/breadcrumb weergave in de SERP", "Rich snippet elementen (sterren, FAQ, sitelinks)", "Desktop vs mobiele SERP weergave"],
+    uniqueFaqs: [
+      { question: "Waarom toont Google een andere beschrijving dan mijn meta description?", answer: "Google kiest soms een eigen snippet uit je pagina-content als dat beter past bij de zoekopdracht. Dit gebeurt bij 60-70% van de zoekopdrachten." },
+      { question: "Hoe lang mag mijn title tag zijn?", answer: "Maximaal 60 tekens (of 580 pixels breed). Langere titels worden afgekapt met '...' wat je CTR verlaagt." }
+    ]
+  },
   { slug: "seo-audit-tool", name: "SEO Audit Tool", icon: "ClipboardCheck", category: "analyse", short: "Uitgebreide SEO-audit van je website.", what: "Een diepgaande analyse van alle SEO-aspecten: technisch, content, links en gebruikerservaring.", steps: ["Voer je domein in", "De tool voert een complete audit uit", "Bekijk het rapport", "Prioriteer de verbeterpunten"] },
   { slug: "mobile-friendly-test", name: "Mobile Friendly Test", icon: "Smartphone", category: "analyse", short: "Test of je website goed werkt op mobiel.", what: "Controleer of je website voldoet aan Google's mobiele eisen. Mobiel-vriendelijkheid is een belangrijke rankingfactor.", steps: ["Vul je URL in", "De tool test je mobiele weergave", "Bekijk de resultaten", "Los eventuele problemen op"] },
   { slug: "seo-benchmark", name: "SEO Benchmark Tool", icon: "TrendingUp", category: "analyse", short: "Vergelijk je SEO-prestaties met je branche.", what: "Zie hoe je website scoort ten opzichte van vergelijkbare websites in jouw branche.", steps: ["Vul je URL en branche in", "De tool vergelijkt je scores", "Bekijk waar je achterblijft", "Verbeter je zwakke punten"] },
@@ -355,6 +452,11 @@ export const tools: ToolData[] = toolInputs.map(createTool);
 
 export function getToolBySlug(slug: string): ToolData | undefined {
   return tools.find(t => t.slug === slug);
+}
+
+/** Returns true if tool has enough unique content for Google indexation */
+export function isToolContentComplete(tool: ToolData): boolean {
+  return !!(tool.uniqueIntro && tool.whatThisToolChecks && tool.uniqueFaqs && tool.uniqueFaqs.length >= 2);
 }
 
 export const toolCategories: Record<ToolCategory, string> = {

@@ -8,7 +8,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 import { Phone, Check, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ToolData, tools, toolCategories } from "@/data/tools";
+import { ToolData, tools, toolCategories, isToolContentComplete } from "@/data/tools";
 import {
   Accordion,
   AccordionContent,
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/accordion";
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
-import { RelatedDienstenSection, getKennisbankContextForTool } from "@/components/CrossLinks";
+import { RelatedDienstenSection } from "@/components/CrossLinks";
 
 interface ToolLandingPageProps {
   tool: ToolData;
@@ -251,7 +251,81 @@ function RelatedTools({ tool }: { tool: ToolData }) {
   );
 }
 
+// ── Unique content sections (only shown when tool has unique data) ──
+
+function ToolUniqueIntro({ tool }: { tool: ToolData }) {
+  const { ref, isVisible } = useScrollReveal();
+  if (!tool.uniqueIntro) return null;
+
+  return (
+    <section ref={ref} className="py-12 lg:py-16">
+      <div className="container px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <p className="text-lg text-muted-foreground leading-relaxed">{tool.uniqueIntro}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ToolChecklist({ tool }: { tool: ToolData }) {
+  const { ref, isVisible } = useScrollReveal();
+  if (!tool.whatThisToolChecks || tool.whatThisToolChecks.length === 0) return null;
+
+  return (
+    <section ref={ref} className="py-12 lg:py-16 haze-gradient-warm">
+      <div className="container px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Wat controleert deze tool?</h2>
+          <ul className="space-y-3">
+            {tool.whatThisToolChecks.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateX(0)' : 'translateX(-16px)', transition: `opacity 0.4s ease-out ${i * 0.08}s, transform 0.4s ease-out ${i * 0.08}s` }}>
+                <Check className="w-5 h-5 text-kk-orange flex-shrink-0 mt-0.5" />
+                <span className="text-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ToolCommonIssues({ tool }: { tool: ToolData }) {
+  const { ref, isVisible } = useScrollReveal();
+  if (!tool.commonIssuesAndFixes || tool.commonIssuesAndFixes.length === 0) return null;
+
+  return (
+    <section ref={ref} className="py-12 lg:py-16">
+      <div className="container px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Veelvoorkomende problemen & oplossingen</h2>
+          <div className="space-y-3">
+            {tool.commonIssuesAndFixes.map((item, i) => (
+              <div key={i} className="p-4 bg-card rounded-xl border border-border" style={{ opacity: isVisible ? 1 : 0, transition: `opacity 0.4s ease-out ${i * 0.08}s` }}>
+                <p className="text-foreground text-sm">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Determine kennisbank context from tool's relatedPillars ──
+function getKennisbankContext(tool: ToolData): "lokale-seo" | "technische-seo" | "content" | "general" {
+  const pillars = tool.relatedPillars;
+  if (!pillars || pillars.length === 0) return "general";
+  if (pillars.includes("lokale-seo")) return "lokale-seo";
+  if (pillars.includes("technische-seo")) return "technische-seo";
+  if (pillars.includes("content-optimalisatie")) return "content";
+  return "general";
+}
+
 export function ToolLandingPage({ tool }: ToolLandingPageProps) {
+  const contentComplete = isToolContentComplete(tool);
+  
   const faqSchema = {
     type: "FAQPage" as const,
     questions: tool.faqs.map(faq => ({ question: faq.question, answer: faq.answer })),
@@ -272,17 +346,21 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
         title={`Gratis ${tool.name} | Check je Website | KlikKlaarSEO`}
         description={`${tool.shortDescription} Gratis, zonder registratie. Verbeter je SEO met concrete actiepunten.`}
         canonical={`https://klikklaar.nl/tools/${tool.slug}`}
+        robots={contentComplete ? "index,follow" : "noindex,follow"}
       />
       <StructuredData schema={faqSchema} />
       <StructuredData schema={breadcrumbSchema} />
       <Header />
       <main>
         <ToolHero tool={tool} />
+        <ToolUniqueIntro tool={tool} />
         <ToolWhatItDoes tool={tool} />
+        <ToolChecklist tool={tool} />
         <ToolHowToUse steps={tool.howToUse} />
         <ToolBenefits benefits={tool.benefits} />
+        <ToolCommonIssues tool={tool} />
         <ToolCTA />
-        <KennisbankLinks context={getKennisbankContextForTool(tool.category)} title={`Meer leren over ${tool.name.toLowerCase()}?`} />
+        <KennisbankLinks context={getKennisbankContext(tool)} title={`Meer leren over ${tool.name.toLowerCase()}?`} />
         <RelatedDienstenSection toolCategory={tool.category} />
         <ToolFAQ faqs={tool.faqs} toolName={tool.name} />
         <RelatedTools tool={tool} />

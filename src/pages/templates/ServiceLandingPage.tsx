@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
-import { Phone, Check, ChevronRight, Star } from "lucide-react";
+import { Phone, Check, ChevronRight, Star, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ServiceData, services } from "@/data/services";
 import {
@@ -18,6 +18,7 @@ import {
 import * as LucideIcons from "lucide-react";
 import { KennisbankLinks } from "@/components/KennisbankLinks";
 import { RelatedToolsSection } from "@/components/CrossLinks";
+import { getTestimonialForSlug, getCtaForSlug } from "@/data/testimonials";
 
 interface ServiceLandingPageProps {
   service: ServiceData;
@@ -241,8 +242,9 @@ function ServiceProcess({ howItWorks }: { howItWorks: Array<{ step: number; titl
   );
 }
 
-function ServiceTestimonial() {
+function ServiceTestimonial({ slug }: { slug: string }) {
   const { ref, isVisible } = useScrollReveal();
+  const testimonial = getTestimonialForSlug(slug);
 
   return (
     <section ref={ref} className="py-16 lg:py-24">
@@ -263,17 +265,16 @@ function ServiceTestimonial() {
             </div>
             
             <p className="text-lg text-foreground mb-6 italic leading-relaxed">
-              "Super club! Een poosje terug contact gekregen met KlikKlaarSEO. Mooie club en maken hun woorden waar. 
-              Veel gezien in de markt maar niet voor deze prijs met deze kwaliteit."
+              "{testimonial.quote}"
             </p>
             
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold">
-                B
+                {testimonial.initial}
               </div>
               <div>
-                <p className="font-semibold text-foreground">Ben Commandeur</p>
-                <p className="text-sm text-muted-foreground">Nieuw Marketing</p>
+                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
               </div>
             </div>
           </div>
@@ -393,7 +394,7 @@ export function ServiceLandingPage({ service }: ServiceLandingPageProps) {
         <ServiceExplanation service={service} />
         <ServiceBenefits benefits={service.benefits} />
         <ServiceProcess howItWorks={service.howItWorks} />
-        <ServiceTestimonial />
+        <ServiceTestimonial slug={service.slug} />
         <ServiceFAQ faqs={service.faqs} serviceName={service.name} />
         <KennisbankLinks context="general" title="Meer leren over SEO?" />
         <RelatedToolsSection serviceSlug={service.slug} />
