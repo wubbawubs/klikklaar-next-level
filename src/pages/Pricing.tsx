@@ -9,13 +9,16 @@ import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site-config";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import { 
   Check, 
   Phone, 
   Star,
   Zap,
   Crown,
-  HelpCircle
+  HelpCircle,
+  Loader2
 } from "lucide-react";
 import {
   Accordion,
@@ -23,12 +26,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { stripePrices, intervalLabels, type BillingInterval } from "@/data/stripe-prices";
 
 const pricingTiers = [
   {
     id: "basis",
     name: "Basis",
-    price: "99",
+    basePrice: 99,
     description: "Beter gevonden worden in Google én AI-zoekmachines",
     icon: Zap,
     featured: false,
@@ -41,12 +45,11 @@ const pricingTiers = [
       "Maandelijks rapport",
       "E-mail support",
     ],
-    cta: "Start met Basis",
   },
   {
     id: "pro",
     name: "Pro",
-    price: "149",
+    basePrice: 149,
     description: "Sneller groeien in Google, AI-zoekresultaten én Maps",
     icon: Star,
     featured: true,
@@ -60,12 +63,11 @@ const pricingTiers = [
       "Wekelijks rapport",
       "Telefonische support",
     ],
-    cta: "Start met Pro",
   },
   {
     id: "proplus",
     name: "Pro+",
-    price: "249",
+    basePrice: 249,
     description: "Maximale groei met persoonlijke begeleiding en AI-strategie",
     icon: Crown,
     featured: false,
@@ -78,7 +80,6 @@ const pricingTiers = [
       "Content creatie ondersteuning",
       "Custom rapportages",
     ],
-    cta: "Start met Pro+",
   },
 ];
 
@@ -203,8 +204,61 @@ function HeroSection() {
   );
 }
 
-function PricingCards() {
+function IntervalSelector({ interval, setInterval }: { interval: BillingInterval; setInterval: (v: BillingInterval) => void }) {
+  return (
+    <div className="flex items-center justify-center gap-1 p-1 bg-muted rounded-xl max-w-md mx-auto mb-8 lg:mb-12">
+      {(["1", "3", "6"] as BillingInterval[]).map((v) => {
+        const isActive = interval === v;
+        const discount = v === "3" ? 10 : v === "6" ? 15 : 0;
+        return (
+          <button
+            key={v}
+            onClick={() => setInterval(v)}
+            className={`relative flex-1 py-2.5 px-3 rounded-lg text-sm font-medium transition-all duration-200
+              ${isActive 
+                ? 'bg-card text-foreground shadow-sm' 
+                : 'text-muted-foreground hover:text-foreground'
+              }`}
+          >
+            {intervalLabels[v]}
+            {discount > 0 && (
+              <span className={`ml-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full
+                ${isActive ? 'bg-kk-orange/10 text-kk-orange' : 'bg-kk-orange/5 text-kk-orange/70'}`}>
+                -{discount}%
+              </span>
+            )}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function PricingCards({ interval }: { interval: BillingInterval }) {
   const { ref, isVisible } = useScrollReveal();
+  const [loadingTier, setLoadingTier] = useState<string | null>(null);
+
+  const handleCheckout = async (tierId: string) => {
+    const priceConfig = stripePrices[tierId]?.[interval];
+    if (!priceConfig) return;
+
+    setLoadingTier(tierId);
+    try {
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: { priceId: priceConfig.priceId, mode: priceConfig.mode },
+      });
+
+      if (error) throw error;
+      if (data?.url) {
+        window.open(data.url, "_blank");
+      }
+    } catch (err: any) {
+      console.error("Checkout error:", err);
+      toast.error("Er ging iets mis. Probeer het opnieuw.");
+    } finally {
+      setLoadingTier(null);
+    }
+  };
 
   return (
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
@@ -212,6 +266,9 @@ function PricingCards() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-start">
           {pricingTiers.map((tier, index) => {
             const Icon = tier.icon;
+            const priceConfig = stripePrices[tier.id]?.[interval];
+            const isLoading = loadingTier === tier.id;
+            
             return (
               <div
                 key={tier.id}
@@ -247,9 +304,25 @@ function PricingCards() {
                 </h3>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-4xl font-bold text-foreground">€{tier.price}</span>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-4xl font-bold text-foreground">
+                    €{priceConfig ? Math.floor(priceConfig.monthlyPrice) : tier.basePrice}
+                  </span>
                   <span className="text-muted-foreground">/maand</span>
+                </div>
+
+                {/* Discount / total info */}
+                <div className="h-6 mb-4">
+                  {interval !== "1" && priceConfig && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-muted-foreground line-through">
+                        €{tier.basePrice}/mnd
+                      </span>
+                      <span className="text-xs font-semibold text-kk-orange">
+                        Totaal €{priceConfig.totalPrice.toFixed(2).replace('.', ',')}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Description */}
@@ -276,17 +349,31 @@ function PricingCards() {
 
                 {/* CTA */}
                 {tier.featured ? (
-                  <GradientButton className="w-full" size="lg" asChild>
-                    <Link to="/contact">
+                  <GradientButton 
+                    className="w-full" 
+                    size="lg" 
+                    onClick={() => handleCheckout(tier.id)}
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
                       <Phone className="w-4 h-4" />
-                      {tier.cta}
-                    </Link>
+                    )}
+                    {isLoading ? "Laden..." : `Start met ${tier.name}`}
                   </GradientButton>
                 ) : (
-                  <GradientButton variant="outline" className="w-full" size="lg" asChild>
-                    <Link to="/contact">
-                      {tier.cta}
-                    </Link>
+                  <GradientButton 
+                    variant="outline" 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => handleCheckout(tier.id)}
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : null}
+                    {isLoading ? "Laden..." : `Start met ${tier.name}`}
                   </GradientButton>
                 )}
               </div>
@@ -450,6 +537,8 @@ function FAQSection() {
 
 
 const Pricing = () => {
+  const [interval, setInterval] = useState<BillingInterval>("1");
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -469,7 +558,10 @@ const Pricing = () => {
       <Header />
       <main>
         <HeroSection />
-        <PricingCards />
+        <div className="pt-12 lg:pt-24">
+          <IntervalSelector interval={interval} setInterval={setInterval} />
+        </div>
+        <PricingCards interval={interval} />
         <SetupCosts />
         <Guarantee />
         <FAQSection />
