@@ -58,21 +58,23 @@ serve(async (req) => {
     }
 
     const checkoutMode = mode === "subscription" ? "subscription" : "payment";
-    logStep("Creating checkout session", { checkoutMode });
+    logStep("Creating embedded checkout session", { checkoutMode });
+
+    const origin = req.headers.get("origin") || "https://klikklaar-next-level.lovable.app";
 
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : customerEmail,
       line_items: [{ price: priceId, quantity: 1 }],
       mode: checkoutMode,
-      success_url: `${req.headers.get("origin")}/betaling-geslaagd`,
-      cancel_url: `${req.headers.get("origin")}/prijzen`,
+      ui_mode: "embedded",
+      return_url: `${origin}/betaling-geslaagd?session_id={CHECKOUT_SESSION_ID}`,
       locale: "nl",
     });
 
-    logStep("Checkout session created", { sessionId: session.id });
+    logStep("Embedded checkout session created", { sessionId: session.id });
 
-    return new Response(JSON.stringify({ url: session.url }), {
+    return new Response(JSON.stringify({ clientSecret: session.client_secret }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
