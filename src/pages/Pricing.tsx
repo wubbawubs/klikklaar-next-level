@@ -9,16 +9,14 @@ import { CTASection } from "@/components/home/CTASection";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site-config";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 import { 
   Check, 
   Phone, 
   Star,
   Zap,
   Crown,
-  HelpCircle,
-  Loader2
+  HelpCircle
 } from "lucide-react";
 import {
   Accordion,
@@ -236,28 +234,10 @@ function IntervalSelector({ interval, setInterval }: { interval: BillingInterval
 
 function PricingCards({ interval }: { interval: BillingInterval }) {
   const { ref, isVisible } = useScrollReveal();
-  const [loadingTier, setLoadingTier] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-  const handleCheckout = async (tierId: string) => {
-    const priceConfig = stripePrices[tierId]?.[interval];
-    if (!priceConfig) return;
-
-    setLoadingTier(tierId);
-    try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { priceId: priceConfig.priceId, mode: priceConfig.mode },
-      });
-
-      if (error) throw error;
-      if (data?.url) {
-        window.open(data.url, "_blank");
-      }
-    } catch (err: any) {
-      console.error("Checkout error:", err);
-      toast.error("Er ging iets mis. Probeer het opnieuw.");
-    } finally {
-      setLoadingTier(null);
-    }
+  const handleCheckout = (tierId: string) => {
+    navigate(`/checkout?pakket=${tierId}&interval=${interval}`);
   };
 
   return (
@@ -267,7 +247,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
           {pricingTiers.map((tier, index) => {
             const Icon = tier.icon;
             const priceConfig = stripePrices[tier.id]?.[interval];
-            const isLoading = loadingTier === tier.id;
+            
             
             return (
               <div
@@ -353,14 +333,9 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                     className="w-full" 
                     size="lg" 
                     onClick={() => handleCheckout(tier.id)}
-                    disabled={isLoading}
                   >
-                    {isLoading ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      <Phone className="w-4 h-4" />
-                    )}
-                    {isLoading ? "Laden..." : `Start met ${tier.name}`}
+                    <Phone className="w-4 h-4" />
+                    Start met {tier.name}
                   </GradientButton>
                 ) : (
                   <GradientButton 
@@ -368,12 +343,8 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                     className="w-full" 
                     size="lg"
                     onClick={() => handleCheckout(tier.id)}
-                    disabled={isLoading}
                   >
-                    {isLoading ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : null}
-                    {isLoading ? "Laden..." : `Start met ${tier.name}`}
+                    Start met {tier.name}
                   </GradientButton>
                 )}
               </div>

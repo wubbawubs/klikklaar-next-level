@@ -21,6 +21,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import Checkout from "./pages/Checkout";
 import Kennisbank from "./pages/Kennisbank";
 import SeoAbonnement from "./pages/SeoAbonnement";
 import SeoUitbesteden from "./pages/SeoUitbesteden";
@@ -214,6 +215,7 @@ const App = () => (
           })}
           
           {/* Payment routes */}
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/betaling-geslaagd" element={<PaymentSuccess />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
