@@ -11,21 +11,21 @@ export interface PriceConfig {
 export const stripePrices: Record<string, Record<BillingInterval, PriceConfig>> = {
   basis: {
     "1": {
-      priceId: "price_1T3w0tFFsGuvFW1gkDS6DsTF",
+      priceId: "price_1T3xMBFFsGuvFW1gkJW0j4pq",
       mode: "subscription",
       totalPrice: 99,
       monthlyPrice: 99,
       discount: 0,
     },
     "3": {
-      priceId: "price_1T3w4lFFsGuvFW1ge50o7tmF",
+      priceId: "price_1T3xMHFFsGuvFW1gTcA5tx5e",
       mode: "payment",
       totalPrice: 267.30,
       monthlyPrice: 89.10,
       discount: 10,
     },
     "6": {
-      priceId: "price_1T3w6kFFsGuvFW1gzrBm2blH",
+      priceId: "price_1T3xMIFFsGuvFW1g6ui1Fno3",
       mode: "payment",
       totalPrice: 504.90,
       monthlyPrice: 84.15,
@@ -34,21 +34,21 @@ export const stripePrices: Record<string, Record<BillingInterval, PriceConfig>> 
   },
   pro: {
     "1": {
-      priceId: "price_1T3wDWFFsGuvFW1ggtTGFzPM",
+      priceId: "price_1T3xMJFFsGuvFW1g7r2RZ6Ue",
       mode: "subscription",
       totalPrice: 149,
       monthlyPrice: 149,
       discount: 0,
     },
     "3": {
-      priceId: "price_1T3wDqFFsGuvFW1gYNRmdNTa",
+      priceId: "price_1T3xMKFFsGuvFW1gzzHCjKLw",
       mode: "payment",
       totalPrice: 402.30,
       monthlyPrice: 134.10,
       discount: 10,
     },
     "6": {
-      priceId: "price_1T3wEBFFsGuvFW1gX1oRFhzl",
+      priceId: "price_1T3xMLFFsGuvFW1gimgmsRXE",
       mode: "payment",
       totalPrice: 759.90,
       monthlyPrice: 126.65,
@@ -57,21 +57,21 @@ export const stripePrices: Record<string, Record<BillingInterval, PriceConfig>> 
   },
   proplus: {
     "1": {
-      priceId: "price_1T3wEdFFsGuvFW1g88rWd78i",
+      priceId: "price_1T3xMMFFsGuvFW1gqKh7wrPo",
       mode: "subscription",
       totalPrice: 249,
       monthlyPrice: 249,
       discount: 0,
     },
     "3": {
-      priceId: "price_1T3wFKFFsGuvFW1ggjQOrUIL",
+      priceId: "price_1T3xMNFFsGuvFW1gSnBiucRs",
       mode: "payment",
       totalPrice: 672.30,
       monthlyPrice: 224.10,
       discount: 10,
     },
     "6": {
-      priceId: "price_1T3wFZFFsGuvFW1gJIJZ8UvV",
+      priceId: "price_1T3xMOFFsGuvFW1gSzMazMy9",
       mode: "payment",
       totalPrice: 1269.90,
       monthlyPrice: 211.65,
