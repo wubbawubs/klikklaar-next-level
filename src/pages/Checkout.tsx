@@ -4,8 +4,10 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { SEOHead } from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import { 
   Check, 
   Shield, 
@@ -19,6 +21,8 @@ import {
 } from "lucide-react";
 import { stripePrices, intervalLabels, type BillingInterval } from "@/data/stripe-prices";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
+
+const stripePromise = loadStripe("pk_test_51T3vW4FFsGuvFW1gt64lU7iVPEXbqs6ZgHBhFFxohEPXHOIBMsgwgZaU5VDZJulh9C6GYemBdcuIBsZ0EwBsY80400fh7Uvwic");
 
 const tierInfo: Record<string, { name: string; icon: typeof Zap; features: string[] }> = {
   basis: {
@@ -71,8 +75,8 @@ const trustPoints = [
 const Checkout = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [showCheckout, setShowCheckout] = useState(false);
 
   const tierId = searchParams.get("pakket") || "basis";
   const interval = (searchParams.get("interval") || "1") as BillingInterval;
@@ -84,6 +88,14 @@ const Checkout = () => {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
+
+  const fetchClientSecret = useCallback(async () => {
+    const { data, error } = await supabase.functions.invoke("create-checkout", {
+      body: { priceId: priceConfig.priceId, mode: priceConfig.mode },
+    });
+    if (error) throw error;
+    return data.clientSecret;
+  }, [priceConfig]);
 
   if (!tier || !priceConfig) {
     return (
@@ -101,24 +113,33 @@ const Checkout = () => {
   const Icon = tier.icon;
   const basePrice = tierId === "basis" ? 99 : tierId === "pro" ? 149 : 249;
 
-  const handleCheckout = async () => {
-    setIsLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { priceId: priceConfig.priceId, mode: priceConfig.mode },
-      });
-
-      if (error) throw error;
-      if (data?.url) {
-        window.open(data.url, "_blank");
-      }
-    } catch (err: any) {
-      console.error("Checkout error:", err);
-      toast.error("Er ging iets mis. Probeer het opnieuw.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  if (showCheckout) {
+    return (
+      <div className="min-h-screen bg-background">
+        <SEOHead
+          title={`Checkout ${tier.name} | KlikKlaarSEO`}
+          description={`Rond je bestelling af voor het ${tier.name} pakket bij KlikKlaarSEO.`}
+          canonical="https://klikklaar-next-level.lovable.app/checkout"
+        />
+        <Header />
+        <main className="pt-28 lg:pt-36 pb-16 lg:pb-24">
+          <div className="container px-4 sm:px-6 max-w-3xl">
+            <button
+              onClick={() => setShowCheckout(false)}
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Terug naar overzicht
+            </button>
+            <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
+              <EmbeddedCheckout />
+            </EmbeddedCheckoutProvider>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -206,7 +227,6 @@ const Checkout = () => {
 
                 {/* Divider */}
                 <div className="border-t border-border pt-5">
-                  {/* Price breakdown */}
                   <div className="space-y-2">
                     {interval !== "1" && (
                       <div className="flex justify-between text-sm">
@@ -243,7 +263,6 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Change selection */}
               <p className="text-xs text-muted-foreground text-center lg:text-left">
                 Niet het juiste pakket?{" "}
                 <Link to="/prijzen" className="text-kk-orange hover:underline font-medium">
@@ -262,7 +281,6 @@ const Checkout = () => {
               }}
             >
               <div className="lg:sticky lg:top-28 space-y-6">
-                {/* CTA Card */}
                 <div className="bg-card rounded-2xl border border-border shadow-premium p-6 lg:p-8">
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     Klaar om te starten?
@@ -274,13 +292,9 @@ const Checkout = () => {
                   <GradientButton
                     className="w-full"
                     size="lg"
-                    onClick={handleCheckout}
-                    disabled={isLoading}
+                    onClick={() => setShowCheckout(true)}
                   >
-                    {isLoading ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : null}
-                    {isLoading ? "Doorsturen naar betaling..." : "Afrekenen"}
+                    Afrekenen
                   </GradientButton>
 
                   <p className="text-[11px] text-muted-foreground text-center mt-3">
@@ -288,7 +302,6 @@ const Checkout = () => {
                   </p>
                 </div>
 
-                {/* Trust elements */}
                 <div className="space-y-3">
                   {trustPoints.map((point, i) => {
                     const TrustIcon = point.icon;
@@ -303,7 +316,6 @@ const Checkout = () => {
                   })}
                 </div>
 
-                {/* Social proof */}
                 <div className="text-center p-4 bg-muted/30 rounded-xl">
                   <p className="text-sm text-muted-foreground">
                     <span className="font-semibold text-foreground">100+</span> ondernemers gingen je voor
