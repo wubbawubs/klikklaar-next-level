@@ -19,7 +19,7 @@ import {
   Crown,
   ChevronRight
 } from "lucide-react";
-import { stripePrices, intervalLabels, type BillingInterval } from "@/data/stripe-prices";
+import { stripePrices, intervalLabels, SETUP_FEE_PRICE_ID, SETUP_FEE_AMOUNT, type BillingInterval } from "@/data/stripe-prices";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 const stripePromise = loadStripe("pk_test_51T3vW4FFsGuvFW1gt64lU7iVPEXbqs6ZgHBhFFxohEPXHOIBMsgwgZaU5VDZJulh9C6GYemBdcuIBsZ0EwBsY80400fh7Uvwic");
@@ -91,7 +91,11 @@ const Checkout = () => {
 
   const fetchClientSecret = useCallback(async () => {
     const { data, error } = await supabase.functions.invoke("create-checkout", {
-      body: { priceId: priceConfig.priceId, mode: priceConfig.mode },
+      body: { 
+        priceId: priceConfig.priceId, 
+        mode: priceConfig.mode,
+        setupFeePriceId: SETUP_FEE_PRICE_ID,
+      },
     });
     if (error) throw error;
     return data.clientSecret;
@@ -228,15 +232,16 @@ const Checkout = () => {
                 {/* Divider */}
                 <div className="border-t border-border pt-5">
                   <div className="space-y-2">
-                    {interval !== "1" && (
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Originele prijs</span>
-                        <span className="text-muted-foreground line-through">
-                          €{(basePrice * parseInt(interval)).toFixed(2).replace('.', ',')}
-                        </span>
-                      </div>
-                    )}
-                    {priceConfig.discount > 0 && (
+                    {/* Subscription price */}
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">
+                        {tier.name} ({intervalLabels[interval]})
+                      </span>
+                      <span className="text-foreground">
+                        €{priceConfig.totalPrice.toFixed(2).replace('.', ',')}
+                      </span>
+                    </div>
+                    {interval !== "1" && priceConfig.discount > 0 && (
                       <div className="flex justify-between text-sm">
                         <span className="text-kk-orange font-medium">Korting ({priceConfig.discount}%)</span>
                         <span className="text-kk-orange font-medium">
@@ -244,17 +249,22 @@ const Checkout = () => {
                         </span>
                       </div>
                     )}
+                    {/* Setup fee */}
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Eenmalige opstartkosten</span>
+                      <span className="text-foreground">€{SETUP_FEE_AMOUNT.toFixed(2).replace('.', ',')}</span>
+                    </div>
+                    {/* Total */}
                     <div className="flex justify-between items-baseline pt-2 border-t border-dashed border-border">
-                      <span className="font-semibold text-foreground">
-                        {interval === "1" ? "Per maand" : `Totaal (${interval} maanden)`}
-                      </span>
+                      <span className="font-semibold text-foreground">Totaal vandaag</span>
                       <div className="text-right">
                         <span className="text-2xl font-bold text-foreground">
-                          €{priceConfig.totalPrice.toFixed(2).replace('.', ',')}
+                          €{(priceConfig.totalPrice + SETUP_FEE_AMOUNT).toFixed(2).replace('.', ',')}
                         </span>
+                        <p className="text-xs text-muted-foreground">excl. btw</p>
                         {interval !== "1" && (
                           <p className="text-xs text-muted-foreground">
-                            = €{priceConfig.monthlyPrice.toFixed(2).replace('.', ',')} per maand
+                            = €{priceConfig.monthlyPrice.toFixed(2).replace('.', ',')} /mnd na opstart
                           </p>
                         )}
                       </div>

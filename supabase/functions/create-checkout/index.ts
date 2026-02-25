@@ -21,9 +21,9 @@ serve(async (req) => {
   try {
     logStep("Function started");
 
-    const { priceId, mode } = await req.json();
+    const { priceId, mode, setupFeePriceId } = await req.json();
     if (!priceId) throw new Error("priceId is required");
-    logStep("Request parsed", { priceId, mode });
+    logStep("Request parsed", { priceId, mode, setupFeePriceId });
 
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
@@ -62,10 +62,17 @@ serve(async (req) => {
 
     const origin = req.headers.get("origin") || "https://klikklaar-next-level.lovable.app";
 
+    const lineItems: Array<{ price: string; quantity: number }> = [
+      { price: priceId, quantity: 1 },
+    ];
+    if (setupFeePriceId) {
+      lineItems.push({ price: setupFeePriceId, quantity: 1 });
+    }
+
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : customerEmail,
-      line_items: [{ price: priceId, quantity: 1 }],
+      line_items: lineItems,
       mode: checkoutMode,
       ui_mode: "embedded",
       return_url: `${origin}/betaling-geslaagd?session_id={CHECKOUT_SESSION_ID}`,
