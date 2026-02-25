@@ -81,23 +81,7 @@ const pricingTiers = [
   },
 ];
 
-const setupPricing = [
-  {
-    pages: "Tot 5 pagina's",
-    price: "Gratis",
-    description: "Perfecte start voor kleine websites",
-  },
-  {
-    pages: "5 - 15 pagina's",
-    price: "€300",
-    description: "Eenmalige opstartkosten",
-  },
-  {
-    pages: "Meer dan 15 pagina's",
-    price: "Op maat",
-    description: "Custom offerte voor grote websites",
-  },
-];
+const SETUP_FEE = 300;
 
 const faqs = [
   {
@@ -106,7 +90,7 @@ const faqs = [
   },
   {
     question: "Wat zijn de opstartkosten?",
-    answer: "Tot 5 pagina's is de opstart gratis. Bij 5-15 pagina's betaal je eenmalig €300 opstartkosten. Voor websites met meer dan 15 pagina's maken we een offerte op maat.",
+    answer: "Bij elk abonnement betaal je eenmalig €300 opstartkosten (excl. btw). Hiermee maken we een grondige analyse van je website en zorgen we dat alles klaarstaat voor optimalisatie.",
   },
   {
     question: "Wanneer zie ik resultaat?",
@@ -290,6 +274,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                   </span>
                   <span className="text-muted-foreground">/maand</span>
                 </div>
+                <p className="text-xs text-muted-foreground mb-0">excl. btw</p>
 
                 {/* Discount / total info */}
                 <div className="h-6 mb-4">
@@ -363,7 +348,7 @@ function SetupCosts() {
     <section ref={ref} className="py-12 lg:py-24 bg-background">
       <div className="container px-4 sm:px-6">
         <div 
-          className="text-center mb-8 lg:mb-12"
+          className="max-w-3xl mx-auto text-center p-6 sm:p-8 lg:p-12 bg-card rounded-xl lg:rounded-2xl border border-border shadow-premium-sm"
           style={{ 
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -374,37 +359,13 @@ function SetupCosts() {
             Eenmalige kosten
           </span>
           <h2 className="text-xl sm:text-2xl lg:text-display font-bold text-foreground mb-3">
-            Opstartkosten{" "}
-            <span className="gradient-text">op basis van pagina's</span>
+            Eenmalige opstartkosten:{" "}
+            <span className="gradient-text">€{SETUP_FEE}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            De opstartkosten zijn eenmalig en afhankelijk van het aantal pagina's op je website.
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
+            Bij elk abonnement betaal je eenmalig €{SETUP_FEE} opstartkosten. Hiermee maken we een grondige analyse van je website en zorgen we dat alles klaarstaat voor optimalisatie.
           </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
-          {setupPricing.map((tier, index) => (
-            <div
-              key={index}
-              className="relative rounded-xl border border-border bg-card p-6 text-center shadow-premium-sm hover:shadow-premium transition-all duration-300"
-              style={{ 
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-                transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                transitionDelay: `${index * 100}ms`
-              }}
-            >
-              <div className="text-sm font-medium text-muted-foreground mb-2">
-                {tier.pages}
-              </div>
-              <div className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
-                {tier.price}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {tier.description}
-              </div>
-            </div>
-          ))}
+          <p className="text-xs text-muted-foreground">Excl. btw</p>
         </div>
       </div>
     </section>

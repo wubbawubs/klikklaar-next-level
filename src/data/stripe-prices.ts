@@ -85,3 +85,6 @@ export const intervalLabels: Record<BillingInterval, string> = {
   "3": "3 maanden",
   "6": "6 maanden",
 };
+
+export const SETUP_FEE_PRICE_ID = "price_1T4fOdFFsGuvFW1grKEofXib";
+export const SETUP_FEE_AMOUNT = 300;
