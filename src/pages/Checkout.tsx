@@ -66,6 +66,8 @@ const tierInfo: Record<string, { name: string; icon: typeof Zap; features: strin
   },
 };
 
+const BTW_PERCENTAGE = 21;
+
 const trustPoints = [
   { icon: Shield, text: "Veilig betalen via Stripe" },
   { icon: Clock, text: "Maandelijks opzegbaar, geen kleine lettertjes" },
@@ -229,46 +231,79 @@ const Checkout = () => {
                   ))}
                 </ul>
 
-                {/* Divider */}
+                {/* Price breakdown */}
                 <div className="border-t border-border pt-5">
                   <div className="space-y-2">
                     {/* Subscription price */}
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">
-                        {tier.name} ({intervalLabels[interval]})
+                        {tier.name} abonnement ({intervalLabels[interval]})
                       </span>
                       <span className="text-foreground">
-                        €{priceConfig.totalPrice.toFixed(2).replace('.', ',')}
+                        €{priceConfig.monthlyPrice.toFixed(2).replace('.', ',')} /mnd
                       </span>
                     </div>
                     {interval !== "1" && priceConfig.discount > 0 && (
                       <div className="flex justify-between text-sm">
                         <span className="text-kk-orange font-medium">Korting ({priceConfig.discount}%)</span>
                         <span className="text-kk-orange font-medium">
-                          -€{((basePrice * parseInt(interval)) - priceConfig.totalPrice).toFixed(2).replace('.', ',')}
+                          -€{((basePrice - priceConfig.monthlyPrice) ).toFixed(2).replace('.', ',')} /mnd
                         </span>
                       </div>
                     )}
-                    {/* Setup fee */}
+
+                    <div className="border-t border-dashed border-border my-3" />
+
+                    {/* Setup fee - one-time */}
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Eenmalige opstartkosten</span>
                       <span className="text-foreground">€{SETUP_FEE_AMOUNT.toFixed(2).replace('.', ',')}</span>
                     </div>
-                    {/* Total */}
-                    <div className="flex justify-between items-baseline pt-2 border-t border-dashed border-border">
-                      <span className="font-semibold text-foreground">Totaal vandaag</span>
-                      <div className="text-right">
-                        <span className="text-2xl font-bold text-foreground">
-                          €{(priceConfig.totalPrice + SETUP_FEE_AMOUNT).toFixed(2).replace('.', ',')}
-                        </span>
-                        <p className="text-xs text-muted-foreground">excl. btw</p>
-                        {interval !== "1" && (
-                          <p className="text-xs text-muted-foreground">
-                            = €{priceConfig.monthlyPrice.toFixed(2).replace('.', ',')} /mnd na opstart
-                          </p>
-                        )}
-                      </div>
-                    </div>
+
+                    {/* First payment total */}
+                    {(() => {
+                      const firstPaymentExcl = priceConfig.totalPrice + SETUP_FEE_AMOUNT;
+                      const btwAmount = firstPaymentExcl * (BTW_PERCENTAGE / 100);
+                      const firstPaymentIncl = firstPaymentExcl + btwAmount;
+                      const monthlyExcl = priceConfig.monthlyPrice;
+                      const monthlyBtw = monthlyExcl * (BTW_PERCENTAGE / 100);
+                      const monthlyIncl = monthlyExcl + monthlyBtw;
+
+                      return (
+                        <>
+                          <div className="border-t border-dashed border-border my-3" />
+
+                          {/* Subtotal */}
+                          <div className="flex justify-between text-sm">
+                            <span className="text-muted-foreground">Subtotaal (excl. btw)</span>
+                            <span className="text-foreground">€{firstPaymentExcl.toFixed(2).replace('.', ',')}</span>
+                          </div>
+                          <div className="flex justify-between text-sm">
+                            <span className="text-muted-foreground">BTW ({BTW_PERCENTAGE}%)</span>
+                            <span className="text-foreground">€{btwAmount.toFixed(2).replace('.', ',')}</span>
+                          </div>
+
+                          {/* Grand total */}
+                          <div className="flex justify-between items-baseline pt-3 border-t border-border">
+                            <span className="font-semibold text-foreground">Totaal eerste betaling</span>
+                            <div className="text-right">
+                              <span className="text-2xl font-bold text-foreground">
+                                €{firstPaymentIncl.toFixed(2).replace('.', ',')}
+                              </span>
+                              <p className="text-xs text-muted-foreground">incl. btw</p>
+                            </div>
+                          </div>
+
+                          {/* Monthly recurring info */}
+                          <div className="mt-4 p-3 bg-muted/40 rounded-xl">
+                            <p className="text-xs text-muted-foreground">
+                              <span className="font-semibold text-foreground">Daarna maandelijks:</span>{" "}
+                              €{monthlyExcl.toFixed(2).replace('.', ',')} + €{monthlyBtw.toFixed(2).replace('.', ',')} btw = <span className="font-semibold text-foreground">€{monthlyIncl.toFixed(2).replace('.', ',')}</span> /mnd
+                            </p>
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
                 </div>
               </div>
@@ -308,7 +343,10 @@ const Checkout = () => {
                   </GradientButton>
 
                   <p className="text-[11px] text-muted-foreground text-center mt-3">
-                    Je wordt doorgestuurd naar een beveiligde betaalpagina
+                    Door af te rekenen ga je akkoord met onze{" "}
+                    <Link to="/voorwaarden" target="_blank" className="text-kk-orange hover:underline">
+                      algemene voorwaarden
+                    </Link>
                   </p>
                 </div>
 
