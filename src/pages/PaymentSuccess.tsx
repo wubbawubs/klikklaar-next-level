@@ -104,9 +104,9 @@ const PaymentSuccess = () => {
             </div>
           ) : null}
 
-          {/* Onboarding CTA — Calendly placeholder */}
+          {/* Onboarding CTA — Calendly embed */}
           <div className="bg-card rounded-2xl border-2 border-kk-orange/20 shadow-premium-sm p-6 lg:p-8 mb-8">
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 mb-6">
               <div className="w-12 h-12 rounded-xl bg-kk-orange/10 flex items-center justify-center flex-shrink-0">
                 <Calendar className="w-6 h-6 text-kk-orange" />
               </div>
@@ -114,16 +114,20 @@ const PaymentSuccess = () => {
                 <h2 className="text-lg font-semibold text-foreground mb-1">
                   Plan je onboarding gesprek
                 </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Boek direct een kort gesprek zodat we je account kunnen inrichten en meteen van start gaan.
+                <p className="text-sm text-muted-foreground">
+                  Kies direct een moment zodat we je account kunnen inrichten en meteen van start gaan.
                 </p>
-                <GradientButton size="lg" asChild>
-                  <a href="https://calendly.com/luuk-klikklaar/onboarding-klikklaarseo" target="_blank" rel="noopener noreferrer">
-                    <Calendar className="w-4 h-4" />
-                    Plan je onboarding
-                  </a>
-                </GradientButton>
               </div>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-border">
+              <iframe
+                src="https://calendly.com/luuk-klikklaar/onboarding-klikklaarseo"
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Plan je onboarding gesprek"
+                className="bg-background"
+              />
             </div>
           </div>
 
