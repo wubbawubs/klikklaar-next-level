@@ -118,10 +118,10 @@ const PaymentSuccess = () => {
                   Boek direct een kort gesprek zodat we je account kunnen inrichten en meteen van start gaan.
                 </p>
                 <GradientButton size="lg" asChild>
-                  <Link to="/contact">
+                  <a href="https://calendly.com/luuk-klikklaar/onboarding-klikklaarseo" target="_blank" rel="noopener noreferrer">
                     <Calendar className="w-4 h-4" />
-                    Plan een gesprek
-                  </Link>
+                    Plan je onboarding
+                  </a>
                 </GradientButton>
               </div>
             </div>
