@@ -319,8 +319,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                     size="lg" 
                     onClick={() => handleCheckout(tier.id)}
                   >
-                    <Phone className="w-4 h-4" />
-                    Start met {tier.name}
+                    Direct starten
                   </GradientButton>
                 ) : (
                   <GradientButton 
@@ -329,7 +328,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                     size="lg"
                     onClick={() => handleCheckout(tier.id)}
                   >
-                    Start met {tier.name}
+                    Direct starten
                   </GradientButton>
                 )}
               </div>
