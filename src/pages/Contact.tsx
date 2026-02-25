@@ -211,7 +211,7 @@ function ContactSection() {
               {/* Calendly Inline Embed */}
               <div className="rounded-xl overflow-hidden border border-border">
               <iframe
-                  src="https://calendly.com/luuk-klikklaar/kennismakingsgesprek?embed_type=inline&embed_domain=klikklaar.nl&hide_gdpr_banner=1"
+                  src="https://calendly.com/huub-klikklaarseo/30min?embed_type=inline&embed_domain=klikklaar.nl&hide_gdpr_banner=1"
                   width="100%"
                   height="1100"
                   frameBorder="0"

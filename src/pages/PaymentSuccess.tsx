@@ -121,7 +121,7 @@ const PaymentSuccess = () => {
             </div>
             <div className="rounded-xl overflow-hidden border border-border">
               <iframe
-                src="https://calendly.com/luuk-klikklaar/onboarding-klikklaarseo"
+                src="https://calendly.com/huub-klikklaarseo/30min"
                 width="100%"
                 height="700"
                 frameBorder="0"
