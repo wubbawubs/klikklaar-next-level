@@ -60,6 +60,7 @@ const pricingTiers = [
       "AI-citatie monitoring",
       "Voorsprong op concurrenten",
       "Wekelijks rapport",
+      "Prioriteit bij updates",
     ],
   },
   {
@@ -74,6 +75,9 @@ const pricingTiers = [
       "Trusted advisor aan je zijde",
       "Maandelijks check-in moment",
       "Content en website advies",
+      "Strategische groei-roadmap",
+      "Hands-on implementatie support",
+      "Directe Slack/WhatsApp lijn",
     ],
   },
 ];
