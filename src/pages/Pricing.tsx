@@ -35,11 +35,12 @@ const pricingTiers = [
     icon: Zap,
     featured: false,
     features: [
-      "Wekelijkse website-analyse",
-      "Automatische content optimalisatie",
+      "Maandelijkse website-analyse",
+      "Automatische optimalisatie",
       "Vindbaarheid verbeteren (Google & AI)",
       "Technische SEO fixes",
       "AI-vindbaarheid optimalisatie",
+      "Toegang tot klantportaal",
       "Maandelijks rapport",
       "E-mail support",
     ],
@@ -55,11 +56,10 @@ const pricingTiers = [
     features: [
       "Alles van Basis, plus:",
       "2-wekelijkse optimalisatie cyclus",
-      "Uitgebreide concurrentie-analyse",
+      "Concurrentie-analyse",
       "AI-citatie monitoring",
-      "Prioriteit bij verbeteringen",
+      "Voorsprong op concurrenten",
       "Wekelijks rapport",
-      "Telefonische support",
     ],
   },
   {
@@ -72,11 +72,8 @@ const pricingTiers = [
     features: [
       "Alles van Pro, plus:",
       "Trusted advisor aan je zijde",
-      "Maandelijkse consulting call",
-      "Blog posting engine",
-      "AI-zoekstrategie op maat",
-      "Content creatie ondersteuning",
-      "Custom rapportages",
+      "Maandelijks check-in moment",
+      "Content en website advies",
     ],
   },
 ];
