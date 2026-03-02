@@ -226,7 +226,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
   return (
     <section ref={ref} className="py-12 lg:py-24 haze-gradient-cool relative overflow-hidden">
       <div className="container px-4 sm:px-6 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-start">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-stretch">
           {pricingTiers.map((tier, index) => {
             const Icon = tier.icon;
             const priceConfig = stripePrices[tier.id]?.[interval];
