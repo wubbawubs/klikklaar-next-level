@@ -22,7 +22,7 @@ import {
 import { stripePrices, intervalLabels, SETUP_FEE_PRICE_ID, SETUP_FEE_AMOUNT, type BillingInterval } from "@/data/stripe-prices";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
-const stripePromise = loadStripe("pk_test_51T3vW4FFsGuvFW1gt64lU7iVPEXbqs6ZgHBhFFxohEPXHOIBMsgwgZaU5VDZJulh9C6GYemBdcuIBsZ0EwBsY80400fh7Uvwic");
+const stripePromise = loadStripe("pk_live_51T3vVuFRqS45qgwEmVskjAKg4aex1BvVxklrwJJ6gs9Sxb8WTGNN3aov7HrP9DxN05LBrMJldqo5oZHolUTAbiAC00S7FWXWpz");
 
 const tierInfo: Record<string, { name: string; icon: typeof Zap; features: string[] }> = {
   basis: {
