@@ -233,7 +233,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
             return (
               <div
                 key={tier.id}
-                className={`relative rounded-2xl border p-6 lg:p-8 transition-all duration-500
+                className={`relative rounded-2xl border p-6 lg:p-8 transition-all duration-500 flex flex-col
                   ${tier.featured 
                     ? 'bg-card border-kk-orange/30 shadow-premium-lg ring-2 ring-kk-orange/20' 
                     : 'bg-card border-border shadow-premium-sm hover:shadow-premium'
@@ -292,14 +292,14 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                   {tier.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-3 mb-8">
+                {/* Features - grows to fill space */}
+                <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5
-                        ${i === 0 && tier.id !== 'basis' ? 'bg-transparent' : 'bg-green-100'}`}>
+                        ${i === 0 && tier.id !== 'basis' ? 'bg-transparent' : 'bg-kk-orange/10'}`}>
                         {i === 0 && tier.id !== 'basis' ? null : (
-                          <Check className="w-3 h-3 text-green-600" />
+                          <Check className="w-3 h-3 text-kk-orange" />
                         )}
                       </div>
                       <span className={`text-sm ${i === 0 && tier.id !== 'basis' ? 'font-semibold text-foreground' : 'text-foreground'}`}>
@@ -309,25 +309,27 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
                   ))}
                 </ul>
 
-                {/* CTA */}
-                {tier.featured ? (
-                  <GradientButton 
-                    className="w-full" 
-                    size="lg" 
-                    onClick={() => handleCheckout(tier.id)}
-                  >
-                    Direct starten
-                  </GradientButton>
-                ) : (
-                  <GradientButton 
-                    variant="outline" 
-                    className="w-full" 
-                    size="lg"
-                    onClick={() => handleCheckout(tier.id)}
-                  >
-                    Direct starten
-                  </GradientButton>
-                )}
+                {/* CTA - always at bottom */}
+                <div className="mt-auto">
+                  {tier.featured ? (
+                    <GradientButton 
+                      className="w-full" 
+                      size="lg" 
+                      onClick={() => handleCheckout(tier.id)}
+                    >
+                      Direct starten
+                    </GradientButton>
+                  ) : (
+                    <GradientButton 
+                      variant="outline" 
+                      className="w-full" 
+                      size="lg"
+                      onClick={() => handleCheckout(tier.id)}
+                    >
+                      Direct starten
+                    </GradientButton>
+                  )}
+                </div>
               </div>
             );
           })}
