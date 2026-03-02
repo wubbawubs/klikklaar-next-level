@@ -31,7 +31,7 @@ const pricingTiers = [
     id: "basis",
     name: "Basis",
     basePrice: 99,
-    description: "Beter gevonden worden in Google én AI-zoekmachines",
+    description: "Beter gevonden worden in Google én AI-zoekmachines. Ideaal als startpunt.",
     icon: Zap,
     featured: false,
     features: [
@@ -49,7 +49,7 @@ const pricingTiers = [
     id: "pro",
     name: "Pro",
     basePrice: 149,
-    description: "Sneller groeien in Google, AI-zoekresultaten én Maps",
+    description: "Sneller groeien in Google, AI-zoekresultaten én Maps. Voor ambitieuze ondernemers.",
     icon: Star,
     featured: true,
     badge: "Meest gekozen",
@@ -66,7 +66,7 @@ const pricingTiers = [
     id: "proplus",
     name: "Pro+",
     basePrice: 249,
-    description: "Maximale groei met persoonlijke begeleiding en AI-strategie",
+    description: "Maximale groei met persoonlijke begeleiding en strategisch advies op maat.",
     icon: Crown,
     featured: false,
     features: [
