@@ -235,7 +235,7 @@ function PricingCards({ interval }: { interval: BillingInterval }) {
             return (
               <div
                 key={tier.id}
-                className={`relative rounded-2xl border p-6 lg:p-8 transition-all duration-500 flex flex-col
+                className={`relative rounded-2xl border p-6 lg:p-8 transition-all duration-500 flex flex-col h-full
                   ${tier.featured 
                     ? 'bg-card border-kk-orange/30 shadow-premium-lg ring-2 ring-kk-orange/20' 
                     : 'bg-card border-border shadow-premium-sm hover:shadow-premium'
