@@ -41,7 +41,7 @@ const StudentsLanding = () => {
             </p>
             <button
               onClick={() => setShowFunnel(true)}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-colors"
             >
               <Rocket className="w-5 h-5" /> Ik wil meer weten
             </button>
@@ -171,20 +171,26 @@ const StudentsLanding = () => {
 
         {/* Team */}
         <section className="bg-secondary py-12">
-          <div className="max-w-5xl mx-auto px-6 flex items-center justify-center gap-12 flex-wrap">
-            <div className="text-center space-y-2">
-              <img src={teamHuub} alt="Huub" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
-              <p className="font-semibold text-foreground">Huub</p>
-            </div>
-            <div className="text-center space-y-2">
-              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover object-[center_20%] mx-auto border-4 border-background shadow-lg" />
-              <p className="font-semibold text-foreground">Luuk</p>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="w-28 h-28 rounded-full border-4 border-dashed border-accent/40 flex items-center justify-center mx-auto">
-                <Users className="w-8 h-8 text-accent/60" />
+          <div className="max-w-5xl mx-auto px-6 space-y-6">
+            <h2 className="text-2xl font-bold text-foreground text-center">Je team</h2>
+            <div className="flex items-center justify-center gap-12 flex-wrap">
+              <div className="text-center space-y-2">
+                <img src={teamHuub} alt="Huub" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
+                <p className="font-semibold text-foreground">Huub</p>
+                <p className="text-sm text-muted-foreground">Co-founder, Sales</p>
               </div>
-              <p className="font-semibold text-muted-foreground">+ jij?</p>
+              <div className="text-center space-y-2">
+                <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover object-[center_20%] mx-auto border-4 border-background shadow-lg" />
+                <p className="font-semibold text-foreground">Luuk</p>
+                <p className="text-sm text-muted-foreground">Co-founder, Strategie</p>
+              </div>
+              <div className="text-center space-y-2">
+                <div className="w-28 h-28 rounded-full border-4 border-dashed border-accent/40 flex items-center justify-center mx-auto">
+                  <Users className="w-8 h-8 text-accent/60" />
+                </div>
+                <p className="font-semibold text-muted-foreground">+ jij?</p>
+                <p className="text-sm text-muted-foreground">Jouw plek in het team</p>
+              </div>
             </div>
           </div>
         </section>

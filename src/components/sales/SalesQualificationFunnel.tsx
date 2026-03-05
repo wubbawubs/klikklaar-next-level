@@ -8,7 +8,11 @@ interface Props {
   variant: "executive" | "student" | "senior";
 }
 
-const Q2_OPTIONS = ["Student", "50+", "Anders"];
+const Q2_OPTIONS_BY_VARIANT: Record<Props["variant"], string[]> = {
+  student: ["Student", "Werkend", "Anders"],
+  senior: ["50+", "Gepensioneerd", "Anders"],
+  executive: ["Student", "50+", "Anders"],
+};
 const Q4_OPTIONS = ["2-5 uur", "5-10 uur", "10+ uur"];
 const Q5_OPTIONS = ["Ja, veel ervaring", "Een beetje", "Nee, maar ik wil leren"];
 
@@ -92,7 +96,7 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
           Wat beschrijft jou het beste?
         </h3>
         <div className="flex flex-col gap-3 max-w-xs mx-auto">
-          {Q2_OPTIONS.map((option) => (
+          {Q2_OPTIONS_BY_VARIANT[variant].map((option) => (
             <Button
               key={option}
               size="lg"
