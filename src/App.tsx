@@ -30,6 +30,7 @@ import Steden from "./pages/Steden";
 import Diensten from "./pages/Diensten";
 import Platforms from "./pages/Platforms";
 import Tools from "./pages/Tools";
+import AdminLeads from "./pages/AdminLeads";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
 import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
@@ -213,6 +214,9 @@ const App = () => (
               />
             );
           })}
+          
+          {/* Admin */}
+          <Route path="/admin/leads" element={<AdminLeads />} />
           
           {/* Payment routes */}
           <Route path="/checkout" element={<Checkout />} />
