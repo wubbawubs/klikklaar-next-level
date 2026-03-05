@@ -29,7 +29,7 @@ const StudentsLanding = () => {
           <div className="relative max-w-5xl mx-auto px-6 py-20 md:py-28 text-center text-accent-foreground space-y-6">
             <div className="flex items-center justify-center gap-2">
               <GraduationCap className="w-6 h-6" />
-              <p className="text-sm uppercase tracking-widest opacity-90">KlikKlaar × IDEA — Voor studenten</p>
+              <p className="text-sm uppercase tracking-widest opacity-90">KlikKlaar × IDEA | Voor studenten</p>
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
               Verdien meer dan<br />je bijbaan
@@ -77,7 +77,7 @@ const StudentsLanding = () => {
                 "€100 per nieuwe klant uit de opstartfee",
                 "25% van de recurring fee over de eerste 4 maanden",
                 "Uitbetaling zodra klant 4 maanden actief is",
-                "Geen vast salaris — wél serieuze upside",
+                "Geen vast salaris, wél serieuze upside",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 bg-card border border-border rounded-lg p-4">
                   <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
@@ -107,11 +107,20 @@ const StudentsLanding = () => {
 
         {/* Team */}
         <section className="bg-secondary py-12">
-          <div className="max-w-5xl mx-auto px-6 flex items-center justify-center gap-8 flex-wrap">
-            <img src={teamHuub} alt="Huub" className="w-20 h-20 rounded-full object-cover" />
-            <img src={teamLuuk} alt="Luuk" className="w-20 h-20 rounded-full object-cover" />
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Users className="w-5 h-5" /> <span>+ jij?</span>
+          <div className="max-w-5xl mx-auto px-6 flex items-center justify-center gap-12 flex-wrap">
+            <div className="text-center space-y-2">
+              <img src={teamHuub} alt="Huub" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
+              <p className="font-semibold text-foreground">Huub</p>
+            </div>
+            <div className="text-center space-y-2">
+              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
+              <p className="font-semibold text-foreground">Luuk</p>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="w-28 h-28 rounded-full border-4 border-dashed border-accent/40 flex items-center justify-center mx-auto">
+                <Users className="w-8 h-8 text-accent/60" />
+              </div>
+              <p className="font-semibold text-muted-foreground">+ jij?</p>
             </div>
           </div>
         </section>
