@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      sales_leads: {
+        Row: {
+          created_at: string
+          id: string
+          landing_page: string
+          name: string
+          phone: string
+          q1_rekeningnummer: boolean
+          q2_doelgroep: boolean
+          q3_hoofdinkomen: boolean
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          landing_page: string
+          name: string
+          phone: string
+          q1_rekeningnummer?: boolean
+          q2_doelgroep?: boolean
+          q3_hoofdinkomen?: boolean
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          landing_page?: string
+          name?: string
+          phone?: string
+          q1_rekeningnummer?: boolean
+          q2_doelgroep?: boolean
+          q3_hoofdinkomen?: boolean
+        }
+        Relationships: []
+      }
       tool_leads: {
         Row: {
           created_at: string
