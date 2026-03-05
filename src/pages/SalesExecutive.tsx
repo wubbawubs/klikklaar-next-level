@@ -92,8 +92,8 @@ const SalesExecutive = () => {
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 "€100 per nieuwe klant uit de opstartfee",
-                "25% van de recurring fee over de eerste 3 maanden",
-                "Uitbetaling zodra klant 3 maanden actief is",
+                "25% van de recurring fee over de eerste 4 maanden",
+                "Uitbetaling zodra klant 4 maanden actief is",
                 "Geen vast salaris, wél serieuze upside",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 bg-card border border-border rounded-lg p-4">
@@ -109,21 +109,13 @@ const SalesExecutive = () => {
                 <h3 className="text-xl font-bold text-foreground">Rekenvoorbeeld</h3>
               </div>
               <div className="space-y-3 text-muted-foreground">
-                <p>Stel je sluit <strong className="text-foreground">5 klanten per maand</strong> af op het €149/mnd abonnement:</p>
+                <p>Stel je sluit <strong className="text-foreground">5 klanten per maand</strong> af (€149/mnd abonnement):</p>
                 <ul className="space-y-2 ml-4">
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>Per klant verdien je €100 opstartfee + 3 × 25% × €149 = <strong className="text-foreground">€212 totaal</strong></span></li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 klanten per maand = <strong className="text-foreground">€1.059 per maand</strong></span></li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>Per klant: €100 + 4 × €37 recurring = <strong className="text-foreground">€249 totaal</strong></span></li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 klanten/mnd = <strong className="text-foreground">€1.245 per maand</strong></span></li>
                 </ul>
-                <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 mt-3">
-                  <p className="text-foreground font-medium text-sm">
-                    💡 5 klanten per maand is minder dan 2 per week. Eén goed gesprek per dag met een lokale ondernemer is genoeg. Het product lost een probleem op dat vrijwel elk MKB-bedrijf herkent: "ik word niet gevonden in Google." Je hoeft alleen het gesprek te starten.
-                  </p>
-                </div>
-                <p className="text-muted-foreground text-sm pt-1">
-                  Je ontvangt 3 maanden lang recurring commissie per klant. Bij een vast tempo van 5 klanten/mnd heb je altijd 15 actieve commissie-klanten lopen.
-                </p>
-                <p className="text-foreground font-semibold text-lg pt-2">
-                  Stabiel inkomen: €500 opstartfees + €559 recurring = €1.059/mnd
+                <p className="text-foreground font-medium text-sm bg-accent/5 border border-accent/20 rounded-lg p-3 mt-2">
+                  💡 5 klanten is minder dan 2 per week. Eén gesprek per dag met een lokale ondernemer is genoeg. Vrijwel elk MKB-bedrijf herkent het probleem: "ik word niet gevonden in Google."
                 </p>
               </div>
             </div>
