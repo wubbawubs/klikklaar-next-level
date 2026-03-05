@@ -95,7 +95,6 @@ const Checkout = () => {
     const { data, error } = await supabase.functions.invoke("create-checkout", {
       body: { 
         priceId: priceConfig.priceId, 
-        mode: priceConfig.mode,
         setupFeePriceId: SETUP_FEE_PRICE_ID,
       },
     });
