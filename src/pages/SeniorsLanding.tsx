@@ -119,6 +119,11 @@ const SeniorsLanding = () => {
                   <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>Per klant verdien je €100 opstartfee + 3 × 25% × €149 = <strong className="text-foreground">€212 totaal</strong></span></li>
                   <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 klanten per maand = <strong className="text-foreground">€1.059 per maand</strong></span></li>
                 </ul>
+                <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 mt-3">
+                  <p className="text-foreground font-medium text-sm">
+                    💡 5 klanten per maand is minder dan 2 per week. Met jouw netwerk en ervaring is één goed gesprek per dag met een lokale ondernemer meer dan genoeg. Het product lost een probleem op dat vrijwel elk MKB-bedrijf herkent: "ik word niet gevonden in Google."
+                  </p>
+                </div>
                 <p className="text-muted-foreground text-sm pt-1">
                   Je ontvangt 3 maanden lang recurring commissie per klant. Bij een vast tempo van 5 klanten/mnd heb je altijd 15 actieve commissie-klanten lopen.
                 </p>
