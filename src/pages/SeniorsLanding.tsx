@@ -116,11 +116,14 @@ const SeniorsLanding = () => {
               <div className="space-y-3 text-muted-foreground">
                 <p>Stel je sluit <strong className="text-foreground">5 klanten per maand</strong> af op het €149/mnd abonnement:</p>
                 <ul className="space-y-2 ml-4">
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 × €100 opstartfee = <strong className="text-foreground">€500 direct</strong></span></li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 × 25% × €149 × 3 maanden = <strong className="text-foreground">€559 recurring</strong></span></li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>Per klant verdien je €100 opstartfee + 3 × 25% × €149 = <strong className="text-foreground">€212 totaal</strong></span></li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 klanten per maand = <strong className="text-foreground">€1.059 per maand</strong></span></li>
                 </ul>
+                <p className="text-muted-foreground text-sm pt-1">
+                  Je ontvangt 3 maanden lang recurring commissie per klant. Bij een vast tempo van 5 klanten/mnd heb je altijd 15 actieve commissie-klanten lopen.
+                </p>
                 <p className="text-foreground font-semibold text-lg pt-2">
-                  Dat is €1.059 per maand. Na 6 maanden heb je 30 klanten en draai je structureel €2.800+/mnd aan recurring commissie.
+                  Stabiel inkomen: €500 opstartfees + €559 recurring = €1.059/mnd
                 </p>
               </div>
             </div>
