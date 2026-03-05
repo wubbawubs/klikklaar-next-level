@@ -1,64 +1,66 @@
 
-# Plan: SEO Blueprint — KlikKlaarSEO 900 pagina's
 
-## Voortgang: ~900+ pagina's ✅ COMPLEET
+## Plan: Sales Recruitment Landing Pages + Lead Funnel
 
-## Template-overzicht
+### Wat we bouwen
 
-| # | Template | Code | Doel | Gebouwd | Status |
-|---|----------|------|------|---------|--------|
-| 1 | Diensten | SRV | 60 | 60 | ✅ Compleet |
-| 2 | Branches/Industries | IND | 250 | ~250 | ✅ Compleet |
-| 3 | Platforms | PLAT | 100 | ~100 | ✅ Compleet (50+50 platforms + hub) |
-| 4 | Locaties | LOC | 120 | ~120 | ✅ Compleet (noindex Tier 3) |
-| 5 | Tools | TOOL | 150 | ~150 | ✅ Compleet (75+75 tools + hub) |
-| 6 | Kennisbank/Resources | RES | 220 | ~200 | ✅ Compleet (14 pillars + ~200 artikelen) |
+Drie landing pages met een 3-stappen kwalificatie-funnel en telefoonnnummer capture:
 
-## Fase 1 — Fundament (nu → week 2)
-- [x] P1 dienst-pagina's (uitbesteden + abonnement)
-- [x] P2 dienst-pagina's (bureau + scan)
-- [x] Diensten hub-pagina
-- [x] Branches hub-pagina
-- [x] Steden hub-pagina
-- [ ] **SRV uitbreiden**: 38 nieuwe dienst-varianten (content-optimalisatie, linkbuilding, SEO teksten, Google Bedrijfsprofiel, SEO voor dienstverleners, SEO migratie, conversie optimalisatie, SEO strategie)
-- [ ] **URL-structuur migreren**: blueprint gebruikt `/nl/diensten/[dienst]/[variant]` i.p.v. huidige flat `/diensten/[dienst]-[variant]`
+1. `/salesexecutive/` — algemene sales executive pagina
+2. `/STUDENTSwhoMAKEtheirOWNliving/` — gericht op studenten
+3. `/SENIORSwhoMAKEtheirOWNliving/` — gericht op 50+
 
-## Fase 2 — Branches uitbreiden (week 3-4)
-- [ ] **IND template upgraden**: toevoegen "lokale SEO voor [branche]" variant (125 extra pagina's)
-- [ ] **IND data uitbreiden**: van 29 naar 125 branches (accountant, advocaat, tandarts, restaurant, sportschool, etc.)
-- [ ] Hub-pagina `/branches` updaten met categorieën
+Elke pagina bevat dezelfde funnel maar met doelgroep-specifieke copy en beelden.
 
-## Fase 3 — Platforms (week 4-5)
-- [ ] **PLAT template bouwen**: "SEO voor [platform]" + "[platform] SEO handleiding"
-- [ ] **PLAT data**: 50 platforms (WordPress, Shopify, Wix, Webflow, Magento, etc.)
-- [ ] Hub-pagina `/platforms` bouwen
+### Wat valt BUITEN scope (niet bouwbaar in Lovable)
 
-## Fase 4 — Locaties uitbreiden (week 5-6)
-- [ ] **LOC uitbreiden**: van 80 naar 120 steden
-- [ ] Noindex-gating voor Tier 3 steden
+- **Social media posts/visuals voor Publer**: Lovable is een webapplicatie-builder. We kunnen geen social media campagne-assets (Instagram posts, LinkedIn visuals, etc.) genereren. Dit moet in een design tool (Canva, Figma) of met een AI image tool.
+- **Publer integratie**: Geen API-koppeling mogelijk.
 
-## Fase 5 — Tools (week 6-8)
-- [ ] **TOOL template bouwen**: tool-pagina + handleiding variant
-- [ ] **TOOL data**: 75 tools (meta tag checker, keyword density, schema validator, etc.)
-- [ ] Hub-pagina `/tools` bouwen
+**Aanbeveling**: Ik kan wél een briefing/contentkalender pagina bouwen als referentie, maar de daadwerkelijke social posts en visuals moeten extern worden gemaakt.
 
-## Fase 6 — Kennisbank/Resources (week 8-12)
-- [ ] **RES template upgraden**: gids/checklist/voorbeelden/best-practices/FAQ clusters
-- [ ] **RES data**: 44 topics × 5 formaten = 220 pagina's
-- [ ] Hub-pagina `/kennis` uitbreiden
+### Technische aanpak
 
-## Architectuur-beslissingen nodig
-1. **URL-prefix `/nl/`**: blueprint gebruikt `/nl/` prefix → moeten we migreren of houden we huidige structuur?
-2. **Noindex-gating**: automatisch noindex tot "Required unique modules" gevuld → hoe implementeren?
-3. **Data-opslag**: alle 900 entries in statische TS bestanden of naar database (Lovable Cloud)?
+**1. Database: `sales_leads` tabel**
+- Kolommen: `id`, `created_at`, `name`, `phone`, `landing_page` (welke variant), `q1_rekeningnummer` (bool), `q2_doelgroep` (bool), `q3_hoofdinkomen` (bool)
+- RLS: INSERT voor iedereen, SELECT via admin edge function
 
-## Technische templates nog te bouwen
-- `PlatformLandingPage` (PLAT) — SEO voor [platform]
-- `PlatformHandleidingPage` (PLAT) — [platform] SEO handleiding
-- `ToolLandingPage` (TOOL) — gratis SEO tool
-- `ToolHandleidingPage` (TOOL) — tool handleiding
-- `BranchLokaleSeoPage` (IND variant) — lokale SEO voor [branche]
-- `ResourceClusterPage` (RES) — gids/checklist/voorbeelden/best-practices/FAQ
+**2. Shared component: `SalesQualificationFunnel.tsx`**
+- Stap 1-3: Drie ja/nee vragen als grote knoppen
+- Stap 4: Naam + telefoonnummer formulier
+- Stap 5: Bedankpagina met "We bellen je binnen 24 uur"
+- Slaat lead op in `sales_leads` tabel
+- Props: `variant` (executive/student/senior) voor tracking
 
-## Bronbestand
-Volledige blueprint: `seo_page_blueprint_nl_v3_2700-2.xlsx` (Page 3 = KlikKlaarSEO)
+**3. Landing page template: `SalesLandingPage.tsx`**
+- Hero met campagne-boodschap (KlikKlaar × IDEA)
+- Commissiestructuur (€100 + 25% recurring)
+- Verwachtingen & onboarding info
+- Team foto's (bestaande assets: Huub, Luuk)
+- CTA naar de kwalificatie-funnel
+- Geen Header/Footer (standalone landing page, zoals AdLandingA)
+- Per variant andere hero-tekst en beeldkeuze
+
+**4. Drie pagina's met variant-specifieke content**
+
+| Route | Doelgroep | Specifieke copy |
+|-------|-----------|----------------|
+| `/salesexecutive/` | Algemeen | "High Performance Sales Opportunity" |
+| `/STUDENTSwhoMAKEtheirOWNliving/` | Studenten | "Verdien meer dan je bijbaan. Op jouw tempo." |
+| `/SENIORSwhoMAKEtheirOWNliving/` | 50+ | "Ervaring is je grootste asset. Zet het in." |
+
+**5. Routes in App.tsx**
+- Drie nieuwe routes, geen navigatie-links (verborgen pagina's)
+
+**6. Admin dashboard uitbreiding**
+- `sales_leads` toevoegen aan bestaande admin-leads edge function en dashboard
+
+### Bestanden
+
+- `supabase migration` — `sales_leads` tabel + RLS
+- `src/components/sales/SalesQualificationFunnel.tsx` — funnel component
+- `src/pages/SalesExecutive.tsx` — variant 1
+- `src/pages/StudentsLanding.tsx` — variant 2
+- `src/pages/SeniorsLanding.tsx` — variant 3
+- `src/App.tsx` — routes toevoegen
+
