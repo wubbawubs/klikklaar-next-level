@@ -3,6 +3,7 @@ import { SEOHead } from "@/components/SEOHead";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import teamHuub from "@/assets/team-huub.jpg";
 import teamLuuk from "@/assets/team-luuk.jpg";
+import teamGroup from "@/assets/team-group.jpg";
 import { Check, Euro, Users, Rocket, Calendar } from "lucide-react";
 import { useState } from "react";
 
@@ -25,8 +26,9 @@ const SalesExecutive = () => {
         </div>
 
         {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
+        <section className="relative overflow-hidden min-h-[420px] md:min-h-[500px]">
+          <img src={teamGroup} alt="" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/85 via-accent/70 to-accent/90" />
           <div className="relative max-w-5xl mx-auto px-6 py-20 md:py-28 text-center text-primary-foreground space-y-6">
             <p className="text-sm uppercase tracking-widest opacity-80">KlikKlaar × IDEA</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
