@@ -159,7 +159,7 @@ function runCheck(id: CheckId, html: string, url: string): CheckResult | null {
       const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
       const bodyText = bodyMatch ? bodyMatch[1].replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : '';
       const wordCount = bodyText ? bodyText.split(/\s+/).length : 0;
-      if (wordCount < 300) return { id, label: 'Woordenaantal', status: 'warning', value: `${wordCount} woorden (te weinig)`, detail: 'Google geeft de voorkeur aan pagina's met minimaal 300+ woorden voor goede rankings.' };
+      if (wordCount < 300) return { id, label: 'Woordenaantal', status: 'warning', value: `${wordCount} woorden (te weinig)`, detail: "Google geeft de voorkeur aan pagina's met minimaal 300+ woorden voor goede rankings." };
       if (wordCount < 600) return { id, label: 'Woordenaantal', status: 'pass', value: `${wordCount} woorden ✓`, detail: 'Voldoende content. Overweeg 800+ woorden voor competitieve zoekwoorden.' };
       return { id, label: 'Woordenaantal', status: 'pass', value: `${wordCount} woorden ✓`, detail: 'Uitstekende hoeveelheid content voor SEO.' };
     }
