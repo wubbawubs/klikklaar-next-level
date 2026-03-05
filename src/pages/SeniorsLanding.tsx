@@ -27,7 +27,7 @@ const SeniorsLanding = () => {
         {/* Hero */}
         <section className="relative overflow-hidden min-h-[420px] md:min-h-[500px]">
           <img src={teamGroup} alt="" className="absolute inset-0 w-full h-full object-cover object-top" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/60 to-primary/75" />
           <div className="relative max-w-5xl mx-auto px-6 py-20 md:py-28 text-center text-primary-foreground space-y-6">
             <div className="flex items-center justify-center gap-2">
               <Award className="w-6 h-6" />
@@ -146,6 +146,20 @@ const SeniorsLanding = () => {
             )}
           </div>
         </section>
+        {/* Sticky CTA */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-6 py-3 flex items-center justify-center">
+          <button
+            onClick={() => {
+              setShowFunnel(true);
+              document.getElementById("funnel")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors"
+          >
+            <Rocket className="w-5 h-5" /> Ik wil meer weten
+          </button>
+        </div>
+
+        <div className="h-16" />
       </div>
     </>
   );
