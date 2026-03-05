@@ -24,6 +24,8 @@ export type Database = {
           q1_rekeningnummer: boolean
           q2_doelgroep: string
           q3_hoofdinkomen: boolean
+          q4_uren_per_week: string
+          q5_sales_ervaring: string
         }
         Insert: {
           created_at?: string
@@ -34,6 +36,8 @@ export type Database = {
           q1_rekeningnummer?: boolean
           q2_doelgroep?: string
           q3_hoofdinkomen?: boolean
+          q4_uren_per_week?: string
+          q5_sales_ervaring?: string
         }
         Update: {
           created_at?: string
@@ -44,6 +48,8 @@ export type Database = {
           q1_rekeningnummer?: boolean
           q2_doelgroep?: string
           q3_hoofdinkomen?: boolean
+          q4_uren_per_week?: string
+          q5_sales_ervaring?: string
         }
         Relationships: []
       }

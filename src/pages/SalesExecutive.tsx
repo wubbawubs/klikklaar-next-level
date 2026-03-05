@@ -4,7 +4,7 @@ import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import teamHuub from "@/assets/team-huub.jpg";
 import teamLuuk from "@/assets/team-luuk.jpg";
 import teamGroup from "@/assets/team-group.jpg";
-import { Check, Euro, Users, Rocket, Calendar, X } from "lucide-react";
+import { Check, Euro, Users, Rocket, Calendar, X, Search, BarChart3, Zap, TrendingUp } from "lucide-react";
 import { useState } from "react";
 
 const SalesExecutive = () => {
@@ -20,7 +20,6 @@ const SalesExecutive = () => {
       />
 
       <div className="min-h-screen bg-background">
-        {/* Nav bar */}
         <div className="border-b border-border px-6 py-4">
           <img src={klikklaarLogo} alt="KlikKlaar" className="h-8" />
         </div>
@@ -46,23 +45,46 @@ const SalesExecutive = () => {
           </div>
         </section>
 
-        {/* What we sell */}
+        {/* Wat is KlikKlaarSEO? */}
         <section className="max-w-5xl mx-auto px-6 py-16 space-y-8">
-          <h2 className="text-3xl font-bold text-foreground text-center">Wat verkopen we?</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card border border-border rounded-xl p-6 space-y-3">
-              <h3 className="text-xl font-semibold text-foreground">KlikklaarWEB</h3>
-              <p className="text-muted-foreground">Websites die presteren in Google én AI. SEO-first aanpak die bedrijven laat groeien.</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6 space-y-3">
-              <h3 className="text-xl font-semibold text-foreground">IDEA Digital Equity Firm</h3>
-              <p className="text-muted-foreground">Commerciële en digitale systemen die bedrijven schaalbaar maken.</p>
+          <h2 className="text-3xl font-bold text-foreground text-center">Wat verkoop je eigenlijk?</h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+            KlikKlaarSEO helpt MKB-bedrijven automatisch gevonden worden in Google en AI-zoekmachines. Geen technische kennis nodig, wij regelen alles. Bedrijven betalen €99 tot €249 per maand en krijgen elke week zichtbaar resultaat.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: Search, title: "Automatische SEO", desc: "Websites die zichzelf optimaliseren voor Google en AI-zoekmachines zoals ChatGPT." },
+              { icon: BarChart3, title: "Wekelijkse rapportages", desc: "Klanten zien elke week hoe hun vindbaarheid verbetert. Concrete resultaten, geen vage beloftes." },
+              { icon: Zap, title: "Product verkoopt zichzelf", desc: "Als je het uitlegt, snappen bedrijven direct de waarde. Jij hoeft geen SEO-expert te zijn." },
+            ].map((item) => (
+              <div key={item.title} className="bg-card border border-border rounded-xl p-6 space-y-3">
+                <item.icon className="w-8 h-8 text-accent" />
+                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* What we sell */}
+        <section className="bg-secondary py-16">
+          <div className="max-w-5xl mx-auto px-6 space-y-8">
+            <h2 className="text-3xl font-bold text-foreground text-center">De producten die je verkoopt</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-card border border-border rounded-xl p-6 space-y-3">
+                <h3 className="text-xl font-semibold text-foreground">KlikklaarWEB</h3>
+                <p className="text-muted-foreground">Websites die presteren in Google én AI. SEO-first aanpak die bedrijven laat groeien zonder marketinggedoe.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 space-y-3">
+                <h3 className="text-xl font-semibold text-foreground">IDEA Digital Equity Firm</h3>
+                <p className="text-muted-foreground">Commerciële en digitale systemen die bedrijven schaalbaar maken. Compleet pakket van strategie tot uitvoering.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Commission structure */}
-        <section className="bg-secondary py-16">
+        {/* Commission + rekenvoorbeeld */}
+        <section className="py-16">
           <div className="max-w-5xl mx-auto px-6 space-y-8">
             <h2 className="text-3xl font-bold text-foreground text-center flex items-center justify-center gap-2">
               <Euro className="w-7 h-7 text-accent" /> Wat verdien jij?
@@ -80,25 +102,66 @@ const SalesExecutive = () => {
                 </div>
               ))}
             </div>
+
+            <div className="bg-card border-2 border-accent/30 rounded-xl p-8 space-y-4 max-w-2xl mx-auto">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-accent" />
+                <h3 className="text-xl font-bold text-foreground">Rekenvoorbeeld</h3>
+              </div>
+              <div className="space-y-3 text-muted-foreground">
+                <p>Stel je sluit <strong className="text-foreground">5 klanten per maand</strong> af op het €149/mnd abonnement:</p>
+                <ul className="space-y-2 ml-4">
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 × €100 opstartfee = <strong className="text-foreground">€500 direct</strong></span></li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-accent mt-1 shrink-0" /> <span>5 × 25% × €149 × 4 maanden = <strong className="text-foreground">€745 recurring</strong></span></li>
+                </ul>
+                <p className="text-foreground font-semibold text-lg pt-2">
+                  Dat is €1.245 per maand. Na 6 maanden heb je 30 klanten en draai je structureel €3.700+/mnd aan recurring commissie.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Requirements */}
-        <section className="max-w-5xl mx-auto px-6 py-16 space-y-8">
-          <h2 className="text-3xl font-bold text-foreground text-center">Wat verwachten wij?</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "Sterke communicatieve vaardigheden",
-              "Commerciële drive en resultaatgerichtheid",
-              "Zelfstandig kunnen werken",
-              "Nederlands en Engels spreken en schrijven",
-              "Bereidheid om op commissiebasis te werken",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                <span className="text-muted-foreground">{item}</span>
-              </div>
-            ))}
+        <section className="bg-secondary py-16">
+          <div className="max-w-5xl mx-auto px-6 space-y-8">
+            <h2 className="text-3xl font-bold text-foreground text-center">Wat verwachten wij?</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                "Sterke communicatieve vaardigheden",
+                "Commerciële drive en resultaatgerichtheid",
+                "Zelfstandig kunnen werken",
+                "Nederlands en Engels spreken en schrijven",
+                "Bereidheid om op commissiebasis te werken",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Waarom KlikKlaar */}
+        <section className="py-16">
+          <div className="max-w-5xl mx-auto px-6 space-y-8">
+            <h2 className="text-3xl font-bold text-foreground text-center">Waarom bedrijven KlikKlaar kiezen</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                "90% van de MKB-bedrijven is slecht vindbaar in Google",
+                "AI-zoekmachines worden steeds belangrijker, maar niemand is er klaar voor",
+                "Wij lossen dat op voor €99-249/mnd, alles inbegrepen",
+                "Klanten krijgen wekelijks bewijs dat het werkt",
+                "Geen lange contracten, maandelijks opzegbaar",
+                "Jij verkoopt iets wat bedrijven echt nodig hebben",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -110,12 +173,12 @@ const SalesExecutive = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-card border border-border rounded-xl p-6 space-y-2">
-                <h3 className="font-semibold text-foreground">1 live trainingsdag</h3>
-                <p className="text-muted-foreground">Op kantoor in Nijmegen. Alles wat je moet weten om direct te starten.</p>
+                <h3 className="font-semibold text-foreground">1 live trainingsdag in Nijmegen of Enkhuizen</h3>
+                <p className="text-muted-foreground">Alles wat je moet weten om direct te starten. Product, pitch, tools en je eerste klantgesprek oefenen.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6 space-y-2">
                 <h3 className="font-semibold text-foreground">Elke 2 weken een webinar</h3>
-                <p className="text-muted-foreground">Online training van 1 uur om je skills aan te scherpen.</p>
+                <p className="text-muted-foreground">Online training van 1 uur om je skills aan te scherpen en van anderen te leren.</p>
               </div>
             </div>
           </div>
@@ -156,7 +219,7 @@ const SalesExecutive = () => {
         {/* Popup Funnel */}
         {showFunnel && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setShowFunnel(false)}>
-            <div className="relative bg-card border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <div className="relative bg-card border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
               <button onClick={() => setShowFunnel(false)} className="absolute top-3 right-3 z-10 p-1 rounded-full hover:bg-muted transition-colors">
                 <X className="w-5 h-5 text-muted-foreground" />
               </button>
