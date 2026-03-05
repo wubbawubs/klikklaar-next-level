@@ -96,7 +96,7 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
           Wat beschrijft jou het beste?
         </h3>
         <div className="flex flex-col gap-3 max-w-xs mx-auto">
-          {Q2_OPTIONS.map((option) => (
+          {Q2_OPTIONS_BY_VARIANT[variant].map((option) => (
             <Button
               key={option}
               size="lg"
