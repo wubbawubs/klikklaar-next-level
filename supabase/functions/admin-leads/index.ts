@@ -26,7 +26,26 @@ Deno.serve(async (req) => {
   );
 
   const url = new URL(req.url);
+  const type = url.searchParams.get("type") || "tool";
   const toolSlug = url.searchParams.get("tool_slug");
+
+  if (type === "sales") {
+    const { data, error } = await supabase
+      .from("sales_leads")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    return new Response(JSON.stringify(data), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
 
   let query = supabase.from("tool_leads").select("*").order("created_at", { ascending: false });
 
