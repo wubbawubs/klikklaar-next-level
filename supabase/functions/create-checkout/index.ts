@@ -21,9 +21,9 @@ serve(async (req) => {
   try {
     logStep("Function started");
 
-    const { priceId, mode, setupFeePriceId } = await req.json();
+    const { priceId, setupFeePriceId } = await req.json();
     if (!priceId) throw new Error("priceId is required");
-    logStep("Request parsed", { priceId, mode, setupFeePriceId });
+    logStep("Request parsed", { priceId, setupFeePriceId });
 
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
@@ -57,8 +57,7 @@ serve(async (req) => {
       }
     }
 
-    const checkoutMode = mode === "subscription" ? "subscription" : "payment";
-    logStep("Creating embedded checkout session", { checkoutMode });
+    logStep("Creating embedded checkout session (subscription)");
 
     const origin = req.headers.get("origin") || "https://klikklaar-next-level.lovable.app";
 
@@ -69,23 +68,15 @@ serve(async (req) => {
       lineItems.push({ price: setupFeePriceId, quantity: 1 });
     }
 
-    const sessionParams: any = {
+    const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : customerEmail,
       line_items: lineItems,
-      mode: checkoutMode,
+      mode: "subscription",
       ui_mode: "embedded",
       return_url: `${origin}/betaling-geslaagd?session_id={CHECKOUT_SESSION_ID}`,
       locale: "nl",
-    };
-
-    // For one-time payments: force customer + invoice creation
-    if (checkoutMode === "payment") {
-      sessionParams.customer_creation = customerId ? undefined : "always";
-      sessionParams.invoice_creation = { enabled: true };
-    }
-
-    const session = await stripe.checkout.sessions.create(sessionParams);
+    });
 
     logStep("Embedded checkout session created", { sessionId: session.id });
 
