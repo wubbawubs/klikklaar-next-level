@@ -3,6 +3,7 @@ import { SEOHead } from "@/components/SEOHead";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import teamHuub from "@/assets/team-huub.jpg";
 import teamLuuk from "@/assets/team-luuk.jpg";
+import teamGroup from "@/assets/team-group.jpg";
 import { Check, Euro, GraduationCap, Rocket, Calendar, Users } from "lucide-react";
 import { useState } from "react";
 
@@ -24,8 +25,9 @@ const StudentsLanding = () => {
         </div>
 
         {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/90 to-accent/70" />
+        <section className="relative overflow-hidden min-h-[420px] md:min-h-[500px]">
+          <img src={teamGroup} alt="" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/85 via-accent/75 to-accent/90" />
           <div className="relative max-w-5xl mx-auto px-6 py-20 md:py-28 text-center text-accent-foreground space-y-6">
             <div className="flex items-center justify-center gap-2">
               <GraduationCap className="w-6 h-6" />
@@ -113,7 +115,7 @@ const StudentsLanding = () => {
               <p className="font-semibold text-foreground">Huub</p>
             </div>
             <div className="text-center space-y-2">
-              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
+              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover object-[center_20%] mx-auto border-4 border-background shadow-lg" />
               <p className="font-semibold text-foreground">Luuk</p>
             </div>
             <div className="text-center space-y-2">
