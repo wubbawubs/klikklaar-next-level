@@ -105,7 +105,7 @@ const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; labe
     label: "Alt Tekst Check",
   },
   "mobile-friendly-test": {
-    checks: ["viewport", "charset", "images", "https"],
+    checks: ["viewport", "charset", "images", "https", "page-speed-hints"],
     freeCount: 2,
     label: "Mobiel Check",
   },
