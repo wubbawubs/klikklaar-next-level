@@ -8,26 +8,19 @@ interface Props {
   variant: "executive" | "student" | "senior";
 }
 
-const questions = [
-  { key: "q1", label: "Heb je een rekeningnummer?" },
-  { key: "q2", label: "Ben je student, 50+ of anders?" },
-  { key: "q3", label: "Wil je van je bijbaan je hoofd-inkomstenbron maken?" },
-];
+const Q2_OPTIONS = ["Student", "50+", "Anders"];
 
 export const SalesQualificationFunnel = ({ variant }: Props) => {
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({ q1: false, q2: false, q3: false });
+  const [q1, setQ1] = useState(false);
+  const [q2, setQ2] = useState("");
+  const [q2Anders, setQ2Anders] = useState("");
+  const [q3, setQ3] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState("");
-
-  const handleAnswer = (answer: boolean) => {
-    const key = questions[step].key as "q1" | "q2" | "q3";
-    setAnswers((prev) => ({ ...prev, [key]: answer }));
-    setStep((s) => s + 1);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,9 +32,9 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
       name: name.trim(),
       phone: phone.trim(),
       landing_page: variant,
-      q1_rekeningnummer: answers.q1,
-      q2_doelgroep: answers.q2,
-      q3_hoofdinkomen: answers.q3,
+      q1_rekeningnummer: q1,
+      q2_doelgroep: q2 === "Anders" ? q2Anders.trim() || "Anders" : q2,
+      q3_hoofdinkomen: q3,
     });
 
     if (dbError) {
@@ -67,52 +60,77 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
     );
   }
 
-  // Questions (step 0-2)
-  if (step < 3) {
+  // Step 0: Q1 - Ja/Nee
+  if (step === 0) {
     return (
-      <div className="text-center py-10 px-6 space-y-8">
-        <div className="flex gap-2 justify-center">
-          {questions.map((_, i) => (
-            <div
-              key={i}
-              className={`h-1.5 w-12 rounded-full transition-colors ${
-                i <= step ? "bg-accent" : "bg-border"
-              }`}
-            />
-          ))}
-        </div>
-        <p className="text-sm text-muted-foreground uppercase tracking-wider">
-          Vraag {step + 1} van 3
-        </p>
+      <FunnelStep step={0} totalSteps={3} onBack={undefined}>
         <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-          {questions[step].label}
+          Heb je een rekeningnummer?
         </h3>
         <div className="flex gap-4 justify-center">
-          <Button
-            size="lg"
-            className="text-lg px-10 py-6 bg-accent hover:bg-accent/90 text-accent-foreground"
-            onClick={() => handleAnswer(true)}
-          >
-            Ja
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-lg px-10 py-6"
-            onClick={() => handleAnswer(false)}
-          >
-            Nee
-          </Button>
+          <Button size="lg" className="text-lg px-10 py-6 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => { setQ1(true); setStep(1); }}>Ja</Button>
+          <Button size="lg" variant="outline" className="text-lg px-10 py-6" onClick={() => { setQ1(false); setStep(1); }}>Nee</Button>
         </div>
-        {step > 0 && (
-          <button
-            onClick={() => setStep((s) => s - 1)}
-            className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 mx-auto"
-          >
-            <ArrowLeft className="w-3 h-3" /> Vorige vraag
-          </button>
-        )}
-      </div>
+      </FunnelStep>
+    );
+  }
+
+  // Step 1: Q2 - Multiple choice
+  if (step === 1) {
+    return (
+      <FunnelStep step={1} totalSteps={3} onBack={() => setStep(0)}>
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+          Wat beschrijft jou het beste?
+        </h3>
+        <div className="flex flex-col gap-3 max-w-xs mx-auto">
+          {Q2_OPTIONS.map((option) => (
+            <Button
+              key={option}
+              size="lg"
+              variant={q2 === option ? "default" : "outline"}
+              className={`text-lg py-6 ${q2 === option ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}`}
+              onClick={() => {
+                setQ2(option);
+                if (option !== "Anders") setStep(2);
+              }}
+            >
+              {option}
+            </Button>
+          ))}
+          {q2 === "Anders" && (
+            <div className="space-y-3">
+              <Input
+                placeholder="Namelijk..."
+                value={q2Anders}
+                onChange={(e) => setQ2Anders(e.target.value)}
+                className="h-12 text-base"
+              />
+              <Button
+                size="lg"
+                className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={() => setStep(2)}
+              >
+                Verder <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          )}
+        </div>
+      </FunnelStep>
+    );
+  }
+
+  // Step 2: Q3 - Ja/Nee
+  if (step === 2) {
+    return (
+      <FunnelStep step={2} totalSteps={3} onBack={() => setStep(1)}>
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+          Wil je van je bijbaan je hoofd-inkomstenbron maken?
+        </h3>
+        <div className="flex gap-4 justify-center">
+          <Button size="lg" className="text-lg px-10 py-6 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => { setQ3(true); setStep(3); }}>Ja</Button>
+          <Button size="lg" variant="outline" className="text-lg px-10 py-6" onClick={() => { setQ3(false); setStep(3); }}>Nee</Button>
+        </div>
+      </FunnelStep>
     );
   }
 
@@ -131,26 +149,9 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
         </p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <Input
-          placeholder="Je naam"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="h-12 text-base"
-        />
-        <Input
-          placeholder="Je telefoonnummer"
-          type="tel"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-          className="h-12 text-base"
-        />
-        <Button
-          type="submit"
-          disabled={submitting}
-          className="w-full h-12 text-base bg-accent hover:bg-accent/90 text-accent-foreground"
-        >
+        <Input placeholder="Je naam" value={name} onChange={(e) => setName(e.target.value)} required className="h-12 text-base" />
+        <Input placeholder="Je telefoonnummer" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required className="h-12 text-base" />
+        <Button type="submit" disabled={submitting} className="w-full h-12 text-base bg-accent hover:bg-accent/90 text-accent-foreground">
           {submitting ? "Verzenden..." : "Bel me terug"}
           {!submitting && <ArrowRight className="w-4 h-4 ml-2" />}
         </Button>
@@ -159,3 +160,23 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
     </div>
   );
 };
+
+// Shared step wrapper
+const FunnelStep = ({ step, totalSteps, onBack, children }: { step: number; totalSteps: number; onBack?: () => void; children: React.ReactNode }) => (
+  <div className="text-center py-10 px-6 space-y-8">
+    <div className="flex gap-2 justify-center">
+      {Array.from({ length: totalSteps }).map((_, i) => (
+        <div key={i} className={`h-1.5 w-12 rounded-full transition-colors ${i <= step ? "bg-accent" : "bg-border"}`} />
+      ))}
+    </div>
+    <p className="text-sm text-muted-foreground uppercase tracking-wider">
+      Vraag {step + 1} van {totalSteps}
+    </p>
+    {children}
+    {onBack && (
+      <button onClick={onBack} className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 mx-auto">
+        <ArrowLeft className="w-3 h-3" /> Vorige vraag
+      </button>
+    )}
+  </div>
+);
