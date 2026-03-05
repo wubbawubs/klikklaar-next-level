@@ -73,7 +73,7 @@ const SalesExecutive = () => {
                 "€100 per nieuwe klant uit de opstartfee",
                 "25% van de recurring fee over de eerste 4 maanden",
                 "Uitbetaling zodra klant 4 maanden actief is",
-                "Geen vast salaris — wél serieuze upside",
+                "Geen vast salaris, wél serieuze upside",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 bg-card border border-border rounded-lg p-4">
                   <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
@@ -124,18 +124,20 @@ const SalesExecutive = () => {
 
         {/* Team */}
         <section className="max-w-5xl mx-auto px-6 py-16">
-          <div className="flex items-center justify-center gap-8 flex-wrap">
+          <div className="flex items-center justify-center gap-12 flex-wrap">
             <div className="text-center space-y-2">
-              <img src={teamHuub} alt="Huub" className="w-24 h-24 rounded-full object-cover mx-auto" />
+              <img src={teamHuub} alt="Huub" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
               <p className="font-semibold text-foreground">Huub</p>
             </div>
             <div className="text-center space-y-2">
-              <img src={teamLuuk} alt="Luuk" className="w-24 h-24 rounded-full object-cover mx-auto" />
+              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
               <p className="font-semibold text-foreground">Luuk</p>
             </div>
-            <div className="flex items-center">
-              <Users className="w-6 h-6 text-muted-foreground mr-2" />
-              <span className="text-muted-foreground">+ jij?</span>
+            <div className="text-center space-y-2">
+              <div className="w-28 h-28 rounded-full border-4 border-dashed border-accent/40 flex items-center justify-center mx-auto">
+                <Users className="w-8 h-8 text-accent/60" />
+              </div>
+              <p className="font-semibold text-muted-foreground">+ jij?</p>
             </div>
           </div>
         </section>
