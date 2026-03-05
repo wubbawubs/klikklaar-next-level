@@ -4,6 +4,7 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { Search, Loader2, CheckCircle2, AlertTriangle, XCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { ResultsGate } from "./ResultsGate";
+import { ScannerLoading } from "./ScannerLoading";
 
 export interface CheckResult {
   id: string;
@@ -275,6 +276,9 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
               </div>
             )}
           </div>
+
+          {/* Loading animation */}
+          {loading && <ScannerLoading />}
 
           {/* Results */}
           {result && (
