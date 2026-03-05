@@ -56,8 +56,8 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
   if (done) {
     return (
       <div className="text-center py-12 px-6 space-y-4">
-        <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto">
-          <Check className="w-8 h-8 text-green-500" />
+        <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto">
+          <Check className="w-8 h-8 text-accent" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Bedankt, {name}!</h3>
         <p className="text-muted-foreground text-lg max-w-md mx-auto">
