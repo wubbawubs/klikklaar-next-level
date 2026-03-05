@@ -15,7 +15,7 @@ const SalesExecutive = () => {
         title="High Performance Sales Opportunity | KlikKlaar × IDEA"
         description="Bouw je eigen inkomstenstroom als sales executive. Geen plafond, geen limiet. Commissiebasis met serieuze upside."
         canonical="/salesexecutive"
-        noindex
+        robots="noindex,follow"
       />
 
       <div className="min-h-screen bg-background">

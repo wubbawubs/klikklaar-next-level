@@ -15,7 +15,7 @@ const StudentsLanding = () => {
         title="Verdien meer dan je bijbaan | KlikKlaar × IDEA"
         description="Als student je eigen inkomstenstroom opbouwen op commissiebasis. Geen plafond, op jouw tempo."
         canonical="/STUDENTSwhoMAKEtheirOWNliving"
-        noindex
+        robots="noindex,follow"
       />
 
       <div className="min-h-screen bg-background">

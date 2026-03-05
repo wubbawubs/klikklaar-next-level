@@ -15,7 +15,7 @@ const SeniorsLanding = () => {
         title="Ervaring is je grootste asset | KlikKlaar × IDEA"
         description="50+? Zet je ervaring in als sales executive. Bouw een extra inkomstenstroom op commissiebasis."
         canonical="/SENIORSwhoMAKEtheirOWNliving"
-        noindex
+        robots="noindex,follow"
       />
 
       <div className="min-h-screen bg-background">

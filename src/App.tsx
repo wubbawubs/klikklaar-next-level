@@ -31,6 +31,9 @@ import Diensten from "./pages/Diensten";
 import Platforms from "./pages/Platforms";
 import Tools from "./pages/Tools";
 import AdminLeads from "./pages/AdminLeads";
+import SalesExecutive from "./pages/SalesExecutive";
+import StudentsLanding from "./pages/StudentsLanding";
+import SeniorsLanding from "./pages/SeniorsLanding";
 import KennisbankPillar from "./pages/templates/KennisbankPillar";
 import KennisbankArticle from "./pages/templates/KennisbankArticle";
 
@@ -215,6 +218,11 @@ const App = () => (
             );
           })}
           
+          {/* Sales landing pages */}
+          <Route path="/salesexecutive" element={<SalesExecutive />} />
+          <Route path="/STUDENTSwhoMAKEtheirOWNliving" element={<StudentsLanding />} />
+          <Route path="/SENIORSwhoMAKEtheirOWNliving" element={<SeniorsLanding />} />
+
           {/* Admin */}
           <Route path="/admin/leads" element={<AdminLeads />} />
           
