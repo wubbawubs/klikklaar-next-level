@@ -132,7 +132,7 @@ const SalesExecutive = () => {
               <p className="font-semibold text-foreground">Huub</p>
             </div>
             <div className="text-center space-y-2">
-              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-background shadow-lg" />
+              <img src={teamLuuk} alt="Luuk" className="w-28 h-28 rounded-full object-cover object-[center_20%] mx-auto border-4 border-background shadow-lg" />
               <p className="font-semibold text-foreground">Luuk</p>
             </div>
             <div className="text-center space-y-2">
