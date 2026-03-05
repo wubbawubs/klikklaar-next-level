@@ -4,7 +4,7 @@ import klikklaarLogo from "@/assets/klikklaar-logo.png";
 import teamHuub from "@/assets/team-huub.jpg";
 import teamLuuk from "@/assets/team-luuk.jpg";
 import teamGroup from "@/assets/team-group.jpg";
-import { Check, Euro, Award, Rocket, Calendar, Users } from "lucide-react";
+import { Check, Euro, Award, Rocket, Calendar, Users, X } from "lucide-react";
 import { useState } from "react";
 
 const SeniorsLanding = () => {
@@ -40,10 +40,7 @@ const SeniorsLanding = () => {
               Zet het in. Bouw een extra inkomstenstroom op jouw manier en jouw tempo.
             </p>
             <button
-              onClick={() => {
-                setShowFunnel(true);
-                document.getElementById("funnel")?.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={() => setShowFunnel(true)}
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-colors"
             >
               <Rocket className="w-5 h-5" /> Ik wil meer weten
@@ -127,32 +124,10 @@ const SeniorsLanding = () => {
           </div>
         </section>
 
-        {/* Funnel */}
-        <section id="funnel" className="max-w-2xl mx-auto px-6 py-16">
-          <div className="bg-card border border-border rounded-2xl shadow-lg overflow-hidden">
-            {showFunnel ? (
-              <SalesQualificationFunnel variant="senior" />
-            ) : (
-              <div className="text-center py-12 space-y-4">
-                <h3 className="text-2xl font-bold text-foreground">Klaar om je ervaring in te zetten?</h3>
-                <p className="text-muted-foreground">3 korte vragen, dan bellen wij jou.</p>
-                <button
-                  onClick={() => setShowFunnel(true)}
-                  className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-colors"
-                >
-                  Start hier
-                </button>
-              </div>
-            )}
-          </div>
-        </section>
         {/* Sticky CTA */}
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-6 py-3 flex items-center justify-center">
           <button
-            onClick={() => {
-              setShowFunnel(true);
-              document.getElementById("funnel")?.scrollIntoView({ behavior: "smooth" });
-            }}
+            onClick={() => setShowFunnel(true)}
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors"
           >
             <Rocket className="w-5 h-5" /> Ik wil meer weten
@@ -160,6 +135,18 @@ const SeniorsLanding = () => {
         </div>
 
         <div className="h-16" />
+
+        {/* Popup Funnel */}
+        {showFunnel && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setShowFunnel(false)}>
+            <div className="relative bg-card border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden" onClick={(e) => e.stopPropagation()}>
+              <button onClick={() => setShowFunnel(false)} className="absolute top-3 right-3 z-10 p-1 rounded-full hover:bg-muted transition-colors">
+                <X className="w-5 h-5 text-muted-foreground" />
+              </button>
+              <SalesQualificationFunnel variant="senior" />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
