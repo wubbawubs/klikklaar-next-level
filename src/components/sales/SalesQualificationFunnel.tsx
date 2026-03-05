@@ -9,6 +9,10 @@ interface Props {
 }
 
 const Q2_OPTIONS = ["Student", "50+", "Anders"];
+const Q4_OPTIONS = ["2-5 uur", "5-10 uur", "10+ uur"];
+const Q5_OPTIONS = ["Ja, veel ervaring", "Een beetje", "Nee, maar ik wil leren"];
+
+const TOTAL_STEPS = 5;
 
 export const SalesQualificationFunnel = ({ variant }: Props) => {
   const [step, setStep] = useState(0);
@@ -16,6 +20,8 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
   const [q2, setQ2] = useState("");
   const [q2Anders, setQ2Anders] = useState("");
   const [q3, setQ3] = useState(false);
+  const [q4, setQ4] = useState("");
+  const [q5, setQ5] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -35,6 +41,8 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
       q1_rekeningnummer: q1,
       q2_doelgroep: q2 === "Anders" ? q2Anders.trim() || "Anders" : q2,
       q3_hoofdinkomen: q3,
+      q4_uren_per_week: q4,
+      q5_sales_ervaring: q5,
     });
 
     if (dbError) {
@@ -60,13 +68,14 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
     );
   }
 
-  // Step 0: Q1 - Ja/Nee
+  // Step 0: Q1 - Rekeningnummer
   if (step === 0) {
     return (
-      <FunnelStep step={0} totalSteps={3} onBack={undefined}>
+      <FunnelStep step={0} totalSteps={TOTAL_STEPS} onBack={undefined}>
         <h3 className="text-2xl md:text-3xl font-bold text-foreground">
           Heb je een rekeningnummer?
         </h3>
+        <p className="text-muted-foreground text-sm">Nodig om commissie te kunnen ontvangen</p>
         <div className="flex gap-4 justify-center">
           <Button size="lg" className="text-lg px-10 py-6 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => { setQ1(true); setStep(1); }}>Ja</Button>
           <Button size="lg" variant="outline" className="text-lg px-10 py-6" onClick={() => { setQ1(false); setStep(1); }}>Nee</Button>
@@ -75,10 +84,10 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
     );
   }
 
-  // Step 1: Q2 - Multiple choice
+  // Step 1: Q2 - Doelgroep
   if (step === 1) {
     return (
-      <FunnelStep step={1} totalSteps={3} onBack={() => setStep(0)}>
+      <FunnelStep step={1} totalSteps={TOTAL_STEPS} onBack={() => setStep(0)}>
         <h3 className="text-2xl md:text-3xl font-bold text-foreground">
           Wat beschrijft jou het beste?
         </h3>
@@ -119,22 +128,73 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
     );
   }
 
-  // Step 2: Q3 - Ja/Nee
+  // Step 2: Q4 - Uren per week
   if (step === 2) {
     return (
-      <FunnelStep step={2} totalSteps={3} onBack={() => setStep(1)}>
+      <FunnelStep step={2} totalSteps={TOTAL_STEPS} onBack={() => setStep(1)}>
         <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-          Wil je van je bijbaan je hoofd-inkomstenbron maken?
+          Hoeveel uur per week wil je beschikbaar zijn?
         </h3>
-        <div className="flex gap-4 justify-center">
-          <Button size="lg" className="text-lg px-10 py-6 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => { setQ3(true); setStep(3); }}>Ja</Button>
-          <Button size="lg" variant="outline" className="text-lg px-10 py-6" onClick={() => { setQ3(false); setStep(3); }}>Nee</Button>
+        <p className="text-muted-foreground text-sm">Er is geen minimum, jij bepaalt je eigen tempo</p>
+        <div className="flex flex-col gap-3 max-w-xs mx-auto">
+          {Q4_OPTIONS.map((option) => (
+            <Button
+              key={option}
+              size="lg"
+              variant={q4 === option ? "default" : "outline"}
+              className={`text-lg py-6 ${q4 === option ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}`}
+              onClick={() => { setQ4(option); setStep(3); }}
+            >
+              {option}
+            </Button>
+          ))}
         </div>
       </FunnelStep>
     );
   }
 
-  // Step 3: Contact form
+  // Step 3: Q5 - Sales ervaring
+  if (step === 3) {
+    return (
+      <FunnelStep step={3} totalSteps={TOTAL_STEPS} onBack={() => setStep(2)}>
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+          Heb je ervaring met sales of klantcontact?
+        </h3>
+        <p className="text-muted-foreground text-sm">Geen ervaring? Geen probleem. Wij trainen je.</p>
+        <div className="flex flex-col gap-3 max-w-xs mx-auto">
+          {Q5_OPTIONS.map((option) => (
+            <Button
+              key={option}
+              size="lg"
+              variant={q5 === option ? "default" : "outline"}
+              className={`text-lg py-6 ${q5 === option ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}`}
+              onClick={() => { setQ5(option); setStep(4); }}
+            >
+              {option}
+            </Button>
+          ))}
+        </div>
+      </FunnelStep>
+    );
+  }
+
+  // Step 4: Q3 - Hoofdinkomen
+  if (step === 4) {
+    return (
+      <FunnelStep step={4} totalSteps={TOTAL_STEPS} onBack={() => setStep(3)}>
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+          Wil je van je bijbaan je hoofd-inkomstenbron maken?
+        </h3>
+        <p className="text-muted-foreground text-sm">Beide antwoorden zijn prima. We passen het traject aan.</p>
+        <div className="flex gap-4 justify-center">
+          <Button size="lg" className="text-lg px-10 py-6 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => { setQ3(true); setStep(5); }}>Ja</Button>
+          <Button size="lg" variant="outline" className="text-lg px-10 py-6" onClick={() => { setQ3(false); setStep(5); }}>Nee</Button>
+        </div>
+      </FunnelStep>
+    );
+  }
+
+  // Step 5: Contact form
   return (
     <div className="py-10 px-6 max-w-md mx-auto space-y-6">
       <div className="text-center space-y-2">
@@ -163,10 +223,10 @@ export const SalesQualificationFunnel = ({ variant }: Props) => {
 
 // Shared step wrapper
 const FunnelStep = ({ step, totalSteps, onBack, children }: { step: number; totalSteps: number; onBack?: () => void; children: React.ReactNode }) => (
-  <div className="text-center py-10 px-6 space-y-8">
+  <div className="text-center py-10 px-6 space-y-6">
     <div className="flex gap-2 justify-center">
       {Array.from({ length: totalSteps }).map((_, i) => (
-        <div key={i} className={`h-1.5 w-12 rounded-full transition-colors ${i <= step ? "bg-accent" : "bg-border"}`} />
+        <div key={i} className={`h-1.5 w-8 rounded-full transition-colors ${i <= step ? "bg-accent" : "bg-border"}`} />
       ))}
     </div>
     <p className="text-sm text-muted-foreground uppercase tracking-wider">
