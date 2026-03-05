@@ -11,7 +11,7 @@ interface CheckResult {
   detail?: string;
 }
 
-type CheckId = 'title' | 'meta-desc' | 'h1' | 'headings' | 'images' | 'internal-links' | 'og-tags' | 'canonical' | 'https' | 'viewport' | 'lang' | 'robots-meta' | 'charset' | 'favicon' | 'twitter-cards' | 'heading-order' | 'h2-content' | 'h3-content';
+type CheckId = 'title' | 'meta-desc' | 'h1' | 'headings' | 'images' | 'internal-links' | 'og-tags' | 'canonical' | 'https' | 'viewport' | 'lang' | 'robots-meta' | 'charset' | 'favicon' | 'twitter-cards' | 'heading-order' | 'h2-content' | 'h3-content' | 'word-count' | 'structured-data' | 'page-speed-hints';
 
 function runCheck(id: CheckId, html: string, url: string): CheckResult | null {
   switch (id) {
@@ -153,6 +153,47 @@ function runCheck(id: CheckId, html: string, url: string): CheckResult | null {
       const count = [twCard, twTitle].filter(Boolean).length;
       if (count === 0) return { id, label: 'Twitter Card tags', status: 'warning', value: 'Ontbreken', detail: 'Voeg twitter:card en twitter:title toe voor betere social sharing op X.' };
       return { id, label: 'Twitter Card tags', status: 'pass', value: 'Aanwezig ✓' };
+    }
+
+    case 'word-count': {
+      const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+      const bodyText = bodyMatch ? bodyMatch[1].replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : '';
+      const wordCount = bodyText ? bodyText.split(/\s+/).length : 0;
+      if (wordCount < 300) return { id, label: 'Woordenaantal', status: 'warning', value: `${wordCount} woorden (te weinig)`, detail: 'Google geeft de voorkeur aan pagina's met minimaal 300+ woorden voor goede rankings.' };
+      if (wordCount < 600) return { id, label: 'Woordenaantal', status: 'pass', value: `${wordCount} woorden ✓`, detail: 'Voldoende content. Overweeg 800+ woorden voor competitieve zoekwoorden.' };
+      return { id, label: 'Woordenaantal', status: 'pass', value: `${wordCount} woorden ✓`, detail: 'Uitstekende hoeveelheid content voor SEO.' };
+    }
+
+    case 'structured-data': {
+      const jsonLdMatches = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi) || [];
+      const microdata = html.match(/itemscope/gi) || [];
+      const totalCount = jsonLdMatches.length + microdata.length;
+      if (totalCount === 0) return { id, label: 'Structured Data', status: 'fail', value: 'Niet gevonden', detail: 'Voeg JSON-LD structured data toe (bijv. Organization, LocalBusiness, FAQ) voor rich results in Google.' };
+      const types: string[] = [];
+      for (const match of jsonLdMatches) {
+        const content = match.replace(/<[^>]+>/g, '');
+        const typeMatches = content.match(/"@type"\s*:\s*"([^"]+)"/g) || [];
+        for (const t of typeMatches) {
+          const val = t.match(/"@type"\s*:\s*"([^"]+)"/)?.[1];
+          if (val) types.push(val);
+        }
+      }
+      const typeSummary = types.length > 0 ? types.slice(0, 4).join(', ') : `${jsonLdMatches.length} JSON-LD, ${microdata.length} Microdata`;
+      return { id, label: 'Structured Data', status: 'pass', value: `${totalCount} gevonden ✓`, detail: `Types: ${typeSummary}` };
+    }
+
+    case 'page-speed-hints': {
+      const renderBlocking: string[] = [];
+      const cssLinks = html.match(/<link[^>]+rel=["']stylesheet["'][^>]*>/gi) || [];
+      const syncScripts = html.match(/<script[^>]+src=["'][^"']+["'][^>]*>/gi) || [];
+      const asyncScripts = syncScripts.filter(s => s.match(/\b(async|defer)\b/i));
+      const blockingScripts = syncScripts.length - asyncScripts.length;
+      if (cssLinks.length > 5) renderBlocking.push(`${cssLinks.length} CSS-bestanden`);
+      if (blockingScripts > 3) renderBlocking.push(`${blockingScripts} blokkerende scripts`);
+      const largeImages = (html.match(/<img[^>]*>/gi) || []).filter(img => !img.match(/loading=["']lazy["']/i));
+      if (largeImages.length > 3) renderBlocking.push(`${largeImages.length} afbeeldingen zonder lazy loading`);
+      if (renderBlocking.length === 0) return { id, label: 'Laadsnelheid hints', status: 'pass', value: 'Goed ✓', detail: 'Geen grote laadsnelheid-problemen gedetecteerd.' };
+      return { id, label: 'Laadsnelheid hints', status: renderBlocking.length >= 2 ? 'warning' : 'pass', value: `${renderBlocking.length} aandachtspunt${renderBlocking.length > 1 ? 'en' : ''}`, detail: renderBlocking.join('; ') + '.' };
     }
 
     default:
