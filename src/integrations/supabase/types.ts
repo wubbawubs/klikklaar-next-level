@@ -22,7 +22,7 @@ export type Database = {
           name: string
           phone: string
           q1_rekeningnummer: boolean
-          q2_doelgroep: boolean
+          q2_doelgroep: string
           q3_hoofdinkomen: boolean
         }
         Insert: {
@@ -32,7 +32,7 @@ export type Database = {
           name: string
           phone: string
           q1_rekeningnummer?: boolean
-          q2_doelgroep?: boolean
+          q2_doelgroep?: string
           q3_hoofdinkomen?: boolean
         }
         Update: {
@@ -42,7 +42,7 @@ export type Database = {
           name?: string
           phone?: string
           q1_rekeningnummer?: boolean
-          q2_doelgroep?: boolean
+          q2_doelgroep?: string
           q3_hoofdinkomen?: boolean
         }
         Relationships: []
