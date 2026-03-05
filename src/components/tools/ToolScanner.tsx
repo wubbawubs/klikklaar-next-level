@@ -19,7 +19,103 @@ export interface ScanResult {
   checks: CheckResult[];
 }
 
-const FREE_CHECKS = 3;
+/**
+ * Maps tool slugs to the specific checks they run.
+ * Tools not listed here get all default checks.
+ */
+const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; label: string }> = {
+  // Full scanners — show everything
+  "seo-checker": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https"],
+    freeCount: 3,
+    label: "SEO Checker",
+  },
+  "seo-score-checker": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https"],
+    freeCount: 3,
+    label: "SEO Score",
+  },
+  "website-analyse": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "charset"],
+    freeCount: 4,
+    label: "Website Analyse",
+  },
+  "seo-audit-tool": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "lang", "robots-meta", "charset"],
+    freeCount: 4,
+    label: "SEO Audit",
+  },
+
+  // Meta tag tools — focused on meta
+  "meta-tag-checker": {
+    checks: ["title", "meta-desc", "og-tags", "canonical", "viewport", "robots-meta", "charset", "twitter-cards", "lang", "favicon"],
+    freeCount: 3,
+    label: "Meta Tags",
+  },
+  "serp-checker": {
+    checks: ["title", "meta-desc", "og-tags", "favicon"],
+    freeCount: 2,
+    label: "SERP Preview",
+  },
+
+  // Heading tools — focused on headings
+  "heading-checker": {
+    checks: ["h1", "headings", "heading-order", "h2-content", "h3-content"],
+    freeCount: 2,
+    label: "Heading Analyse",
+  },
+
+  // Technical tools
+  "canonical-checker": {
+    checks: ["canonical", "robots-meta", "lang"],
+    freeCount: 2,
+    label: "Canonical Check",
+  },
+  "ssl-checker": {
+    checks: ["https"],
+    freeCount: 1,
+    label: "SSL Check",
+  },
+  "http-header-checker": {
+    checks: ["https", "charset", "viewport", "robots-meta"],
+    freeCount: 2,
+    label: "HTTP Headers",
+  },
+  "sitemap-checker": {
+    checks: ["canonical", "robots-meta"],
+    freeCount: 2,
+    label: "Sitemap Check",
+  },
+  "robots-txt-checker": {
+    checks: ["robots-meta", "canonical"],
+    freeCount: 2,
+    label: "Robots.txt Check",
+  },
+  "indexatie-checker": {
+    checks: ["robots-meta", "canonical", "title", "meta-desc"],
+    freeCount: 2,
+    label: "Indexatie Check",
+  },
+
+  // Content tools
+  "alt-tekst-checker": {
+    checks: ["images"],
+    freeCount: 1,
+    label: "Alt Tekst Check",
+  },
+  "mobile-friendly-test": {
+    checks: ["viewport", "charset", "images", "https"],
+    freeCount: 2,
+    label: "Mobiel Check",
+  },
+
+  // Link tools
+  "interne-link-checker": {
+    checks: ["internal-links", "canonical"],
+    freeCount: 1,
+    label: "Interne Links",
+  },
+};
 
 const statusIcon = (status: CheckResult["status"]) => {
   switch (status) {
@@ -64,6 +160,33 @@ function ScoreRing({ score }: { score: number }) {
   );
 }
 
+function CheckCard({ check }: { check: CheckResult }) {
+  return (
+    <div className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border">
+      {statusIcon(check.status)}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center justify-between gap-2">
+          <p className="font-medium text-foreground text-sm">{check.label}</p>
+          <span
+            className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+              check.status === "pass"
+                ? "bg-emerald-500/10 text-emerald-600"
+                : check.status === "warning"
+                  ? "bg-amber-500/10 text-amber-600"
+                  : "bg-destructive/10 text-destructive"
+            }`}
+          >
+            {check.value}
+          </span>
+        </div>
+        {check.detail && (
+          <p className="text-xs text-muted-foreground mt-1">{check.detail}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 interface ToolScannerProps {
   toolSlug: string;
   toolName: string;
@@ -76,6 +199,10 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
   const [error, setError] = useState<string | null>(null);
   const [unlocked, setUnlocked] = useState(false);
 
+  const toolConfig = TOOL_CHECK_MAP[toolSlug];
+  const checksToRequest = toolConfig?.checks;
+  const freeCount = toolConfig?.freeCount ?? 3;
+
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!url.trim()) return;
@@ -86,7 +213,10 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
 
     try {
       const { data, error: fnError } = await supabase.functions.invoke("analyze-url", {
-        body: { url: url.trim() },
+        body: {
+          url: url.trim(),
+          ...(checksToRequest ? { checks: checksToRequest } : {}),
+        },
       });
 
       if (fnError) throw new Error(fnError.message);
@@ -103,6 +233,8 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
       setLoading(false);
     }
   };
+
+  const hasGatedChecks = result && result.checks.length > freeCount;
 
   return (
     <section className="py-12 lg:py-16">
@@ -150,7 +282,8 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
               {/* Score */}
               <div className="bg-card border border-border rounded-2xl p-6 text-center">
                 <p className="text-sm text-muted-foreground mb-3">
-                  Score voor <span className="font-medium text-foreground">{result.url}</span>
+                  {toolConfig?.label || toolName} score voor{" "}
+                  <span className="font-medium text-foreground">{result.url}</span>
                 </p>
                 <ScoreRing score={result.score} />
                 <p className="text-sm text-muted-foreground mt-3">
@@ -158,48 +291,23 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
                     ? "Goed bezig! Er zijn nog kleine verbeterpunten."
                     : result.score >= 50
                       ? "Redelijk, maar er is ruimte voor verbetering."
-                      : "Er zijn belangrijke SEO-problemen gevonden."}
+                      : "Er zijn belangrijke problemen gevonden."}
                 </p>
               </div>
 
               {/* Free checks */}
               <div className="space-y-3">
-                {result.checks.slice(0, FREE_CHECKS).map((check) => (
-                  <div
-                    key={check.id}
-                    className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border"
-                  >
-                    {statusIcon(check.status)}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="font-medium text-foreground text-sm">{check.label}</p>
-                        <span
-                          className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                            check.status === "pass"
-                              ? "bg-emerald-500/10 text-emerald-600"
-                              : check.status === "warning"
-                                ? "bg-amber-500/10 text-amber-600"
-                                : "bg-destructive/10 text-destructive"
-                          }`}
-                        >
-                          {check.value}
-                        </span>
-                      </div>
-                      {check.detail && (
-                        <p className="text-xs text-muted-foreground mt-1">{check.detail}</p>
-                      )}
-                    </div>
-                  </div>
+                {result.checks.slice(0, freeCount).map((check) => (
+                  <CheckCard key={check.id} check={check} />
                 ))}
               </div>
 
               {/* Gated checks */}
-              {!unlocked && result.checks.length > FREE_CHECKS && (
+              {!unlocked && hasGatedChecks && (
                 <>
-                  {/* Blurred preview */}
                   <div className="relative">
                     <div className="space-y-3 blur-sm pointer-events-none select-none" aria-hidden>
-                      {result.checks.slice(FREE_CHECKS, FREE_CHECKS + 2).map((check) => (
+                      {result.checks.slice(freeCount, freeCount + 2).map((check) => (
                         <div
                           key={check.id}
                           className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border"
@@ -218,41 +326,17 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
                   <ResultsGate
                     toolSlug={toolSlug}
                     urlChecked={result.url}
-                    remainingChecks={result.checks.length - FREE_CHECKS}
+                    remainingChecks={result.checks.length - freeCount}
                     onUnlock={() => setUnlocked(true)}
                   />
                 </>
               )}
 
               {/* Unlocked checks */}
-              {unlocked && result.checks.length > FREE_CHECKS && (
+              {unlocked && hasGatedChecks && (
                 <div className="space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  {result.checks.slice(FREE_CHECKS).map((check) => (
-                    <div
-                      key={check.id}
-                      className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border"
-                    >
-                      {statusIcon(check.status)}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-2">
-                          <p className="font-medium text-foreground text-sm">{check.label}</p>
-                          <span
-                            className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                              check.status === "pass"
-                                ? "bg-emerald-500/10 text-emerald-600"
-                                : check.status === "warning"
-                                  ? "bg-amber-500/10 text-amber-600"
-                                  : "bg-destructive/10 text-destructive"
-                            }`}
-                          >
-                            {check.value}
-                          </span>
-                        </div>
-                        {check.detail && (
-                          <p className="text-xs text-muted-foreground mt-1">{check.detail}</p>
-                        )}
-                      </div>
-                    </div>
+                  {result.checks.slice(freeCount).map((check) => (
+                    <CheckCard key={check.id} check={check} />
                   ))}
                 </div>
               )}
