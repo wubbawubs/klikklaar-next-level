@@ -69,7 +69,7 @@ serve(async (req) => {
       lineItems.push({ price: setupFeePriceId, quantity: 1 });
     }
 
-    const session = await stripe.checkout.sessions.create({
+    const sessionParams: any = {
       customer: customerId,
       customer_email: customerId ? undefined : customerEmail,
       line_items: lineItems,
@@ -77,7 +77,15 @@ serve(async (req) => {
       ui_mode: "embedded",
       return_url: `${origin}/betaling-geslaagd?session_id={CHECKOUT_SESSION_ID}`,
       locale: "nl",
-    });
+    };
+
+    // For one-time payments: force customer + invoice creation
+    if (checkoutMode === "payment") {
+      sessionParams.customer_creation = customerId ? undefined : "always";
+      sessionParams.invoice_creation = { enabled: true };
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
 
     logStep("Embedded checkout session created", { sessionId: session.id });
 
