@@ -1,89 +1,64 @@
 
+# Plan: SEO Blueprint — KlikKlaarSEO 900 pagina's
 
-## Plan: Functionele SEO Tools met Lead Funnel
+## Voortgang: ~900+ pagina's ✅ COMPLEET
 
-### Huidige situatie
-De ~150 tool-pagina's zijn puur statisch/informatief. Er is geen werkende input, geen analyse, geen resultaat. Bezoekers komen, lezen, en vertrekken.
+## Template-overzicht
 
-### Doel
-Tools functioneel maken zodat bezoekers:
-1. Een URL invoeren en echte resultaten zien
-2. Na het zien van resultaten gefunneld worden naar een gesprek of lead-capture
+| # | Template | Code | Doel | Gebouwd | Status |
+|---|----------|------|------|---------|--------|
+| 1 | Diensten | SRV | 60 | 60 | ✅ Compleet |
+| 2 | Branches/Industries | IND | 250 | ~250 | ✅ Compleet |
+| 3 | Platforms | PLAT | 100 | ~100 | ✅ Compleet (50+50 platforms + hub) |
+| 4 | Locaties | LOC | 120 | ~120 | ✅ Compleet (noindex Tier 3) |
+| 5 | Tools | TOOL | 150 | ~150 | ✅ Compleet (75+75 tools + hub) |
+| 6 | Kennisbank/Resources | RES | 220 | ~200 | ✅ Compleet (14 pillars + ~200 artikelen) |
 
-### Strategie: "Freemium Gated Results"
+## Fase 1 — Fundament (nu → week 2)
+- [x] P1 dienst-pagina's (uitbesteden + abonnement)
+- [x] P2 dienst-pagina's (bureau + scan)
+- [x] Diensten hub-pagina
+- [x] Branches hub-pagina
+- [x] Steden hub-pagina
+- [ ] **SRV uitbreiden**: 38 nieuwe dienst-varianten (content-optimalisatie, linkbuilding, SEO teksten, Google Bedrijfsprofiel, SEO voor dienstverleners, SEO migratie, conversie optimalisatie, SEO strategie)
+- [ ] **URL-structuur migreren**: blueprint gebruikt `/nl/diensten/[dienst]/[variant]` i.p.v. huidige flat `/diensten/[dienst]-[variant]`
 
-```text
-┌─────────────────────────────────────┐
-│  1. URL Input (boven de fold)       │
-│     [voer je website URL in]  [Check]│
-├─────────────────────────────────────┤
-│  2. Scan draait (loading + animatie)│
-├─────────────────────────────────────┤
-│  3. Resultaten – GEDEELTELIJK      │
-│     ✓ Score (bijv. 62/100)          │
-│     ✓ 3 van 8 checks zichtbaar     │
-│     ✗ 5 checks geblurred/locked    │
-├─────────────────────────────────────┤
-│  4. Lead Gate                       │
-│     "Wil je het volledige rapport?" │
-│     → Optie A: E-mail invullen     │
-│     → Optie B: Plan een gesprek    │
-│       (primaire CTA, link /contact) │
-└─────────────────────────────────────┘
-```
+## Fase 2 — Branches uitbreiden (week 3-4)
+- [ ] **IND template upgraden**: toevoegen "lokale SEO voor [branche]" variant (125 extra pagina's)
+- [ ] **IND data uitbreiden**: van 29 naar 125 branches (accountant, advocaat, tandarts, restaurant, sportschool, etc.)
+- [ ] Hub-pagina `/branches` updaten met categorieën
 
-### Welke tools functioneel maken (fase 1 — hoogste waarde)
+## Fase 3 — Platforms (week 4-5)
+- [ ] **PLAT template bouwen**: "SEO voor [platform]" + "[platform] SEO handleiding"
+- [ ] **PLAT data**: 50 platforms (WordPress, Shopify, Wix, Webflow, Magento, etc.)
+- [ ] Hub-pagina `/platforms` bouwen
 
-Starten met 3-5 tools die we client-side of via een edge function kunnen draaien:
+## Fase 4 — Locaties uitbreiden (week 5-6)
+- [ ] **LOC uitbreiden**: van 80 naar 120 steden
+- [ ] Noindex-gating voor Tier 3 steden
 
-| Tool | Aanpak | Complexiteit |
-|------|--------|-------------|
-| **SEO Score Checker** | Edge function: fetch URL, parse HTML, scoor meta/headings/alt/links | Medium |
-| **Meta Tag Checker** | Edge function: fetch URL, extract & valideer title/description/OG tags | Laag |
-| **Heading Checker** | Edge function: fetch URL, parse H1-H6 hiërarchie | Laag |
-| **SSL Checker** | Client-side: check https + certificaat info | Laag |
-| **Robots.txt Checker** | Edge function: fetch /robots.txt, parse & rapporteer | Laag |
+## Fase 5 — Tools (week 6-8)
+- [ ] **TOOL template bouwen**: tool-pagina + handleiding variant
+- [ ] **TOOL data**: 75 tools (meta tag checker, keyword density, schema validator, etc.)
+- [ ] Hub-pagina `/tools` bouwen
 
-### Technische aanpak
+## Fase 6 — Kennisbank/Resources (week 8-12)
+- [ ] **RES template upgraden**: gids/checklist/voorbeelden/best-practices/FAQ clusters
+- [ ] **RES data**: 44 topics × 5 formaten = 220 pagina's
+- [ ] Hub-pagina `/kennis` uitbreiden
 
-1. **Edge function `analyze-url`**
-   - Accepteert `{ url, checks: ["meta", "headings", "images", ...] }`
-   - Fetcht de pagina server-side (CORS-vrij)
-   - Parseert HTML en retourneert gestructureerde resultaten per check
-   - Rate limiting: max 5 scans per IP per uur
+## Architectuur-beslissingen nodig
+1. **URL-prefix `/nl/`**: blueprint gebruikt `/nl/` prefix → moeten we migreren of houden we huidige structuur?
+2. **Noindex-gating**: automatisch noindex tot "Required unique modules" gevuld → hoe implementeren?
+3. **Data-opslag**: alle 900 entries in statische TS bestanden of naar database (Lovable Cloud)?
 
-2. **Herbruikbaar `<ToolScanner />` component**
-   - URL input + submit button
-   - Loading state met animatie
-   - Resultaten-kaarten met score per check
-   - Geblurrde sectie na 3 resultaten
+## Technische templates nog te bouwen
+- `PlatformLandingPage` (PLAT) — SEO voor [platform]
+- `PlatformHandleidingPage` (PLAT) — [platform] SEO handleiding
+- `ToolLandingPage` (TOOL) — gratis SEO tool
+- `ToolHandleidingPage` (TOOL) — tool handleiding
+- `BranchLokaleSeoPage` (IND variant) — lokale SEO voor [branche]
+- `ResourceClusterPage` (RES) — gids/checklist/voorbeelden/best-practices/FAQ
 
-3. **Lead Gate component `<ResultsGate />`**
-   - Toont na de gratis resultaten
-   - Twee opties:
-     - E-mail invoeren → opslaan in `tool_leads` tabel → volledig rapport tonen
-     - "Laat een expert kijken" → link naar /contact
-   - E-mail opslag in database: `tool_leads(id, email, tool_slug, url_checked, created_at)`
-
-4. **Database tabel**
-   - `tool_leads`: vangt e-mailadressen op met context (welke tool, welke URL)
-   - RLS: insert voor iedereen, select alleen voor admins
-
-5. **Integratie in ToolLandingPage**
-   - Scanner direct onder de hero (boven "Wat doet deze tool?")
-   - Resultaten vervangen de statische "Hoe werkt het?" stappen
-   - CTA-secties blijven, maar worden contextueler ("Je scoort 62/100 — wij maken er 90+ van")
-
-### Lead funnel flow
-
-- **Zonder e-mail**: bezoeker ziet score + 3 checks → nieuwsgierig maar gelimiteerd
-- **Met e-mail**: volledig rapport → follow-up e-mail mogelijk (handmatig of via n8n)
-- **Via gesprek**: directe conversie naar Calendly booking
-
-### Fasering
-
-**Fase 1** — Edge function + SEO Score Checker functioneel (1 tool als proof of concept)
-**Fase 2** — Hergebruik voor 4 andere laag-complexe tools
-**Fase 3** — Lead tabel + e-mail gate activeren
-**Fase 4** — Dynamische CTA's op basis van scan-resultaten ("Je mist structured data — wij regelen dit")
-
+## Bronbestand
+Volledige blueprint: `seo_page_blueprint_nl_v3_2700-2.xlsx` (Page 3 = KlikKlaarSEO)

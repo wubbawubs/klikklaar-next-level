@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Phone, Check, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ToolData, tools, toolCategories } from "@/data/tools";
+import { ToolScanner } from "@/components/tools/ToolScanner";
 import { isToolIndexReady, getToolScore } from "@/lib/indexation-governance";
 import {
   Accordion,
@@ -374,6 +375,7 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
       <Header />
       <main>
         <ToolHero tool={tool} />
+        <ToolScanner toolSlug={tool.slug} toolName={tool.name} />
         <ToolUniqueIntro tool={tool} />
         <ToolWhatItDoes tool={tool} />
         <ToolChecklist tool={tool} />
