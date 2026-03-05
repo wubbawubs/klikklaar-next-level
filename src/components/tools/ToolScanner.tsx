@@ -27,22 +27,22 @@ export interface ScanResult {
 const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; label: string }> = {
   // Full scanners — show everything
   "seo-checker": {
-    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https"],
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data", "page-speed-hints"],
     freeCount: 3,
     label: "SEO Checker",
   },
   "seo-score-checker": {
-    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https"],
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data"],
     freeCount: 3,
     label: "SEO Score",
   },
   "website-analyse": {
-    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "charset"],
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "charset", "word-count", "structured-data", "page-speed-hints"],
     freeCount: 4,
     label: "Website Analyse",
   },
   "seo-audit-tool": {
-    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "lang", "robots-meta", "charset"],
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "lang", "robots-meta", "charset", "word-count", "structured-data", "page-speed-hints"],
     freeCount: 4,
     label: "SEO Audit",
   },
@@ -105,7 +105,7 @@ const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; labe
     label: "Alt Tekst Check",
   },
   "mobile-friendly-test": {
-    checks: ["viewport", "charset", "images", "https"],
+    checks: ["viewport", "charset", "images", "https", "page-speed-hints"],
     freeCount: 2,
     label: "Mobiel Check",
   },
