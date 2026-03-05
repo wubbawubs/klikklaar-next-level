@@ -92,8 +92,8 @@ const SalesExecutive = () => {
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 "€100 per nieuwe klant uit de opstartfee",
-                "25% van de recurring fee over de eerste 4 maanden",
-                "Uitbetaling zodra klant 4 maanden actief is",
+                "25% van de recurring fee over de eerste 3 maanden",
+                "Uitbetaling zodra klant 3 maanden actief is",
                 "Geen vast salaris, wél serieuze upside",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 bg-card border border-border rounded-lg p-4">
