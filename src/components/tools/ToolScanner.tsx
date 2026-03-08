@@ -22,7 +22,7 @@ export interface ScanResult {
 
 /**
  * Maps tool slugs to the specific checks they run.
- * Tools not listed here get all default checks.
+ * Tools not listed here get a sensible default set of checks.
  */
 const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; label: string }> = {
   // Full scanners — show everything
@@ -116,6 +116,12 @@ const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; labe
     freeCount: 1,
     label: "Interne Links",
   },
+};
+
+// Default checks for tools not in the map (covers all major SEO factors)
+const DEFAULT_CHECKS = {
+  checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count"],
+  freeCount: 3,
 };
 
 const statusIcon = (status: CheckResult["status"]) => {
