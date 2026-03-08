@@ -375,7 +375,7 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
       <Header />
       <main>
         <ToolHero tool={tool} />
-        <ToolScanner toolSlug={tool.slug} toolName={tool.name} />
+        <ToolScanner toolSlug={tool.slug} toolName={tool.name} toolCategory={tool.category} />
         <ToolUniqueIntro tool={tool} />
         <ToolWhatItDoes tool={tool} />
         <ToolChecklist tool={tool} />
