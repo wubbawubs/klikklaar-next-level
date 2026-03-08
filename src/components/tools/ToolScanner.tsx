@@ -22,7 +22,7 @@ export interface ScanResult {
 
 /**
  * Maps tool slugs to the specific checks they run.
- * Tools not listed here get all default checks.
+ * Tools not listed here get a sensible default set of checks.
  */
 const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; label: string }> = {
   // Full scanners — show everything
@@ -118,6 +118,12 @@ const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; labe
   },
 };
 
+// Default checks for tools not in the map (covers all major SEO factors)
+const DEFAULT_CHECKS = {
+  checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count"],
+  freeCount: 3,
+};
+
 const statusIcon = (status: CheckResult["status"]) => {
   switch (status) {
     case "pass":
@@ -201,8 +207,8 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
   const [unlocked, setUnlocked] = useState(false);
 
   const toolConfig = TOOL_CHECK_MAP[toolSlug];
-  const checksToRequest = toolConfig?.checks;
-  const freeCount = toolConfig?.freeCount ?? 3;
+  const checksToRequest = toolConfig?.checks || DEFAULT_CHECKS.checks;
+  const freeCount = toolConfig?.freeCount ?? DEFAULT_CHECKS.freeCount;
 
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
