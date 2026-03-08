@@ -207,8 +207,8 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
   const [unlocked, setUnlocked] = useState(false);
 
   const toolConfig = TOOL_CHECK_MAP[toolSlug];
-  const checksToRequest = toolConfig?.checks;
-  const freeCount = toolConfig?.freeCount ?? 3;
+  const checksToRequest = toolConfig?.checks || DEFAULT_CHECKS.checks;
+  const freeCount = toolConfig?.freeCount ?? DEFAULT_CHECKS.freeCount;
 
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
