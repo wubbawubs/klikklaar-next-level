@@ -11,6 +11,8 @@ import { Phone, Check, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ToolData, tools, toolCategories } from "@/data/tools";
 import { ToolScanner } from "@/components/tools/ToolScanner";
+import { TextToolScanner } from "@/components/tools/TextToolScanner";
+import { TEXT_TOOL_SLUGS } from "@/components/tools/text-processors";
 import { isToolIndexReady, getToolScore } from "@/lib/indexation-governance";
 import {
   Accordion,
@@ -375,7 +377,11 @@ export function ToolLandingPage({ tool }: ToolLandingPageProps) {
       <Header />
       <main>
         <ToolHero tool={tool} />
-        <ToolScanner toolSlug={tool.slug} toolName={tool.name} toolCategory={tool.category} />
+        {TEXT_TOOL_SLUGS[tool.slug] ? (
+          <TextToolScanner toolSlug={tool.slug} toolName={tool.name} toolType={TEXT_TOOL_SLUGS[tool.slug]} />
+        ) : (
+          <ToolScanner toolSlug={tool.slug} toolName={tool.name} toolCategory={tool.category} />
+        )}
         <ToolUniqueIntro tool={tool} />
         <ToolWhatItDoes tool={tool} />
         <ToolChecklist tool={tool} />
