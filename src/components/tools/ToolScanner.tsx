@@ -21,108 +21,326 @@ export interface ScanResult {
 }
 
 /**
- * Maps tool slugs to the specific checks they run.
- * Tools not listed here get a sensible default set of checks.
+ * Category-based default checks — every tool in a category gets these unless overridden.
  */
-const TOOL_CHECK_MAP: Record<string, { checks: string[]; freeCount: number; label: string }> = {
-  // Full scanners — show everything
-  "seo-checker": {
+const CATEGORY_CHECK_DEFAULTS: Record<string, { checks: string[]; freeCount: number }> = {
+  analyse: {
     checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data", "page-speed-hints"],
     freeCount: 3,
-    label: "SEO Checker",
   },
-  "seo-score-checker": {
+  technisch: {
+    checks: ["title", "meta-desc", "canonical", "robots-meta", "viewport", "charset", "lang", "https", "og-tags", "twitter-cards"],
+    freeCount: 3,
+  },
+  content: {
+    checks: ["title", "meta-desc", "h1", "headings", "heading-order", "word-count", "images", "internal-links"],
+    freeCount: 3,
+  },
+  linkbuilding: {
+    checks: ["internal-links", "canonical", "og-tags", "https"],
+    freeCount: 2,
+  },
+  lokaal: {
+    checks: ["title", "meta-desc", "structured-data", "og-tags", "canonical", "https", "viewport"],
+    freeCount: 2,
+  },
+  monitoring: {
+    checks: ["title", "meta-desc", "h1", "canonical", "robots-meta", "https", "structured-data", "page-speed-hints"],
+    freeCount: 3,
+  },
+  snelheid: {
+    checks: ["page-speed-hints", "images", "viewport", "https", "charset"],
+    freeCount: 2,
+  },
+  "structured-data": {
+    checks: ["structured-data", "title", "meta-desc", "canonical", "og-tags"],
+    freeCount: 2,
+  },
+  keyword: {
+    checks: ["title", "meta-desc", "h1", "headings", "word-count", "internal-links"],
+    freeCount: 2,
+  },
+  concurrentie: {
     checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data"],
     freeCount: 3,
-    label: "SEO Score",
+  },
+};
+
+/**
+ * Per-tool overrides for tools that need specific checks beyond their category default.
+ */
+const TOOL_CHECK_OVERRIDES: Record<string, { checks: string[]; freeCount: number; label: string }> = {
+  // ── Full scanners ──
+  "seo-checker": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data", "page-speed-hints"],
+    freeCount: 3, label: "SEO Checker",
   },
   "website-analyse": {
     checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "charset", "word-count", "structured-data", "page-speed-hints"],
-    freeCount: 4,
-    label: "Website Analyse",
+    freeCount: 4, label: "Website Analyse",
   },
   "seo-audit-tool": {
     checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "viewport", "lang", "robots-meta", "charset", "word-count", "structured-data", "page-speed-hints"],
-    freeCount: 4,
-    label: "SEO Audit",
+    freeCount: 4, label: "SEO Audit",
+  },
+  "seo-health-check": {
+    checks: ["title", "meta-desc", "h1", "https", "canonical", "robots-meta", "images", "page-speed-hints"],
+    freeCount: 3, label: "SEO Health Check",
   },
 
-  // Meta tag tools — focused on meta
+  // ── Meta / SERP ──
   "meta-tag-checker": {
     checks: ["title", "meta-desc", "og-tags", "canonical", "viewport", "robots-meta", "charset", "twitter-cards", "lang", "favicon"],
-    freeCount: 3,
-    label: "Meta Tags",
+    freeCount: 3, label: "Meta Tags",
   },
   "serp-checker": {
     checks: ["title", "meta-desc", "og-tags", "favicon"],
-    freeCount: 2,
-    label: "SERP Preview",
+    freeCount: 2, label: "SERP Preview",
+  },
+  "open-graph-checker": {
+    checks: ["og-tags", "title", "meta-desc", "twitter-cards", "favicon"],
+    freeCount: 2, label: "Open Graph Check",
+  },
+  "twitter-card-checker": {
+    checks: ["twitter-cards", "og-tags", "title", "meta-desc", "favicon"],
+    freeCount: 2, label: "Twitter Card Check",
   },
 
-  // Heading tools — focused on headings
+  // ── Headings ──
   "heading-checker": {
     checks: ["h1", "headings", "heading-order", "h2-content", "h3-content"],
-    freeCount: 2,
-    label: "Heading Analyse",
+    freeCount: 2, label: "Heading Analyse",
+  },
+  "heading-generator": {
+    checks: ["h1", "headings", "heading-order", "h2-content", "h3-content"],
+    freeCount: 2, label: "Heading Check",
   },
 
-  // Technical tools
+  // ── Technical specifics ──
   "canonical-checker": {
     checks: ["canonical", "robots-meta", "lang"],
-    freeCount: 2,
-    label: "Canonical Check",
+    freeCount: 2, label: "Canonical Check",
   },
   "ssl-checker": {
     checks: ["https"],
-    freeCount: 1,
-    label: "SSL Check",
+    freeCount: 1, label: "SSL Check",
   },
   "http-header-checker": {
     checks: ["https", "charset", "viewport", "robots-meta"],
-    freeCount: 2,
-    label: "HTTP Headers",
+    freeCount: 2, label: "HTTP Headers",
   },
   "sitemap-checker": {
     checks: ["canonical", "robots-meta"],
-    freeCount: 2,
-    label: "Sitemap Check",
+    freeCount: 2, label: "Sitemap Check",
   },
   "robots-txt-checker": {
     checks: ["robots-meta", "canonical"],
-    freeCount: 2,
-    label: "Robots.txt Check",
+    freeCount: 2, label: "Robots.txt Check",
   },
   "indexatie-checker": {
     checks: ["robots-meta", "canonical", "title", "meta-desc"],
-    freeCount: 2,
-    label: "Indexatie Check",
+    freeCount: 2, label: "Indexatie Check",
+  },
+  "mixed-content-checker": {
+    checks: ["https", "images", "page-speed-hints"],
+    freeCount: 2, label: "Mixed Content Check",
+  },
+  "redirect-checker": {
+    checks: ["canonical", "https", "robots-meta"],
+    freeCount: 2, label: "Redirect Check",
+  },
+  "hreflang-checker": {
+    checks: ["lang", "canonical", "robots-meta"],
+    freeCount: 2, label: "Hreflang Check",
+  },
+  "dns-checker": {
+    checks: ["https", "canonical"],
+    freeCount: 1, label: "DNS Check",
+  },
+  "structured-data-tester": {
+    checks: ["structured-data", "canonical", "title", "meta-desc"],
+    freeCount: 2, label: "Structured Data Test",
+  },
+  "wachtwoord-pagina-checker": {
+    checks: ["robots-meta", "canonical", "title", "meta-desc"],
+    freeCount: 2, label: "Noindex Check",
   },
 
-  // Content tools
+  // ── Content specifics ──
   "alt-tekst-checker": {
     checks: ["images"],
-    freeCount: 1,
-    label: "Alt Tekst Check",
+    freeCount: 1, label: "Alt Tekst Check",
   },
-  "mobile-friendly-test": {
-    checks: ["viewport", "charset", "images", "https", "page-speed-hints"],
-    freeCount: 2,
-    label: "Mobiel Check",
+  "keyword-density-checker": {
+    checks: ["title", "meta-desc", "h1", "headings", "word-count"],
+    freeCount: 2, label: "Keyword Density",
+  },
+  "leesbaarheid-checker": {
+    checks: ["h1", "headings", "word-count", "heading-order"],
+    freeCount: 2, label: "Leesbaarheid",
+  },
+  "content-score-checker": {
+    checks: ["title", "meta-desc", "h1", "headings", "word-count", "images", "internal-links", "heading-order"],
+    freeCount: 3, label: "Content Score",
+  },
+  "meta-description-generator": {
+    checks: ["meta-desc", "title", "og-tags"],
+    freeCount: 2, label: "Meta Description",
+  },
+  "title-tag-generator": {
+    checks: ["title", "meta-desc", "og-tags"],
+    freeCount: 2, label: "Title Tag",
+  },
+  "content-gap-analyse": {
+    checks: ["title", "meta-desc", "h1", "headings", "word-count", "internal-links"],
+    freeCount: 2, label: "Content Gap",
+  },
+  "featured-snippet-optimizer": {
+    checks: ["h1", "headings", "heading-order", "word-count", "structured-data"],
+    freeCount: 2, label: "Featured Snippet",
+  },
+  "slug-generator": {
+    checks: ["canonical", "title", "meta-desc"],
+    freeCount: 2, label: "URL Slug Check",
+  },
+  "internal-link-suggestie": {
+    checks: ["internal-links", "h1", "headings", "canonical"],
+    freeCount: 2, label: "Interne Link Suggestie",
   },
 
-  // Link tools
+  // ── Linkbuilding specifics ──
   "interne-link-checker": {
     checks: ["internal-links", "canonical"],
-    freeCount: 1,
-    label: "Interne Links",
+    freeCount: 1, label: "Interne Links",
+  },
+  "backlink-checker": {
+    checks: ["internal-links", "canonical", "og-tags", "https"],
+    freeCount: 2, label: "Backlink Check",
+  },
+  "broken-link-checker": {
+    checks: ["internal-links", "canonical", "https"],
+    freeCount: 2, label: "Broken Link Check",
+  },
+  "toxic-link-checker": {
+    checks: ["internal-links", "canonical", "https", "robots-meta"],
+    freeCount: 2, label: "Toxic Link Check",
+  },
+
+  // ── Mobile ──
+  "mobile-friendly-test": {
+    checks: ["viewport", "charset", "images", "https", "page-speed-hints"],
+    freeCount: 2, label: "Mobiel Check",
+  },
+  "amp-validator": {
+    checks: ["viewport", "https", "structured-data", "page-speed-hints"],
+    freeCount: 2, label: "AMP Check",
+  },
+
+  // ── Snelheid specifics ──
+  "pagespeed-test": {
+    checks: ["page-speed-hints", "images", "viewport", "https"],
+    freeCount: 2, label: "PageSpeed",
+  },
+  "core-web-vitals-test": {
+    checks: ["page-speed-hints", "images", "viewport"],
+    freeCount: 2, label: "Core Web Vitals",
+  },
+  "render-blocking-checker": {
+    checks: ["page-speed-hints", "images", "viewport"],
+    freeCount: 2, label: "Render Blocking",
+  },
+  "gzip-checker": {
+    checks: ["https", "page-speed-hints"],
+    freeCount: 1, label: "GZIP Check",
+  },
+  "caching-checker": {
+    checks: ["https", "page-speed-hints", "images"],
+    freeCount: 2, label: "Cache Check",
+  },
+  "lighthouse-tester": {
+    checks: ["page-speed-hints", "images", "viewport", "https", "structured-data"],
+    freeCount: 2, label: "Lighthouse",
+  },
+  "third-party-checker": {
+    checks: ["page-speed-hints", "https"],
+    freeCount: 1, label: "Third Party Scripts",
+  },
+
+  // ── Structured Data specifics ──
+  "schema-validator": {
+    checks: ["structured-data", "title", "meta-desc", "canonical"],
+    freeCount: 2, label: "Schema Validator",
+  },
+  "rich-snippet-preview": {
+    checks: ["structured-data", "title", "meta-desc", "og-tags", "favicon"],
+    freeCount: 2, label: "Rich Snippet Preview",
+  },
+  "json-ld-validator": {
+    checks: ["structured-data", "canonical"],
+    freeCount: 1, label: "JSON-LD Validator",
+  },
+  "lokale-schema-checker": {
+    checks: ["structured-data", "title", "meta-desc", "canonical"],
+    freeCount: 2, label: "Lokale Schema Check",
+  },
+
+  // ── Lokaal specifics ──
+  "lokale-seo-audit": {
+    checks: ["title", "meta-desc", "structured-data", "og-tags", "canonical", "https", "viewport", "images"],
+    freeCount: 3, label: "Lokale SEO Audit",
+  },
+
+  // ── Concurrentie specifics ──
+  "concurrentie-analyse-tool": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data", "page-speed-hints"],
+    freeCount: 3, label: "Concurrentie Analyse",
+  },
+  "technische-vergelijking-tool": {
+    checks: ["https", "viewport", "charset", "canonical", "robots-meta", "page-speed-hints", "structured-data"],
+    freeCount: 3, label: "Technische Vergelijking",
+  },
+
+  // ── Analyse extras ──
+  "seo-grader": {
+    checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count", "structured-data", "page-speed-hints"],
+    freeCount: 3, label: "SEO Grader",
+  },
+  "404-checker": {
+    checks: ["internal-links", "canonical", "robots-meta"],
+    freeCount: 2, label: "404 Check",
+  },
+  "duplicate-content-checker": {
+    checks: ["canonical", "title", "meta-desc", "word-count"],
+    freeCount: 2, label: "Duplicate Content",
+  },
+  "seo-spider-tool": {
+    checks: ["title", "meta-desc", "h1", "canonical", "robots-meta", "internal-links", "images", "https"],
+    freeCount: 3, label: "SEO Spider",
+  },
+  "url-structuur-checker": {
+    checks: ["canonical", "title", "robots-meta"],
+    freeCount: 2, label: "URL Structuur",
+  },
+
+  // ── Monitoring specifics ──
+  "ssl-verloop-monitor": {
+    checks: ["https"],
+    freeCount: 1, label: "SSL Monitor",
+  },
+  "indexatie-monitor": {
+    checks: ["robots-meta", "canonical", "title", "meta-desc"],
+    freeCount: 2, label: "Indexatie Monitor",
   },
 };
 
-// Default checks for tools not in the map (covers all major SEO factors)
-const DEFAULT_CHECKS = {
-  checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count"],
-  freeCount: 3,
-};
+/**
+ * Resolves the check config for a given tool: override > category default > fallback.
+ */
+function getToolCheckConfig(toolSlug: string, toolCategory?: string): { checks: string[]; freeCount: number; label?: string } {
+  if (TOOL_CHECK_OVERRIDES[toolSlug]) return TOOL_CHECK_OVERRIDES[toolSlug];
+  if (toolCategory && CATEGORY_CHECK_DEFAULTS[toolCategory]) return CATEGORY_CHECK_DEFAULTS[toolCategory];
+  return { checks: ["title", "meta-desc", "h1", "headings", "images", "internal-links", "og-tags", "canonical", "https", "word-count"], freeCount: 3 };
+}
 
 const statusIcon = (status: CheckResult["status"]) => {
   switch (status) {
@@ -197,18 +415,19 @@ function CheckCard({ check }: { check: CheckResult }) {
 interface ToolScannerProps {
   toolSlug: string;
   toolName: string;
+  toolCategory?: string;
 }
 
-export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
+export function ToolScanner({ toolSlug, toolName, toolCategory }: ToolScannerProps) {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ScanResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [unlocked, setUnlocked] = useState(false);
 
-  const toolConfig = TOOL_CHECK_MAP[toolSlug];
-  const checksToRequest = toolConfig?.checks || DEFAULT_CHECKS.checks;
-  const freeCount = toolConfig?.freeCount ?? DEFAULT_CHECKS.freeCount;
+  const toolConfig = getToolCheckConfig(toolSlug, toolCategory);
+  const checksToRequest = toolConfig.checks;
+  const freeCount = toolConfig.freeCount;
 
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -292,7 +511,7 @@ export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
               {/* Score */}
               <div className="bg-card border border-border rounded-2xl p-6 text-center">
                 <p className="text-sm text-muted-foreground mb-3">
-                  {toolConfig?.label || toolName} score voor{" "}
+                  {('label' in toolConfig ? toolConfig.label : null) || toolName} score voor{" "}
                   <span className="font-medium text-foreground">{result.url}</span>
                 </p>
                 <ScoreRing score={result.score} />
