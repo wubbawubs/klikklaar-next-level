@@ -511,7 +511,7 @@ export function ToolScanner({ toolSlug, toolName, toolCategory }: ToolScannerPro
               {/* Score */}
               <div className="bg-card border border-border rounded-2xl p-6 text-center">
                 <p className="text-sm text-muted-foreground mb-3">
-                  {toolConfig?.label || toolName} score voor{" "}
+                  {('label' in toolConfig ? toolConfig.label : null) || toolName} score voor{" "}
                   <span className="font-medium text-foreground">{result.url}</span>
                 </p>
                 <ScoreRing score={result.score} />
