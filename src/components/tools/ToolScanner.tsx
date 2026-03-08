@@ -415,18 +415,19 @@ function CheckCard({ check }: { check: CheckResult }) {
 interface ToolScannerProps {
   toolSlug: string;
   toolName: string;
+  toolCategory?: string;
 }
 
-export function ToolScanner({ toolSlug, toolName }: ToolScannerProps) {
+export function ToolScanner({ toolSlug, toolName, toolCategory }: ToolScannerProps) {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ScanResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [unlocked, setUnlocked] = useState(false);
 
-  const toolConfig = TOOL_CHECK_MAP[toolSlug];
-  const checksToRequest = toolConfig?.checks || DEFAULT_CHECKS.checks;
-  const freeCount = toolConfig?.freeCount ?? DEFAULT_CHECKS.freeCount;
+  const toolConfig = getToolCheckConfig(toolSlug, toolCategory);
+  const checksToRequest = toolConfig.checks;
+  const freeCount = toolConfig.freeCount;
 
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
