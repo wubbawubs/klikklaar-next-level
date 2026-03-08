@@ -11,6 +11,8 @@ import { Phone, Check, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ToolData, tools, toolCategories } from "@/data/tools";
 import { ToolScanner } from "@/components/tools/ToolScanner";
+import { TextToolScanner } from "@/components/tools/TextToolScanner";
+import { TEXT_TOOL_SLUGS } from "@/components/tools/text-processors";
 import { isToolIndexReady, getToolScore } from "@/lib/indexation-governance";
 import {
   Accordion,
