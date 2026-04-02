@@ -17,10 +17,18 @@ import {
   Zap, 
   Star, 
   Crown,
-  ChevronRight
+  ChevronRight,
+  Tag,
+  X
 } from "lucide-react";
 import { stripePrices, intervalLabels, SETUP_FEE_PRICE_ID, SETUP_FEE_AMOUNT, type BillingInterval } from "@/data/stripe-prices";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
+
+// Promo code definitions (mirror of edge function)
+const PROMO_CODES: Record<string, { label: string; skipSetupFee: boolean; percentOff?: number }> = {
+  GEENSTARTKOSTEN: { label: "Geen opstartkosten", skipSetupFee: true },
+  VIP15: { label: "VIP – geen opstartkosten + 15% korting", skipSetupFee: true, percentOff: 15 },
+};
 
 const stripePromise = loadStripe("pk_live_51T3vVuFRqS45qgwEmVskjAKg4aex1BvVxklrwJJ6gs9Sxb8WTGNN3aov7HrP9DxN05LBrMJldqo5oZHolUTAbiAC00S7FWXWpz");
 
@@ -80,6 +88,11 @@ const Checkout = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
 
+  const [promoCode, setPromoCode] = useState("");
+  const [promoInput, setPromoInput] = useState("");
+  const [promoError, setPromoError] = useState("");
+  const [appliedPromo, setAppliedPromo] = useState<{ code: string; label: string; skipSetupFee: boolean; percentOff?: number } | null>(null);
+
   const tierId = searchParams.get("pakket") || "basis";
   const interval = (searchParams.get("interval") || "1") as BillingInterval;
 
@@ -91,16 +104,36 @@ const Checkout = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleApplyPromo = () => {
+    const normalized = promoInput.trim().toUpperCase();
+    const config = PROMO_CODES[normalized];
+    if (!config) {
+      setPromoError("Ongeldige kortingscode");
+      setAppliedPromo(null);
+      setPromoCode("");
+      return;
+    }
+    setPromoError("");
+    setPromoCode(normalized);
+    setAppliedPromo({ code: normalized, ...config });
+    toast.success(`Kortingscode "${normalized}" toegepast!`);
+  };
+
+  const handleRemovePromo = () => {
+    setPromoCode("");
+    setPromoInput("");
+    setAppliedPromo(null);
+    setPromoError("");
+  };
+
   const fetchClientSecret = useCallback(async () => {
-    const { data, error } = await supabase.functions.invoke("create-checkout", {
-      body: { 
-        priceId: priceConfig.priceId, 
-        setupFeePriceId: SETUP_FEE_PRICE_ID,
-      },
-    });
+    const body: any = { priceId: priceConfig.priceId, setupFeePriceId: SETUP_FEE_PRICE_ID };
+    if (promoCode) body.promoCode = promoCode;
+    const { data, error } = await supabase.functions.invoke("create-checkout", { body });
     if (error) throw error;
+    if (data.error) throw new Error(data.error);
     return data.clientSecret;
-  }, [priceConfig]);
+  }, [priceConfig, promoCode]);
 
   if (!tier || !priceConfig) {
     return (
@@ -255,22 +288,88 @@ const Checkout = () => {
 
                     {/* Setup fee - one-time */}
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Eenmalige opstartkosten</span>
-                      <span className="text-foreground">€{SETUP_FEE_AMOUNT.toFixed(2).replace('.', ',')}</span>
+                      <span className={`text-muted-foreground ${appliedPromo?.skipSetupFee ? 'line-through' : ''}`}>
+                        Eenmalige opstartkosten
+                      </span>
+                      <span className={`text-foreground ${appliedPromo?.skipSetupFee ? 'line-through text-muted-foreground' : ''}`}>
+                        {appliedPromo?.skipSetupFee ? (
+                          <span>€{SETUP_FEE_AMOUNT.toFixed(2).replace('.', ',')}</span>
+                        ) : (
+                          `€${SETUP_FEE_AMOUNT.toFixed(2).replace('.', ',')}`
+                        )}
+                      </span>
                     </div>
+                    {appliedPromo?.skipSetupFee && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-kk-orange font-medium">Korting opstartkosten</span>
+                        <span className="text-kk-orange font-medium">-€{SETUP_FEE_AMOUNT.toFixed(2).replace('.', ',')}</span>
+                      </div>
+                    )}
+
+                    {/* Promo code input */}
+                    <div className="border-t border-dashed border-border my-3" />
+                    {appliedPromo ? (
+                      <div className="flex items-center gap-2 p-2.5 bg-kk-orange/5 border border-kk-orange/20 rounded-xl">
+                        <Tag className="w-4 h-4 text-kk-orange flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-foreground">{appliedPromo.code}</p>
+                          <p className="text-xs text-muted-foreground">{appliedPromo.label}</p>
+                        </div>
+                        <button onClick={handleRemovePromo} className="p-1 hover:bg-muted rounded-lg transition-colors">
+                          <X className="w-4 h-4 text-muted-foreground" />
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="space-y-1.5">
+                        <div className="flex gap-2">
+                          <input
+                            type="text"
+                            value={promoInput}
+                            onChange={(e) => { setPromoInput(e.target.value); setPromoError(""); }}
+                            onKeyDown={(e) => e.key === "Enter" && handleApplyPromo()}
+                            placeholder="Kortingscode"
+                            className="flex-1 px-3 py-2 text-sm bg-muted/50 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-kk-orange/30 text-foreground placeholder:text-muted-foreground"
+                          />
+                          <button
+                            onClick={handleApplyPromo}
+                            disabled={!promoInput.trim()}
+                            className="px-4 py-2 text-sm font-medium bg-kk-orange/10 text-kk-orange rounded-xl hover:bg-kk-orange/20 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                          >
+                            Toepassen
+                          </button>
+                        </div>
+                        {promoError && <p className="text-xs text-destructive">{promoError}</p>}
+                      </div>
+                    )}
 
                     {/* First payment total */}
                     {(() => {
-                      const firstPaymentExcl = priceConfig.totalPrice + SETUP_FEE_AMOUNT;
+                      const effectiveSetupFee = appliedPromo?.skipSetupFee ? 0 : SETUP_FEE_AMOUNT;
+                      const effectiveMonthly = appliedPromo?.percentOff 
+                        ? priceConfig.monthlyPrice * (1 - appliedPromo.percentOff / 100)
+                        : priceConfig.monthlyPrice;
+                      const effectiveTotal = appliedPromo?.percentOff
+                        ? priceConfig.totalPrice * (1 - appliedPromo.percentOff / 100)
+                        : priceConfig.totalPrice;
+                      const firstPaymentExcl = effectiveTotal + effectiveSetupFee;
                       const btwAmount = firstPaymentExcl * (BTW_PERCENTAGE / 100);
                       const firstPaymentIncl = firstPaymentExcl + btwAmount;
-                      const monthlyExcl = priceConfig.monthlyPrice;
+                      const monthlyExcl = effectiveMonthly;
                       const monthlyBtw = monthlyExcl * (BTW_PERCENTAGE / 100);
                       const monthlyIncl = monthlyExcl + monthlyBtw;
 
                       return (
                         <>
                           <div className="border-t border-dashed border-border my-3" />
+
+                          {appliedPromo?.percentOff && (
+                            <div className="flex justify-between text-sm">
+                              <span className="text-kk-orange font-medium">Korting abonnement ({appliedPromo.percentOff}%)</span>
+                              <span className="text-kk-orange font-medium">
+                                -€{(priceConfig.totalPrice - effectiveTotal).toFixed(2).replace('.', ',')}
+                              </span>
+                            </div>
+                          )}
 
                           {/* Subtotal */}
                           <div className="flex justify-between text-sm">
