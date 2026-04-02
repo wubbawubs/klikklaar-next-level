@@ -88,6 +88,11 @@ const Checkout = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
 
+  const [promoCode, setPromoCode] = useState("");
+  const [promoInput, setPromoInput] = useState("");
+  const [promoError, setPromoError] = useState("");
+  const [appliedPromo, setAppliedPromo] = useState<{ code: string; label: string; skipSetupFee: boolean; percentOff?: number } | null>(null);
+
   const tierId = searchParams.get("pakket") || "basis";
   const interval = (searchParams.get("interval") || "1") as BillingInterval;
 
@@ -99,16 +104,36 @@ const Checkout = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleApplyPromo = () => {
+    const normalized = promoInput.trim().toUpperCase();
+    const config = PROMO_CODES[normalized];
+    if (!config) {
+      setPromoError("Ongeldige kortingscode");
+      setAppliedPromo(null);
+      setPromoCode("");
+      return;
+    }
+    setPromoError("");
+    setPromoCode(normalized);
+    setAppliedPromo({ code: normalized, ...config });
+    toast.success(`Kortingscode "${normalized}" toegepast!`);
+  };
+
+  const handleRemovePromo = () => {
+    setPromoCode("");
+    setPromoInput("");
+    setAppliedPromo(null);
+    setPromoError("");
+  };
+
   const fetchClientSecret = useCallback(async () => {
-    const { data, error } = await supabase.functions.invoke("create-checkout", {
-      body: { 
-        priceId: priceConfig.priceId, 
-        setupFeePriceId: SETUP_FEE_PRICE_ID,
-      },
-    });
+    const body: any = { priceId: priceConfig.priceId, setupFeePriceId: SETUP_FEE_PRICE_ID };
+    if (promoCode) body.promoCode = promoCode;
+    const { data, error } = await supabase.functions.invoke("create-checkout", { body });
     if (error) throw error;
+    if (data.error) throw new Error(data.error);
     return data.clientSecret;
-  }, [priceConfig]);
+  }, [priceConfig, promoCode]);
 
   if (!tier || !priceConfig) {
     return (
