@@ -17,10 +17,18 @@ import {
   Zap, 
   Star, 
   Crown,
-  ChevronRight
+  ChevronRight,
+  Tag,
+  X
 } from "lucide-react";
 import { stripePrices, intervalLabels, SETUP_FEE_PRICE_ID, SETUP_FEE_AMOUNT, type BillingInterval } from "@/data/stripe-prices";
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
+
+// Promo code definitions (mirror of edge function)
+const PROMO_CODES: Record<string, { label: string; skipSetupFee: boolean; percentOff?: number }> = {
+  GEENSTARTKOSTEN: { label: "Geen opstartkosten", skipSetupFee: true },
+  VIP15: { label: "VIP – geen opstartkosten + 15% korting", skipSetupFee: true, percentOff: 15 },
+};
 
 const stripePromise = loadStripe("pk_live_51T3vVuFRqS45qgwEmVskjAKg4aex1BvVxklrwJJ6gs9Sxb8WTGNN3aov7HrP9DxN05LBrMJldqo5oZHolUTAbiAC00S7FWXWpz");
 
