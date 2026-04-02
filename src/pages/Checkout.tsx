@@ -352,11 +352,6 @@ const Checkout = () => {
                         ? priceConfig.totalPrice * (1 - appliedPromo.percentOff / 100)
                         : priceConfig.totalPrice;
                       const firstPaymentExcl = effectiveTotal + effectiveSetupFee;
-                      const btwAmount = firstPaymentExcl * (BTW_PERCENTAGE / 100);
-                      const firstPaymentIncl = firstPaymentExcl + btwAmount;
-                      const monthlyExcl = effectiveMonthly;
-                      const monthlyBtw = monthlyExcl * (BTW_PERCENTAGE / 100);
-                      const monthlyIncl = monthlyExcl + monthlyBtw;
 
                       return (
                         <>
@@ -371,32 +366,26 @@ const Checkout = () => {
                             </div>
                           )}
 
-                          {/* Subtotal */}
-                          <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Subtotaal (excl. btw)</span>
-                            <span className="text-foreground">€{firstPaymentExcl.toFixed(2).replace('.', ',')}</span>
-                          </div>
-                          <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">BTW ({BTW_PERCENTAGE}%)</span>
-                            <span className="text-foreground">€{btwAmount.toFixed(2).replace('.', ',')}</span>
-                          </div>
-
-                          {/* Grand total */}
+                          {/* Grand total excl BTW */}
                           <div className="flex justify-between items-baseline pt-3 border-t border-border">
                             <span className="font-semibold text-foreground">Totaal eerste betaling</span>
                             <div className="text-right">
                               <span className="text-2xl font-bold text-foreground">
-                                €{firstPaymentIncl.toFixed(2).replace('.', ',')}
+                                €{firstPaymentExcl.toFixed(2).replace('.', ',')}
                               </span>
-                              <p className="text-xs text-muted-foreground">incl. btw</p>
+                              <p className="text-xs text-muted-foreground">excl. btw</p>
                             </div>
                           </div>
+
+                          <p className="text-xs text-muted-foreground mt-2">
+                            BTW ({BTW_PERCENTAGE}%) wordt automatisch berekend bij het afrekenen op basis van je locatie.
+                          </p>
 
                           {/* Monthly recurring info */}
                           <div className="mt-4 p-3 bg-muted/40 rounded-xl">
                             <p className="text-xs text-muted-foreground">
                               <span className="font-semibold text-foreground">Daarna maandelijks:</span>{" "}
-                              €{monthlyExcl.toFixed(2).replace('.', ',')} + €{monthlyBtw.toFixed(2).replace('.', ',')} btw = <span className="font-semibold text-foreground">€{monthlyIncl.toFixed(2).replace('.', ',')}</span> /mnd
+                              €{effectiveMonthly.toFixed(2).replace('.', ',')} excl. btw
                             </p>
                           </div>
                         </>
