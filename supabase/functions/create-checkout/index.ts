@@ -14,9 +14,19 @@ const logStep = (step: string, details?: any) => {
 };
 
 // Promo code definitions
-const PROMO_CODES: Record<string, { skipSetupFee: boolean; stripeCouponId?: string }> = {
+const PROMO_CODES: Record<string, { skipSetupFee: boolean; stripeCouponId?: string; requiresPriceIds?: string[] }> = {
   GEENSTARTKOSTEN: { skipSetupFee: true },
   VIP15: { skipSetupFee: true, stripeCouponId: "IblOAeeT" },
+  // VIP20: only valid on 6-month plans (basis/pro/proplus)
+  VIP20: {
+    skipSetupFee: true,
+    stripeCouponId: "O03IsNSF",
+    requiresPriceIds: [
+      "price_1T7cFsFRqS45qgwEbVBUlGo6", // basis 6m
+      "price_1T7cFuFRqS45qgwEK8tSwarL", // pro 6m
+      "price_1T7cFvFRqS45qgwEr6GwqDWX", // proplus 6m
+    ],
+  },
 };
 
 serve(async (req) => {
@@ -44,6 +54,12 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 400,
       });
+    }
+    if (promoConfig?.requiresPriceIds && !promoConfig.requiresPriceIds.includes(priceId)) {
+      return new Response(
+        JSON.stringify({ error: "Deze kortingscode is alleen geldig op het 6-maanden traject." }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 400 }
+      );
     }
     logStep("Promo code resolved", { normalizedCode, promoConfig });
 
