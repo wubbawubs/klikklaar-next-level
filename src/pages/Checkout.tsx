@@ -25,9 +25,10 @@ import { stripePrices, intervalLabels, SETUP_FEE_PRICE_ID, SETUP_FEE_AMOUNT, typ
 import klikklaarLogo from "@/assets/klikklaar-logo.png";
 
 // Promo code definitions (mirror of edge function)
-const PROMO_CODES: Record<string, { label: string; skipSetupFee: boolean; percentOff?: number }> = {
+const PROMO_CODES: Record<string, { label: string; skipSetupFee: boolean; percentOff?: number; requiresInterval?: BillingInterval }> = {
   GEENSTARTKOSTEN: { label: "Geen opstartkosten", skipSetupFee: true },
   VIP15: { label: "VIP – geen opstartkosten + 15% korting", skipSetupFee: true, percentOff: 15 },
+  VIP20: { label: "VIP20 – geen opstartkosten + 5% extra korting (alleen 6 mnd)", skipSetupFee: true, percentOff: 5, requiresInterval: "6" },
 };
 
 const stripePromise = loadStripe("pk_live_51T3vVuFRqS45qgwEmVskjAKg4aex1BvVxklrwJJ6gs9Sxb8WTGNN3aov7HrP9DxN05LBrMJldqo5oZHolUTAbiAC00S7FWXWpz");
@@ -109,6 +110,12 @@ const Checkout = () => {
     const config = PROMO_CODES[normalized];
     if (!config) {
       setPromoError("Ongeldige kortingscode");
+      setAppliedPromo(null);
+      setPromoCode("");
+      return;
+    }
+    if (config.requiresInterval && config.requiresInterval !== interval) {
+      setPromoError("Deze kortingscode is alleen geldig op het 6-maanden traject.");
       setAppliedPromo(null);
       setPromoCode("");
       return;
